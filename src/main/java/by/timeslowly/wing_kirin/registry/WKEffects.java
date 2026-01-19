@@ -15,7 +15,7 @@ public class WKEffects {
             Registries.MOB_EFFECT, Wing_kirin.MOD_ID
     );
 
-    public static final Holder<MobEffect> DingShen = MOB_EFFECTS.register("dingshen",
+    public static final Holder<MobEffect> DingShen = MOB_EFFECTS.register("ding_shen",
             () -> new DingShen_Effect(MobEffectCategory.HARMFUL, -1));
 
     public static final Holder<MobEffect> GreatZhengqi = MOB_EFFECTS.register("great_zhengqi",
