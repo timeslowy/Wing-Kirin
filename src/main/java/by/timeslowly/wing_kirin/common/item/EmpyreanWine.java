@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class EmpyreanWine extends Item {
+    // 设置堆叠数、饥饿值和饱和度
     public EmpyreanWine() {
         super(new Item.Properties()
                 .stacksTo(16)

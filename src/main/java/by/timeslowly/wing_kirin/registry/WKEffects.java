@@ -9,7 +9,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
+// 注册药水效果
 public class WKEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(
             Registries.MOB_EFFECT, Wing_kirin.MOD_ID
