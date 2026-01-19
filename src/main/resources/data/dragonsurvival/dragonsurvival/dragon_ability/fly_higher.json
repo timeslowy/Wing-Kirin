@@ -1,0 +1,167 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:fly_higher",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "dragonsurvival:flight_speed",
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.125,
+                        "per_level_above_first": 0.125
+                      },
+                      "operation": "add_multiplied_total"
+                    },
+                    {
+                      "attribute": "dragonsurvival:flight_stamina",
+                      "amount": {
+                        "type": "linear",
+                        "base": 0.125,
+                        "per_level_above_first": 0.125
+                      },
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "effect_type": "dragonsurvival:particle",
+              "particle_data": {
+                "particle": {
+                  "type": "minecraft:instant_effect"
+                },
+                "horizontal_position": {
+                  "type": "entity_position"
+                },
+                "vertical_position": {
+                  "type": "in_bounding_box"
+                },
+                "horizontal_velocity": {
+                  "base": 1.0
+                },
+                "vertical_velocity": {
+                  "base": 1.0
+                }
+              },
+              "particle_count": 1
+            }
+          ],
+          "targeting_mode": "allies_and_self",
+          "target_conditions": {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "position": {
+                    "y": {
+                      "min": 319
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "dimension": "minecraft:overworld"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 1.0
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "can_be_manually_disabled": true,
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_3"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_4"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_5"
+      },
+      {
+        "from_level": 6,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_6"
+      },
+      {
+        "from_level": 7,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_7"
+      },
+      {
+        "from_level": 8,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher_8"
+      }
+    ]
+  },
+  "upgrade": {
+    "experience_cost": {
+      "type": "minecraft:lookup",
+      "fallback": 40,
+      "values": [
+        20,
+        40,
+        60,
+        80,
+        120,
+        160,
+        200,
+        240
+      ]
+    },
+    "maximum_level": 8,
+    "upgrade_type": "dragonsurvival:experience_points"
+  },
+  "usage_blocked": {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "dragonsurvival:dragon_predicate",
+          "dragon_species": "dragonsurvival:wing_kirin"
+        }
+      }
+    }
+  }
+}

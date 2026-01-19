@@ -1,0 +1,8 @@
+{
+  "key": "cattle_ear",
+  "texture": "dragonsurvival:textures/dragon/custom/parts/extra/cattle_ear.png",
+  "average_hue": 0.0,
+  "applicable_species": [
+    "dragonsurvival:wing_kirin"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "parent": "wing_kirin:wing_kirin/great_zhengqi",
+    "criteria": {
+        "Have_Used_the_Ability_of_Weathwe_Clear":{
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/weather_clear.desc"
+        },
+        "icon": {
+            "id": "minecraft:sunflower",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/weather_clear"
+        }
+    },
+    "requirements": [
+        [
+            "Have_Used_the_Ability_of_Weathwe_Clear"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": false
+}

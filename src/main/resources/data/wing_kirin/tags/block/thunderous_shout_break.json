@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "values": [
+        "#minecraft:logs",
+        "#c:glass_blocks",
+        "#minecraft:dirt",
+        "#minecraft:wool",
+        "#minecraft:planks",
+        "#minecraft:candles",
+        "#minecraft:banners",
+        "#minecraft:pressure_plates",
+        "minecraft:redstone_wire"
+    ]
+}

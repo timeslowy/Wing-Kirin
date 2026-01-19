@@ -1,0 +1,12 @@
+{
+  "values": {
+    "dragonsurvival:wing_kirin": {
+      "spawn_position": [
+        0,
+        200,
+        200
+      ],
+      "structure": "dragonsurvival:end_spawn_platforms/wing_kirin_end_spawn_platform"
+    }
+  }
+}

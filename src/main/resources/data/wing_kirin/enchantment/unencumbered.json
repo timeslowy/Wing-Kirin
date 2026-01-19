@@ -1,0 +1,45 @@
+{
+    "description": {
+        "translate": "enchantment.wing_kirin.unencumbered"
+    },
+    "max_level": 4,
+    "max_cost": {
+        "base": 20,
+        "per_level_above_first": 10
+    },
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 10
+    },
+    "weight": 10,
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "wing_kirin:golden_bell",
+    "primary_items": "wing_kirin:golden_bell",
+    "anvil_cost": 8,
+    "effects": {
+        "attributes": [
+            {
+                "id": "wing_kirin:unencumbered_movement_recovery",
+                "attribute": "generic.movement_speed",
+                "amount": {
+                    "type": "linear",
+                    "base": 0.4,
+                    "per_level_above_first": 0.4
+                },
+                "operation": "add_multiplied_total"
+            },
+            {
+                "id": "wing_kirin:unencumbered_flight_recovery",
+                "attribute": "dragonsurvival:flight_speed",
+                "amount": {
+                    "type": "linear",
+                    "base": 0.2,
+                    "per_level_above_first": 0.2
+                },
+                "operation": "add_multiplied_total"
+            }
+        ]
+    }
+}

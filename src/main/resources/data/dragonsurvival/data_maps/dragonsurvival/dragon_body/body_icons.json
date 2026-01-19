@@ -1,0 +1,19 @@
+{
+	"values": {
+		"dragonsurvival:center": {
+			"dragonsurvival:wing_kirin": "dragonsurvival:textures/gui/custom/body/center/wing_kirin.png"
+		},
+		"dragonsurvival:east": {
+			"dragonsurvival:wing_kirin": "dragonsurvival:textures/gui/custom/body/east/wing_kirin.png"
+		},
+		"dragonsurvival:north": {
+			"dragonsurvival:wing_kirin": "dragonsurvival:textures/gui/custom/body/north/wing_kirin.png"
+		},
+		"dragonsurvival:south": {
+			"dragonsurvival:wing_kirin": "dragonsurvival:textures/gui/custom/body/south/wing_kirin.png"
+		},
+		"dragonsurvival:west": {
+			"dragonsurvival:wing_kirin": "dragonsurvival:textures/gui/custom/body/west/wing_kirin.png"
+		}
+	}
+}

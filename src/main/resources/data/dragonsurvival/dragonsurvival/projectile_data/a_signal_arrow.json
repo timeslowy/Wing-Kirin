@@ -1,0 +1,88 @@
+{
+  "general_data": {
+    "block_hit_effects": [],
+    "common_hit_effects": [],
+    "entity_hit_condition": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "dragonsurvival:entity_check_predicate",
+          "check_for": "living_entity"
+        }
+      }
+    },
+    "entity_hit_effects": [],
+    "name": "dragonsurvival:a_signal_arrow",
+    "ticking_effects": []
+  },
+  "type_data": {
+    "behaviour_data": {
+      "height": 1.0,
+      "max_lifespan": 200.0,
+      "max_movement_distance": 200.0,
+      "width": 1.0,
+      "max_lingering_ticks": 100
+    },
+    "on_destroy_effects": [
+      {
+        "general_data": {
+          "effects": [
+            {
+              "effect": {
+                "world_effect": "dragonsurvival:run_function",
+                "function": "wing_kirin:dragon_ability/signal_arrow/main-projectile"
+              },
+              "condition": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "position": {
+                      "y": {
+                        "min": 192
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "effect": {
+                "world_effect": "dragonsurvival:particle",
+                "particle_data": {
+                  "particle": {
+                    "type": "minecraft:firework"
+                  },
+                  "horizontal_position": {
+                    "type": "in_bounding_box"
+                  },
+                  "vertical_position": {
+                    "type": "in_bounding_box"
+                  },
+                  "horizontal_velocity": {
+                    "base": 2.0
+                  },
+                  "vertical_velocity": {
+                    "base": 2.0
+                  },
+                  "speed": 5.0
+                },
+                "particle_count": 2
+              }
+            }
+          ]
+        },
+        "target_type": "dragonsurvival:point"
+      }
+    ],
+    "resources": {
+      "texture_entries": [
+        {
+          "from_level": 1,
+          "texture_resource": "dragonsurvival:fireball"
+        }
+      ]
+    }
+  }
+}

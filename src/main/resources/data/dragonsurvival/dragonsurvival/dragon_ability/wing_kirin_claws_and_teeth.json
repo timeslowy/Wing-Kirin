@@ -1,0 +1,93 @@
+{
+    "activation": {
+        "activation_type": "dragonsurvival:passive"
+    },
+    "upgrade": {
+        "growth_requirement": {
+            "type": "minecraft:lookup",
+            "fallback": {
+                "type": "minecraft:linear",
+                "base": 15.0,
+                "per_level_above_first": 15.0
+            },
+            "values": [
+                25.0,
+                40.0,
+                60.0
+            ]
+        },
+        "maximum_level": 3,
+        "upgrade_type": "dragonsurvival:dragon_growth"
+    },
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:modifier",
+                            "modifiers": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:claw_and_teeth",
+                                        "should_remove_automatically": true,
+                                        "is_hidden": false,
+                                        "custom_icon": "dragonsurvival:textures/ability_effect/knockback_bonus.png"
+                                    },
+                                    "modifiers": [
+                                        {
+                                            "attribute": "minecraft:generic.attack_knockback",
+                                            "amount": {
+                                                "type": "minecraft:linear",
+                                                "base": 0.1,
+                                                "per_level_above_first": 0.05
+                                            },
+                                            "operation": "add_multiplied_total"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_rate": 1.0
+        }
+    ],
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_3"
+            }
+        ]
+    },
+    "can_be_manually_disabled": true,
+    "usage_blocked": {
+        "condition": "inverted",
+        "term": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type_specific": {
+                    "type": "dragonsurvival:dragon_predicate",
+                    "dragon_species": "dragonsurvival:wing_kirin"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:damage_modification",
+              "modifications": [
+                {
+                  "base": {
+                    "is_hidden": true,
+                    "id": "wing_kirin:sonic_boom_immunity",
+                    "should_remove_automatically": true
+                  },
+                  "damage_types": "minecraft:sonic_boom",
+                  "multiplier": 0.0
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 1.0
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "can_be_manually_disabled": true,
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/sonic_boom_immunity_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/sonic_boom_immunity_1"
+      }
+    ]
+  },
+  "usage_blocked": {
+    "condition": "inverted",
+    "term": {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "dragonsurvival:dragon_predicate",
+          "dragon_species": "dragonsurvival:wing_kirin"
+        }
+      }
+    }
+  }
+}

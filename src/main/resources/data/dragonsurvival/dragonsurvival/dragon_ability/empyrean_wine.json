@@ -1,0 +1,158 @@
+{
+  "upgrade": {
+    "maximum_level": 5,
+    "upgrade_type": "dragonsurvival:experience_levels",
+    "level_requirement": {
+      "type": "minecraft:lookup",
+      "values": [
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fallback": 15
+    }
+  },
+  "usage_blocked": {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "y": {
+                "max": 192
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:weather_check",
+        "raining": true
+      },
+      {
+        "condition": "minecraft:weather_check",
+        "thundering": true
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "slots": {
+              "weapon.mainhand": {
+                "items": "minecraft:glass_bottle"
+              }
+            },
+            "location": {
+              "dimension": "minecraft:overworld"
+            },
+            "type_specific": {
+              "type": "dragonsurvival:dragon_predicate",
+              "dragon_species": "dragonsurvival:wing_kirin"
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:time_check",
+          "value": {
+            "min": 12000,
+            "max": 23999
+          },
+          "period": 24000
+        }
+      }
+    ]
+  },
+  "actions": [
+    {
+      "target_selection": {
+        "target_type": "dragonsurvival:self",
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:run_function",
+              "function": "wing_kirin:dragon_ability/empyrean_wine/main"
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        }
+      },
+      "trigger_rate": 20
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:channeled",
+    "initial_mana_cost": 1,
+    "continuous_mana_cost": {
+      "type": "ticking",
+      "amount": 0.0125
+    },
+    "cast_time": 5,
+    "cooldown": 1,
+    "notification": {
+      "usage_blocked": {
+        "translate": "dragon_ability.dragonsurvival.empyrean_wine.activation.notification.usage_blocked"
+      }
+    },
+    "max_duration": 9600,
+    "can_move_while_casting": false,
+    "animations": {
+      "start_and_charging": {
+        "animation_key": "cast_self_buff",
+        "layer": "BASE",
+        "locks_neck": false,
+        "locks_tail": false
+      },
+      "looping": {
+        "animation_key": "sitting_spinning_item",
+        "layer": "BASE",
+        "locks_neck": false,
+        "locks_tail": false
+      },
+      "end": {
+        "animation_key": "self_buff",
+        "layer": "BASE",
+        "locks_neck": false,
+        "locks_tail": false
+      }
+    }
+  },
+  "can_be_manually_disabled": true,
+  "icon": {
+    "texture_entries": [
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_0",
+        "from_level": 0
+      },
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_1",
+        "from_level": 1
+      },
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_2",
+        "from_level": 2
+      },
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_3",
+        "from_level": 3
+      },
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_4",
+        "from_level": 4
+      },
+      {
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine_5",
+        "from_level": 5
+      }
+    ]
+  }
+}

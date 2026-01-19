@@ -1,0 +1,50 @@
+{
+    "parent": "wing_kirin:wing_kirin/falling_arrow_like_rainstorm",
+    "criteria": {
+        "Fly_to_Higher_Place":{
+            "trigger": "location",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "location": {
+                                "position": {
+                                    "y": {
+                                        "min": 999
+                                    }
+                                }
+                            },
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/fly_higher.desc"
+        },
+        "icon": {
+            "id": "wing_kirin:fly_higher_icon",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/fly_higher"
+        }
+    },
+    "requirements": [
+        [
+            "Fly_to_Higher_Place"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": false
+}

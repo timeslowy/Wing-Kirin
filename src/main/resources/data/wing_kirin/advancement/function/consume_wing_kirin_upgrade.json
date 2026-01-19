@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "wing_kirin:cousume_wing_kirin_upgrade": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "items": "wing_kirin:wing_kirin_upgrade"
+                },
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "wing_kirin:wing_kirin_upgrade/main"
+    }
+}

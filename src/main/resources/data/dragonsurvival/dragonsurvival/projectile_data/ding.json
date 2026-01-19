@@ -1,0 +1,53 @@
+{
+    "general_data": {
+        "name": "dragonsurvival:ding",
+        "ticking_effects": [
+        ],
+        "entity_hit_condition": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type_specific": {
+                    "type": "dragonsurvival:entity_check_predicate",
+                    "check_for": "living_entity"
+                }
+            }
+        },
+        "block_hit_effects": [
+            {
+                "block_effect":"dragonsurvival:run_function",
+                "function":"wing_kirin:dragon_ability/stasia_hex/desctuor/auto_kill"
+            }
+        ],
+        "entity_hit_effects": [
+            {
+                "entity_effect": "dragonsurvival:run_function",
+                "function":"wing_kirin:dragon_ability/stasia_hex/arrow_hit/main"
+            },
+            {
+                "entity_effect": "dragonsurvival:damage",
+                "damage_type": "dragonsurvival:trace_ding",
+                "amount": 0.1
+            }
+        ],
+        "common_hit_effects": []
+    },
+    "type_data": {
+        "texture": {
+            "texture_entries": [
+                {
+                    "from_level": 1,
+                    "texture_resource": "dragonsurvival:ding_arrow"
+                },
+                {
+                    "from_level": 2,
+                    "texture_resource": "dragonsurvival:ding_arrow"
+                },
+                {
+                    "from_level": 3,
+                    "texture_resource": "dragonsurvival:ding_arrow"
+                }
+            ]
+        }
+    }
+}

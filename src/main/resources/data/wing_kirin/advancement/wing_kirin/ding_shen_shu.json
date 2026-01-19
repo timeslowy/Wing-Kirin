@@ -1,0 +1,53 @@
+{
+    "parent": "wing_kirin:wing_kirin/heaven_dish",
+    "criteria": {
+        "Have_Used_the_Ability_of_Stasis_Hex":{
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    }
+                ],
+                "damage": {
+                    "type": {
+                        "tags": [
+                            {
+                                "id": "wing_kirin:trace_ding",
+                                "expected": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/ding_shen_shu.desc"
+        },
+        "icon": {
+            "id": "wing_kirin:dingshen_icon",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/ding_shen_shu"
+        }
+    },
+    "requirements": [
+        [
+            "Have_Used_the_Ability_of_Stasis_Hex"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": false
+}

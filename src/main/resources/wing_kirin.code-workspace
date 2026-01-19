@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../doc"
+		},
+		{
+			"path": "../../../object"
+		},
+		{
+			"path": "../../../other"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,1 @@
+execute unless data entity @s active_effects[{"id":"wing_kirin:great_zhengqi"}].amplifier

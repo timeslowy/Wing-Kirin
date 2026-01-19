@@ -1,0 +1,108 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:block_vision",
+                            "block_visions": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:looking_at_block_display",
+                                        "duration": 10
+                                    },
+                                    "colors": [
+                                        "gold",
+                                        "red"
+                                    ],
+                                    "display_type": "outline",
+                                    "range": 10,
+                                    "blocks": "#wing_kirin:magic_range_display"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "all"
+                },
+                "range": 200,
+                "target_type": "dragonsurvival:looking_at"
+            },
+            "trigger_point": "charging",
+            "trigger_rate": 5.0
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:simple",
+        "animations": {
+            "start_and_charging": {
+                "animation_key": "cast_magic_alt",
+                "layer": "BASE",
+                "locks_neck": false,
+                "locks_tail": false,
+                "transition_length": 5
+            },
+            "end": {
+                "animation_key": "magic_alt",
+                "layer": "BASE",
+                "locks_tail": false,
+                "locks_neck": false,
+                "transition_length": 5
+            }
+        },
+        "cast_time": 100.0,
+        "cooldown": 40,
+        "initial_mana_cost": 40.0,
+        "notification": {
+            "usage_blocked": {
+                "translate": "dragon_ability.dragonsurvival.heavenly_justice.activation.notification.usage_blocked"
+            }
+        },
+        "sound": {
+            "end": "minecraft:item.firecharge.use"
+        },
+        "can_move_while_casting": false
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:test"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "dragonsurvival:test"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "dragonsurvival:test"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "dragonsurvival:test"
+            },
+            {
+                "from_level": 4,
+                "texture_resource": "dragonsurvival:test"
+            }
+        ]
+    },
+    "upgrade": {
+        "level_requirement": {
+            "type": "minecraft:lookup",
+            "fallback": {
+                "type": "minecraft:linear",
+                "base": 15.0,
+                "per_level_above_first": 15.0
+            },
+            "values": [
+                50.0,
+                70.0,
+                90.0,
+                110.0
+            ]
+        },
+        "maximum_level": 4,
+        "upgrade_type": "dragonsurvival:experience_levels"
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:damage_modification",
+              "modifications": [
+                {
+                  "base": {
+                    "id": "wing_kirin:lighter_than_swallow",
+                    "is_hidden": true
+                  },
+                  "damage_types": [
+                    "minecraft:fall",
+                    "fly_into_wall",
+                    "stalagmite"
+                  ],
+                  "multiplier": 0.0
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 1.0
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "can_be_manually_disabled": true,
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/lighter_than_swallow_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/lighter_than_swallow_1"
+      }
+    ]
+  },
+  "usage_blocked": {
+    "condition": "inverted",
+    "term": {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "dragonsurvival:dragon_predicate",
+          "dragon_species": "dragonsurvival:wing_kirin"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "block_effect": [
+            {
+              "effect_type": "dragonsurvival:summon_entity",
+              "max_summons": 1,
+              "entities": "marker",
+              "base": {
+                "id": "wing_kirin:heavenly_justice_marker",
+                "duration": 400,
+                "custom_icon": "dragonsurvival:textures/ability_effect/missle_countdown.png"
+              },
+              "nbt": {
+                "Tags": [
+                  "heavenly_justice_marker"
+                ]
+              },
+              "is_allied": true
+            },
+            {
+              "effect_type": "dragonsurvival:summon_entity",
+              "max_summons": 1,
+              "entities": "item_display",
+              "base": {
+                "id": "wing_kirin:heavenly_justice_dispaly",
+                "duration": 400,
+                "is_hidden": true
+              },
+              "nbt": {
+                "item": {
+                  "id": "mace"
+                },
+                "Glowing": true,
+                "glow_color_override": 1423179,
+                "view_range": 10,
+                "billboard": "vertical",
+                "Tags":[
+                  "heavenly_justice_marker_display"
+                ]
+              }
+            }
+          ]
+        },
+        "target_type": "dragonsurvival:looking_at",
+        "range": 200
+      },
+      "trigger_rate": 1.0
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:projectile",
+              "number_of_projectiles": 0,
+              "projectile_data": "dragonsurvival:dong_feng",
+              "speed": 0,
+              "target_direction": {
+                "direction": "looking_at"
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:run_function",
+              "function": "wing_kirin:dragon_ability/heavenly_justice/ability_data/player"
+            },
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:casted_mana_regeneration_delay",
+                    "is_hidden": false,
+                    "duration": 600,
+                    "custom_icon": "dragonsurvival:textures/mob_effect/magic_disabled.png"
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "amount": -0.4,
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "effect_type": "dragonsurvival:cooldown_recovery",
+              "action_type": "reduce",
+              "adjustment_type": "percent",
+              "exclude_this": false,
+              "amount": -0.5,
+              "probability": 1.0
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "dragonsurvival:entity_check_predicate",
+                "check_for": "living_entity"
+              }
+            }
+          },
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 1.0
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:cast_slowness",
+                    "duration": 10.0,
+                    "is_hidden": true
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "dragonsurvival:flight_speed",
+                      "amount": -0.9,
+                      "operation": "add_multiplied_total"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_point": "charging"
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:simple",
+    "animations": {
+      "start_and_charging": {
+        "animation_key": "cast_magic_alt",
+        "layer": "BASE",
+        "locks_neck": false,
+        "locks_tail": false,
+        "transition_length": 5
+      },
+      "end": {
+        "animation_key": "magic_alt",
+        "layer": "BASE",
+        "locks_tail": false,
+        "locks_neck": false,
+        "transition_length": 5
+      }
+    },
+    "cast_time": 100.0,
+    "cooldown": 6000.0,
+    "initial_mana_cost": 40.0,
+    "notification": {
+      "usage_blocked": {
+        "translate": "dragon_ability.dragonsurvival.heavenly_justice.activation.notification.usage_blocked"
+      }
+    },
+    "sound": {
+      "end": "block.beacon.activate"
+    },
+    "can_move_while_casting": false
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/heavenly_justice_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/heavenly_justice_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/heavenly_justice_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/heavenly_justice_3"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/heavenly_justice_4"
+      }
+    ]
+  },
+  "upgrade": {
+    "level_requirement": {
+      "type": "minecraft:lookup",
+      "fallback": {
+        "type": "minecraft:linear",
+        "base": 15.0,
+        "per_level_above_first": 15.0
+      },
+      "values": [
+        50.0,
+        70.0,
+        90.0,
+        110.0
+      ]
+    },
+    "maximum_level": 4,
+    "upgrade_type": "dragonsurvival:experience_levels"
+  },
+  "usage_blocked": {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type_specific": {
+            "type": "dragonsurvival:dragon_predicate",
+            "stage_specific": {
+              "growth": {
+                "max": 80
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "location": {
+              "dimension": "minecraft:overworld"
+            },
+            "type_specific": {
+              "type": "dragonsurvival:dragon_predicate",
+              "dragon_species": "dragonsurvival:wing_kirin"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

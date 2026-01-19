@@ -1,0 +1,1 @@
+$data modify storage wing_kirin:ram math.hex_uuid_bit set from storage wing_kirin:ram math.hex_map[$(result)]

@@ -1,0 +1,67 @@
+{
+    "parent": "wing_kirin:wing_kirin/delay_death",
+    "criteria": {
+        "master_last_stand": {
+            "conditions": {
+                "ability": "dragonsurvival:last_stand"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_instant_invisibility": {
+            "conditions": {
+                "ability": "dragonsurvival:instant_invisibility"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_signal_arrow": {
+            "conditions": {
+                "ability": "dragonsurvival:signal_arrow"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_indesstuctible_body": {
+            "conditions": {
+                "ability": "dragonsurvival:indestructible_body"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_heavenly_justice": {
+            "conditions": {
+                "ability": "dragonsurvival:heavenly_justice"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/persistent_attempt"
+        },
+        "icon": {
+            "id": "wing_kirin:wing_kirin_upgrade",
+            "count": 1
+        }
+    },
+    "requirements": [
+        [
+            "master_heavenly_justice"
+        ],
+        [
+            "master_indesstuctible_body"
+        ],
+        [
+            "master_instant_invisibility"
+        ],
+        [
+            "master_last_stand"
+        ],
+        [
+            "master_signal_arrow"
+        ]
+    ],
+    "rewards": {
+        "experience": 200
+    }
+}

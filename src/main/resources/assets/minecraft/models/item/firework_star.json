@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld_rod",
+    "textures": {
+        "layer0": "item/firework_star"
+    },
+    "overrides": [
+        { "predicate": { "custom_model_data": 12020000 }, "model": "wing_kirin:item/ding"}
+    ]
+}

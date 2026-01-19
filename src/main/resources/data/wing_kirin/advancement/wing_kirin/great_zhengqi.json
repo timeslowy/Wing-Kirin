@@ -1,0 +1,46 @@
+{
+    "parent": "wing_kirin:wing_kirin/master_all_passives",
+    "criteria": {
+        "Amplified_the_Effect_of_Great_Zhengqi":{
+            "trigger": "minecraft:effects_changed",
+            "conditions": {
+                "effects": {
+                    "wing_kirin:great_zhengqi":{}
+                },
+                "player":[
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/great_zhengqi.desc"
+        },
+        "icon": {
+            "id": "wing_kirin:great_zhengqi_icon",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/great_zhengqi"
+        }
+    },
+    "requirements": [
+        [
+            "Amplified_the_Effect_of_Great_Zhengqi"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    },
+    "sends_telemetry_event": false
+}

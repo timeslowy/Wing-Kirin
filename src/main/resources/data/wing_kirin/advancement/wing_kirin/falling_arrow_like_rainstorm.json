@@ -1,0 +1,51 @@
+{
+    "parent": "wing_kirin:wing_kirin/ding_shen_shu",
+    "criteria": {
+        "Kill_Entity_by_Use_the_Ability_of_Signal_Arrow": {
+            "trigger": "player_killed_entity",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    }
+                ],
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "id": "wing_kirin:signal_arrow_spawn",
+                            "expected": true
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/falling_arrow_like_rainstorm.desc"
+        },
+        "icon": {
+            "id": "minecraft:arrow",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/falling_arrow_like_rainstorm"
+        }
+    },
+    "requirements": [
+        [
+            "Kill_Entity_by_Use_the_Ability_of_Signal_Arrow"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": false
+}

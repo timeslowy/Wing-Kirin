@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "id": "wing_kirin:golden_bell",
+    "count": 1
+  }
+}

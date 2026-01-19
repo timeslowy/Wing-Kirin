@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "fcf",
+    "bdb",
+    "aea"
+  ],
+  "key": {
+    "a": {
+      "item": "dragonsurvival:elder_dragon_heart"
+    },
+    "b":{
+      "item": "minecraft:diamond"
+    },
+    "c":{
+      "item": "minecraft:netherite_ingot"
+    },
+    "d":{
+      "item": "minecraft:nether_star"
+    },
+    "e":{
+      "item": "minecraft:gold_ingot"
+    },
+    "f":{
+      "item": "wing_kirin:empyrean_wine"
+    }
+  },
+  "result": {
+    "id": "wing_kirin:wing_kirin_upgrade",
+    "count": 1
+  }
+}

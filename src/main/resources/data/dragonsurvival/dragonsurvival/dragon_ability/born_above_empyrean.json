@@ -1,0 +1,150 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 1.0
+                },
+                "duration": 100,
+                "effects": "minecraft:regeneration"
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 1.0
+                },
+                "duration": 100,
+                "effects": "minecraft:absorption"
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:born_above_empyrean",
+                    "should_remove_automatically": true,
+                    "is_hidden": true
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "generic.movement_speed",
+                      "amount": {
+                        "type": "linear",
+                        "base": 0.1,
+                        "per_level_above_first": 0.1
+                      },
+                      "operation": "add_multiplied_total"
+                    },
+                    {
+                      "attribute": "generic.max_health",
+                      "amount": {
+                        "type": "linear",
+                        "base": 0.1,
+                        "per_level_above_first": 0.1
+                      },
+                      "operation": "add_multiplied_total"
+                    },
+                    {
+                      "attribute": "generic.attack_damage",
+                      "amount": {
+                        "type": "linear",
+                        "base": 0.1,
+                        "per_level_above_first": 0.1
+                      },
+                      "operation": "add_multiplied_total"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self",
+          "target_conditions": {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "position": {
+                    "y": {
+                      "min": 192
+                    }
+                  },
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            ]
+          }
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 20.0
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "can_be_manually_disabled": true,
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_3"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_4"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_5"
+      }
+    ]
+  },
+  "upgrade": {
+    "experience_cost": {
+      "type": "minecraft:linear",
+      "base": 100.0,
+      "per_level_above_first": 100.0
+    },
+    "maximum_level": 5,
+    "upgrade_type": "dragonsurvival:experience_points"
+  },
+  "usage_blocked": {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "dragonsurvival:dragon_predicate",
+          "dragon_species": "dragonsurvival:wing_kirin"
+        }
+      }
+    }
+  }
+}

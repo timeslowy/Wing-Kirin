@@ -1,0 +1,42 @@
+{
+    "parent": "wing_kirin:wing_kirin/weather_clear",
+    "criteria": {
+        "Get_the_Empyrean_Wine":{
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "wing_kirin:empyrean_wine"
+                    }
+                ],
+                "player": {
+                    "type_specific": {
+                        "type": "dragonsurvival:dragon_predicate",
+                        "dragon_species": "dragonsurvival:wing_kirin"
+                    }
+                }
+            }
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/the_wine_from_empyrean.desc"
+        },
+        "icon": {
+            "id": "wing_kirin:empyrean_wine",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/the_wine_from_empyrean"
+        }
+    },
+    "requirements": [
+        [
+            "Get_the_Empyrean_Wine"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    },
+    "sends_telemetry_event": false
+}

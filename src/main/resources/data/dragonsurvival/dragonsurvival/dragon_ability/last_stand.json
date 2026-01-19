@@ -1,0 +1,196 @@
+{
+    "activation": {
+        "activation_type": "dragonsurvival:passive",
+        "trigger": {
+            "trigger_type": "dragonsurvival:on_death"
+        },
+        "continuous_mana_cost": {
+            "type": "reserved",
+            "amount": 1
+        },
+        "cooldown": 12000
+    },
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:heal",
+                            "percentage": {
+                                "type": "minecraft:linear",
+                                "base": 0.1,
+                                "per_level_above_first": 0.1
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:modifier",
+                            "modifiers": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:last_stand",
+                                        "should_remove_automatically": false,
+                                        "custom_icon": "dragonsurvival:test.png",
+                                        "is_hidden": false,
+                                        "duration": {
+                                            "type": "linear",
+                                            "base": 800,
+                                            "per_level_above_first": 800
+                                        }
+                                    },
+                                    "modifiers": [
+                                        {
+                                            "attribute": "generic.attack_damage",
+                                            "amount": 0.5,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "minecraft:generic.attack_speed",
+                                            "amount": 1.0,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "minecraft:generic.movement_speed",
+                                            "amount": 1.0,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "dragonsurvival:flight_speed",
+                                            "amount": 0.3,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "generic.armor",
+                                            "amount": 18,
+                                            "operation": "add_value"
+                                        },
+                                        {
+                                            "attribute": "generic.armor_toughness",
+                                            "amount": 18,
+                                            "operation": "add_value"
+                                        },
+                                        {
+                                            "attribute": "minecraft:player.block_break_speed",
+                                            "amount": 0.3,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "minecraft:player.mining_efficiency",
+                                            "amount": 0.3,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "dragonsurvival:mana_regeneration",
+                                            "amount": 0.2,
+                                            "operation": "add_value"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "effect_type": "dragonsurvival:effect_removal"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "hunger",
+                                "duration": {
+                                    "type": "linear",
+                                    "base": 2400,
+                                    "per_level_above_first": 1200
+                                },
+                                "amplifier": 4
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:cooldown_recovery",
+                            "action_type": "reduce",
+                            "exclude_this": false,
+                            "adjustment_type": "percent",
+                            "amount": 0.9,
+                            "probability": 1.0,
+                            "abilities": "#dragonsurvival:last_stand_cooldown_recovery"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:mana_recovery",
+                            "action_type": "add",
+                            "adjustment_type": "percent",
+                            "amount": 0.5
+                        },
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/last_stand/main"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_rate": 1.0
+        }
+    ],
+    "can_be_manually_disabled": true,
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_5"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_4"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_3"
+            },
+            {
+                "from_level": 4,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_2"
+            },
+            {
+                "from_level": 5,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_1"
+            }
+        ]
+    },
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_points",
+        "maximum_level": 5,
+        "experience_cost": {
+            "type": "linear",
+            "base": 150,
+            "per_level_above_first": 150
+        }
+    },
+    "usage_blocked": {
+        "condition": "any_of",
+        "terms": [
+            {
+                "condition": "entity_scores",
+                "entity": "this",
+                "scores": {
+                    "wk.last_stand.death_check": 1
+                }
+            },
+            {
+                "condition": "inverted",
+                "term": {
+                    "condition": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

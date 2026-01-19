@@ -1,0 +1,98 @@
+{
+    "activation": {
+        "activation_type": "dragonsurvival:passive",
+        "continuous_mana_cost": {
+          "type": "reserved",
+          "amount": 1.0
+        }
+    },
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:damage_modification",
+                            "modifications": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:sonic_boom_upgrade",
+                                        "is_hidden": true,
+                                        "should_remove_automatically": true
+                                    },
+                                    "damage_types": "minecraft:sonic_boom",
+                                    "multiplier": 2.0
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "non_allies"
+                },
+                "range_multiplier": 1.0,
+                "target_type": "dragonsurvival:dragon_breath"
+            },
+            "trigger_rate": 1.0
+        },
+        {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:heavy",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "dragonsurvival:flight_speed",
+                      "amount": -0.9,
+                      "operation": "add_multiplied_base"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_rate": 20.0
+    }
+    ],
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/sonic_boom_upgrade_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/sonic_boom_upgrade_1"
+            }
+        ]
+    },
+    "can_be_manually_disabled": true,
+    "usage_blocked": {
+        "condition": "minecraft:inverted",
+        "term": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "slots": {
+                    "weapon.mainhand": {
+                        "items": "wing_kirin:golden_bell"
+                    }
+                },
+                "type_specific": {
+                  "type": "dragonsurvival:dragon_predicate",
+                  "dragon_species": "dragonsurvival:wing_kirin"
+                }
+            }
+        }
+    }
+}
