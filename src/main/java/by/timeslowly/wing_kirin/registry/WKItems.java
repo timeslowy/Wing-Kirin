@@ -3,22 +3,13 @@ package by.timeslowly.wing_kirin.registry;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.item.EmpyreanWine;
 import by.timeslowly.wing_kirin.common.item.GoldenBell;
+import by.timeslowly.wing_kirin.common.item.WingKirinHeart;
 import by.timeslowly.wing_kirin.common.item.WingKirinTreat;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 // 注册物品
 public class WKItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(
@@ -48,14 +39,7 @@ public class WKItems {
             () -> new Item(new Item.Properties()));
     // 通仙心
     // TODO:增加shift物品描述（见文档）
-    public static final DeferredItem<Item> WingKirinHeartItem = ITEMS.register("wing_kirin_upgrade",
-            () -> new Item(new Item.Properties()));
-
-
-
-
-
-
+    public static final DeferredItem<Item> WingKirinHeartItem = ITEMS.register("wing_kirin_upgrade", WingKirinHeart::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
