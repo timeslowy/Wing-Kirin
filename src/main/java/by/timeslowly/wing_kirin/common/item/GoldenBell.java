@@ -1,18 +1,16 @@
 package by.timeslowly.wing_kirin.common.item;
 
+import by.dragonsurvivalteam.dragonsurvival.registry.DSAttributes;
+import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +23,10 @@ public class GoldenBell extends Item {
                         .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 4, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND)
                         .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.4, AttributeModifier.Operation.ADD_VALUE),
+                                EquipmentSlotGroup.MAINHAND)
+                        .add(DSAttributes.FLIGHT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_2"),-0.9, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                                EquipmentSlotGroup.MAINHAND)
+                        .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_3"),-0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
                         .build()
                 )
@@ -41,12 +43,5 @@ public class GoldenBell extends Item {
         super.appendHoverText(stack, context, components, tooltipFlag);
         components.add(Component.translatable("item.wing_kirin.golden_bell.description_0"));
         components.add(Component.translatable("item.wing_kirin.golden_bell.description_1"));
-    }
-
-    @Override
-    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean selected) {
-        super.inventoryTick(stack, level, entity, slot, selected);
-        if (selected && entity instanceof LivingEntity _entity && level.isClientSide())
-            _entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 3, false, false));
     }
 }
