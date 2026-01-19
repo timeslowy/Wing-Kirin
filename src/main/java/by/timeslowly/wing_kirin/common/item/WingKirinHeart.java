@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.common.item;
 
 import by.timeslowly.wing_kirin.registry.WKItems;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -31,6 +32,10 @@ public class WingKirinHeart extends Item {
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_0"));
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_1"));
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_2"));
+        if (Screen.hasShiftDown())
+            components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
+        else
+            components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_up"));
     }
 
     @Override
