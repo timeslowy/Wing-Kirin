@@ -25,7 +25,7 @@ public class WKEffects {
             () -> new DingShen_Effect(MobEffectCategory.HARMFUL, -256));
 
     public static final Holder<MobEffect> GreatZhengqi = MOB_EFFECTS.register("great_zhengqi",
-            () -> new GreatZhengqi_Effect(MobEffectCategory.BENEFICIAL, -1));
+            () -> new GreatZhengqi_Effect(MobEffectCategory.BENEFICIAL, -13261));
 
     // 药水效果移除行为
     @SubscribeEvent
