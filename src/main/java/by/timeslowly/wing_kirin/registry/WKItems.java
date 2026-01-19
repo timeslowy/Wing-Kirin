@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.item.EmpyreanWine;
+import by.timeslowly.wing_kirin.common.item.GoldenBell;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -26,8 +27,7 @@ public class WKItems {
     public static final DeferredItem<Item> EmpyreanWineItem = ITEMS.register("empyrean_wine", EmpyreanWine::new);
     // 金钟（暂时未增加属性）
     // TODO：增加物品组件属性修饰效果（见文档）
-    public static final DeferredItem<Item> GoldenBellItem = ITEMS.register("golden_bell",
-            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GoldenBellItem = ITEMS.register("golden_bell", GoldenBell::new);
     // 翼麒麟的佳肴
     public static final DeferredItem<Item> WingKirinTreatItem = ITEMS.register("wing_kirin_treat",
             () -> new Item(new Item.Properties()));
