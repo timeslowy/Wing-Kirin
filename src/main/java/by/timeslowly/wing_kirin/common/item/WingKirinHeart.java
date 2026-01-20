@@ -20,24 +20,25 @@ public class WingKirinHeart extends Item {
                 .rarity(Rarity.RARE)
         );
     }
-
+    // 附魔发光
     @Override
     public boolean isFoil(@NotNull ItemStack itemstack) {
         return true;
     }
-
+    // 添加描述
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, components, tooltipFlag);
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_0"));
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_1"));
         components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_2"));
+        // Shift描述
         if (Screen.hasShiftDown())
             components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
         else
             components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_up"));
     }
-
+    // 添加冷却
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         stack = super.finishUsingItem(stack, level, entity);

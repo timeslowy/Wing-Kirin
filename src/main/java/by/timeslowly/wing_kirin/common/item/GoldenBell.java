@@ -19,13 +19,18 @@ import java.util.List;
 public class GoldenBell extends Item {
     public GoldenBell() {
         super(new Properties().attributes(
+                // 属性修饰
                 ItemAttributeModifiers.builder()
+                        // 攻击伤害
                         .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 4, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND)
+                        // 攻击速度
                         .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.4, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND)
+                        // 龙飞行速度
                         .add(DSAttributes.FLIGHT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_2"),-0.9, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
+                        // 移动速度
                         .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_3"),-0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
                         .build()
@@ -37,7 +42,7 @@ public class GoldenBell extends Item {
     public float getDestroySpeed(@NotNull ItemStack itemstack, @NotNull BlockState state) {
         return 0.5f;
     }
-
+    // 添加描述
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, components, tooltipFlag);
