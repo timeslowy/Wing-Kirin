@@ -435,6 +435,8 @@
     "item.wing_kirin.wing_kirin_upgrade.description_0": "§7■ Gathers essences into one. Using it allows you to acquire innate abilities you didn't originally possess.",
     "item.wing_kirin.wing_kirin_upgrade.description_1": "§7■§a Seventy percent§r§7 chance to gain§a experience and other award§r§7,§6 thirty percent§r§7 chance to gain one of the§6 five powerful acquired abilities§r§7.",
     "item.wing_kirin.wing_kirin_upgrade.description_2": "",
+    "item.wing_kirin.wing_kirin_upgrade.shift_up": "Presee §eShift§r for more info.",
+  "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a-《Encouragement Award》-\nXp 400 points, Gold Ingot,Elder Dragon Heart , Empyrean Wine, Nether Star, Netherite Ingot\n§6-《Acquired Ability》-\n《Signal Arrow》《Instant Invisibility》《Indestructible Body》《Last Stand》《Heavenly Justice》",
 
     "item.wing_kirin.dingshen_icon": "Dingshen Icon",
     "item.wing_kirin.fly_higher_icon": "Fly Higher Icon",
@@ -444,8 +446,10 @@
 
     "painting.wing_kirin.mountain_water.author": "Timeslowly",
     "painting.wing_kirin.mountain_water.title": "Mountain and Water",
-    "painting.wing_kirin.wing_kirin_flag.title": "Wing Kirin Dragon Banner",
-    "painting.wing_kirin.wing_kirin_flag.author": "Timeslowly",
+    "painting.wing_kirin.wing_kirin_flag_colorful.title": "Wing Kirin Dragon Banner - Colorful",
+    "painting.wing_kirin.wing_kirin_flag_colorful.author": "Timeslowly",
+    "painting.wing_kirin.wing_kirin_flag_simplified.title": "Wing Kirin Dragon Banner - Simplified",
+    "painting.wing_kirin.wing_kirin_flag_simplified.author": "Timeslowly",
 
     "item_group.wing_kirin.wing_kirin": "Wing Kirin",
 

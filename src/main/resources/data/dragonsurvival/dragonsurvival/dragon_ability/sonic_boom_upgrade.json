@@ -32,37 +32,7 @@
                 "target_type": "dragonsurvival:dragon_breath"
             },
             "trigger_rate": 1.0
-        },
-        {
-      "target_selection": {
-        "applied_effects": {
-          "entity_effect": [
-            {
-              "effect_type": "dragonsurvival:modifier",
-              "modifiers": [
-                {
-                  "base": {
-                    "id": "wing_kirin:heavy",
-                    "is_hidden": true,
-                    "should_remove_automatically": true
-                  },
-                  "modifiers": [
-                    {
-                      "attribute": "dragonsurvival:flight_speed",
-                      "amount": -0.9,
-                      "operation": "add_multiplied_base"
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "targeting_mode": "allies_and_self"
-        },
-        "target_type": "dragonsurvival:self"
-      },
-      "trigger_rate": 20.0
-    }
+        }
     ],
     "icon": {
         "texture_entries": [
