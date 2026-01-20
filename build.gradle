@@ -121,7 +121,9 @@ repositories {
 }
 
 dependencies {
-    implementation "curse.maven:dragons-survival-420799:7320820"
+    // 龙之生存
+    implementation "curse.maven:dragons-survival-420799:7422257"
+    // 壁虎库
     implementation "curse.maven:geckolib-388172:6920810"
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

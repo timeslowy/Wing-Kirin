@@ -25,18 +25,23 @@ import java.util.Objects;
 public class DingShen_Effect extends MobEffect {
     public DingShen_Effect(MobEffectCategory category, int color) {
         super(category, color);
+        // 属性修改
+        // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_0"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
+        // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
+        // 重力
         this.addAttributeModifier(Attributes.GRAVITY,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), 0,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
+        // 挖掘速度
         this.addAttributeModifier(Attributes.MINING_EFFICIENCY,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
@@ -47,7 +52,7 @@ public class DingShen_Effect extends MobEffect {
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
-
+    // 每刻持续应用的效果
     @Override
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
         // 阻止移动
@@ -66,7 +71,7 @@ public class DingShen_Effect extends MobEffect {
 
         return super.applyEffectTick(entity, amplifier);
     }
-
+    // 生物死亡时时执行一次
     @Override
     public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
         super.onMobRemoved(entity, amplifier, reason);
@@ -91,7 +96,7 @@ public class DingShen_Effect extends MobEffect {
             }
         }
     }
-
+    // 效果消失时执行一次
     public static void onEffectExpired(LivingEntity entity, int amplifier) {
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();

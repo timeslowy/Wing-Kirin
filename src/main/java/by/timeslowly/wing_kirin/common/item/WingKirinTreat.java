@@ -15,7 +15,7 @@ public class WingKirinTreat extends Item {
                 rarity(Rarity.UNCOMMON)
         );
     }
-
+    // 添加描述
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, components, tooltipFlag);
