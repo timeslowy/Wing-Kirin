@@ -2,8 +2,11 @@ package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -17,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 import java.util.Objects;
 
@@ -52,6 +56,7 @@ public class DingShen_Effect extends MobEffect {
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
+
     // 每刻持续应用的效果
     @Override
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
@@ -71,6 +76,34 @@ public class DingShen_Effect extends MobEffect {
 
         return super.applyEffectTick(entity, amplifier);
     }
+
+    // 生物获得效果的瞬间
+    @Override
+    public void onEffectAdded(LivingEntity entity, int amplifier) {
+        super.onEffectAdded(entity, amplifier);
+        if (entity.level() instanceof Level _level) {
+            double x = entity.getX();
+            double y = entity.getY();
+            double z = entity.getZ();
+            // 烈焰人受伤声
+            if (!_level.isClientSide()) {
+                _level.playSound(null,
+                        BlockPos.containing(x, y, z),
+                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"))),
+                        SoundSource.PLAYERS,
+                        2,
+                        (float) 1.2);
+            } else {
+                _level.playLocalSound(x, y, z,
+                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"))),
+                        SoundSource.PLAYERS,
+                        2,
+                        (float) 1.2,
+                        false);
+            }
+        }
+    }
+
     // 生物死亡时时执行一次
     @Override
     public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
@@ -96,6 +129,7 @@ public class DingShen_Effect extends MobEffect {
             }
         }
     }
+
     // 效果消失时执行一次
     public static void onEffectExpired(LivingEntity entity, int amplifier) {
         if (entity.level() instanceof Level _level) {
@@ -116,6 +150,21 @@ public class DingShen_Effect extends MobEffect {
                         2,
                         (float) 1.2,
                         false);
+            }
+
+            // 生成粒子
+            if (entity.level() instanceof ServerLevel level) {
+                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
+                float scale = 1.0F; // 粒子大小
+                level.sendParticles(
+                        new DustParticleOptions(color, scale),
+                        x,
+                        y + entity.getBbHeight() / 2.0F,
+                        z,
+                        200,
+                        1, 1, 1,
+                        0.0F
+                );
             }
         }
     }
