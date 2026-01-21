@@ -44,7 +44,7 @@ public class WKEffects {
     }
     private static void expireEffects(LivingEntity entity, MobEffectInstance effectInstance) {
         if (effectInstance.getEffect().value() instanceof DingShen_Effect) {
-            DingShen_Effect.onEffectExpired(entity, effectInstance.getAmplifier());
+            DingShen_Effect.onEffectExpired(entity);
         }
     }
 

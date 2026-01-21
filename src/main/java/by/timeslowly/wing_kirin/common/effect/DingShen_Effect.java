@@ -3,9 +3,7 @@ package by.timeslowly.wing_kirin.common.effect;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -15,6 +13,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -26,7 +25,7 @@ import org.joml.Vector3f;
 import java.util.Objects;
 
 // 定身 药水效果
-// TODO:太多了，见发的文档
+// TODO:只剩发光效果更改了
 public class DingShen_Effect extends MobEffect {
     public DingShen_Effect(MobEffectCategory category, int color) {
         super(category, color);
@@ -80,11 +79,12 @@ public class DingShen_Effect extends MobEffect {
 
     // 生物获得效果的瞬间
     @Override
-    public void onEffectAdded(LivingEntity entity, int amplifier) {
+    public void onEffectAdded(@NotNull LivingEntity entity, int amplifier) {
         super.onEffectAdded(entity, amplifier);
         // 将实体AI禁用
-        CompoundTag tag = entity.getPersistentData();
-        tag.putBoolean("NoAI", true);
+        if (entity instanceof Mob mob) {
+            mob.setNoAi(true);
+        }
 
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
@@ -129,8 +129,9 @@ public class DingShen_Effect extends MobEffect {
     public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
         super.onMobRemoved(entity, amplifier, reason);
         // 将实体AI恢复
-        CompoundTag tag = entity.getPersistentData();
-        tag.putBoolean("NoAI", false);
+        if (entity instanceof Mob mob) {
+            mob.setNoAi(false);
+        }
 
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
@@ -171,10 +172,11 @@ public class DingShen_Effect extends MobEffect {
     }
 
     // 效果消失时执行一次
-    public static void onEffectExpired(LivingEntity entity, int amplifier) {
+    public static void onEffectExpired(LivingEntity entity) {
         // 将实体AI恢复
-        CompoundTag tag = entity.getPersistentData();
-        tag.putBoolean("NoAI", false);
+        if (entity instanceof Mob mob) {
+            mob.setNoAi(false);
+        }
 
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
