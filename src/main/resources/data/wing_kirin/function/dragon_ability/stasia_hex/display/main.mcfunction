@@ -1,7 +1,5 @@
 ## 执行者: 被定身的生物
 # 执行位置：当前实体
-#播放被定身音效（烈焰人受伤调音调）
-playsound entity.blaze.hurt player @a ~ ~ ~ 2.0 1.2
 
 # 检查当前实体是否正在被展示实体乘骑
 execute if function wing_kirin:dragon_ability/stasia_hex/display/ding_display_check run return fail
