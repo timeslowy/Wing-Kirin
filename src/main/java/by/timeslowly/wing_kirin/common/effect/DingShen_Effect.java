@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -69,7 +70,7 @@ public class DingShen_Effect extends MobEffect {
         }
 
         // 关闭GUI
-        if (Mth.nextInt(RandomSource.create(), 1, 20) == 1) {
+        if (Mth.nextInt(RandomSource.create(), 1, 50) == 1) {
             if (entity instanceof Player _player)
                 _player.closeContainer();
         }
@@ -81,6 +82,10 @@ public class DingShen_Effect extends MobEffect {
     @Override
     public void onEffectAdded(LivingEntity entity, int amplifier) {
         super.onEffectAdded(entity, amplifier);
+        // 将实体AI禁用
+        CompoundTag tag = entity.getPersistentData();
+        tag.putBoolean("NoAI", true);
+
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
             double y = entity.getY();
@@ -93,13 +98,28 @@ public class DingShen_Effect extends MobEffect {
                         SoundSource.PLAYERS,
                         2,
                         (float) 1.2);
-            } else {
+            }
+            else {
                 _level.playLocalSound(x, y, z,
                         Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"))),
                         SoundSource.PLAYERS,
                         2,
                         (float) 1.2,
                         false);
+            }
+            // 生成粒子
+            if (entity.level() instanceof ServerLevel level) {
+                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
+                float scale = 1.0F; // 粒子大小
+                level.sendParticles(
+                        new DustParticleOptions(color, scale),
+                        x,
+                        y + entity.getBbHeight() / 2.0F,
+                        z,
+                        200,
+                        1, 1, 1,
+                        0.0F
+                );
             }
         }
     }
@@ -108,10 +128,15 @@ public class DingShen_Effect extends MobEffect {
     @Override
     public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
         super.onMobRemoved(entity, amplifier, reason);
+        // 将实体AI恢复
+        CompoundTag tag = entity.getPersistentData();
+        tag.putBoolean("NoAI", false);
+
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
             double y = entity.getY();
             double z = entity.getZ();
+            // 播放声音
             if (!_level.isClientSide()) {
                 _level.playSound(null,
                         BlockPos.containing(x, y, z),
@@ -119,7 +144,8 @@ public class DingShen_Effect extends MobEffect {
                         SoundSource.PLAYERS,
                         2,
                         (float) 1.2);
-            } else {
+            }
+            else {
                 _level.playLocalSound(x, y, z,
                         Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete"))),
                         SoundSource.PLAYERS,
@@ -127,15 +153,34 @@ public class DingShen_Effect extends MobEffect {
                         (float) 1.2,
                         false);
             }
+            // 生成粒子
+            if (entity.level() instanceof ServerLevel level) {
+                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
+                float scale = 1.0F; // 粒子大小
+                level.sendParticles(
+                        new DustParticleOptions(color, scale),
+                        x,
+                        y + entity.getBbHeight() / 2.0F,
+                        z,
+                        200,
+                        1, 1, 1,
+                        0.0F
+                );
+            }
         }
     }
 
     // 效果消失时执行一次
     public static void onEffectExpired(LivingEntity entity, int amplifier) {
+        // 将实体AI恢复
+        CompoundTag tag = entity.getPersistentData();
+        tag.putBoolean("NoAI", false);
+
         if (entity.level() instanceof Level _level) {
             double x = entity.getX();
             double y = entity.getY();
             double z = entity.getZ();
+            // 播放声音
             if (!_level.isClientSide()) {
                 _level.playSound(null,
                         BlockPos.containing(x, y, z),

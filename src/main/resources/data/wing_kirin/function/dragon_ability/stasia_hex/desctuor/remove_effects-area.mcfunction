@@ -1,7 +1,6 @@
 ## 执行者：在wing_kirin:dragon_ability/stasia_hex/main （“定身术”主函数）中已制定被范围定身实体为执行者
 
-# 恢复生物AI
-data modify entity @s NoAI set value false
+# 恢复生物AI效果已由java实现
 
 # 清除效果
 effect clear @s dragonsurvival:broken_wings

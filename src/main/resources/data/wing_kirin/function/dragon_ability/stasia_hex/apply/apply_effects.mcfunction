@@ -2,8 +2,7 @@
 ## 执行位置：实体
 # 传入：wing_kirin:ram stasis_hex
 
-# 禁用生物AI
-data modify entity @s NoAI set value true
+# 禁用生物AI效果已由Java实现
 
 # 给予各种效果
 $effect give @s dragonsurvival:broken_wings $(duration) 0
