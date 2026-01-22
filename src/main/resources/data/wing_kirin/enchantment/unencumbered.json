@@ -39,6 +39,16 @@
                     "per_level_above_first": 2.0
                 },
                 "operation": "add_multiplied_total"
+            },
+            {
+                "id": "wing_kirin:unencumbered_gravity_recovery",
+                "attribute": "generic.gravity",
+                "amount": {
+                    "type": "linear",
+                    "base": -0.08,
+                    "per_level_above_first": -0.07
+                },
+                "operation": "add_multiplied_total"
             }
         ]
     }

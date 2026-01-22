@@ -139,11 +139,11 @@
             },
             {
                 "from_level": 1,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_5"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_1"
             },
             {
                 "from_level": 2,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_4"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_2"
             },
             {
                 "from_level": 3,
@@ -151,11 +151,11 @@
             },
             {
                 "from_level": 4,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_2"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_4"
             },
             {
                 "from_level": 5,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_1"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/last_stand_5"
             }
         ]
     },

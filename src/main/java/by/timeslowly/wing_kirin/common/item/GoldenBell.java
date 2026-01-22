@@ -33,6 +33,9 @@ public class GoldenBell extends Item {
                         // 移动速度
                         .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_3"),-0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
+                        // 重力
+                        .add(Attributes.GRAVITY, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_4"),0.4, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                                EquipmentSlotGroup.MAINHAND)
                         .build()
                 )
         );
