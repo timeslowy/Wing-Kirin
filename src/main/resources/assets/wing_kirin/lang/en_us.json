@@ -116,7 +116,7 @@
     "title.wing_kirin.last_stand": "The Last Stand",
     "subtitle.wing_kirin.last_stand": "Attribute Moddifier Effect Duration Attention!",
 
-    "dragon_species.dragonsurvival.wing_kirin.locked": "§7■ After mastering§n all passive ability§r§7 of the official three dragons , reaching the§n Ancient stage§r§7 with all of them, and completing the dietary challenges for all three dragon types, Heaven will verify your cultivation near the limit of constcuction in the Overworld:\n\n1. Whether experience has reached§a Level 68§r§7; 2. Whether carrying§6 2 or more Netherite Blocks§r§7 (not consumed).\n\nIf all the above conditions are met, when the§n weather is clear§r§7, you can transform into the Auspicious Beast — the§6 Wing Kirin.§r",
+    "dragon_species.dragonsurvival.wing_kirin.locked": "§7■ After mastering§n all passive ability§r§7 of the official three dragons , reaching the§n Ancient stage§r§7 with all of them, and completing the dietary challenges for all three dragon types, Heaven will verify your cultivation near the limit of constcuction in the Overworld:\n\n1. Whether experience has reached§a Level 68§r§7; 2. Whether carrying§6 2 or more Netherite Blocks§r§7 (not consumed).\n\nIf all the above conditions are met, when the§n weather is clear§r§7, you can transform into the Auspicious Beast — the§6 Wing Kirin.§r\n\n§7■ If you enabled the datapack §a「Low Unlock Condition - Wing Kirin」§r§7,there will only requires §nposition and weather.§r",
 
     
   "skin_part.dragonsurvival.wing_kirin.all_extra_1": "Crown",
@@ -461,5 +461,7 @@
 
 
     "dragon_emote.dragonsurvival.clap": "§3Fun:§r Clap",
-    "dragon_emote.dragonsurvival.sitting_throwing_item": "§5Sit：§r Throwing Item"
+    "dragon_emote.dragonsurvival.sitting_throwing_item": "§5Sit：§r Throwing Item",
+
+    "datapack_description.wing_kirin.low_unlock_condition": "Reduceing the difficulty of unlock Wing Kirin significantly."
 }

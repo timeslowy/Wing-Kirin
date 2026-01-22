@@ -88,7 +88,7 @@
     "death.attack.dragonsurvival.breath_disappear": "%1$s气数已尽",
 
 
-    "dragon_species.dragonsurvival.wing_kirin.locked": "§7■升官方三种龙的§n全部被动§r§7至 满级 ，且都长至§n远古阶段§r§7、并达成三种龙的饮食挑战之后（以上对应九个成就），在主世界近群山之巅处（接近原版建筑限高），上天会核验你的修为：\n\n1.经验是否达到§a68级§r§7；2.是否携有§62块及以上的下界合金块§r§7（不消耗）。\n\n若全部满足上述条件，在§n天气晴好§r§7之时，即可化为瑞兽————§6翼麒麟。§r",
+    "dragon_species.dragonsurvival.wing_kirin.locked": "§7■升官方三种龙的§n全部被动§r§7至 满级 ，且都长至§n远古阶段§r§7、并达成三种龙的饮食挑战之后（以上对应九个成就），在主世界近群山之巅处（接近原版建筑限高），上天会核验你的修为：\n\n1.经验是否达到§a68级§r§7；2.是否携有§62块及以上的下界合金块§r§7（不消耗）。\n\n若全部满足上述条件，在§n天气晴好§r§7之时，即可化为瑞兽————§6翼麒麟。§r\n\n§7■若启用§a「Low Unlock Condition -  Wing Kirin」§r§7数据包，则只对§n解锁位置和天气§r§7有所要求",
     
     
   "skin_part.dragonsurvival.wing_kirin.none": "",
@@ -479,5 +479,7 @@
 
     
     "dragon_emote.dragonsurvival.clap": "§3趣味：§r鼓掌",
-    "dragon_emote.dragonsurvival.sitting_throwing_item": "§5坐姿：§r抛物"
+    "dragon_emote.dragonsurvival.sitting_throwing_item": "§5坐姿：§r抛物",
+
+    "datapack_description.wing_kirin.low_unlock_condition": "大大降低翼麒麟的解锁难度，助你早日成为“九天上的来客”。"
 }
