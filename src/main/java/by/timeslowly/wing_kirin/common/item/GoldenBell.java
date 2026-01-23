@@ -18,7 +18,10 @@ import java.util.List;
 
 public class GoldenBell extends Item {
     public GoldenBell() {
-        super(new Properties().attributes(
+        super(new Item.Properties()
+                // 设置堆叠
+                .stacksTo(1)
+                .attributes(
                 // 属性修饰
                 ItemAttributeModifiers.builder()
                         // 攻击伤害
@@ -47,9 +50,9 @@ public class GoldenBell extends Item {
     }
     // 添加描述
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
-        super.appendHoverText(stack, context, components, tooltipFlag);
-        components.add(Component.translatable("item.wing_kirin.golden_bell.description_0"));
-        components.add(Component.translatable("item.wing_kirin.golden_bell.description_1"));
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+        tooltipComponents.add(Component.translatable("item.wing_kirin.golden_bell.description_0"));
+        tooltipComponents.add(Component.translatable("item.wing_kirin.golden_bell.description_1"));
     }
 }

@@ -135,6 +135,39 @@
           "items": "minecraft:suspicious_stew"
         },
         {
+          "items": "minecraft:chorus_fruit"
+        },
+        {
+          "items": "minecraft:carrot"
+        },
+        {
+          "items": "minecraft:chorus_fruit"
+        },
+        {
+          "items": "minecraft:potato"
+        },
+        {
+          "items": "minecraft:beetroot"
+        },
+        {
+          "items": "minecraft:beef"
+        },
+        {
+          "items": "minecraft:porkchop"
+        },
+        {
+          "items": "minecraft:mutton"
+        },
+        {
+          "items": "minecraft:rabbit"
+        },
+        {
+          "items": "minecraft:cod"
+        },
+        {
+          "items": "minecraft:salmon"
+        },
+        {
           "items": "#farmersdelight:meals"
         },
         {
@@ -262,6 +295,21 @@
         },
         {
           "items": "duacandelight:oil_cut_wheat_tea"
+        },
+        {
+          "items": "create:bar_of_chocolate"
+        },
+        {
+          "items": "create:sweet_roll"
+        },
+        {
+          "items": "create:chocolate_glazed_berries"
+        },
+        {
+          "items": "create:honeyed_apple"
+        },
+        {
+          "items": "create:builders_tea"
         },
         {
           "items": "wing_kirin:wing_kirin_upgrade",

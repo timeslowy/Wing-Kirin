@@ -27,16 +27,16 @@ public class WingKirinHeart extends Item {
     }
     // 添加描述
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
-        super.appendHoverText(stack, context, components, tooltipFlag);
-        components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_0"));
-        components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_1"));
-        components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_2"));
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+        tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_0"));
+        tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_1"));
+        tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_2"));
         // Shift描述
         if (Screen.hasShiftDown())
-            components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
+            tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
         else
-            components.add(Component.translatable("item.wing_kirin.shift_up"));
+            tooltipComponents.add(Component.translatable("item.wing_kirin.shift_up"));
     }
     // 添加冷却
     @Override
