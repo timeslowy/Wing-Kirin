@@ -77,6 +77,13 @@ public class EmpyreanMilkwine extends Item {
                 }
             }
         }
+        // 返还玻璃瓶
+        if (livingEntity instanceof Player player && !player.getAbilities().instabuild) {
+            ItemStack bottle = new ItemStack(Items.GLASS_BOTTLE);
+            if (!player.getInventory().add(bottle)) {
+                player.drop(bottle, false);
+            }
+        }
         return result;
     }
 
