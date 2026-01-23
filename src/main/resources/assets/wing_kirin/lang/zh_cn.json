@@ -404,8 +404,13 @@
   "item.wing_kirin.wing_kirin_upgrade.description_0": "§7■集合精华于一身，使用后可让你得到天生并不具备的神通。",
   "item.wing_kirin.wing_kirin_upgrade.description_1": "§7■§a百分之七十§r§7概率获得§a经验或其他鼓励奖§r§7，§6百分之三十§r§7概率获得§6后天五种强力技能§r§7中的一种。",
   "item.wing_kirin.wing_kirin_upgrade.description_2": "§6§o“越人语天姥，云霞明灭或可睹。”",
-  "item.wing_kirin.wing_kirin_upgrade.shift_up": "按下 §eShift§r 显示更多",
+  
   "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a--------------------《鼓励奖池》--------------------\n400点经验、金锭、古龙之心、金风玉露、钻石、下界之星、下界合金锭\n§6-------------------《后天技能池》-------------------\n《一支穿云箭》《聚形散气》《不坏金身》《回光返照》《天降正义》",
+  "item.wing_kirin.empyrean_milkwine":"奶露之合",
+  "item.wing_kirin.empyrean_milkwine.description_0":"§7■将金风玉露与牛奶相混合，自然便失去了增益效果的加成，但却继承了“概念神”牛奶的一部分效果，同时保留了饱腹感。\n§6§o“玉鹭（花生）牛奶（bushi）”",
+  "item.wing_kirin.empyrean_milkwine.shift_down":"可消除中毒、虚弱、凋零、挖掘疲劳、反胃、失明和黑暗效果",
+  
+  "item.wing_kirin.shift_up": "按下 §eShift§r 显示更多",
 
   
   "item.wing_kirin.dingshen_icon": "Dingshen Icon",

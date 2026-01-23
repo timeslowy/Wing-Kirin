@@ -36,7 +36,7 @@ public class WingKirinHeart extends Item {
         if (Screen.hasShiftDown())
             components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
         else
-            components.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_up"));
+            components.add(Component.translatable("item.wing_kirin.shift_up"));
     }
     // 添加冷却
     @Override

@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "wing_kirin:empyrean_wine"
+        },
+        {
+            "item": "milk_bucket"
+        }
+    ],
+    "result": {
+        "id": "wing_kirin:empyrean_milkwine",
+        "count": 1
+    }
+}

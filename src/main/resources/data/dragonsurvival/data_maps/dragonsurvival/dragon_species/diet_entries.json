@@ -21,6 +21,15 @@
           }
         },
         {
+          "items": "wing_kirin:empyrean_milkwine",
+          "properties": {
+            "eat_seconds":0.5,
+            "nutrition": 8,
+            "saturation":12,
+            "can_always_eat": true
+          }
+        },
+        {
           "items": "wing_kirin:wing_kirin_treat",
           "properties": {
             "nutrition": 8,

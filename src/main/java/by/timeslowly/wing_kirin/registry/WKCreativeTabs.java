@@ -19,6 +19,7 @@ public class WKCreativeTabs {
                     .title(Component.translatable("item_group.wing_kirin.wing_kirin"))
                     .displayItems(((itemDisplayParameters, output) -> {
                         output.accept(WKItems.EmpyreanWineItem);
+                        output.accept(WKItems.EmpyreanMilkwineItem);
                         output.accept(WKItems.GoldenBellItem);
                         output.accept(WKItems.WingKirinHeartItem);
                         output.accept(WKItems.WingKirinTreatItem);

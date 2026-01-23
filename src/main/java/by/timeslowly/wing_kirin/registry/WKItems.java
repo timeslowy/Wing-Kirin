@@ -1,10 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.common.item.EmpyreanWine;
-import by.timeslowly.wing_kirin.common.item.GoldenBell;
-import by.timeslowly.wing_kirin.common.item.WingKirinHeart;
-import by.timeslowly.wing_kirin.common.item.WingKirinTreat;
+import by.timeslowly.wing_kirin.common.item.*;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -19,6 +16,8 @@ public class WKItems {
     public static final DeferredItem<Item> EmpyreanWineItem = ITEMS.register("empyrean_wine", EmpyreanWine::new);
     // 金钟（暂时未增加属性）
     public static final DeferredItem<Item> GoldenBellItem = ITEMS.register("golden_bell", GoldenBell::new);
+    // 奶露之合
+    public static final DeferredItem<Item> EmpyreanMilkwineItem = ITEMS.register("empyrean_milkwine", EmpyreanMilkwine::new);
     // 翼麒麟的佳肴
     public static final DeferredItem<Item> WingKirinTreatItem = ITEMS.register("wing_kirin_treat", WingKirinTreat::new);
     // 远古翼麒麟头像（空物品）
