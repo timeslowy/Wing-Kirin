@@ -29,10 +29,13 @@ logoFile="pack.png" #optional
 # A text field displayed in the mod UI
 #credits="" #optional
 # A text field displayed in the mod UI
-authors = "${mod_authors}" #optional
+authors = "timeslowly" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
-description = '''${mod_description}'''
+description = "An addon for Dragon Survival,adding an new species\u2014\u2014Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven."
+
+# A list about helper
+credits = "Dragon-LinFeng, Kerrrod"
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 #[[mixins]]
@@ -77,7 +80,7 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "dragonsurvival"
 type = "required"
-versionRange = "${dragonsurvival_version_range}"
+versionRange = "[2.0.52,)"
 ordering = "AFTER"
 side = "BOTH"
 
