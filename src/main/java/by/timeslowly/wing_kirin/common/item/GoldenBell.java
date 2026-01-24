@@ -4,8 +4,6 @@ import by.dragonsurvivalteam.dragonsurvival.registry.DSAttributes;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
