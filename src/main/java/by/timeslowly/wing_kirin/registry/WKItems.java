@@ -14,12 +14,15 @@ public class WKItems {
     );
     // 金风玉露 使用流程
     public static final DeferredItem<Item> EmpyreanWineItem = ITEMS.register("empyrean_wine", EmpyreanWine::new);
-    // 金钟（暂时未增加属性）
+    // 金钟
     public static final DeferredItem<Item> GoldenBellItem = ITEMS.register("golden_bell", GoldenBell::new);
     // 奶露之合
     public static final DeferredItem<Item> EmpyreanMilkwineItem = ITEMS.register("empyrean_milkwine", EmpyreanMilkwine::new);
     // 翼麒麟的佳肴
     public static final DeferredItem<Item> WingKirinTreatItem = ITEMS.register("wing_kirin_treat", WingKirinTreat::new);
+    // 通仙心
+    public static final DeferredItem<Item> WingKirinHeartItem = ITEMS.register("wing_kirin_upgrade", WingKirinHeart::new);
+
     // 远古翼麒麟头像（空物品）
     public static final DeferredItem<Item> WingKirinFullIconItem = ITEMS.register("wing_kirin_full_icon",
             () -> new Item(new Item.Properties()));
@@ -35,8 +38,6 @@ public class WKItems {
     // 定身药水效果图标（空物品）
     public static final DeferredItem<Item> DingshenIconItem = ITEMS.register("dingshen_icon",
             () -> new Item(new Item.Properties()));
-    // 通仙心
-    public static final DeferredItem<Item> WingKirinHeartItem = ITEMS.register("wing_kirin_upgrade", WingKirinHeart::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

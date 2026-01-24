@@ -1,4 +1,4 @@
-package by.timeslowly.wing_kirin.common;
+package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.network.chat.Component;
