@@ -15,5 +15,8 @@ tag @s remove being_frozen-arrow
 scoreboard players reset @s wk.stasis_hex.freezeTimer-arrow
 scoreboard players reset @s wk.stasis_hex.freezeTimer-max_count
 
+# 离开“定身队伍”
+team leave @s
+
 # 杀死骑乘的物品展示实体（定）
 execute on passengers if entity @s[type=item_display] run kill @s
