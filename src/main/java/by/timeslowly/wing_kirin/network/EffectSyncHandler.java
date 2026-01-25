@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.network;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.registry.WKEffects;
+import net.minecraft.network.protocol.game.ClientboundRemoveMobEffectPacket;
 import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,27 +14,44 @@ import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class EffectSyncHandler {
 
+    // 1. 处理效果被添加
     @SubscribeEvent
     public static void onEffectAdded(MobEffectEvent.Added event) {
-        LivingEntity entity = event.getEntity();
-        MobEffectInstance effectInstance = event.getEffectInstance();
+        syncEffectChange(event.getEntity(), event.getEffectInstance(), true);
+    }
 
-        // 1. 确保在服务端运行
-        // 2. 检查是否是定身效果
-        if (effectInstance != null && !entity.level().isClientSide() &&
-                effectInstance.getEffect().value() == WKEffects.DingShen.value()) {
+    // 2. 处理效果被移除（例如被牛奶清除，或指令移除）
+    @SubscribeEvent
+    public static void onEffectRemoved(MobEffectEvent.Remove event) {
+        if (event.getEffectInstance() != null) {
+            syncEffectChange(event.getEntity(), event.getEffectInstance(), false);
+        }
+    }
 
+    // 3. 处理效果过期（持续时间结束）
+    @SubscribeEvent
+    public static void onEffectExpired(MobEffectEvent.Expired event) {
+        syncEffectChange(event.getEntity(), event.getEffectInstance(), false);
+    }
+
+    /**
+     * 核心同步逻辑
+     * @param isAdded true 代表添加/更新，false 代表移除/过期
+     */
+    private static void syncEffectChange(LivingEntity entity, MobEffectInstance instance, boolean isAdded) {
+        // 仅在服务端且是定身效果时执行
+        if (!entity.level().isClientSide() && instance.getEffect().value() == WKEffects.DingShen.value()) {
             if (entity.level() instanceof ServerLevel serverLevel) {
-                // 创建同步数据包
-                // 参数含义：实体ID, 效果实例, 是否显示颗粒, 是否是环境效果(Beacon等)
-                ClientboundUpdateMobEffectPacket packet = new ClientboundUpdateMobEffectPacket(
-                        entity.getId(),
-                        effectInstance,
-                        true
-                );
 
-                // 广播给所有正在追踪（能看到）该实体的玩家
-                serverLevel.getChunkSource().broadcast(entity, packet);
+                if (isAdded) {
+                    // 发送更新/添加包
+                    ClientboundUpdateMobEffectPacket packet = new ClientboundUpdateMobEffectPacket(entity.getId(), instance, true);
+                    serverLevel.getChunkSource().broadcast(entity, packet);
+                } else {
+                    // 发送移除包，参数为 实体ID 和 效果类型
+                    ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), WKEffects.DingShen);
+                    serverLevel.getChunkSource().broadcast(entity, packet);
+                }
             }
         }
     }
