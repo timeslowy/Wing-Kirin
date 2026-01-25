@@ -106,6 +106,8 @@ sourceSets {
             // 2. 图标和数据参数
             include 'pack.png'
             include 'pack.mcmeta'
+            // 包含 Mixin 配置文件
+            include '*.json'
         }
     }
 }
@@ -150,6 +152,8 @@ dependencies {
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    // 强制使用 UTF-8 编码处理文件，防止中文乱码或解析失败
+    filteringCharset = 'UTF-8'
     var replaceProperties = [minecraft_version      : minecraft_version,
                              minecraft_version_range: minecraft_version_range,
                              neo_version            : neo_version,
