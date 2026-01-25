@@ -25,7 +25,6 @@ import org.joml.Vector3f;
 import java.util.Objects;
 
 // 定身 药水效果
-// TODO:只剩发光效果更改了
 public class DingShen_Effect extends MobEffect {
     public DingShen_Effect(MobEffectCategory category, int color) {
         super(category, color);

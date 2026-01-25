@@ -4,9 +4,6 @@
 # 移除标签防止范围计时器继续运行
 tag @s remove being_frozen-area
 
-#让实体加入被定身的队伍以显示相应化发光颜色
-team join ding_shen @s
-
 # 叠加机制1：将范围定身的剩余时长转移至箭击定身计时器中
 scoreboard players operation @s wk.stasis_hex.freezeTimer-arrow += @s wk.stasis_hex.freezeTimer-area
 

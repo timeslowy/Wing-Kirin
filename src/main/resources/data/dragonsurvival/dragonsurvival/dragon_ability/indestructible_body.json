@@ -92,6 +92,21 @@
         "applied_effects": {
           "entity_effect": [
             {
+              "effect_type": "dragonsurvival:damage",
+              "amount": 4.0,
+              "damage_type": "dragonsurvival:counter_shock"
+            }
+          ],
+          "targeting_mode": "enemies"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
               "effect_type": "dragonsurvival:effect_removal",
               "categories": [
                 "BENEFICIAL"

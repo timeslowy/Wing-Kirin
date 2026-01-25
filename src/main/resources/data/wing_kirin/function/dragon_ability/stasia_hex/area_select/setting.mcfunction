@@ -1,7 +1,5 @@
 ## 执行者：被范围定身选中的生物
 # 执行位置：此生物（带标签stasis_hex-area）
-# 让实体加入被定身的队伍以显示相应化发光颜色
-team join ding_shen @s
 
 # 移除标签防止箭击定时器继续运行
 execute if entity @s[tag=being_frozen-arrow] run tag @s remove being_frozen-arrow

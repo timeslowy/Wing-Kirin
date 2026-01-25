@@ -19,7 +19,7 @@ public abstract class EntityGlowColorMixin {
 
     // 定义你想要的目标颜色（0xFBDC92）
     @Unique
-    private static final int WING_KIRIN_GLOW_COLOR = 16491666; // 金色
+    private static final int WING_KIRIN_GLOW_COLOR = 16506002; // 金色
 
     @Inject(method = "getTeamColor", at = @At("HEAD"), cancellable = true)
     private void onGetTeamColor(CallbackInfoReturnable<Integer> cir) {

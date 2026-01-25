@@ -9,9 +9,6 @@ scoreboard objectives add wk.stasis_hex.freezeTimer-area dummy
 scoreboard objectives add wk.stasis_hex.freezeTimer-max_count dummy
 # 临时存储
 scoreboard objectives add wk.stasis_hex.temp dummy
-# 给被定身的实体创建队伍用以调整发光颜色
-team add ding_shen
-team modify ding_shen color gold
 
 
 # 聚形散气 1.持续时间；2.移除检查
