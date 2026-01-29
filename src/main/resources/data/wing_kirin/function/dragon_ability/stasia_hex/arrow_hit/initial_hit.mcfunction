@@ -9,9 +9,6 @@ execute if score @s wk.stasis_hex.freezeTimer-arrow matches 1 run scoreboard pla
 execute if score @s wk.stasis_hex.freezeTimer-arrow matches 2 run scoreboard players add @s wk.stasis_hex.freezeTimer-arrow 300
 execute if score @s wk.stasis_hex.freezeTimer-arrow matches 3 run scoreboard players add @s wk.stasis_hex.freezeTimer-arrow 400
 
-# 限制时长：1200刻（60秒）
-execute if score @s wk.stasis_hex.freezeTimer-arrow matches 1201.. run scoreboard players set @s wk.stasis_hex.freezeTimer-arrow 1200
-
 # 给被击中实体增加“定身”标签
 tag @s add being_frozen-arrow
 
