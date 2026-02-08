@@ -467,5 +467,7 @@
     "dragon_emote.dragonsurvival.clap": "§3Fun:§r Clap",
     "dragon_emote.dragonsurvival.sitting_throwing_item": "§5Sit：§r Throwing Item",
 
-    "datapack_description.wing_kirin.low_unlock_condition": "Reduceing the difficulty of unlock Wing Kirin significantly."
+    "datapack_description.wing_kirin.low_unlock_condition": "Reduceing the difficulty of unlock Wing Kirin significantly.",
+
+    "resoucepack.wing_kirin.description": "Special §6GOLD UI§r designed for §6Wing Kirin§r."
 }

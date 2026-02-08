@@ -25,5 +25,13 @@ public class PackFinders {
                 false,
                 Pack.Position.TOP
         );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "assets/wing_kirin/resourcepacks/wing_kirin_ui"),
+                PackType.CLIENT_RESOURCES,
+                Component.literal("Wing Kirin - Optional Resourcepack"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
     }
 }
