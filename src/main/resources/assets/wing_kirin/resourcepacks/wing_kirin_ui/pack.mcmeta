@@ -6,7 +6,7 @@
       "max_inclusive": 60
 	  },
       "description": {
-        "translate": "resoucepack.wing_kirin.description"
+        "translate": "resoucepack_description.wing_kirin.wing_kirin_ui"
       }
 	}
 }
