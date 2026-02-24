@@ -78,7 +78,7 @@
             },
             {
               "effect_type": "dragonsurvival:run_function",
-              "function": "wing_kirin:dragon_ability/indestructible_body/working_symbol"
+              "function": "wing_kirin:dragon_ability/indestructible_body/notice"
             }
           ],
           "targeting_mode": "allies_and_self"
@@ -97,7 +97,10 @@
               "damage_type": "wing_kirin:counter_shock"
             }
           ],
-          "targeting_mode": "enemies"
+          "targeting_mode": "all_except_self",
+          "target_conditions": {
+            "condition": "killed_by_player"
+          }
         },
         "target_type": "dragonsurvival:self"
       }
