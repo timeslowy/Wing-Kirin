@@ -149,15 +149,38 @@
           "condition": "entity_properties",
           "entity": "this",
           "predicate": {
-            "location": {
-              "dimension": "minecraft:overworld"
-            },
             "type_specific": {
               "type": "dragonsurvival:dragon_predicate",
               "dragon_species": "dragonsurvival:wing_kirin"
             }
           }
         }
+      },
+      {
+        "condition": "all_of",
+        "terms": [
+          {
+            "condition": "inverted",
+            "term": {
+              "condition": "location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          },
+          {
+            "condition": "inverted",
+            "term": {
+              "condition": "entity_properties",
+              "entity": "this",
+              "predicate": {
+                "effects": {
+                  "wing_kirin:great_zhengqi":{}
+                }
+              }
+            }
+          }
+        ]
       }
     ]
   }
