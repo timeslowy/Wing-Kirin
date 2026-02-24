@@ -7,12 +7,12 @@ playsound block.bell.use player @a[distance=..20]
 # 自身产生反撞粒子特效
 particle dust{color:[0.98,0.86,0.57],scale:4.0} ~ ~ ~ 0.5 0.5 0.5 1 50
 
-# 给方圆五格内的实体产生受击粒子特效
-execute as @e[distance=..5] at @s run particle minecraft:crit ~ ~ ~ 1 0.5 1 1 50
+# 通过属性巨龙技能伤害数值计算伤害
+execute store result storage wing_kirin:ram indestructible_body.countershock_damage float 1 \
+    run attribute @s dragonsurvival:dragon_ability_damage get 4
 
-# 给方圆五格内的实体造成伤害
-execute as @e[distance=..5] run damage @s 4 wing_kirin:counter_shock \
-    by @p[predicate=wing_kirin:wing_kirin] from @p[predicate=wing_kirin:wing_kirin]
+# 伤害流程
+execute as @e[distance=0.1..5] run function wing_kirin:dragon_ability/indestructible_body/damage with storage wing_kirin:ram indestructible_body
 
 # 反震次数计分板+1
 scoreboard players add @s wk.indestructible_body.counter_shock_count 1
