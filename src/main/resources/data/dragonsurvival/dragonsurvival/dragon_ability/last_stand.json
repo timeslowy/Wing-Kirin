@@ -45,6 +45,11 @@
                                             "operation": "add_multiplied_total"
                                         },
                                         {
+                                            "attribute": "dragonsurvival:dragon_ability_damage",
+                                            "amount": 0.5,
+                                            "operation": "add_value"
+                                        },
+                                        {
                                             "attribute": "minecraft:generic.attack_speed",
                                             "amount": 1.0,
                                             "operation": "add_multiplied_total"

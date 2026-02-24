@@ -54,7 +54,7 @@ execute anchored eyes run summon dragonsurvival:generic_arrow_entity ^ ^ ^ { \
                     "effects": [ \
                         { \
                             "effect": { \
-                                "damage_type": "dragonsurvival:rainstorm_arrow", \
+                                "damage_type": "wing_kirin:rainstorm_arrow", \
                                 "amount": 1, \
                                 "entity_effect": "dragonsurvival:damage" \
                             }, \

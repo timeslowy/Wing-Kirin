@@ -10,7 +10,7 @@
                 "base": 1.0,
                 "per_level_above_first": 1.0
               },
-              "damage_type": "dragonsurvival:wind_devastate",
+              "damage_type": "wing_kirin:wind_devastate",
               "effect_type": "dragonsurvival:damage"
             },
             {

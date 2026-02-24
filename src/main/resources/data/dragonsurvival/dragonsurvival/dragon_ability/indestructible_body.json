@@ -94,7 +94,7 @@
             {
               "effect_type": "dragonsurvival:damage",
               "amount": 4.0,
-              "damage_type": "dragonsurvival:counter_shock"
+              "damage_type": "wing_kirin:counter_shock"
             }
           ],
           "targeting_mode": "enemies"

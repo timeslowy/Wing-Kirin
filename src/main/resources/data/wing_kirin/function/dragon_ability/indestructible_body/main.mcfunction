@@ -11,7 +11,7 @@ particle dust{color:[0.98,0.86,0.57],scale:4.0} ~ ~ ~ 0.5 0.5 0.5 1 50
 execute as @e[distance=..5] at @s run particle minecraft:crit ~ ~ ~ 1 0.5 1 1 50
 
 # 给方圆五格内的实体造成伤害
-execute as @e[distance=..5] run damage @s 4 dragonsurvival:counter_shock \
+execute as @e[distance=..5] run damage @s 4 wing_kirin:counter_shock \
     by @p[predicate=wing_kirin:wing_kirin] from @p[predicate=wing_kirin:wing_kirin]
 
 # 反震次数计分板+1

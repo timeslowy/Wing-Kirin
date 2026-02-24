@@ -74,18 +74,16 @@
     "dragon_penalty.dragonsurvival.evil_entangle.desc": "§7■翼麒麟生于主世界九天之上，未曾接触过其他维度的§c邪逆§r§7。当踏入其他维度之时，萦绕的§5邪气§r§7将侵蚀体内的§6正气§r§7，若不及时远离是非，正气将被邪气§c侵蚀殆尽§r§7，并吸取体内之元神，让你身形消瘦、不堪一击。\n\n■通过食用§6「金风玉露」§r§7或从龙之信标获得§6「浩然正气」§r§7效果，可以稳固体内的§6正气§r§7，将邪气暂时§a拒之门外§r。",
 
     
-    "damage_type.dragonsurvival.evil_entangle": "正不压邪",
-    "damage_type.dragonsurvival.wind_devastate": "风摧",
-    "damage_type.dragonsurvival.rainstorm_arrow": "万箭穿心",
-    "damage_type.dragonsurvival.trace_ding": "痕定量",
-    "damage_type.dragonsurvival.counter_shock": "震伤",
+    "damage_type.wing_kirin.wind_devastate": "风摧",
+    "damage_type.wing_kirin.rainstorm_arrow": "万箭穿心",
+    "damage_type.wing_kirin.trace_ding": "痕定量",
+    "damage_type.wing_kirin.counter_shock": "震伤",
 
 
-    "death.attack.dragonsurvival.evil_entangle": "%1$s被邪气侵身而亡",
-    "death.attack.dragonsurvival.wind_devastate": "%1$s被罡风吹得神形分离",
-    "death.attack.dragonsurvival.rainstorm_arrow": "%1$s被万箭穿心",
-    "death.attack.dragonsurvival.counter_shock": "%1$s被不坏金身反震碎五脏六腑",
-    "death.attack.dragonsurvival.breath_disappear": "%1$s气数已尽",
+    "death.attack.wing_kirin.wind_devastate": "%1$s被罡风吹得神形分离",
+    "death.attack.wing_kirin.rainstorm_arrow": "%1$s被万箭穿心",
+    "death.attack.wing_kirin.counter_shock": "%1$s被不坏金身反震碎五脏六腑",
+    "death.attack.wing_kirin.breath_disappear": "%1$s气数已尽",
 
 
     "dragon_species.dragonsurvival.wing_kirin.locked": "§7■升官方三种龙的§n全部被动§r§7至 满级 ，且都长至§n远古阶段§r§7、并达成三种龙的饮食挑战之后（以上对应九个成就），在主世界近群山之巅处（接近原版建筑限高），上天会核验你的修为：\n\n1.经验是否达到§a68级§r§7；2.是否携有§62块及以上的下界合金块§r§7（不消耗）。\n\n若全部满足上述条件，在§n天气晴好§r§7之时，即可化为瑞兽————§6翼麒麟。§r\n\n§7■若启用§a「Low Unlock Condition -  Wing Kirin」§r§7数据包，则只对§n解锁位置和天气§r§7有所要求",

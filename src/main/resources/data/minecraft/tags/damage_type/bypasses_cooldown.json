@@ -1,7 +1,7 @@
 {
     "replace": false,
     "values": [
-        "dragonsurvival:wind_devastate",
-        "dragonsurvival:breath_disappear"
+        "wing_kirin:wind_devastate",
+        "wing_kirin:breath_disappear"
     ]
 }

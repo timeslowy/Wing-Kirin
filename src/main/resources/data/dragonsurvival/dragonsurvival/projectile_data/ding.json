@@ -26,7 +26,7 @@
             },
             {
                 "entity_effect": "dragonsurvival:damage",
-                "damage_type": "dragonsurvival:trace_ding",
+                "damage_type": "wing_kirin:trace_ding",
                 "amount": 0.1
             }
         ],
