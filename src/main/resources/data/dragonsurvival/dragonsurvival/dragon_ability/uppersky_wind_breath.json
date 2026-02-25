@@ -81,11 +81,6 @@
         "transition_length": 5
       }
     },
-    "max_duration": {
-      "type": "minecraft:linear",
-      "base": 800,
-      "per_level_above_first": 800
-    },
     "cast_time": 40.0,
     "continuous_mana_cost": {
       "type": "ticking",
