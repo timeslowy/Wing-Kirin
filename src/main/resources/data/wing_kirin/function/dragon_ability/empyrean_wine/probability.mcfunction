@@ -23,5 +23,9 @@ execute if data storage wing_kirin:ram {empyrean_wine:{level:5}} \
     if predicate wing_kirin:9_percent \
     run return run function wing_kirin:dragon_ability/empyrean_wine/modify_item
 
+# 若拥有「浩然正气」药水效果，则使得保底时间缩短为20秒
+execute if data entity @s active_effects[{id:"wing_kirin:great_zhengqi"}] if score @s wk.empyrean_wine.attempt_count matches 20.. \
+    run return run function wing_kirin:dragon_ability/empyrean_wine/modify_item
+
 # 大保底,30秒必定成功一次
 execute if score @s wk.empyrean_wine.attempt_count matches 30.. run function wing_kirin:dragon_ability/empyrean_wine/modify_item

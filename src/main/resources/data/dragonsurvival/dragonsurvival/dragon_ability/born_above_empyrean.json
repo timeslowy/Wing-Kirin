@@ -64,6 +64,15 @@
                         "per_level_above_first": 0.1
                       },
                       "operation": "add_multiplied_total"
+                    },
+                    {
+                      "attribute": "dragonsurvival:dragon_ability_damage",
+                      "amount": {
+                        "type": "linear",
+                        "base": 0.1,
+                        "per_level_above_first": 0.1
+                      },
+                      "operation": "add_multiplied_total"
                     }
                   ]
                 }
