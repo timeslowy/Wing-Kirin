@@ -9,7 +9,7 @@
     "dragon_ability.dragonsurvival.uppersky_wind_breath": "罡风之息",
     "dragon_ability.dragonsurvival.uppersky_wind_breath.desc": "§7■引下九天之上的§6「罡风」§r§7，操控其化为§6「罡风之息」§r§7，可§e吹透一切防御§r§7，将吐息所及的敌卒吹得§e神形分离，难以招架！§r\n\n§7■威力随§a技能等级（经验等级）§r§7提升。§8\n\n■只能在§n主世界§r§8使用（除非拥有§r「浩然正气」§8药水效果）。§r\n\n§6§o“野马也，尘埃也，生物之以息相吹也”§r",
     "dragon_ability.dragonsurvival.fall_like_meteorite": "从天而降",
-    "dragon_ability.dragonsurvival.fall_like_meteorite.desc": "§7■当§n手握（口持）§r§6重锤§r§7时，此法将赋予§6翼麒麟§r§7相比其他龙种和人类更高的§a「重力势能」§r§7，落地之时好似陨石从天而降，对重锤所击生物造成§e相当可观的毁伤§r§7。\n\n■重锤威力随§a技能等级（成长等级）§r§7提升。\n\n■一旦移除重锤，效果也会§4随之消失!§r§7。\n\n§6§o“你有没有听过一招，从天而降的锤法？”",
+    "dragon_ability.dragonsurvival.fall_like_meteorite.desc": "§7■当§n手握（口持）§r§6重锤§r§7时，此法将赋予§6翼麒麟§r§7相比其他龙种和人类更高的§a「重力势能」§r§7，落地之时好似陨石从天而降，对重锤所击生物造成§e相当可观的毁伤§r§7。\n\n■§f「站地」§7施法时将获得直接强化重锤伤害之效果，将§e平A伤害§a提升数倍§7，§4但重锤不能离手否则立刻失效§7；而§f「离地」§7施法则会将§e重锤（下落）猛击威力§a提升数倍§7，伤害之上限§l更高于前者§r§7。\n\n■重锤威力随§a技能等级（成长等级）§r§7提升。\n\n§6§o“你有没有听过一招，从天而降的锤法？”",
     "dragon_ability.dragonsurvival.fall_like_meteorite.activation.notification.usage_blocked": "§c手握（口持）重锤方可使用！",
     "dragon_ability.dragonsurvival.weather_clear": "云销雨霁",
     "dragon_ability.dragonsurvival.weather_clear.desc": "■§6翼麒麟§r§7不喜§9呼风唤雨§r§7，而喜§a晴空万里§r§7。施用此法术，将驱散重重乌云，重现§3青天§r§7。\n\n■§8天气晴好时不可使用§m（废话）§r\n\n§6§o“云销雨霁，彩彻区明”",
@@ -387,6 +387,7 @@
   "effect.wing_kirin.great_zhengqi": "浩然正气",
   "effect.wing_kirin.ding_shen": "定身",
   "effect.wing_kirin.instant_invisibility": "聚形散气",
+  "effect.wing_kirin.mace_crush": "从天而降",
 
   
   "item.wing_kirin.wing_kirin_treat": "翼麒麟的佳肴",

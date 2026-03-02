@@ -91,8 +91,7 @@
                     ],
                     "targeting_mode": "allies_and_self"
                 }
-            },
-            "trigger_rate": 1
+            }
         }
     ],
     "can_be_manually_disabled": true,

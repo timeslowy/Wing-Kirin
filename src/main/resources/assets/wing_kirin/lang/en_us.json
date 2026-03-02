@@ -9,7 +9,7 @@
     "dragon_ability.dragonsurvival.uppersky_wind_breath": "Uppersky Wind Breath",
     "dragon_ability.dragonsurvival.uppersky_wind_breath.desc": "§7■ Draws down the§6「Harsh Winds」§r§7 from above the Nine Heavens, controlling them to transform into the§6「Uppersky Wind Breath」§r§7, §ebypassing any armor§r§7 ,blowing enemies caught in the breath until they are§e separated from spirit and form, unable to resist!§r\n\n§7■ The force increases with §aability level(experience level).§r §8\n\n■ Can only be used in the§n Overworld§r§8(Except having §r「Great Zhengqi」§8 effect).§r\n\n§6§o\"The wild horses, the dust, all living things blowing each other with their breath.\"§r",
     "dragon_ability.dragonsurvival.fall_like_meteorite": "Fall Like Meteorite",
-    "dragon_ability.dragonsurvival.fall_like_meteorite.desc": "§7■ When mainhand §n holding §r§7 a§6 Mace§r§7, this magic grants the§6 Wing Kirin§r§7 higher§a「Gravitational Potential Energy」§r§7 compared to other dragon species and humans. Upon landing, it's like a meteorite falling from the sky, causing§e considerable damage§r§7 to creatures struck by the warhammer.\n\n■ The bouns to mace increases with §aability level(growth level)§r§7\n\n■ Once the mace is without in mainhand, the modify effect§4 also disappears!§r§7.\n\n§6§o\"Have you ever heard of a mace technique that descends from the heavens?\"",
+    "dragon_ability.dragonsurvival.fall_like_meteorite.desc": "§7■ When mainhand §n holding §r§7 a§6 Mace§r§7, this magic grants the§6 Wing Kirin§r§7 higher§a「Gravitational Potential Energy」§r§7 compared to other dragon species and humans. Upon landing, it's like a meteorite falling from the sky, causing§e considerable damage§r§7 to creatures struck by the warhammer.\n\n■ When cast §f「Onground」§7,the §enormal attack of Mace§7 can§a be boosted,§4but that required Mace must be in your mainhand continuously§7;■ When cast §f「Onsky」§7,the §eMace Smash Dagame§7 will §abe boosted significantly§7,has§l a higher ceiling§r§7 than the former.\n\n■ The bouns to mace increases with §aability level(growth level)§r§7\n\n§6§o\"Have you ever heard of a mace technique that descends from the heavens?\"",
     "dragon_ability.dragonsurvival.fall_like_meteorite.activation.notification.usage_blocked": "§cMust be holding a Mace in mainhand to use!",
     "dragon_ability.dragonsurvival.weather_clear": "Clearing Skies",
     "dragon_ability.dragonsurvival.weather_clear.desc": "■ The§6 Wing Kirin§r§7 dislikes§9 summoning wind and rain§r§7, preferring§a clear skies§r§7. Casting this magic disperses the heavy clouds, restoring the§3 blue sky§r§7.\n\n■§8 Cannot be used when the weather is already clear§m (obviously)§r\n\n§6§o\"Clouds disperse, rain ceases, sunlight shines through clearly.\"",
@@ -419,6 +419,7 @@
     "effect.wing_kirin.great_zhengqi": "Geat Zhengqi",
     "effect.wing_kirin.ding_shen": "Ding",
     "effect.wing_kirin.instant_invisibility": "Instant Invisibility",
+    "effect.wing_kirin.mace_crush": "Fall Like Meteorite",
 
     "item.wing_kirin.wing_kirin_treat": "Wing Kirin's Treat",
     "item.wing_kirin.wing_kirin_treat.description_0": "§7■ After mixing Golden Wind, Jade Dew with Dragon Dust, although the Absorption effect is lost due to neutralization, it grants the Wing Kirin infinite mana temporarily.",

@@ -35,7 +35,7 @@ authors = "timeslowly" #optional
 description = "An addon for Dragon Survival,adding an new species\u2014\u2014Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven."
 
 # A list about helper
-credits = "Dragon-LinFeng, Kerrrod"
+credits = "Dragon-LinFeng, Inhrtbury2998"
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]

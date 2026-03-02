@@ -23,7 +23,7 @@
                                     "base": {
                                         "id": "wing_kirin:bad_luck_immunity",
                                         "should_remove_automatically": true,
-                                        "is_hidden": true
+                                        "custom_icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/ancient_stage_hover.png"
                                     },
                                     "effects": "minecraft:unluck",
                                     "duration_modification": {

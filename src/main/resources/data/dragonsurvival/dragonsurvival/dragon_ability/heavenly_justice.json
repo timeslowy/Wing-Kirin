@@ -46,8 +46,7 @@
         },
         "target_type": "dragonsurvival:looking_at",
         "range": 200
-      },
-      "trigger_rate": 1.0
+      }
     },
     {
       "target_selection": {
@@ -108,8 +107,7 @@
           "targeting_mode": "all"
         },
         "target_type": "dragonsurvival:self"
-      },
-      "trigger_rate": 1.0
+      }
     },
     {
       "target_selection": {
