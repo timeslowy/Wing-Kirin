@@ -1,0 +1,59 @@
+{
+  "parent": "wing_kirin:wing_kirin/falling_arrow_like_rainstorm",
+  "criteria": {
+    "overoveroverkill": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:player",
+              "equipment": {
+                "mainhand": {
+                  "items": "minecraft:mace"
+                }
+              }
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_player_attack"
+              }
+            ]
+          },
+          "dealt": {
+            "min": 500.0
+          }
+        },
+        "player": {
+            "type_specific": {
+                "type": "dragonsurvival:dragon_predicate",
+                "dragon_species": "dragonsurvival:wing_kirin"
+            }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.wing_kirin/overoveroverkill.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:mace"
+    },
+    "title": {
+      "translate": "dragonsurvival.advancement.wing_kirin/overoveroverkill"
+    }
+  },
+  "requirements": [
+    [
+      "overoveroverkill"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": false
+}

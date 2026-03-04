@@ -12,6 +12,7 @@ import net.minecraft.world.item.MaceItem;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 import static by.timeslowly.wing_kirin.registry.WKEffects.MaceCrush;
 
@@ -31,10 +32,10 @@ public class WKEventHandler {
     }
 
     /**
-     * 监听伤害事件，精确判断并增强重锤下落猛击的伤害
+     * 监听伤害事件，精确判断并增强重锤下落猛击的伤害，用于从天而降药水效果。
      */
     @SubscribeEvent
-    public static void onLivingDamage(LivingDamageEvent.Pre event) {
+    public static void onLivingDamage(LivingIncomingDamageEvent event) {
         DamageSource source = event.getSource();
         Entity attackerEntity = source.getEntity();
 
@@ -49,8 +50,8 @@ public class WKEventHandler {
             return; // 不是重锤，直接返回
         }
 
-        // 3. 检查是否处于下落猛击状态 (下落距离 > 1.5)
-        if (attacker.fallDistance <= 1.5f) {
+        // 3. 检查是否处于下落猛击状态 (参照重锤物品的代码)
+        if (!(attacker.fallDistance > 1.5f && !attacker.isFallFlying())) {
             return; // 下落距离不足，不是猛击
         }
 
@@ -58,9 +59,9 @@ public class WKEventHandler {
         // 获取药水效果倍率并放大伤害
         float multiplier = MaceCrush_Effect.getMultiplier(attacker, MaceCrush);
         if (multiplier != 1.0f) {
-            float originalDamage = event.getOriginalDamage();
+            float originalDamage = event.getAmount();
             float newDamage = originalDamage * multiplier;
-            event.setNewDamage(newDamage);
+            event.setAmount(newDamage);
         }
     }
 

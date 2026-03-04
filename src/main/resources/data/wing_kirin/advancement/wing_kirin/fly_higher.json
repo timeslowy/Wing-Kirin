@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/falling_arrow_like_rainstorm",
+    "parent": "wing_kirin:wing_kirin/overoveroverkill",
     "criteria": {
         "Fly_to_Higher_Place":{
             "trigger": "location",

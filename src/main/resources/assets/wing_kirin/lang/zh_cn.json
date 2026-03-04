@@ -373,6 +373,8 @@
   "dragonsurvival.advancement.wing_kirin/ding_shen_shu.desc": "用「定身术」给对手点上“死穴”，使其动弹不得，“我为刀俎，他为鱼肉”。",
   "dragonsurvival.advancement.wing_kirin/falling_arrow_like_rainstorm": "暴雨梨花针",
   "dragonsurvival.advancement.wing_kirin/falling_arrow_like_rainstorm.desc": "朝天上打上一发「穿云箭」，让敌卒体会下什么叫“万箭穿心”。",
+  "dragonsurvival.advancement.wing_kirin/overoveroverkill": "从天而降",
+  "dragonsurvival.advancement.wing_kirin/overoveroverkill.desc": "使用重锤一击造成250颗心的伤害，将“势大力沉”体现得淋漓尽致。",
   "dragonsurvival.advancement.wing_kirin/fly_higher": "高处不胜寒",
   "dragonsurvival.advancement.wing_kirin/fly_higher.desc": "飞至999格的碧空之上，好生领悟苏轼的“我自乘风归去”。",
   "dragonsurvival.advancement.wing_kirin/delay_death": "回光返照",
@@ -380,7 +382,7 @@
   "dragonsurvival.advancement.wing_kirin/be_old": "统御青天",
   "dragonsurvival.advancement.wing_kirin/be_old.desc": "身为翼麒麟成长至108成长等级。",
   "dragonsurvival.advancement.wing_kirin/persistent_attempt": "物以稀为贵",
-  "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc" :"“散尽家资”§m（脸白者可无视）§r§a，在“盲盒”里“抽到”所有后天技能。",
+  "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc" :"“散尽家资”§m（脸白者可无视）§r，在“盲盒”里“抽到”所有后天技能。",
 
 
   "effect.wing_kirin.health_decline": "邪气缠身",

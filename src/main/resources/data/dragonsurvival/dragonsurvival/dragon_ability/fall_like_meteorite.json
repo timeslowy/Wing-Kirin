@@ -41,7 +41,7 @@
                     },
                     {
                       "attribute": "generic.attack_speed",
-                      "amount": 0.3,
+                      "amount": 0.5,
                       "operation": "add_multiplied_total"
                     }
                   ]

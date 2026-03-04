@@ -42,7 +42,8 @@
         "icon": {
             "id": "wing_kirin:wing_kirin_upgrade",
             "count": 1
-        }
+        },
+        "frame": "challenge"
     },
     "requirements": [
         [
