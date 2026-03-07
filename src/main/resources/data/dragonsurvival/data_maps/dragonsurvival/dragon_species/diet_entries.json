@@ -35,7 +35,7 @@
             "nutrition": 8,
             "saturation": 16,
             "eat_seconds": 1.5,
-            "can_always_eat": false,
+            "can_always_eat": true,
             "using_converts_to": {
               "id": "minecraft:glass_bottle"
             },

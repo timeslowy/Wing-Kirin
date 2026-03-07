@@ -1,14 +1,19 @@
 {
-    "replace": false,
+    "replace": true,
     "values": [
-        "#minecraft:logs",
         "#c:glass_blocks",
         "#minecraft:dirt",
+        "#minecraft:leaves",
         "#minecraft:wool",
-        "#minecraft:planks",
         "#minecraft:candles",
         "#minecraft:banners",
+        "#minecraft:signs",
+        "#minecraft:ice",
+        "#minecraft:wooden_doors",
+        "#minecraft:wooden_buttons",
         "#minecraft:pressure_plates",
-        "minecraft:redstone_wire"
+        "minecraft:redstone_wire",
+        "#c:sands",
+        "#c:gravels"
     ]
 }

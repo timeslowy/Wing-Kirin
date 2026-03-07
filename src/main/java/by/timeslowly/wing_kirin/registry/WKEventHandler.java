@@ -13,6 +13,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import org.jetbrains.annotations.NotNull;
 
 import static by.timeslowly.wing_kirin.registry.WKEffects.MaceCrush;
 
@@ -20,7 +21,7 @@ import static by.timeslowly.wing_kirin.registry.WKEffects.MaceCrush;
 public class WKEventHandler {
     // 金钟损害机制
     @SubscribeEvent
-    public static void onLivingDamage(LivingDamageEvent.Post event) {
+    public static void onLivingDamage(LivingDamageEvent.@NotNull Post event) {
         DamageSource damageSource = event.getSource();
         if (damageSource.is(DamageTypes.SONIC_BOOM)) {
             // 获取攻击者
@@ -32,36 +33,54 @@ public class WKEventHandler {
     }
 
     /**
-     * 监听伤害事件，精确判断并增强重锤下落猛击的伤害，用于从天而降药水效果。
+     * 监听伤害事件，处理：
+     * 1. 受害者被定身超过50秒时的“脆骨”效果
+     * 2. 攻击者「从天而降」药水效果（下落猛击时根据效果倍率增伤）
+     * 3.持有金钟对「龙吼功」伤害加成
      */
     @SubscribeEvent
-    public static void onLivingDamage(LivingIncomingDamageEvent event) {
+    public static void onLivingDamage(@NotNull LivingIncomingDamageEvent event) {
+        LivingEntity victim = event.getEntity();
+        float originalDamage = event.getAmount();
+        float multiplier = 1.0f;
+
+        // ----- 1. 受害者定身效果 -----
+        var DingShen = victim.getEffect(WKEffects.DingShen);
+        if (DingShen != null) {
+            int duration = DingShen.getDuration();
+            // 剩余时长 > 50秒 (1000 ticks) 或无限时长，则被定身实体所受伤害乘1.5倍
+            if (duration == -1 || duration > 1000 ) {
+                multiplier *= 1.5f;
+            }
+        }
+
+        // ----- 2. 攻击者相关效果 -----
         DamageSource source = event.getSource();
         Entity attackerEntity = source.getEntity();
-
-        // 1. 攻击者必须是活着的实体
-        if (!(attackerEntity instanceof LivingEntity attacker)) {
-            return;
+        // 2.1 「聚音激能」相关（原来是一个被动）
+        if (attackerEntity instanceof LivingEntity attacker) {
+            if (source.is(DamageTypes.SONIC_BOOM)) {
+                ItemStack mainHand = attacker.getMainHandItem();
+                if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBell) {
+                    multiplier *= 2.0f;  // 伤害翻倍
+                }
+            }
+            // 2.2 从天而降药水效果
+            ItemStack weapon = attacker.getWeaponItem();
+            if (weapon.getItem() instanceof MaceItem) {
+                // 检查是否下落猛击
+                if (attacker.fallDistance > 1.5f && !attacker.isFallFlying()) {
+                    float maceMultiplier = MaceCrush_Effect.getMultiplier(attacker, MaceCrush);
+                    if (maceMultiplier != 1.0f) {
+                        multiplier *= maceMultiplier;
+                    }
+                }
+            }
         }
 
-        // 2. 检查攻击者是否持有重锤 (使用更通用的判断方式)
-        ItemStack weaponStack = attacker.getWeaponItem(); // 获取当前使用的武器
-        if (!(weaponStack.getItem() instanceof MaceItem)) {
-            return; // 不是重锤，直接返回
-        }
-
-        // 3. 检查是否处于下落猛击状态 (参照重锤物品的代码)
-        if (!(attacker.fallDistance > 1.5f && !attacker.isFallFlying())) {
-            return; // 下落距离不足，不是猛击
-        }
-
-        // 通过所有检查，确认这是一次重锤下落猛击！
-        // 获取药水效果倍率并放大伤害
-        float multiplier = MaceCrush_Effect.getMultiplier(attacker, MaceCrush);
+        // 应用最终倍率
         if (multiplier != 1.0f) {
-            float originalDamage = event.getAmount();
-            float newDamage = originalDamage * multiplier;
-            event.setAmount(newDamage);
+            event.setAmount(originalDamage * multiplier);
         }
     }
 

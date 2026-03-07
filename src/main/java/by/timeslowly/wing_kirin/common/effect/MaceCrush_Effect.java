@@ -9,13 +9,14 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import org.jetbrains.annotations.NotNull;
 
 // 从天而降药水效果
 public class MaceCrush_Effect extends MobEffect {
     public MaceCrush_Effect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(DSAttributes.ARMOR_IGNORE_CHANCE,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.1,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.2,
                 AttributeModifier.Operation.ADD_VALUE
         );
     }
@@ -28,7 +29,7 @@ public class MaceCrush_Effect extends MobEffect {
      * @param effectHolder 该效果的 Holder（可通过注册表获取）
      * @return 倍率值
      */
-    public static float getMultiplier(LivingEntity entity, Holder<MobEffect> effectHolder) {
+    public static float getMultiplier(@NotNull LivingEntity entity, Holder<MobEffect> effectHolder) {
         MobEffectInstance instance = entity.getEffect(effectHolder);
         if (instance != null) {
             // amplifier 从 0 开始，等级 I 对应 amplifier = 0，加成倍率 = 等级 * 0.5

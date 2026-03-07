@@ -9,6 +9,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
+import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber
 public class PackFinders {
@@ -16,7 +17,7 @@ public class PackFinders {
     }
 
     @SubscribeEvent
-    public static void addPackFinders(AddPackFindersEvent event) {
+    public static void addPackFinders(@NotNull AddPackFindersEvent event) {
         event.addPackFinders(
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/low_unlock_condition"),
                 PackType.SERVER_DATA,

@@ -15,6 +15,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.NotNull;
 
 // 注册药水效果
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
@@ -34,20 +35,20 @@ public class WKEffects {
 
     // 药水效果移除行为
     @SubscribeEvent
-    public static void onEffectRemoved(MobEffectEvent.Remove event) {
+    public static void onEffectRemoved(MobEffectEvent.@NotNull Remove event) {
         MobEffectInstance effectInstance = event.getEffectInstance();
         if (effectInstance != null) {
             expireEffects(event.getEntity(), effectInstance);
         }
     }
     @SubscribeEvent
-    public static void onEffectExpired(MobEffectEvent.Expired event) {
+    public static void onEffectExpired(MobEffectEvent.@NotNull Expired event) {
         MobEffectInstance effectInstance = event.getEffectInstance();
         if (effectInstance != null) {
             expireEffects(event.getEntity(), effectInstance);
         }
     }
-    private static void expireEffects(LivingEntity entity, MobEffectInstance effectInstance) {
+    private static void expireEffects(LivingEntity entity, @NotNull MobEffectInstance effectInstance) {
         if (effectInstance.getEffect().value() instanceof DingShen_Effect) {
             DingShen_Effect.onEffectExpired(entity);
         }
