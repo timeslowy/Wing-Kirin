@@ -489,5 +489,7 @@
 
     "datapack_description.wing_kirin.low_unlock_condition": "大大降低翼麒麟的解锁难度，助你早日成为“九天上的来客”。",
 
-    "resoucepack_description.wing_kirin.wing_kirin_ui": "为§6翼麒麟§r龙种特制的§6金色UI§r，高端大气。"
+    "resoucepack_description.wing_kirin.wing_kirin_ui": "为§6翼麒麟§r龙种特制的§6金色UI§r，高端大气。",
+    
+    "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。"
 }
