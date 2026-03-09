@@ -5,7 +5,7 @@
 
 
     "dragon_ability.dragonsurvival.stasis_hex": "定身术",
-    "dragon_ability.dragonsurvival.stasis_hex.desc": "§7■当§f[站立]§r§7施法时，射出一道极快的§6「定身光标」§r§7，将击中的实体瞬间§6定身§r§7在原地（包括空中），使其§c动弹不得§r§7。\n■当§f[蹲下]§r§7施法时，「定身光标」将改为§6「范围触发」§r§7，并在地上显示粒子§n标注大致范围§r§7。\n\n■「箭击定身」持续时长随§a技能等级（经验等级）§r§7提升；「范围定身」的半径亦随技能等级提升，§e但定身时间恒定不变§r§7。\n\n■定身还可以在§n一定限度和次数内§r§a叠加时长。§r\n\n■§c⚠：不是所有生物都能被定身！§r\n\n§6§o“......即使个定身法，把两个狼头精定住。眼睁睁，口也难开；直挺挺，双脚站住。”§r",
+    "dragon_ability.dragonsurvival.stasis_hex.desc": "§7■当§f[站立]§r§7施法时，射出一道极快的§6「定身光标」§r§7，将击中的实体瞬间§6定身§r§7在原地（包括空中），使其§c动弹不得§r§7。\n■当§f[蹲下]§r§7施法时，「定身光标」将改为§6「范围触发」§r§7，并在地上显示粒子§n标注大致范围§r§7。\n\n■「箭击定身」持续时长随§a技能等级（经验等级）§r§7提升；「范围定身」的半径亦随技能等级提升，§e但定身时间恒定不变§r§7。\n\n■定身还可以在§n一定限度和次数内§r§a叠加时长。§r§7当一个生物被施加超过§n50秒§r§7的§6「定身」§r§7药水效果时，会使其§l“肌肉松弛”§r§7，在50秒时长之上受到的伤害§a增半！§r\n\n■§c⚠：不是所有生物都能被定身！§r\n\n§6§o“......即使个定身法，把两个狼头精定住。眼睁睁，口也难开；直挺挺，双脚站住。”§r",
     "dragon_ability.dragonsurvival.uppersky_wind_breath": "罡风之息",
     "dragon_ability.dragonsurvival.uppersky_wind_breath.desc": "§7■引下九天之上的§6「罡风」§r§7，操控其化为§6「罡风之息」§r§7，可§e吹透一切防御§r§7，将吐息所及的敌卒吹得§e神形分离，难以招架！§r\n\n§7■威力随§a技能等级（经验等级）§r§7提升。§8\n\n■只能在§n主世界§r§8使用（除非拥有§r「浩然正气」§8药水效果）。§r\n\n§6§o“野马也，尘埃也，生物之以息相吹也”§r",
     "dragon_ability.dragonsurvival.fall_like_meteorite": "从天而降",
@@ -491,5 +491,8 @@
 
     "resoucepack_description.wing_kirin.wing_kirin_ui": "为§6翼麒麟§r龙种特制的§6金色UI§r，高端大气。",
     
-    "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。"
+    "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。",
+    
+    "attribute.name.wing_kirin.mace_smash_damage_multiplier": "重锤猛击伤害倍率",
+    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "音波伤害倍率" 
 }

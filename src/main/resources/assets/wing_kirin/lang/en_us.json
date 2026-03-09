@@ -5,7 +5,7 @@
 
 
     "dragon_ability.dragonsurvival.stasis_hex": "____Stasis Hex____",
-    "dragon_ability.dragonsurvival.stasis_hex.desc": "§7■ When cast §f[standing]§r§7, shoots an extremely fast§6「Stasis Arrow」§r§7 that instantly§6 immobilizes§r§7 the hit entity in place (including in mid-air), making it§c unable to move§r§7.\n■ When cast §f[sneaking]§r§7,the「Stasis Arrow」changes to§6「Area Trigger」§r§7, displaying particles on the ground to§n mark the approximate range§r§7.\n\n■ The duration of「Projectile Stasis」increases with§a ability level (experience level)§r§7; the radius of「Area Stasis」also increases with skill level,§e but the stasis duration remains constant§r§7.\n\n■Can §a superpose duration§r§n with count and duration restriction.§r\n\n■§c⚠: Not all creatures can be immobilized!§r\n\n§6§o\"...Even using this Body Binding Spell, immobilizing the two wolf-headed spirits. Staring wide-eyed, unable to speak; standing stiffly, feet rooted.\"§r",
+    "dragon_ability.dragonsurvival.stasis_hex.desc": "§7■ When cast §f[standing]§r§7, shoots an extremely fast§6「Stasis Arrow」§r§7 that instantly§6 immobilizes§r§7 the hit entity in place (including in mid-air), making it§c unable to move§r§7.\n■ When cast §f[sneaking]§r§7,the「Stasis Arrow」changes to§6「Area Trigger」§r§7, displaying particles on the ground to§n mark the approximate range§r§7.\n\n■ The duration of「Projectile Stasis」increases with§a ability level (experience level)§r§7; the radius of「Area Stasis」also increases with skill level,§e but the stasis duration remains constant§r§7.\n\n■Can §a superpose duration§r§n with count and duration restriction.§r§7If a entity was given §6「Ding Shen」§r§7potion effect which §nexceeds 50 seconds§r§7,that will cause this entity§a suffer 50%%§a damage bonus§r§7 when duration §nexceeds 50 seconds!§r\n\n■§c⚠: Not all creatures can be immobilized!§r\n\n§6§o\"...Even using this Body Binding Spell, immobilizing the two wolf-headed spirits. Staring wide-eyed, unable to speak; standing stiffly, feet rooted.\"§r",
     "dragon_ability.dragonsurvival.uppersky_wind_breath": "Uppersky Wind Breath",
     "dragon_ability.dragonsurvival.uppersky_wind_breath.desc": "§7■ Draws down the§6「Harsh Winds」§r§7 from above the Nine Heavens, controlling them to transform into the§6「Uppersky Wind Breath」§r§7, §ebypassing any armor§r§7 ,blowing enemies caught in the breath until they are§e separated from spirit and form, unable to resist!§r\n\n§7■ The force increases with §aability level(experience level).§r §8\n\n■ Can only be used in the§n Overworld§r§8(Except having §r「Great Zhengqi」§8 effect).§r\n\n§6§o\"The wild horses, the dust, all living things blowing each other with their breath.\"§r",
     "dragon_ability.dragonsurvival.fall_like_meteorite": "Fall Like Meteorite",
@@ -472,5 +472,8 @@
 
     "resoucepack_description.wing_kirin.wing_kirin_ui": "Special §6GOLD UI§r designed for §6Wing Kirin§r.",
 
-    "fml.menu.mods.info.description.wing_kirin": "An addon for Dragon Survival,adding an new species————Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven."
+    "fml.menu.mods.info.description.wing_kirin": "An addon for Dragon Survival,adding an new species————Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven.",
+
+    "attribute.name.wing_kirin.mace_smash_damage_multiplier": "Mace Smash Damage Multipilier",
+    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "Sonic Boom Damage Multiplier" 
 }

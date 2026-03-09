@@ -31,22 +31,22 @@ public class DingShen_Effect extends MobEffect {
         // 属性修改
         // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_0"), -1,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
         // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
         // 重力
         this.addAttributeModifier(Attributes.GRAVITY,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), 0,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), 0,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
         // 挖掘速度
         this.addAttributeModifier(Attributes.MINING_EFFICIENCY,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), -1,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_4"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
     }

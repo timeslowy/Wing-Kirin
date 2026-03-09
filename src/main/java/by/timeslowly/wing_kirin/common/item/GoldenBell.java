@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.common.item;
 
 import by.dragonsurvivalteam.dragonsurvival.registry.DSAttributes;
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.registry.WKAttributes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -28,19 +29,37 @@ public class GoldenBell extends Item {
                 // 属性修饰
                 ItemAttributeModifiers.builder()
                         // 攻击伤害
-                        .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 4, AttributeModifier.Operation.ADD_VALUE),
+                        .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID,
+                                        4, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND)
                         // 攻击速度
-                        .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.4, AttributeModifier.Operation.ADD_VALUE),
+                        .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID,
+                                        -2.4, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND)
+                        // 音爆伤害倍率
+                        .add(WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER, new AttributeModifier(
+                                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_1"),
+                                        1.0, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                                EquipmentSlotGroup.MAINHAND)
+                        // 重锤猛击伤害倍率（合理的，因为其重）
+                        .add(WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER, new AttributeModifier(
+                                        ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_2"),
+                                        0.5, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                                EquipmentSlotGroup.OFFHAND)
                         // 龙飞行速度
-                        .add(DSAttributes.FLIGHT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_2"),-0.9, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                        .add(DSAttributes.FLIGHT_SPEED, new AttributeModifier(
+                                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_3"),
+                                        -0.9, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
                         // 移动速度
-                        .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_3"),-0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                        .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(
+                                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_4"),
+                                        -0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
                         // 重力
-                        .add(Attributes.GRAVITY, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_4"),0.4, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                        .add(Attributes.GRAVITY, new AttributeModifier(
+                                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.golden_bell_5"),
+                                        0.4, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                                 EquipmentSlotGroup.MAINHAND)
                         .build()
                 )
