@@ -17,10 +17,14 @@ import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class WKEventHandler {
-    // 金钟损害机制
+    /**
+     * 监听实体受伤事件，处理：
+     * 1.使用「龙吼功」时金钟的双倍损害
+     */
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent.@NotNull Post event) {
         DamageSource damageSource = event.getSource();
+        // 金钟双倍损害机制
         if (damageSource.is(DamageTypes.SONIC_BOOM)) {
             // 获取攻击者
             if (damageSource.getDirectEntity() instanceof LivingEntity attacker) {

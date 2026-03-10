@@ -5,7 +5,6 @@ import by.timeslowly.wing_kirin.registry.WKCreativeTabs;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import by.timeslowly.wing_kirin.registry.WKItems;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.entity.EntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,7 +15,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -47,7 +45,6 @@ public class Wing_kirin {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::modifyEntityAttributes);
 
     }
 
@@ -58,10 +55,6 @@ public class Wing_kirin {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
 
-    private void modifyEntityAttributes(EntityAttributeModificationEvent event) {
-        event.add(EntityType.PLAYER, WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER);
-        event.add(EntityType.PLAYER, WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER);
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
