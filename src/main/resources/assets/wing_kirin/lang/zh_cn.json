@@ -482,6 +482,8 @@
 
     "enchantment.wing_kirin.unencumbered": "轻钟上阵",
     "enchantment.wing_kirin.unencumbered.desc": "减轻金钟之重量，施法更加自如。",
+    "enchantment.wing_kirin.dingshen_resistance": "定身抗性",
+    "enchantment.wing_kirin.dingshen_resistance.desc": "削弱定身药水效果的持续时间，助你更快脱困。",
 
     
     "dragon_emote.dragonsurvival.clap": "§3趣味：§r鼓掌",
@@ -494,5 +496,6 @@
     "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。",
     
     "attribute.name.wing_kirin.mace_smash_damage_multiplier": "重锤猛击伤害倍率",
-    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "音波伤害倍率" 
+    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "音波伤害倍率" ,
+    "attribute.name.wing_kirin.dingshen_effect_resistance": "定身抗性"
 }

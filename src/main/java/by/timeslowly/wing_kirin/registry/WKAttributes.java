@@ -36,11 +36,21 @@ public class WKAttributes {
                             1024.0)
                             .setSyncable(true));
 
+    // 定身药水效果抗性属性，默认0.0，范围0~1
+    public static final DeferredHolder<Attribute, Attribute> DINGSHEN_EFFECT_RESISTANCE =
+            ATTRIBUTES.register("dingshen_effect_resistance",
+                    () -> new RangedAttribute("attribute.name.wing_kirin.dingshen_effect_resistance",
+                            0.0,
+                            0.0,
+                            1.0)
+                            .setSyncable(true));
+
     // 注册属性
     @SubscribeEvent
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {
         event.add(EntityType.PLAYER, WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER);
         event.add(EntityType.PLAYER, WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER);
+        event.add(EntityType.PLAYER,WKAttributes.DINGSHEN_EFFECT_RESISTANCE);
     }
 
     public static void register(IEventBus eventBus) {

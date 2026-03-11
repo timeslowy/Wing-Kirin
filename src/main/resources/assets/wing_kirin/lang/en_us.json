@@ -459,6 +459,7 @@
     "item_group.wing_kirin.wing_kirin": "Wing Kirin",
     
     "enchantment.wing_kirin.unencumbered": "Unencumbered",
+    "enchantment.wing_kirin.dingshen_resistance": "Dingshen Resistance",
 
     "tag.block.wing_kirin.magic_range_display": "Most Solid Blocks",
     "tag.dragonsurvival.dragon_ability.dragonsurvival.last_stand_cooldown_recovery": "Could be reduced of ability by 「Last Stand」",
@@ -475,5 +476,6 @@
     "fml.menu.mods.info.description.wing_kirin": "An addon for Dragon Survival,adding an new species————Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven.",
 
     "attribute.name.wing_kirin.mace_smash_damage_multiplier": "Mace Smash Damage Multipilier",
-    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "Sonic Boom Damage Multiplier" 
+    "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "Sonic Boom Damage Multiplier" ,
+    "attribute.name.wing_kirin.dingshen_effect_resistance": "Dingshen Resistance"
 }

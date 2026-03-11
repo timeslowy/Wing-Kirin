@@ -1,0 +1,34 @@
+{
+    "description": {
+        "translate": "enchantment.wing_kirin.dingshen_resistance"
+    },
+    "max_level": 5,
+    "max_cost": {
+        "base": 10,
+        "per_level_above_first": 5
+    },
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 5
+    },
+    "weight": 10,
+    "slots": [
+        "armor"
+    ],
+    "supported_items": "#minecraft:enchantable/armor",
+    "anvil_cost": 8,
+    "effects": {
+        "attributes": [
+            {
+                "id": "wing_kirin:dingshen_resistance",
+                "attribute": "wing_kirin:dingshen_effect_resistance",
+                "amount": {
+                    "type": "linear",
+                    "base": 0.2,
+                    "per_level_above_first": 0.2
+                },
+                "operation": "add_value"
+            }
+        ]
+    }
+}
