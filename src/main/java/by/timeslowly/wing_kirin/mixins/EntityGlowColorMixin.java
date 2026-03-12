@@ -24,7 +24,6 @@ public abstract class EntityGlowColorMixin {
     @Inject(method = "getTeamColor", at = @At("HEAD"), cancellable = true)
     private void onGetTeamColor(CallbackInfoReturnable<Integer> cir) {
         if ((Object) this instanceof LivingEntity living) {
-            System.out.println("Entity: " + ((LivingEntity) (Object) this).self().getName().getString() + " has effect: " + ((LivingEntity) (Object) this).self().hasEffect(WKEffects.DingShen));
             if (living.hasEffect(WKEffects.DingShen)) { // 如果具有定身效果
                 cir.setReturnValue(WING_KIRIN_GLOW_COLOR); // 返回金色 0xFBDC92
             }
