@@ -43,7 +43,7 @@ public class WingKirinHeart extends Item {
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         stack = super.finishUsingItem(stack, level, entity);
         if (entity instanceof Player _player)
-            _player.getCooldowns().addCooldown(WKItems.WingKirinHeartItem.get(), 40);
+            _player.getCooldowns().addCooldown(WKItems.WingKirinHeartItem.get(), 20);
         return stack;
     }
 }

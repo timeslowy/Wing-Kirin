@@ -6,9 +6,8 @@ import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
@@ -24,7 +23,7 @@ import org.joml.Vector3f;
 
 import java.util.Objects;
 
-// 定身 药水效果
+// 定身药水效果
 public class DingShen_Effect extends MobEffect {
     public DingShen_Effect(MobEffectCategory category, int color) {
         super(category, color);
@@ -32,23 +31,19 @@ public class DingShen_Effect extends MobEffect {
         // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
-                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
-        );
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), -1,
-                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
-        );
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 重力
         this.addAttributeModifier(Attributes.GRAVITY,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), 0,
-                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
-        );
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), -1,
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 挖掘速度
         this.addAttributeModifier(Attributes.MINING_EFFICIENCY,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_4"), -1,
-                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
-        );
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
     @Override
@@ -56,162 +51,112 @@ public class DingShen_Effect extends MobEffect {
         return true;
     }
 
-    // 每刻持续应用的效果
     @Override
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
         // 阻止移动
-        entity.setDeltaMovement(new Vec3(0, 0, 0));
+        entity.setDeltaMovement(Vec3.ZERO);
 
-        // 冷却
-        if (entity instanceof Player _player) {
-            _player.getCooldowns().addCooldown(_player.getMainHandItem().getItem(), 10);
+        // 物品冷却
+        if (entity instanceof Player player) {
+            player.getCooldowns().addCooldown(player.getMainHandItem().getItem(), 10);
         }
 
-        // 关闭GUI
-        if (Mth.nextInt(RandomSource.create(), 1, 50) == 1) {
-            if (entity instanceof Player _player)
-                _player.closeContainer();
+        // 随机关闭 GUI（使用实体自身的随机源）
+        if (entity.getRandom().nextInt(1, 51) == 1) {  // nextInt(1,51) 等价于原 1~50 范围
+            if (entity instanceof Player player) {
+                player.closeContainer();
+            }
         }
 
         return super.applyEffectTick(entity, amplifier);
     }
 
-    // 生物获得效果的瞬间
+    // 效果初应用时
     @Override
     public void onEffectAdded(@NotNull LivingEntity entity, int amplifier) {
         super.onEffectAdded(entity, amplifier);
-        // 将实体AI禁用
+        // 禁用生物AI
         if (entity instanceof Mob mob) {
             mob.setNoAi(true);
         }
 
-        if (entity.level() instanceof Level _level) {
-            double x = entity.getX();
-            double y = entity.getY();
-            double z = entity.getZ();
-            // 烈焰人受伤声
-            if (!_level.isClientSide()) {
-                _level.playSound(null,
-                        BlockPos.containing(x, y, z),
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2);
-            }
-            else {
-                _level.playLocalSound(x, y, z,
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2,
-                        false);
-            }
-            // 生成粒子
-            if (entity.level() instanceof ServerLevel level) {
-                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
-                float scale = 1.0F; // 粒子大小
-                level.sendParticles(
-                        new DustParticleOptions(color, scale),
-                        x,
-                        y + entity.getBbHeight() / 2.0F,
-                        z,
-                        200,
-                        1, 1, 1,
-                        0.0F
-                );
-            }
+        Level level = entity.level();
+        double x = entity.getX();
+        double y = entity.getY();
+        double z = entity.getZ();
+
+        // 播放声音（烈焰人受伤）
+        SoundEvent sound = Objects.requireNonNull(
+                BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt")));
+        playSound(level, x, y, z, sound);
+
+        // 生成粒子
+        if (level instanceof ServerLevel serverLevel) {
+            spawnParticles(serverLevel, entity);
         }
     }
 
-    // 生物死亡时时执行一次
+    // 带效果生物被杀死时
     @Override
     public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
         super.onMobRemoved(entity, amplifier, reason);
-        // 将实体AI恢复
-        if (entity instanceof Mob mob) {
-            mob.setNoAi(false);
-        }
+        handleExpireOrRemoval(entity);
+    }
 
-        if (entity.level() instanceof Level _level) {
-            double x = entity.getX();
-            double y = entity.getY();
-            double z = entity.getZ();
-            // 播放声音
-            if (!_level.isClientSide()) {
-                _level.playSound(null,
-                        BlockPos.containing(x, y, z),
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2);
-            }
-            else {
-                _level.playLocalSound(x, y, z,
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2,
-                        false);
-            }
-            // 生成粒子
-            if (entity.level() instanceof ServerLevel level) {
-                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
-                float scale = 1.0F; // 粒子大小
-                level.sendParticles(
-                        new DustParticleOptions(color, scale),
-                        x,
-                        y + entity.getBbHeight() / 2.0F,
-                        z,
-                        200,
-                        1, 1, 1,
-                        0.0F
-                );
-            }
+    // 效果消失时的处理（由事件调用）
+    public static void onEffectExpired(LivingEntity entity) {
+        handleExpireOrRemoval(entity);
+    }
+
+    // ---------- 以下为提取的辅助方法 ----------
+
+    private static void handleExpireOrRemoval(LivingEntity entity) {
+        restoreAi(entity);
+
+        Level level = entity.level();
+        double x = entity.getX();
+        double y = entity.getY();
+        double z = entity.getZ();
+
+        // 播放声音（重生锚消耗）
+        SoundEvent sound = Objects.requireNonNull(
+                BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete")));
+        playSound(level, x, y, z, sound);
+
+        // 生成粒子
+        if (level instanceof ServerLevel serverLevel) {
+            spawnParticles(serverLevel, entity);
         }
     }
 
-    // 效果消失时执行一次
-    public static void onEffectExpired(LivingEntity entity) {
-        // 将实体AI恢复
+    // 恢复AI
+    private static void restoreAi(LivingEntity entity) {
         if (entity instanceof Mob mob) {
             mob.setNoAi(false);
         }
+    }
 
-        if (entity.level() instanceof Level _level) {
-            double x = entity.getX();
-            double y = entity.getY();
-            double z = entity.getZ();
-            // 播放声音
-            if (!_level.isClientSide()) {
-                _level.playSound(null,
-                        BlockPos.containing(x, y, z),
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2);
-            } else {
-                _level.playLocalSound(x, y, z,
-                        Objects.requireNonNull(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete"))),
-                        SoundSource.PLAYERS,
-                        2,
-                        (float) 1.2,
-                        false);
-            }
-
-            // 生成粒子
-            if (entity.level() instanceof ServerLevel level) {
-                Vector3f color = new Vector3f(0.98F,0.86F,0.57F); // 粒子颜色
-                float scale = 1.0F; // 粒子大小
-                level.sendParticles(
-                        new DustParticleOptions(color, scale),
-                        x,
-                        y + entity.getBbHeight() / 2.0F,
-                        z,
-                        200,
-                        1, 1, 1,
-                        0.0F
-                );
-            }
+    // 声音参数
+    private static void playSound(@NotNull Level level, double x, double y, double z, SoundEvent sound) {
+        if (level.isClientSide()) {
+            level.playLocalSound(x, y, z, sound, SoundSource.PLAYERS, (float) 2.0, (float) 1.2, false);
+        } else {
+            level.playSound(null, BlockPos.containing(x, y, z), sound, SoundSource.PLAYERS, (float) 2.0, (float) 1.2);
         }
+    }
+
+    // 粒子参数
+    private static void spawnParticles(@NotNull ServerLevel level, @NotNull LivingEntity entity) {
+        Vector3f color = new Vector3f(0.98F, 0.86F, 0.57F);
+        float scale = 1.0F;
+        level.sendParticles(
+                new DustParticleOptions(color, scale),
+                entity.getX(),
+                entity.getY() + entity.getBbHeight() / 2.0F,
+                entity.getZ(),
+                200,
+                1.0, 1.0, 1.0,
+                0.0
+        );
     }
 }

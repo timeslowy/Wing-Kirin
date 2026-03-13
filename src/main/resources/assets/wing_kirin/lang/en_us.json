@@ -101,7 +101,8 @@
     "actionbar.wing_kirin.upgrade.diamond":"Gained:§bDiamondd*4",
     "actionbar.wing_kirin.upgrade.nether_star":"Gained：§bNether Star*4",
     "actionbar.wing_kirin.upgrade.netherite_ingot":"Gained：§bNetherite Ingot*4",
-    "actionbar.wing_kirin.ability.insurance": "You get compensation because of duplicate：§a200 points experience",
+    "actionbar.wing_kirin.ability.insurance-return_xp": "You get compensation because of duplicate：§a200 points experience",
+    "actionbar.wing_kirin.ability.insurance-return_item": "§6Try again!",
     
     "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "Will cast §6「Arrow Hit Stasis Hex」",
     "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "Will cast §6「Area Stasis Hex」",
@@ -436,12 +437,12 @@
     "item.wing_kirin.wing_kirin_upgrade.description_0": "§7■ Gathers essences into one. Using it allows you to acquire innate abilities you didn't originally possess.",
     "item.wing_kirin.wing_kirin_upgrade.description_1": "§7■§a Seventy percent§r§7 chance to gain§a experience and other award§r§7,§6 thirty percent§r§7 chance to gain one of the§6 five powerful acquired abilities§r§7.",
     "item.wing_kirin.wing_kirin_upgrade.description_2": "",
-  "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a-《Encouragement Award》-\nXp 400 points, Gold Ingot,Elder Dragon Heart , Empyrean Wine, Nether Star, Netherite Ingot\n§6-《Acquired Ability》-\n《Signal Arrow》《Instant Invisibility》《Indestructible Body》《Last Stand》《Heavenly Justice》",
-  "item.wing_kirin.empyrean_milkwine":"Empyrean Milkwine",
-  "item.wing_kirin.empyrean_milkwine.description_0":"§7■ After mixing with milk, the beneficial effects losed, but it inherit some effects form milk.",
-  "item.wing_kirin.empyrean_milkwine.shift_down":"Could remove POISION, WEAKNESS, WITHER, MINING_FATIGUE, NAUSEA, BLINDNESS and DARKNESS",
+    "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a-《Encouragement Award》-\nXp 400 points, Gold Ingot,Elder Dragon Heart , Empyrean Wine, Nether Star, Netherite Ingot\n§6-《Acquired Ability》-\n《Signal Arrow》《Instant Invisibility》《Indestructible Body》《Last Stand》《Heavenly Justice》",
+    "item.wing_kirin.empyrean_milkwine":"Empyrean Milkwine",
+    "item.wing_kirin.empyrean_milkwine.description_0":"§7■ After mixing with milk, the beneficial effects losed, but it inherit some effects form milk.",
+    "item.wing_kirin.empyrean_milkwine.shift_down":"Could remove POISION, WEAKNESS, WITHER, MINING_FATIGUE, NAUSEA, BLINDNESS and DARKNESS",
   
-   "item.wing_kirin.shift_up": "Press §eShift§r for more info.",
+    "item.wing_kirin.shift_up": "Press §eShift§r for more info.",
 
     "item.wing_kirin.dingshen_icon": "Dingshen Icon",
     "item.wing_kirin.fly_higher_icon": "Fly Higher Icon",

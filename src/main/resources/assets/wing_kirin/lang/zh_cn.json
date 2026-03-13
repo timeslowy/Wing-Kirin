@@ -1,7 +1,7 @@
 {
-    "dragon_species.dragonsurvival.wing_kirin": "翼麒麟",
-    "dragon_species.dragonsurvival.wing_kirin.altar.desc": "§7■§6“麒麟踏祥云，人间百难消”麒麟§r§7乃上古神话中生于九天之上的§6五大瑞兽§r§7之一，蕴含§6“风调雨顺、国泰民安”§r§7的§a美好寓意§r§7。\n■而§6翼麒麟§7者是其多长了对羽翼的同胞。§6它身覆金鳞，脚踏祥云，身形流风，鹤翼垂天。其栖云霓之间，沐太清之炁；御罡风为驾，遨游八极之表。§r\n\n§2■特性：攻击势大力沉，神通大开大合；天赋高强，后天可塑。§r\n§4■劣势：偏安一隅。§r\n§6■食性：§r§7%s",
-     "dragon_species.dragonsurvival.wing_kirin.banner.desc": "§7■你生于九天之上，与神仙们同吃同住，食性与人类§r§a并无太大差异§r§7，无论是小点心的的浆果西瓜，还是“只应天上有”的玉盘珍馐，你的胃都能§r§a从容应付§r§7。\n■日月天地间浩然的正气也赋予了你施展§r§6天法神通§r§7之能力，哪怕只是略通皮毛、杂而不精，也足以§r§b“打的那狼虫虎豹无处躲”§r§7。\n\n■然而，§r§n初次下凡§r§7的你从未见识过主世界外的的§r§4妖魔鬼蜮§r§7，一旦踏足其中，盘踞其中的§r§5邪逆§r将§c无孔不入§r§7你的身躯，让你§c痛苦万分§r§7，甚至被邪魔夺舍而§c大伤元气§r§7......但你又不能§n偏安一隅§r§7，因此在离开主世界时必须§e做好万全准备§r§7。",
+  "dragon_species.dragonsurvival.wing_kirin": "翼麒麟",
+  "dragon_species.dragonsurvival.wing_kirin.altar.desc": "§7■§6“麒麟踏祥云，人间百难消”麒麟§r§7乃上古神话中生于九天之上的§6五大瑞兽§r§7之一，蕴含§6“风调雨顺、国泰民安”§r§7的§a美好寓意§r§7。\n■而§6翼麒麟§7者是其多长了对羽翼的同胞。§6它身覆金鳞，脚踏祥云，身形流风，鹤翼垂天。其栖云霓之间，沐太清之炁；御罡风为驾，遨游八极之表。§r\n\n§2■特性：攻击势大力沉，神通大开大合；天赋高强，后天可塑。§r\n§4■劣势：偏安一隅。§r\n§6■食性：§r§7%s",
+  "dragon_species.dragonsurvival.wing_kirin.banner.desc": "§7■你生于九天之上，与神仙们同吃同住，食性与人类§r§a并无太大差异§r§7，无论是小点心的的浆果西瓜，还是“只应天上有”的玉盘珍馐，你的胃都能§r§a从容应付§r§7。\n■日月天地间浩然的正气也赋予了你施展§r§6天法神通§r§7之能力，哪怕只是略通皮毛、杂而不精，也足以§r§b“打的那狼虫虎豹无处躲”§r§7。\n\n■然而，§r§n初次下凡§r§7的你从未见识过主世界外的的§r§4妖魔鬼蜮§r§7，一旦踏足其中，盘踞其中的§r§5邪逆§r将§c无孔不入§r§7你的身躯，让你§c痛苦万分§r§7，甚至被邪魔夺舍而§c大伤元气§r§7......但你又不能§n偏安一隅§r§7，因此在离开主世界时必须§e做好万全准备§r§7。",
 
 
     "dragon_ability.dragonsurvival.stasis_hex": "定身术",
@@ -462,7 +462,8 @@
     "actionbar.wing_kirin.upgrade.diamond":"获得：§b钻石*4",
     "actionbar.wing_kirin.upgrade.nether_star":"获得：§b下界之星*4",
     "actionbar.wing_kirin.upgrade.netherite_ingot":"获得：§b下界合金锭*4",
-    "actionbar.wing_kirin.ability.insurance": "重复补偿：§a200点经验",
+    "actionbar.wing_kirin.ability.insurance-return_xp": "重复补偿：§a200点经验",
+    "actionbar.wing_kirin.ability.insurance-return_item": "§6再来一次！",
     
     
 

@@ -1,10 +1,7 @@
 ## “保险补偿”
 # 执行者：玩家
-# 给抽到重复技能的玩家给予“安慰奖”（doge）
-xp add @s 200 points
+# 30%概率返回通仙心
+execute if predicate wing_kirin:30_percent run return run function wing_kirin:wing_kirin_upgrade/insurance/return_item
 
-# 播放声音
-playsound entity.experience_orb.pickup player @s
-
-# 提示
-title @s actionbar [{"translate": "actionbar.wing_kirin.ability.insurance"}]
+# 如果没有返通仙心给抽到重复技能的玩家给予“安慰奖”（doge）
+function wing_kirin:wing_kirin_upgrade/insurance/return_xp
