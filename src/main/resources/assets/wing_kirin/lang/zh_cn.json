@@ -386,6 +386,9 @@
   "dragonsurvival.advancement.wing_kirin/be_old.desc": "身为翼麒麟成长至108成长等级。",
   "dragonsurvival.advancement.wing_kirin/persistent_attempt": "物以稀为贵",
   "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc" :"“散尽家资”§m（脸白者可无视）§r，在“盲盒”里“抽到”所有后天技能。",
+  "dragonsurvival.advancement.wing_kirin/invincible_benevolence":"仁者无敌",
+  "dragonsurvival.advancement.wing_kirin/invincible_benevolence.desc":"单次使至少3名以上的盟友受惠之于你的「仁者无敌」，用醒目的效果时长来“诠释”古人的智慧。",
+  
 
 
   "effect.wing_kirin.health_decline": "邪气缠身",

@@ -420,6 +420,8 @@
     "dragonsurvival.advancement.wing_kirin/be_old.desc": "Gain level 108 growth as a Wing Kirin.",
     "dragonsurvival.advancement.wing_kirin/persistent_attempt": "Persistent Attempt",
     "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc" :"Obtain all 「Acquired Ability」 by eating 「Hearting connecting to Memories」.",
+    "dragonsurvival.advancement.wing_kirin/invincible_benevolence":"Benevolence is Invicible",
+    "dragonsurvival.advancement.wing_kirin/invincible_benevolence.desc":"Healing at least 3 alies by your 「Invincible Benevolence」 Once, Resistance on you, you are invincible.",
 
     "effect.wing_kirin.health_decline": "Entangled by Evil Qi",
     "effect.wing_kirin.great_zhengqi": "Geat Zhengqi",

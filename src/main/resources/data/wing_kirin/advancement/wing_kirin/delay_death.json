@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/fly_higher",
+    "parent": "wing_kirin:wing_kirin/invincible_benevolence",
     "criteria": {
         "delay_death":{
             "trigger": "impossible",

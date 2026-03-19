@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/ding_shen_shu",
+    "parent": "wing_kirin:wing_kirin/great_zhengqi",
     "criteria": {
         "Kill_Entity_by_Use_the_Ability_of_Signal_Arrow": {
             "trigger": "player_killed_entity",

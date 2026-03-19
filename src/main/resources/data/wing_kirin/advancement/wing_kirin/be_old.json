@@ -1,5 +1,5 @@
 {
-	"parent": "wing_kirin:wing_kirin/persistent_attempt",
+	"parent": "wing_kirin:wing_kirin/fly_higher",
 	"criteria": {
 		"be_fully_grown_ancient": {
 			"conditions": {
