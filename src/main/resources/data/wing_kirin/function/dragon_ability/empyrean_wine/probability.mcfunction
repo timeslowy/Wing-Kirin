@@ -14,11 +14,11 @@ execute if data storage wing_kirin:ram {empyrean_wine:{level:2}} \
 execute if data storage wing_kirin:ram {empyrean_wine:{level:3}} \
     if predicate wing_kirin:5_percent \
     run return run function wing_kirin:dragon_ability/empyrean_wine/modify_item
-# 3级：7%
+# 4级：7%
 execute if data storage wing_kirin:ram {empyrean_wine:{level:4}} \
     if predicate wing_kirin:7_percent \
     run return run function wing_kirin:dragon_ability/empyrean_wine/modify_item
-# 3级：9%
+# 5级：9%
 execute if data storage wing_kirin:ram {empyrean_wine:{level:5}} \
     if predicate wing_kirin:9_percent \
     run return run function wing_kirin:dragon_ability/empyrean_wine/modify_item

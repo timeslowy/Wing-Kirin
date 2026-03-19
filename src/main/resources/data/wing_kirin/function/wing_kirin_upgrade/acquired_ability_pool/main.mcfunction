@@ -8,9 +8,9 @@ execute if score @s wk.ability_add.random_value matches 1..12 run return \
 execute if score @s wk.ability_add.random_value matches 13..20 run return \
     run function wing_kirin:wing_kirin_upgrade/acquired_ability_pool/instant_invisibility
 
-# 如果上一步未成功，检查6%（21-26）概率执行函数C （获得技能：不坏金身）
+# 如果上一步未成功，检查6%（21-26）概率执行函数C （获得技能：仁者无敌）
 execute if score @s wk.ability_add.random_value matches 21..26 run return \
-    run function wing_kirin:wing_kirin_upgrade/acquired_ability_pool/indestructible_body
+    run function wing_kirin:wing_kirin_upgrade/acquired_ability_pool/invincible_benevolence
 
 # 如果上两步未成功，检查3%（27-29）概率执行函数D（获得技能：回光返照）
 execute if score @s wk.ability_add.random_value matches 27..29 run return \

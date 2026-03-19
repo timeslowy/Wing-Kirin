@@ -50,7 +50,7 @@ public class WKAttributes {
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {
         event.add(EntityType.PLAYER, WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER);
         event.add(EntityType.PLAYER, WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER);
-        event.add(EntityType.PLAYER,WKAttributes.DINGSHEN_EFFECT_RESISTANCE);
+        event.add(EntityType.PLAYER, WKAttributes.DINGSHEN_EFFECT_RESISTANCE);
     }
 
     public static void register(IEventBus eventBus) {

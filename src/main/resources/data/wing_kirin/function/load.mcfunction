@@ -38,6 +38,9 @@ scoreboard objectives add wk.indestructible_body.counter_shock_count dummy
 scoreboard objectives add wk.last_stand.death_countdown dummy
 scoreboard objectives add wk.last_stand.death_check dummy
 
+# 仁者无敌 受惠实体数
+scoreboard objectives add wk.invincible_benevolence.beneficiary_amount dummy
+
 # 天降正义 倒计时
 scoreboard objectives add wk.heavenly_justice.countdown dummy
 

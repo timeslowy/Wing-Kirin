@@ -1,1 +1,2 @@
-execute unless data entity @s active_effects[{"id":"wing_kirin:great_zhengqi"}].amplifier
+say 青云与时光不匆敬献。
+say Directed by Qingyun & Timeslowly.
