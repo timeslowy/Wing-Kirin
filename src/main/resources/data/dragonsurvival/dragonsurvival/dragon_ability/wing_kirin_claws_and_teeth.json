@@ -60,19 +60,19 @@
         "texture_entries": [
             {
                 "from_level": 0,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_0"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth/wing_kirin_claws_and_teeth_0"
             },
             {
                 "from_level": 1,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_1"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth/wing_kirin_claws_and_teeth_1"
             },
             {
                 "from_level": 2,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_2"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth/wing_kirin_claws_and_teeth_2"
             },
             {
                 "from_level": 3,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth_3"
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/wing_kirin_claws_and_teeth/wing_kirin_claws_and_teeth_3"
             }
         ]
     },

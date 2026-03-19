@@ -1,5 +1,5 @@
 # （如果达到上限）将范围内所有生物的相应标签移去
-execute as @e[distance=..9,tag=beneficiary] run tag @s remove beneficiary
+tag @e[distance=..9,tag=beneficiary] remove beneficiary
 
 # 将玩家技能等级存至命令存储格式
 execute store result storage wing_kirin:ram invincible_benevolence.level int 1 \

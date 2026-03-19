@@ -110,27 +110,27 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_0"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_1"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_1"
       },
       {
         "from_level": 2,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_2"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_2"
       },
       {
         "from_level": 3,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_3"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_3"
       },
       {
         "from_level": 4,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_4"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_4"
       },
       {
         "from_level": 5,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean_5"
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/born_above_empyrean/born_above_empyrean_5"
       }
     ]
   },
