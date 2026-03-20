@@ -1,2 +1,2 @@
-say 青云与时光不匆敬献。
-say Directed by Qingyun & Timeslowly.
+
+tellraw @s [{"translate": "dragonsurvival.advancement.wing_kirin/be_wing_kirin.message"}]

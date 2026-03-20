@@ -17,7 +17,7 @@ import java.util.List;
 public class WingKirinHeart extends Item {
     public WingKirinHeart() {
         super(new Item.Properties()
-                .rarity(Rarity.RARE)
+                .rarity(Rarity.EPIC)
         );
     }
     // 附魔发光

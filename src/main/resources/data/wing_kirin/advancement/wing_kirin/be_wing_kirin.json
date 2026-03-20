@@ -37,7 +37,8 @@
     ]
   ],
   "rewards": {
-    "experience": 12
+    "function": "wing_kirin:test",
+    "experience": 200
   },
   "sends_telemetry_event": true
 }

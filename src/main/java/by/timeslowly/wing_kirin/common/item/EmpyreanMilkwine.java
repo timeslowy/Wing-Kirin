@@ -19,11 +19,13 @@ public class EmpyreanMilkwine extends Item {
     public EmpyreanMilkwine() {
         super(new Item.Properties()
                 .stacksTo(16)
-                .rarity(Rarity.RARE)
+                .rarity(Rarity.UNCOMMON)
                 .food(new FoodProperties.Builder()
                         .nutrition(4)
                         .saturationModifier(2f)
+                        .fast()
                         .alwaysEdible()
+                        .usingConvertsTo(Items.GLASS_BOTTLE)
                         .build()));
     }
     // 负面效果列表：中毒、虚弱、凋零、挖掘疲劳、反胃、失明和黑暗
@@ -75,13 +77,6 @@ public class EmpyreanMilkwine extends Item {
                 if (player.hasEffect(effect)) {
                     player.removeEffect(effect);
                 }
-            }
-        }
-        // 返还玻璃瓶
-        if (livingEntity instanceof Player player && !player.getAbilities().instabuild) {
-            ItemStack bottle = new ItemStack(Items.GLASS_BOTTLE);
-            if (!player.getInventory().add(bottle)) {
-                player.drop(bottle, false);
             }
         }
         return result;

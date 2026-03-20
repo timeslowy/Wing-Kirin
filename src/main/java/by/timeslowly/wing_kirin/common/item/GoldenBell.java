@@ -21,8 +21,6 @@ import java.util.List;
 public class GoldenBell extends Item {
     public GoldenBell() {
         super(new Item.Properties()
-                // 设置堆叠
-                .stacksTo(1)
                 // 设置耐久
                 .durability(580)
                 .attributes(
@@ -71,12 +69,16 @@ public class GoldenBell extends Item {
         return 0.5f;
     }
 
-    // 添加耐久损耗逻辑 - 直接攻击
     @Override
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
+        return true;
+    }
+
+    // 添加耐久损耗逻辑 - 直接攻击
+    @Override
+    public void postHurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
         // 直接攻击损耗1点耐久
         stack.hurtAndBreak(1, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
-        return true;
     }
 
     // 添加描述
@@ -87,15 +89,6 @@ public class GoldenBell extends Item {
         tooltipComponents.add(Component.translatable("item.wing_kirin.golden_bell.description_1"));
     }
 
-    // 静态方法：当玩家造成音波伤害（龙吼功）时调用此方法，双倍耐久损耗
-    public static void onSonicBoomDamage(LivingEntity attacker) {
-        // 检查攻击者是否持有GoldenBell
-        if (attacker != null) {
-            ItemStack mainHand = attacker.getMainHandItem();
-            // 检查主手
-            if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBell) {
-                mainHand.hurtAndBreak(2, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
-            }
-        }
-    }
+    // 静态方法：原双倍耐久损耗方法简化至WKEventHandler中
+
 }

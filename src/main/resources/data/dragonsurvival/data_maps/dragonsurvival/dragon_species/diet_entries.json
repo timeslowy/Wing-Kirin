@@ -8,6 +8,9 @@
             "nutrition": 8,
             "saturation":12,
             "can_always_eat": true,
+            "using_converts_to": {
+              "id": "minecraft:glass_bottle"
+            },
             "effects": [
               {
                 "effect": {
@@ -18,7 +21,8 @@
                 }
               }
             ]
-          }
+          },
+          "retain_effects": true
         },
         {
           "items": "wing_kirin:empyrean_milkwine",
@@ -26,8 +30,12 @@
             "eat_seconds":0.5,
             "nutrition": 8,
             "saturation":12,
-            "can_always_eat": true
-          }
+            "can_always_eat": true,
+            "using_converts_to": {
+              "id": "glass_bottle"
+            }
+          },
+          "retain_effects": true
         },
         {
           "items": "wing_kirin:wing_kirin_treat",
@@ -49,7 +57,8 @@
                 }
               }
             ]
-          }
+          },
+          "retain_effects": true
         },
         {
           "items": "minecraft:glistering_melon_slice",

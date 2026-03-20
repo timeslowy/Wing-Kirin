@@ -12,7 +12,7 @@ import java.util.List;
 public class WingKirinTreat extends Item {
     public WingKirinTreat() {
         super(new Properties().
-                rarity(Rarity.UNCOMMON)
+                rarity(Rarity.RARE)
         );
     }
     // 添加描述

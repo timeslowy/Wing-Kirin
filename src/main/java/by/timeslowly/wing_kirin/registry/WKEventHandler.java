@@ -15,8 +15,13 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
+import java.util.WeakHashMap;
+
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class WKEventHandler {
+    // 记录每个攻击者上次扣除金钟耐久的世界刻
+    private static final Map<LivingEntity, Integer> LAST_DAMAGE_TICK = new WeakHashMap<>();
     /**
      * 监听实体受伤事件，处理：
      * 1.使用「龙吼功」时金钟的双倍损害
@@ -24,12 +29,20 @@ public class WKEventHandler {
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent.@NotNull Post event) {
         DamageSource damageSource = event.getSource();
-        // 金钟双倍损害机制
         if (damageSource.is(DamageTypes.SONIC_BOOM)) {
-            // 获取攻击者
             if (damageSource.getDirectEntity() instanceof LivingEntity attacker) {
-                // 调用GoldenBell的静态方法
-                GoldenBell.onSonicBoomDamage(attacker);
+                // 直接在主手检查并损耗耐久
+                ItemStack mainHand = attacker.getMainHandItem();
+                if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBell) {
+                    // 获取当前游戏刻
+                    int currentTick = Math.toIntExact(attacker.level().getGameTime());
+                    // 检查是否在同一刻内已经扣除过
+                    Integer lastTick = LAST_DAMAGE_TICK.get(attacker);
+                    if (lastTick == null || lastTick != currentTick) {
+                        mainHand.hurtAndBreak(2, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+                        LAST_DAMAGE_TICK.put(attacker, currentTick);
+                    }
+                }
             }
         }
     }
