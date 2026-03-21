@@ -113,6 +113,8 @@
     "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "GUIDED MISSLE HAS LUANCHED!",
     "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "FAILED LOCATING POSITION!", 
     
+    "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount": "Beneficiary Amount:",
+    
     "actionbar.wing_kirin.instant_invisibility.distance_notice":"REMAINING EFFECTIVE DISTANCE:",
 
     "title.wing_kirin.last_stand": "The Last Stand",

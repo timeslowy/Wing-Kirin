@@ -38,7 +38,7 @@
     "dragon_ability.dragonsurvival.explosion_arrow": "三连箭雷",
     "dragon_ability.dragonsurvival.explosion_arrow.desc": "§7■完成§6「见鬼去吧」§r§7挑战进度以解锁。\n\n§6§o“捂好耳朵，要打雷了！”",
     "dragon_ability.dragonsurvival.invincible_benevolence":"仁者无敌",
-    "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■与同胞麒麟相仿，§6翼麒麟§7亦身怀§6辟邪、消灾§7之能。将体内蕴含之“正气”播撒开来，使方圆内的盟友萦绕正气，§a削除恶效，恢复元神§7。\n\n同时，根据§n所惠及之盟友数（有上限）§r§7，赋予自身相应时长的§6「抗性提升V」§7效果，正所谓“仁者无敌”。\n\n■治疗的§n百分比值§r§7与§n抗性时长§r§7随§a技能等级（经验等级）§7而提升，而范围则无变。\n\n§8■仅能在§n主世界§r§8使用（除非身有§r「浩然正气」§8药水效果）。\n\n§6§o“仁者无敌”——《孟子·梁惠王上》",
+    "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■与同胞麒麟相仿，§6翼麒麟§7亦身怀§6辟邪、消灾§7之能。将体内蕴含之“正气”播撒开来，使方圆内的友方萦绕正气，§a削除恶效，恢复元神§7。\n\n同时，根据§n所惠及之友友数（有上限）§r§7，赋予自身相应时长的§6「抗性提升V」§7效果，正所谓“仁者无敌”。\n\n■治疗的§n百分比值§r§7与§n抗性时长§r§7随§a技能等级（经验等级）§7而提升，而范围则无变。\n\n§8■仅能在§n主世界§r§8使用（除非身有§r「浩然正气」§8药水效果）。\n\n§6§o“仁者无敌”——《孟子·梁惠王上》",
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§c邪气缠蚀，仁施不得。",
     
     
@@ -484,6 +484,8 @@
 
     "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "已成功定位坐标！",
     "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "坐标定位失败！", 
+    
+    "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount": "惠及友方数：",
 
     "actionbar.wing_kirin.instant_invisibility.distance_notice":"剩余生效距离：",
     
@@ -499,7 +501,7 @@
 
     "datapack_description.wing_kirin.low_unlock_condition": "大大降低翼麒麟的解锁难度，助你早日成为“九天上的来客”。",
 
-    "resoucepack_description.wing_kirin.wing_kirin_ui": "为§6翼麒麟§r龙种特制的§6金色UI§r，高端大气。",
+    "resoucepack_description.wing_kirin.wing_kirin_ui": "为§6翼麒麟§r龙种特制的§6金色UI§r，简约而不失大气。",
     
     "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。",
     
