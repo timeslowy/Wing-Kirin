@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/falling_arrow_like_rainstorm",
+    "parent": "wing_kirin:wing_kirin/indestructible_body",
     "criteria": {
         "Heal_at_least_3_Alies":{
             "trigger": "impossible"

@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/great_zhengqi",
+    "parent": "wing_kirin:wing_kirin/breaking_invisibility_strike",
     "criteria": {
         "Kill_Entity_by_Use_the_Ability_of_Signal_Arrow": {
             "trigger": "player_killed_entity",

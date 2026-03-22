@@ -425,6 +425,10 @@
     "dragonsurvival.advancement.wing_kirin/persistent_attempt.desc" :"Obtain all 「Acquired Ability」 by eating 「Hearting connecting to Memories」.",
     "dragonsurvival.advancement.wing_kirin/invincible_benevolence":"Benevolence is Invicible",
     "dragonsurvival.advancement.wing_kirin/invincible_benevolence.desc":"Healing at least 3 alies by your 「Invincible Benevolence」 Once, Resistance on you, you are invincible.",
+    "dragonsurvival.advancement.wing_kirin/breaking_invisibility_strike": "Breaking Invisibility Strike",
+    "dragonsurvival.advancement.wing_kirin/breaking_invisibility_strike.desc" : "Striking entity with 「Instant Invisibility」,tell them: \"I am everywhere.\"",
+    "dragonsurvival.advancement.wing_kirin/indestructible_body": "Indestructible Body",
+    "dragonsurvival.advancement.wing_kirin/indestructible_body.desc": "Counter Shock more than 10 times in single casting 「Indestructible Body」, making their attacking invalid.",
 
     "effect.wing_kirin.health_decline": "Entangled by Evil Qi",
     "effect.wing_kirin.great_zhengqi": "Geat Zhengqi",

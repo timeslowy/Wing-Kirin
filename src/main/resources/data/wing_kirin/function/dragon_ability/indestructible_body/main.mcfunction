@@ -17,6 +17,11 @@ execute as @e[distance=0.1..5] run function wing_kirin:dragon_ability/indestruct
 # 反震次数计分板+1
 scoreboard players add @s wk.indestructible_body.counter_shock_count 1
 
+# 单次反震超过10次授予「金身不坏」进度
+execute if entity @s[advancements={wing_kirin:wing_kirin/indestructible_body=false}] \
+    if score @s wk.indestructible_body.counter_shock_count matches 10.. \
+        run advancement grant @s only wing_kirin:wing_kirin/indestructible_body
+
 # 剥夺进度使其可反复触发
 advancement revoke @s only wing_kirin:function/indestructible_body_casting_effect
 

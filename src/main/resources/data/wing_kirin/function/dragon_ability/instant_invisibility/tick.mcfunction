@@ -24,7 +24,7 @@ $execute as $(Owner_hex) unless score @s wk.instant_invisibility.remove_check ma
 $execute as $(Owner_hex) if score @s wk.death_check matches 1.. run kill @n[type=marker,tag=instant_invisibility-select]
 
 # 提示失效距离
-execute as @s run function wing_kirin:dragon_ability/instant_invisibility/distance_notice/main with entity @s data
+function wing_kirin:dragon_ability/instant_invisibility/distance_notice/main with entity @s data
 
 # 移除标签防止重选
 tag @s remove instant_invisibility-select
