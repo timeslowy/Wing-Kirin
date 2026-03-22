@@ -8,6 +8,7 @@ import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.PercentageAttribute;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -39,7 +40,7 @@ public class WKAttributes {
     // 定身药水效果抗性属性，默认0.0，范围0~1
     public static final DeferredHolder<Attribute, Attribute> DINGSHEN_EFFECT_RESISTANCE =
             ATTRIBUTES.register("dingshen_effect_resistance",
-                    () -> new RangedAttribute("attribute.name.wing_kirin.dingshen_effect_resistance",
+                    () -> new PercentageAttribute("attribute.name.wing_kirin.dingshen_effect_resistance",
                             0.0,
                             0.0,
                             1.0)

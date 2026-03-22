@@ -160,7 +160,7 @@
     },
     "cast_time": 100.0,
     "cooldown": 6000.0,
-    "initial_mana_cost": 40.0,
+    "initial_mana_cost": 30.0,
     "notification": {
       "usage_blocked": {
         "translate": "dragon_ability.dragonsurvival.heavenly_justice.activation.notification.usage_blocked"
