@@ -7,10 +7,15 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class WKEnchantments {
-
-    // TODO：不会注册，未完待续
     public static final DeferredRegister<Enchantment> ENCHANTMENTS =
             DeferredRegister.create(Registries.ENCHANTMENT, Wing_kirin.MOD_ID);
+    // TODO：不会注册，未完待续
+
+
+
+
+
+
 
 
     public static void register(IEventBus eventBus) {

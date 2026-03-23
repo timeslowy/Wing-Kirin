@@ -29,7 +29,7 @@ public class WKItems {
     // 新生翼麒麟头像（空物品）
     public static final DeferredItem<Item> WingKirinIconItem = ITEMS.register("wing_kirin_icon",
             () -> new Item(new Item.Properties()));
-    // 浩燃正气效果图标（空物品）
+    // 浩然正气效果图标（空物品）
     public static final DeferredItem<Item> GreatZhengqiIconItem = ITEMS.register("great_zhengqi_icon",
             () -> new Item(new Item.Properties()));
     // 麒麟之翼图标（空物品）
