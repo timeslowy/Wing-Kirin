@@ -19,9 +19,9 @@
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
-        "master_indesstuctible_body": {
+        "master_invincible_benevolence": {
             "conditions": {
-                "ability": "dragonsurvival:indestructible_body"
+                "ability": "dragonsurvival:invincible_benevolence"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
@@ -50,7 +50,7 @@
             "master_heavenly_justice"
         ],
         [
-            "master_indesstuctible_body"
+            "master_invincible_benevolence"
         ],
         [
             "master_instant_invisibility"
