@@ -2,6 +2,9 @@
   "values": {
     "dragonsurvival:wing_kirin": [
         {
+          "items": "#c:foods"
+        },
+        {
           "items": "wing_kirin:empyrean_wine",
           "properties": {
             "eat_seconds":0.5,
@@ -76,9 +79,6 @@
             "saturation": 12.0,
             "eat_seconds": 0.5
           }
-        },
-        {
-          "items": "#c:foods"
         },
         {
           "items": "#farmersdelight:meals"
