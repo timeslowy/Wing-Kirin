@@ -124,6 +124,7 @@
     },
     "initial_mana_cost": 6.0,
     "sound": {
+      "charging":"block.conduit.ambient" ,
       "end": "minecraft:block.bell.resonate"
     }
   },

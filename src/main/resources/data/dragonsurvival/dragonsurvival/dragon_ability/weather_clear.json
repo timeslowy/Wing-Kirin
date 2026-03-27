@@ -25,6 +25,7 @@
             }
         },
         "sound": {
+            "charging": "block.respawn_anchor.ambient",
             "end": "minecraft:item.trident.thunder"
         }
     },

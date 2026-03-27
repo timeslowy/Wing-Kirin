@@ -22,6 +22,9 @@
             "base": 400,
             "per_level_above_first": 200
         },
+        "sound": {
+            "charging": "block.grindstone.use"
+        },
         "can_move_while_casting": true
     },
     "upgrade": {

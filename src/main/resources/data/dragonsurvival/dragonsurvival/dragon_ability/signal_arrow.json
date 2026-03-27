@@ -69,6 +69,7 @@
       }
     },
     "sound": {
+      "charging": "item.crossbow.loading_middle",
       "end": "minecraft:item.firecharge.use"
     }
   },

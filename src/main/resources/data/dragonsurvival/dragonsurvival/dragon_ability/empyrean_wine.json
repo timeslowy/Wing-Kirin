@@ -123,6 +123,10 @@
         "locks_neck": false,
         "locks_tail": false
       }
+    },
+    "sound": {
+      "looping": "block.pointed_dripstone.drip_water",
+      "end": "entity.experience_orb.pickup"
     }
   },
   "can_be_manually_disabled": true,

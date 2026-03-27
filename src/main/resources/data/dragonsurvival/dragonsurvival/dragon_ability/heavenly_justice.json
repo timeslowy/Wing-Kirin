@@ -167,6 +167,7 @@
       }
     },
     "sound": {
+      "charging": "ambient.underwater.loop.additions.ultra_rare",
       "end": "block.beacon.activate"
     },
     "can_move_while_casting": false
