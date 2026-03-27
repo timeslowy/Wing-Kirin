@@ -88,7 +88,7 @@ public class DingShen_Effect extends MobEffect {
         // 播放声音（烈焰人受伤）
         SoundEvent sound = Objects.requireNonNull(
                 BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt")));
-        playSound(level, x, y, z, sound);
+                playSound(level, x, y, z, sound);
 
         // 生成粒子
         if (level instanceof ServerLevel serverLevel) {

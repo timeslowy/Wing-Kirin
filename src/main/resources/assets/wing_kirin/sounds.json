@@ -1,0 +1,10 @@
+{
+    "thunderous_shout":{
+        "sounds":[
+            {
+                "name": "wing_kirin:thunderous_shout",
+                "volume": 5.0
+            }
+        ]
+    }
+}
