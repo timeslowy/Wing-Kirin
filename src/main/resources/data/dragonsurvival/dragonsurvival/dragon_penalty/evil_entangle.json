@@ -55,7 +55,7 @@
       {
         "item_predicates": [
           {
-            "items": "wing_kirin:empyrean_wine"
+            "items": "#wing_kirin:recovery_items"
           }
         ],
         "percent_restored": 0.5

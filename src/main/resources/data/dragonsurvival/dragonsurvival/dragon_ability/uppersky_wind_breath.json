@@ -81,7 +81,7 @@
         "transition_length": 5
       }
     },
-    "cast_time": 40.0,
+    "cast_time": 20.0,
     "continuous_mana_cost": {
       "type": "ticking",
       "amount": 0.05
