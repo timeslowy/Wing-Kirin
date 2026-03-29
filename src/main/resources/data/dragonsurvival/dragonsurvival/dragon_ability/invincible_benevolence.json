@@ -2,6 +2,30 @@
     "actions": [
         {
             "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:charging_glow",
+                                        "duration": 60,
+                                        "is_hidden": true
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "all"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_point": "charging"
+        },
+        {
+            "target_selection": {
                 "target_type": "dragonsurvival:area",
                 "applied_effects": {
                     "entity_effect": [
