@@ -74,13 +74,13 @@
             {
               "effect_type": "dragonsurvival:breath_particles",
               "main_particle": {
-                "type": "minecraft:crit"
+                "type": "wing_kirin:thunderous_shout"
               },
               "secondary_particle": {
-                "type": "minecraft:cloud"
+                "type": "firework"
               },
-              "speed_per_growth": 0.05,
-              "spread": 0.05
+              "speed_per_growth": 0.025,
+              "spread": 0.0
             },
             {
               "effect_type": "dragonsurvival:potion",
