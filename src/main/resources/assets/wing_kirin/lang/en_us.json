@@ -482,9 +482,15 @@
     "dragon_emote.dragonsurvival.clap": "§3Fun:§r Clap",
     "dragon_emote.dragonsurvival.sitting_throwing_item": "§5Sit：§r Throwing Item",
 
-    "datapack_description.wing_kirin.low_unlock_condition": "Reduceing the difficulty of unlock Wing Kirin significantly.",
+    "datapack.wing_kirin.low_unlock_condition": "Low Unlock Conditin",
+    "datapack.wing_kirin.low_unlock_condition.desc": "Reduceing the difficulty of unlock Wing Kirin significantly.",
+    "datapack.wing_kirin.low_upgrade_requirement": "Low Upgrade Requirement",
+    "datapack.wing_kirin.low_upgrade_requirement.desc": "Reducing the reqirements of upgrade§n innate abilities§r of Wing kirin signfifcantly.",
+    "datapack.wing_kirin.unlock_acquired_abilities": "Unlock Acquired Abilities",
+    "datapack.wing_kirin.unlock_acquired_abilities.desc": "Unlock Acquired Abilities directly.",
 
-    "resoucepack_description.wing_kirin.wing_kirin_ui": "Special §6GOLD UI§r designed for §6Wing Kirin§r.",
+    "resoucepack.wing_kirin.wing_kirin_ui": "Wing Kirin UI",
+    "resoucepack_description.wing_kirin_ui.desc": "Special §6GOLD UI§r designed for §6Wing Kirin§r.",
 
     "fml.menu.mods.info.description.wing_kirin": "An addon for Dragon Survival,adding an new species————Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven.",
 

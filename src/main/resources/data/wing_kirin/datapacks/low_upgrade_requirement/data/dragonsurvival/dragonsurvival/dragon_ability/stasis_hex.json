@@ -1,0 +1,209 @@
+{
+    "activation": {
+        "activation_type": "dragonsurvival:simple",
+        "animations": {
+            "start_and_charging": {
+                "animation_key": "cast_self_buff",
+                "layer": "BASE",
+                "locks_neck": false,
+                "locks_tail": false
+            },
+            "end": {
+                "animation_key": "self_buff",
+                "layer": "BASE",
+                "locks_neck": false,
+                "locks_tail": false
+            }
+        },
+        "initial_mana_cost": 8,
+        "cast_time": 10,
+        "cooldown": {
+            "type": "minecraft:linear",
+            "base": 400,
+            "per_level_above_first": 200
+        },
+        "sound": {
+            "charging": "block.grindstone.use"
+        },
+        "can_move_while_casting": true
+    },
+    "upgrade": {
+        "level_requirement": {
+            "type": "minecraft:lookup",
+            "fallback": {
+                "type": "minecraft:linear",
+                "base": 15.0,
+                "per_level_above_first": 15.0
+            },
+            "values": [
+                10,
+                25,
+                40
+            ]
+        },
+        "maximum_level": 3,
+        "upgrade_type": "dragonsurvival:experience_levels"
+    },
+    "usage_blocked": {
+        "condition": "inverted",
+        "term": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type_specific": {
+                    "type": "dragonsurvival:dragon_predicate",
+                    "dragon_species": "dragonsurvival:wing_kirin"
+                }
+            }
+        } 
+    },
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:projectile",
+                            "number_of_projectiles": 1.0,
+                            "projectile_data": "dragonsurvival:ding",
+                            "speed": 5.0,
+                            "target_direction": {
+                                "direction": "looking_at"
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/arrow_hit/on_generic_arrow_entity"
+                        }
+                    ],
+                    "target_conditions": {
+                        "condition": "all_of",
+                        "terms": [
+                            {
+                                "condition": "entity_properties",
+                                "entity": "this",
+                                "predicate": {
+                                    "flags": {
+                                        "is_sneaking": false
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_rate": 1.0
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/area_select/main"
+                        }
+                    ],
+                    "target_conditions": {
+                        "condition": "all_of",
+                        "terms": [
+                            {
+                                "condition": "entity_properties",
+                                "entity": "this",
+                                "predicate": {
+                                    "flags": {
+                                        "is_sneaking": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_rate": 1
+        },
+        {
+            "target_selection": {
+                "applied_effects":{
+                    "entity_effect":[
+                        {
+                            "effect_type": "dragonsurvival:block_vision",
+                            "block_visions": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:stasis_hex_area",
+                                        "duration": 5,
+                                        "is_hidden": true
+                                    },
+                                    "range": {
+                                        "type": "minecraft:linear",
+                                        "base": 6,
+                                        "per_level_above_first": 6
+                                    },
+                                    "colors": [
+                                        "#fbdc92"
+                                    ],
+                                    "display_type": "particles",
+                                    "blocks": "#wing_kirin:magic_range_display"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self",
+                    "target_conditions": {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "flags": {
+                                "is_sneaking": true
+                            }
+                        }
+                    }
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_point": "charging",
+            "trigger_rate": 0.5
+        },
+        {
+            "target_selection": {
+                "applied_effects":{
+                    "entity_effect":[
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/sneaking_notification/main"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_point": "charging",
+            "trigger_rate": 1.0
+        }
+    ],
+    "can_be_manually_disabled": true,
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_3"
+            }
+        ]
+    }
+}

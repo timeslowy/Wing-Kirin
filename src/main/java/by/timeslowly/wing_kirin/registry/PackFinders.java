@@ -21,7 +21,7 @@ public class PackFinders {
         event.addPackFinders(
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/low_unlock_condition"),
                 PackType.SERVER_DATA,
-                Component.literal("Wing Kirin - Low Unlock Condition"),
+                Component.translatable("datapack.wing_kirin.low_unlock_condition"),
                 PackSource.FEATURE,
                 false,
                 Pack.Position.TOP
@@ -29,7 +29,23 @@ public class PackFinders {
         event.addPackFinders(
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "assets/wing_kirin/resourcepacks/wing_kirin_ui"),
                 PackType.CLIENT_RESOURCES,
-                Component.literal("Wing Kirin - Optional Resourcepack"),
+                Component.translatable("resoucepack.wing_kirin.wing_kirin_ui"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/low_upgrade_requirement"),
+                PackType.SERVER_DATA,
+                Component.translatable("datapack.wing_kirin.low_upgrade_requirement"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/unlock_acquired_abilities"),
+                PackType.SERVER_DATA,
+                Component.translatable("datapack.wing_kirin.unlock_acquired_abilities"),
                 PackSource.FEATURE,
                 false,
                 Pack.Position.TOP

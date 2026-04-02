@@ -1,0 +1,125 @@
+{
+    "activation": {
+        "activation_type": "dragonsurvival:simple",
+        "initial_mana_cost": 10,
+        "cast_time": 300,
+        "cooldown": 12000,
+        "notification": {
+            "usage_blocked": {
+                "translate": "dragon_ability.dragonsurvival.weather_clear.activation.notification.usage_blocked"
+            }
+        },
+        "can_move_while_casting": false,
+        "animations": {
+            "start_and_charging": {
+                "animation_key": "sit_on_magic_source",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true
+            },
+            "end": {
+                "animation_key": "mass_buff",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true
+            }
+        },
+        "sound": {
+            "charging": "block.respawn_anchor.ambient",
+            "end": "minecraft:item.trident.thunder"
+        }
+    },
+    "actions": [
+        {
+            "target_selection": {
+                "target_type": "dragonsurvival:self",
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/weather_clear/main"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:particle",
+                            "particle_data": {
+                                "particle": {
+                                    "type": "dust",
+                                    "color": [0.98, 0.86, 0.57],
+                                    "scale": 1.0
+                                },
+                                "horizontal_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "vertical_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "horizontal_velocity": {
+                                    "base": 1.0
+                                },
+                                "vertical_velocity": {
+                                    "base": 1.0
+                                }
+                            },
+                            "particle_count": 100
+                        }
+                    ],
+                    "targeting_mode": "all"
+                }
+            }
+        }
+    ],
+    "can_be_manually_disabled": true,
+    "icon": {
+        "texture_entries": [
+            {
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/weather_clear/weather_clear_0",
+                "from_level": 0
+            },
+            {
+                "texture_resource": "dragonsurvival:abilities/wing_kirin/weather_clear/weather_clear_1",
+                "from_level": 1
+            }
+        ]
+    },
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_levels",
+        "maximum_level": 1,
+        "level_requirement": {
+            "type": "minecraft:lookup",
+            "fallback": {
+                "type": "minecraft:linear",
+                "base": 5,
+                "per_level_above_first": 5
+            },
+            "values": [
+                30
+            ]
+        }
+    },
+    "usage_blocked": {
+        "condition": "minecraft:any_of",
+        "terms": [
+            {
+                "condition": "minecraft:weather_check",
+                "raining": false,
+                "thundering": false
+            },
+            {
+                "condition": "minecraft:inverted",
+                "term": {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "location": {
+                            "dimension": "minecraft:overworld"
+                        },
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

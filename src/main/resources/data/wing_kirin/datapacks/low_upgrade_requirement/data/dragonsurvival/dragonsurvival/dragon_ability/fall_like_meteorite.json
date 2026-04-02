@@ -1,0 +1,182 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:mace_crush",
+                    "custom_icon": "dragonsurvival:textures/ability_effect/mace_crush.png",
+                    "should_remove_automatically":false,
+                    "is_hidden": false,
+                    "early_removal_condition": {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                          "slots": {
+                            "weapon.mainhand": {
+                              "items": "minecraft:mace"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "duration": 1200
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "minecraft:generic.attack_damage",
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 2.0,
+                        "per_level_above_first": 2.0
+                      },
+                      "operation": "add_multiplied_total"
+                    },
+                    {
+                      "attribute": "generic.attack_speed",
+                      "amount": 0.5,
+                      "operation": "add_multiplied_total"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self",
+          "target_conditions": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_on_ground": true
+              }
+            }
+          }
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "effects": "wing_kirin:mace_crush",
+                "duration": 1200,
+                "amplifier": {
+                  "type": "linear",
+                  "base": 0,
+                  "per_level_above_first": 1
+                },
+                "effect_particles": true,
+                "show_icon": true
+              }
+            }
+          ],
+          "targeting_mode": "allies_and_self",
+          "target_conditions": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_on_ground": false
+              }
+            }
+          }
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:simple",
+    "animations": {
+      "end": {
+        "animation_key": "magic_alt",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true
+      },
+      "start_and_charging": {
+        "animation_key": "cast_magic_alt",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true,
+        "transition_length": 2
+      }
+    },
+    "can_move_while_casting": false,
+    "cast_time": 60.0,
+    "cooldown": 1200.0,
+    "notification": {
+      "usage_blocked": {
+        "translate": "dragon_ability.dragonsurvival.fall_like_meteorite.activation.notification.usage_blocked"
+      }
+    },
+    "initial_mana_cost": 6.0,
+    "sound": {
+      "charging":"block.conduit.ambient" ,
+      "end": "minecraft:block.bell.resonate"
+    }
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fall_like_meteorite/fall_like_meteorite_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fall_like_meteorite/fall_like_meteorite_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fall_like_meteorite/fall_like_meteorite_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/fall_like_meteorite/fall_like_meteorite_3"
+      }
+    ]
+  },
+  "upgrade": {
+    "upgrade_type": "dragonsurvival:dragon_growth",
+    "maximum_level": 3,
+    "growth_requirement": {
+      "type": "minecraft:lookup",
+      "values": [
+        20,
+        40,
+        60
+      ],
+      "fallback": 10
+    }
+  },
+  "usage_blocked": {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "entity_properties",
+          "entity": "this",
+          "predicate": {
+            "slots": {
+              "weapon.mainhand": {
+                "items": "mace"
+              }
+            },
+            "type_specific": {
+              "type": "dragonsurvival:dragon_predicate",
+              "dragon_species": "dragonsurvival:wing_kirin"
+            }
+          }
+        }
+    }
+}

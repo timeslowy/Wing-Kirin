@@ -2,7 +2,7 @@
     "pack": {
         "pack_format": 48,
         "description": {
-            "translate": "datapack.wing_kirin.low_unlock_condition.desc"
+            "translate": "datapack.wing_kirin.unlock_acquired_abilities.desc"
         }
     }
 }
