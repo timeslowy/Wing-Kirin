@@ -77,7 +77,7 @@
                 "type": "wing_kirin:thunderous_shout"
               },
               "secondary_particle": {
-                "type": "firework"
+                "type": "wing_kirin:thunderous_shout"
               },
               "speed_per_growth": 0.025,
               "spread": 0.0

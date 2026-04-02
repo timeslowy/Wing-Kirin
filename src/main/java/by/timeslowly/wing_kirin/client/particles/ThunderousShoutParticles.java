@@ -17,8 +17,8 @@ public class ThunderousShoutParticles extends SimpleAnimatedParticle {
         this.xd = xSpeed;
         this.yd = ySpeed;
         this.zd = zSpeed;
-        this.lifetime = 20;
-        this.quadSize = 0.3F;
+        this.lifetime = 10;
+        this.quadSize = 0.2F;
         // 设置渐隐色
         this.setFadeColor(15916745);
         // 必须存在
@@ -28,7 +28,7 @@ public class ThunderousShoutParticles extends SimpleAnimatedParticle {
     @Override
     public void tick() {
         super.tick();
-        this.quadSize += 0.2F; // 每刻增大尺寸
+        this.quadSize += 0.4F; // 每刻增大尺寸
     }
 
     // 检测碰撞
