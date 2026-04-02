@@ -60,7 +60,7 @@
     "dragon_ability.dragonsurvival.kirin_wing": "麒麟之翼" ,
     "dragon_ability.dragonsurvival.kirin_wing.desc": "§7■不类其他龙种，§6翼麒麟§r§7诞于九天之上，生来自会翱翔万里长空。\n\n§6§o“其翼若垂天之云”§r",
     "dragon_ability.dragonsurvival.cloudy_spin": "风卷云舒（旋冲）",
-    "dragon_ability.dragonsurvival.cloudy_spin.desc": "■§6翼麒麟§r§7飞行时可在空中与水里进行旋冲，对沿途所撞到的单位造成§e一定伤害§r。\n\n§7■要获得这个技能，可前往末地，在「传承之所」里习得。\n\n§6§o“仙气流云吞龙脊，扶摇直上九万里”",
+    "dragon_ability.dragonsurvival.cloudy_spin.desc": "■§6翼麒麟§r§7飞行时可在空中与水里进行旋冲，对沿途所撞到的单位造成§e一定伤害§r。\n\n§6§l■天生自得，无需多劳。§r\n\n§6§o“仙气流云吞龙脊，扶摇直上九万里”",
     "dragon_ability.dragonsurvival.wing_kirin_claws_and_teeth": "利爪与獠牙（翼麒麟）",
     "dragon_ability.dragonsurvival.wing_kirin_claws_and_teeth.desc": "■§6翼麒麟§r§7的爪与牙虽不能替代工具，但攻击§6势大力沉§r§7，一爪可将敌人击得§e连连后退§r。\n\n§7■击退增益随§a成长等级§r§7而提升。\n\n■§8当然，对击退不感冒的，可以“自废武功”，手动禁用。§r\n\n§6§o“一力退十会”",
     "dragon_ability.dragonsurvival.lighter_than_swallow": "身轻甚燕",
