@@ -11,7 +11,7 @@
               "base": {
                 "id": "wing_kirin:heavenly_justice_marker",
                 "duration": 400,
-                "custom_icon": "dragonsurvival:textures/ability_effect/missle_countdown.png"
+                "custom_icon": "wing_kirin:textures/ability_effect/missle_countdown.png"
               },
               "nbt": {
                 "Tags": [

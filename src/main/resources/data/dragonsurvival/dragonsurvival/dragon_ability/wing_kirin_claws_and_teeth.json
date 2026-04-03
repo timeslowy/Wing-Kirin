@@ -32,7 +32,7 @@
                                         "id": "wing_kirin:claw_and_teeth",
                                         "should_remove_automatically": true,
                                         "is_hidden": false,
-                                        "custom_icon": "dragonsurvival:textures/ability_effect/knockback_bonus.png"
+                                        "custom_icon": "wing_kirin:textures/ability_effect/knockback_bonus.png"
                                     },
                                     "modifiers": [
                                         {

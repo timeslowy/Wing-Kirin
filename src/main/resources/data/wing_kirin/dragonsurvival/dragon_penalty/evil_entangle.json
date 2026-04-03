@@ -29,7 +29,7 @@
         "base": {
           "id": "wing_kirin:penalty",
           "should_remove_automatically": true,
-          "custom_icon": "dragonsurvival:textures/ability_effect/health_decline.png",
+          "custom_icon": "wing_kirin:textures/ability_effect/health_decline.png",
           "duration": 100
         },
         "modifiers": [

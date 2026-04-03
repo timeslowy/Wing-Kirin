@@ -10,7 +10,7 @@
                 {
                   "base": {
                     "id": "wing_kirin:mace_crush",
-                    "custom_icon": "dragonsurvival:textures/ability_effect/mace_crush.png",
+                    "custom_icon": "wing_kirin:textures/ability_effect/mace_crush.png",
                     "should_remove_automatically":false,
                     "is_hidden": false,
                     "early_removal_condition": {

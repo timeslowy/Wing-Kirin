@@ -44,7 +44,7 @@
                                 {
                                     "base": {
                                         "id": "wing_kirin:scale_down",
-                                        "custom_icon": "dragonsurvival:textures/ability_effect/scale_down.png",
+                                        "custom_icon": "wing_kirin:textures/ability_effect/scale_down.png",
                                         "is_hidden": false,
                                         "duration": {
                                             "type": "minecraft:linear",

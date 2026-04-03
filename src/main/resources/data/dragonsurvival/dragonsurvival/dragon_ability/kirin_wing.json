@@ -6,7 +6,7 @@
           "entity_effect": [
             {
               "effect_type": "dragonsurvival:flight",
-              "icon": "dragonsurvival:textures/ability_effect/kirin_wings.png",
+              "icon": "wing_kirin:textures/ability_effect/kirin_wings.png",
               "level_requirement": 1
             }
           ],

@@ -442,7 +442,7 @@
   "item_group.wing_kirin.wing_kirin": "翼麒麟",
 
   "tag.block.wing_kirin.magic_range_display": "绝大部分固体方块",
-  "tag.dragonsurvival.dragon_ability.dragonsurvival.last_stand_cooldown_recovery": "「回光返照」可回转技能",
+  "tag.dragonsurvival.dragon_ability.wing_kirin.last_stand_cooldown_recovery": "「回光返照」可回转技能",
   "tag.damage_type.wing_kirin.instant_invisibility_immunity": "「聚形散气」可免疫的伤害",
 
   "projectile.wing_kirin.a_signal_arrow": "穿云箭",

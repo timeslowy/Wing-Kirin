@@ -120,7 +120,7 @@
                             "adjustment_type": "percent",
                             "amount": 0.9,
                             "probability": 1.0,
-                            "abilities": "#dragonsurvival:last_stand_cooldown_recovery"
+                            "abilities": "#wing_kirin:last_stand_cooldown_recovery"
                         },
                         {
                             "effect_type": "dragonsurvival:mana_recovery",
