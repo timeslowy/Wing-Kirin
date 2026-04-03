@@ -108,7 +108,7 @@
         "texture": {
             "texture_entries": [
                 {
-                    "texture_resource": "dragonsurvival:ding_arrow",
+                    "texture_resource": "wing_kirin:ding_arrow",
                     "from_level": 1
                 }
             ]

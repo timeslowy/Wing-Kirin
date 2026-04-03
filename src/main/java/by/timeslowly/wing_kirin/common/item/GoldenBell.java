@@ -11,6 +11,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +22,7 @@ import java.util.List;
 public class GoldenBell extends Item {
     public GoldenBell() {
         super(new Item.Properties()
+                .rarity(Rarity.COMMON)
                 // 设置耐久
                 .durability(580)
                 .attributes(

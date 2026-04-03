@@ -13,7 +13,7 @@
       }
     },
     "entity_hit_effects": [],
-    "name": "wing_kirin:a_signal_arrow",
+    "name": "wing_kirin:signal_arrow",
     "ticking_effects": []
   },
   "type_data": {
@@ -80,9 +80,12 @@
       "texture_entries": [
         {
           "from_level": 1,
-          "texture_resource": "dragonsurvival:fireball"
+          "texture_resource": "dragonsurvival:signal_arrow"
         }
       ]
+    },
+    "trail_particle": {
+      "type": "firework"
     }
   }
 }

@@ -117,7 +117,7 @@ execute anchored eyes run summon dragonsurvival:generic_arrow_entity ^ ^ ^ { \
         "texture": { \
             "texture_entries": [ \
                 { \
-                    "texture_resource": "dragonsurvival:ding_arrow", "from_level": 1 \
+                    "texture_resource": "wing_kirin:ding_arrow", "from_level": 1 \
                 } \
             ] \
         } \

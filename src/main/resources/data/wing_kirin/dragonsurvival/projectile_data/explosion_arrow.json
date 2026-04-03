@@ -107,19 +107,7 @@
             "texture_entries": [
                 {
                     "from_level": 1,
-                    "texture_resource": "dragonsurvival:ding_arrow"
-                },
-                {
-                    "from_level": 2,
-                    "texture_resource": "dragonsurvival:ding_arrow"
-                },
-                {
-                    "from_level": 3,
-                    "texture_resource": "dragonsurvival:ding_arrow"
-                },
-                {
-                    "from_level": 4,
-                    "texture_resource": "dragonsurvival:ding_arrow"
+                    "texture_resource": "wing_kirin:ding_arrow"
                 }
             ]
         }
