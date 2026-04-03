@@ -23,7 +23,7 @@
         "entity_effect": "dragonsurvival:damage"
       }
     ],
-    "name": "dragonsurvival:dong_feng",
+    "name": "wing_kirin:dong_feng",
     "ticking_effects": [
       {
         "general_data": {

@@ -13,7 +13,7 @@
             }
         }, 
         "entity_hit_effects": [], 
-        "name": "dragonsurvival:explosion_arrow_explosion", 
+        "name": "wing_kirin:explosion_arrow_explosion", 
         "ticking_effects": [] 
     }, 
     "type_data": { 

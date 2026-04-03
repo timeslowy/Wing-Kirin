@@ -7,7 +7,7 @@
                         {
                             "effect_type": "dragonsurvival:projectile",
                             "number_of_projectiles": 3,
-                            "projectile_data": "dragonsurvival:explosion_arrow",
+                            "projectile_data": "wing_kirin:explosion_arrow",
                             "speed": 2,
                             "projectile_spread": 4.0,
                             "target_direction": {
@@ -20,7 +20,7 @@
                         },
                         {
                             "effect_type": "dragonsurvival:projectile",
-                            "projectile_data": "dragonsurvival:explosion_arrow_explosion",
+                            "projectile_data": "wing_kirin:explosion_arrow_explosion",
                             "speed": 0,
                             "number_of_projectiles": 0,
                             "target_direction": {

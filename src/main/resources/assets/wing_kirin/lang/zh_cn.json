@@ -73,8 +73,8 @@
     "dragon_ability.dragonsurvival.empyrean_favor.desc": "§7■俗话说：“三分天注定”。生于九天的§6翼麒麟§r§7，自然§a备受天公宠爱§r，§7在钓鱼等§n战利品场景§r§7中能够寻获§a品质更加上乘§r§7的好物。\n\n§6§o“但是毕竟‘七分靠打拼’！爱拼才会赢。”§r",
     
     
-    "dragon_penalty.dragonsurvival.evil_entangle": "偏安一隅",
-    "dragon_penalty.dragonsurvival.evil_entangle.desc": "§7■翼麒麟生于主世界九天之上，未曾接触过其他维度的§c邪逆§r§7。当踏入其他维度之时，萦绕的§5邪气§r§7将侵蚀体内的§6正气§r§7，若不及时远离是非，正气将被邪气§c侵蚀殆尽§r§7，并吸取体内之元神，让你身形消瘦、不堪一击。\n\n■通过食用含§6「金风玉露」§r之物品§7或从龙之信标获得§6「浩然正气」§r§7效果，可以稳固体内的§6正气§r§7，将邪气暂时§a拒之门外§r。",
+    "dragon_penalty.wing_kirin.evil_entangle": "偏安一隅",
+    "dragon_penalty.wing_kirin.evil_entangle.desc": "§7■翼麒麟生于主世界九天之上，未曾接触过其他维度的§c邪逆§r§7。当踏入其他维度之时，萦绕的§5邪气§r§7将侵蚀体内的§6正气§r§7，若不及时远离是非，正气将被邪气§c侵蚀殆尽§r§7，并吸取体内之元神，让你身形消瘦、不堪一击。\n\n■通过食用含§6「金风玉露」§r之物品§7或从龙之信标获得§6「浩然正气」§r§7效果，可以稳固体内的§6正气§r§7，将邪气暂时§a拒之门外§r。",
 
     
     "damage_type.wing_kirin.wind_devastate": "风摧",
@@ -445,10 +445,10 @@
   "tag.dragonsurvival.dragon_ability.dragonsurvival.last_stand_cooldown_recovery": "「回光返照」可回转技能",
   "tag.damage_type.wing_kirin.instant_invisibility_immunity": "「聚形散气」可免疫的伤害",
 
-  "projectile.dragonsurvival.a_signal_arrow": "穿云箭",
-  "projectile.dragonsurvival.ding": "定身光标",
-  "projectile.dragonsurvival.pear_blossom_needles": "梨花针",
-  "projectile.dragonsurvival.dong_feng": "东风（5C）",
+  "projectile.wing_kirin.a_signal_arrow": "穿云箭",
+  "projectile.wing_kirin.ding": "定身光标",
+  "projectile.wing_kirin.pear_blossom_needles": "梨花针",
+  "projectile.wing_kirin.dong_feng": "东风（5C）",
   "projectile.wing_kirin.explosion_arrow": "箭雷",
 
 

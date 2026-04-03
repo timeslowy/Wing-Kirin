@@ -6,7 +6,7 @@ summon dragonsurvival:generic_ball_entity ~ ~1 ~ { \
         "common_hit_effects": [], \
         "entity_hit_condition": {}, \
         "entity_hit_effects": [], \
-        "name": "dragonsurvival:explosion_arrow_explosion", \
+        "name": "wing_kirin:explosion_arrow_explosion", \
         "ticking_effects": [], \
     }, \
     "type_data": { \

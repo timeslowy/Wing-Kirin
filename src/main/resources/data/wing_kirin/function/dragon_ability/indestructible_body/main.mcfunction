@@ -14,6 +14,9 @@ execute store result storage wing_kirin:ram indestructible_body.countershock_dam
 # 伤害流程
 execute as @e[distance=0.1..5] run function wing_kirin:dragon_ability/indestructible_body/damage with storage wing_kirin:ram indestructible_body
 
+# 粒子效果
+particle wing_kirin:thunderous_shout ~ ~ ~ 0.0 0.0 0.0 0 1
+
 # 反震次数计分板+1
 scoreboard players add @s wk.indestructible_body.counter_shock_count 1
 

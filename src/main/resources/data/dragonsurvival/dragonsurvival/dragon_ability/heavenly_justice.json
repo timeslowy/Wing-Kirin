@@ -55,7 +55,7 @@
             {
               "effect_type": "dragonsurvival:projectile",
               "number_of_projectiles": 0,
-              "projectile_data": "dragonsurvival:dong_feng",
+              "projectile_data": "wing_kirin:dong_feng",
               "speed": 0,
               "target_direction": {
                 "direction": "looking_at"

@@ -33,7 +33,7 @@ summon dragonsurvival:generic_ball_entity ~ ~1 ~ { \
         } \
       } \
     ], \
-    "name": "dragonsurvival:dong_feng", \
+    "name": "wing_kirin:dong_feng", \
     "ticking_effects": [ \
         { \
         "general_data": { \

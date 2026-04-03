@@ -1,7 +1,8 @@
 {
+    "replace": true,
     "values":[
         "dragonsurvival:item_blacklist",
         "dragonsurvival:fear",
-        "dragonsurvival:evil_entangle"
+        "wing_kirin:evil_entangle"
     ]
 }

@@ -7,7 +7,7 @@
             {
               "effect_type": "dragonsurvival:projectile",
               "number_of_projectiles": 1.0,
-              "projectile_data": "dragonsurvival:a_signal_arrow",
+              "projectile_data": "wing_kirin:a_signal_arrow",
               "speed": 10.0,
               "target_direction": {
                 "direction": "looking_at"
@@ -20,7 +20,7 @@
             {
               "effect_type": "dragonsurvival:projectile",
               "number_of_projectiles": 0,
-              "projectile_data": "dragonsurvival:pear_blossom_needles",
+              "projectile_data": "wing_kirin:pear_blossom_needles",
               "speed": 0,
               "target_direction": {
                 "direction": "looking_at"

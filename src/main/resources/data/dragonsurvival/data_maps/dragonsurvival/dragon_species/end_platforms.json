@@ -6,7 +6,7 @@
         200,
         200
       ],
-      "structure": "dragonsurvival:end_spawn_platforms/wing_kirin_end_spawn_platform"
+      "structure": "wing_kirin:end_spawn_platforms/end_spawn_platform"
     }
   }
 }

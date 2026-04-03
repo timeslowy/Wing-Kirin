@@ -13,7 +13,7 @@ execute anchored eyes run summon dragonsurvival:generic_arrow_entity ^ ^ ^ { \
     FallDistance: 0.0f, \
     life: 1180, \
     "general_data": { \
-        "name": "dragonsurvival:pear_blossom_needles", \
+        "name": "wing_kirin:pear_blossom_needles", \
         "ticking_effects": [ \
         { \
                 "general_data": { \

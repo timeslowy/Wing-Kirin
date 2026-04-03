@@ -3,7 +3,7 @@
 
 
 # 增加标签
-tag @n[distance=0..,type=dragonsurvival:generic_ball_entity,nbt={general_data:{name:"dragonsurvival:a_signal_arrow"}}] add signal_arrow-generic_entity
+tag @n[distance=0..,type=dragonsurvival:generic_ball_entity,nbt={general_data:{name:"wing_kirin:a_signal_arrow"}}] add signal_arrow-generic_entity
 
 
 # 播放射出音效
