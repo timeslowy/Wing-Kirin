@@ -15,6 +15,11 @@ public class WingKirinTreat extends Item {
                 rarity(Rarity.RARE)
         );
     }
+    // 使其附魔发光
+    @Override
+    public boolean isFoil(@NotNull ItemStack stack) {
+        return true;
+    }
     // 添加描述
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
