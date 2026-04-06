@@ -484,10 +484,12 @@
 
     "datapack.wing_kirin.low_unlock_condition": "Low Unlock Conditin",
     "datapack.wing_kirin.low_unlock_condition.desc": "Reduceing the difficulty of unlock Wing Kirin significantly.",
-    "datapack.wing_kirin.low_upgrade_requirement": "Low Upgrade Requirement",
-    "datapack.wing_kirin.low_upgrade_requirement.desc": "Reducing the reqirements of upgrade§n innate abilities§r of Wing kirin signfifcantly.",
+    "datapack.wing_kirin.innate_low_upgrade_requirement": "Low Innate Upgrade Requirement",
+    "datapack.wing_kirin.innate_low_upgrade_requirement.desc": "Reducing the reqirements of upgrade§n innate abilities§r of Wing kirin signfifcantly.",
     "datapack.wing_kirin.unlock_acquired_abilities": "Unlock Acquired Abilities",
     "datapack.wing_kirin.unlock_acquired_abilities.desc": "Unlock Acquired Abilities directly.",
+    "datapack.wing_kirin.acquired_low_upgrade_requirement": "Low Acquired Upgrade Requirement",
+    "datapack.wing_kirin.acquired_low_upgrade_requirement.desc": "Reducing the reqirements of upgrade§n acquired abilities§r of Wing kirin signfifcantly.",
 
     "resoucepack.wing_kirin.wing_kirin_ui": "Wing Kirin UI",
     "resoucepack_description.wing_kirin_ui.desc": "Special §6GOLD UI§r designed for §6Wing Kirin§r.",

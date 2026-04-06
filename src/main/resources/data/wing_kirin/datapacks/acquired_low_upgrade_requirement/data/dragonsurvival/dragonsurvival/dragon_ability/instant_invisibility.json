@@ -1,0 +1,246 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:run_function",
+              "function": "wing_kirin:dragon_ability/instant_invisibility/main"
+            },
+            {
+              "effect_type": "dragonsurvival:damage_modification",
+              "modifications":  [
+                {
+                  "base": {
+                    "id": "wing_kirin:instant_invisibility_1",
+                    "should_remove_automatically": false,
+                    "custom_icon":"wing_kirin:textures/ability_effect/instant_invisibility.png" ,
+                    "duration": {
+                      "type": "minecraft:linear",
+                      "base": 200,
+                      "per_level_above_first": 200
+                    },
+                    "early_removal_condition": {
+                      "condition": "inverted",
+                      "term": {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                          "wk.instant_invisibility.remove_check": {
+                            "min": 1
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "damage_types": "#wing_kirin:instant_invisibility_immunity",
+                  "multiplier": 0
+                }
+              ]
+            },
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "wing_kirin:instant_invisibility_2",
+                    "duration": {
+                      "type": "minecraft:linear",
+                      "base": 200,
+                      "per_level_above_first": 200
+                    },
+                    "custom_icon": "wing_kirin:textures/ability_effect/instant_invisibility.png",
+                    "is_hidden": false,
+                    "should_remove_automatically": false,
+                    "early_removal_condition": {
+                      "condition": "inverted",
+                      "term": {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                          "wk.instant_invisibility.remove_check": {
+                            "min": 1
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "modifiers": [
+                    {
+                      "attribute": "minecraft:generic.attack_damage",
+                      "amount": 0.5,
+                      "operation": "add_multiplied_total"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "effects": "minecraft:invisibility",
+                "amplifier": 0,
+                "show_icon": false,
+                "effect_particles": false,
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 200,
+                  "per_level_above_first": 200
+                }
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:particle",
+              "particle_data": {
+                "particle": {
+                  "type": "minecraft:cloud"
+                },
+                "horizontal_position": {
+                  "type": "in_bounding_box"
+                },
+                "vertical_position": {
+                  "type": "in_bounding_box"
+                },
+                "horizontal_velocity": {
+                  "base": 0.1
+                },
+                "vertical_velocity": {
+                  "base": 0.1
+                }
+              },
+              "particle_count": 80
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects":{
+          "entity_effect":[
+            {
+              "effect_type": "dragonsurvival:block_vision",
+              "block_visions": [
+                {
+                  "base": {
+                    "id": "wing_kirin:instant_invisibility_radius",
+                    "duration": 5,
+                    "is_hidden": true
+                  },
+                  "colors": [
+                    "#0cb97f",
+                    "#fbdc92"
+                  ],
+                  "display_type": "particles",
+                  "range": 25,
+                  "blocks": "#wing_kirin:magic_range_display"
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      },
+      "trigger_point": "charging",
+      "trigger_rate": 1.0
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:simple",
+    "animations": {
+      "end": {
+        "animation_key": "cast_self_buff",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true
+      },
+      "start_and_charging": {
+        "animation_key": "self_buff",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true,
+        "transition_length": 2
+      }
+    },
+    "can_move_while_casting": false,
+    "cast_time": 5.0,
+    "cooldown": 1200.0,
+    "initial_mana_cost": 8.0,
+    "sound": {
+      "end": "minecraft:block.fire.extinguish"
+    },
+    "notification": {
+      "usage_blocked": {
+        "translate": "dragon_ability.dragonsurvival.instant_invisibility.activation.notification.usage_blocked"
+      }
+    }
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_3"
+      }
+    ]
+  },
+  "upgrade": {
+    "level_requirement": {
+      "type": "minecraft:lookup",
+      "fallback": {
+        "type": "minecraft:linear",
+        "base": 15.0,
+        "per_level_above_first": 15.0
+      },
+      "values": [
+        10,
+        20,
+        30
+      ]
+    },
+    "maximum_level": 3,
+    "upgrade_type": "dragonsurvival:experience_levels"
+  },
+  "usage_blocked": {
+    "condition": "any_of",
+    "terms": [
+      {
+        "condition": "entity_scores",
+        "entity": "this",
+        "scores": {
+          "wk.instant_invisibility.remove_check": {
+            "min": 1
+          }
+        }
+      },
+      {
+        "condition": "inverted",
+        "term": {
+          "condition": "entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific": {
+              "type": "dragonsurvival:dragon_predicate",
+              "dragon_species": "dragonsurvival:wing_kirin"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

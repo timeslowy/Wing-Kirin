@@ -35,9 +35,9 @@ public class PackFinders {
                 Pack.Position.TOP
         );
         event.addPackFinders(
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/low_upgrade_requirement"),
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/innate_low_upgrade_requirement"),
                 PackType.SERVER_DATA,
-                Component.translatable("datapack.wing_kirin.low_upgrade_requirement"),
+                Component.translatable("datapack.wing_kirin.innate_low_upgrade_requirement"),
                 PackSource.FEATURE,
                 false,
                 Pack.Position.TOP
@@ -46,6 +46,14 @@ public class PackFinders {
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/unlock_acquired_abilities"),
                 PackType.SERVER_DATA,
                 Component.translatable("datapack.wing_kirin.unlock_acquired_abilities"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "data/wing_kirin/datapacks/acquired_low_upgrade_requirement"),
+                PackType.SERVER_DATA,
+                Component.translatable("datapack.wing_kirin.acquired_low_upgrade_requirement"),
                 PackSource.FEATURE,
                 false,
                 Pack.Position.TOP

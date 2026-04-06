@@ -505,10 +505,12 @@
 
     "datapack.wing_kirin.low_unlock_condition": "云上乘风化麒麟",
     "datapack.wing_kirin.low_unlock_condition.desc": "大大降低翼麒麟的解锁难度，助你早日成为“九天上的来客”。",
-    "datapack.wing_kirin.low_upgrade_requirement": "不再经验限身手",
-    "datapack.wing_kirin.low_upgrade_requirement.desc": "将翼麒麟§n先天技能§r的升级要求大大降低，让施放法术不再窘于经验或身段。",
+    "datapack.wing_kirin.innate_low_upgrade_requirement": "不再经验限身手",
+    "datapack.wing_kirin.innate_low_upgrade_requirement.desc": "将翼麒麟§n先天技能§r的升级要求大大降低，让施放法术不再窘于经验或身段。",
     "datapack.wing_kirin.unlock_acquired_abilities": "不想抽奖点这里",
     "datapack.wing_kirin.unlock_acquired_abilities.desc": "§m点击就送§r，直接解锁所有后天技能。",
+    "datapack.wing_kirin.acquired_low_upgrade_requirement": "后天无忧耗费奢",
+    "datapack.wing_kirin.acquired_low_upgrade_requirement.desc": "将翼麒麟§n后天技能§r的升级要求大大降低，使得后天技能不再那么后天。",
  
     "resoucepack.wing_kirin.wing_kirin_ui": "典雅简约金蓝条",
     "resoucepack.wing_kirin.wing_kirin_ui.desc": "为§6翼麒麟§r龙种特制的§6金色UI§r，简约而不失典雅。",

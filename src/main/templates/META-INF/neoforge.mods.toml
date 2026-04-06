@@ -80,7 +80,7 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "dragonsurvival"
 type = "required"
-versionRange = "[2.0.52,)"
+versionRange = "${dragonsurvival_version_range}"
 ordering = "AFTER"
 side = "BOTH"
 

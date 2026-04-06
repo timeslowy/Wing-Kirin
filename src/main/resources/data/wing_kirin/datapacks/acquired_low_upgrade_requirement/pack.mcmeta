@@ -2,7 +2,7 @@
     "pack": {
         "pack_format": 48,
         "description": {
-            "translate": "datapack.wing_kirin.low_upgrade_requirement.desc"
+            "translate": "datapack.wing_kirin.acquired_low_upgrade_requirement.desc"
         }
     }
 }
