@@ -39,7 +39,11 @@
           },
           "targeting_mode": "non_allies"
         },
-        "range_multiplier": 1.0,
+        "range_multiplier": {
+          "type": "linear",
+          "base": 1.25,
+          "per_level_above_first": 0.25
+        },
         "target_type": "dragonsurvival:dragon_breath"
       },
       "trigger_rate": 10.0
