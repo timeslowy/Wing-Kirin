@@ -31,11 +31,6 @@ public class EmpyreanWine extends Item {
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.DRINK;
     }
-    // 设置食用时间（弃用）
-    // @Override
-    // public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
-        //return 24;
-    // }
 
     // 使其附魔发光
     @Override

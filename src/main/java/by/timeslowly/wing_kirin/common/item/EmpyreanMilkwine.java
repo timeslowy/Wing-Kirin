@@ -30,6 +30,7 @@ public class EmpyreanMilkwine extends Item {
     }
     // 负面效果列表：中毒、虚弱、凋零、挖掘疲劳、反胃、失明和黑暗
     // 使用 Holder<MobEffect> 类型
+    @SuppressWarnings("unchecked")
     private static final Holder<MobEffect>[] NEGATIVE_EFFECTS = new Holder[]{
             MobEffects.POISON,          // 中毒
             MobEffects.WEAKNESS,        // 虚弱
