@@ -30,7 +30,5 @@ public class Wing_kirin {
         WKSounds.register(modEventBus);
 
     }
-    public static ResourceLocation res(final String path) {
-        return DragonSurvival.location(Wing_kirin.MOD_ID, path);
-    }
+
 }

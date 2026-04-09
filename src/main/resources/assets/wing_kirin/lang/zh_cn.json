@@ -35,8 +35,8 @@
     "dragon_ability.dragonsurvival.indestructible_body": "不坏金身",
     "dragon_ability.dragonsurvival.indestructible_body.desc": "§7■凝神聚气，将§6正气§r§7凝聚于体表，片刻过后体表发出金光，瞬时身体§6如金石般坚硬§r§7，短时内能§a抵御几乎一切外来伤害§r§7并造成定量§e反震伤害§r§7，从而争取§n喘息之机§r§7。\n\n■§n施法上限时间§r§7随§a技能等级（经验消耗）§r§7而提升。§r§4\n\n■然当对手对你施予如漂浮等离地之法术，则功力将烟消云散！§r§6\n\n§o“金铁击石全无力，枪刀剑戟浑不避”",
     "dragon_ability.dragonsurvival.indestructible_body.activation.notification.usage_blocked": "双脚离地了，§m病毒§r技能就关闭了",
-    "dragon_ability.dragonsurvival.explosion_arrow": "三连箭雷",
-    "dragon_ability.dragonsurvival.explosion_arrow.desc": "§7■完成§6「见鬼去吧」§r§7挑战进度以解锁。\n\n§6§o“捂好耳朵，要打雷了！”",
+    "dragon_ability.wing_kirin.explosion_arrow": "三连箭雷",
+    "dragon_ability.wing_kirin.explosion_arrow.desc": "§7■完成§6「见鬼去吧」§r§7挑战进度以解锁。\n\n§6§o“捂好耳朵，要打雷了！”",
     "dragon_ability.dragonsurvival.invincible_benevolence":"仁者无敌",
     "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■与同胞麒麟相仿，§6翼麒麟§7亦身怀§6辟邪、消灾§7之能。将体内蕴含之“正气”播撒开来，使方圆内的友方萦绕正气，§a削除恶效，恢复元神§7。\n\n同时，根据§n所惠及之友友数（有上限）§r§7，赋予自身相应时长的§6「抗性提升V」§7效果，正所谓“仁者无敌”。\n\n■治疗的§n百分比值§r§7与§n抗性时长§r§7随§a技能等级（经验等级）§7而提升，而范围则无变。\n\n§8■仅能在§n主世界§r§8使用（除非身有§r「浩然正气」§8药水效果）。\n\n§6§o“仁者无敌”——《孟子·梁惠王上》",
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§c邪气缠蚀，仁施不得。",
@@ -52,8 +52,8 @@
     "dragon_ability.dragonsurvival.fly_higher.desc": "§7■当九天之上的罡风划过羽翼，§6翼麒麟§r§7可以汲取其中无穷无尽的能量，极大地§a提升飞行速度§r§7，亦能乘风而行§a减少飞行消耗§r§7。在群山不能所及之巅再上的碧空，如同光一样掠过长空。\n\n■「飞行速度增益」与「飞行消耗减少」随§a技能等级（经验消耗）§r§7提升。\n\n§6§o“海阔凭鱼跃，天高任龙飞”",
     "dragon_ability.dragonsurvival.last_stand": "回光返照",
     "dragon_ability.dragonsurvival.last_stand.desc": "§7■此技能名字不太中听，但名副其实。其作用类似于§n半个不死图腾§r§7，在“踏入鬼门关”时可以暂时“撤退”，并§e短暂提高身体的各项机能，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股能量散尽（对应属性调整效果消失），自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r\n\n§6§o“阎王要你三更死，它能留你到五更”",
-    "dragon_ability.dragonsurvival.entity_marker": "无所遁形",
-    "dragon_ability.dragonsurvival.entity_marker.desc": "§7■完成§6「眼前一亮！」§r§7进度以解锁。\n\n§6§o“发现敌人位置！§m（标记敌人+10分）”",
+    "dragon_ability.wing_kirin.entity_marker": "无所遁形",
+    "dragon_ability.wing_kirin.entity_marker.desc": "§7■完成§6「眼前一亮！」§r§7进度以解锁。\n\n§6§o“发现敌人位置！§m（标记敌人+10分）”",
 
     
     
