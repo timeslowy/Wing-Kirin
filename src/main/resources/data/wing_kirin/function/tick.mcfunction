@@ -27,5 +27,3 @@ execute as @a[predicate=wing_kirin:wing_kirin] run function wing_kirin:dragon_ab
 # 玩家死亡执行
 execute as @a if score @s wk.death_check matches 1.. run function wing_kirin:player_death/main
 
-# 三连发延迟炮
-execute as @e[type=dragonsurvival:generic_arrow_entity,tag=explosion_arrow] at @s run function wing_kirin:dragon_ability/explosion_arrow/tick
