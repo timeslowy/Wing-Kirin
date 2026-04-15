@@ -75,8 +75,32 @@
     "icon": {
         "texture_entries": [
             {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_0"
+            },
+            {
                 "from_level": 1,
-                "texture_resource": "wing_kirin:test"
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_3"
+            },
+            {
+                "from_level": 4,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_4"
+            },
+            {
+                "from_level": 5,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_5"
+            },
+            {
+                "from_level": 6,
+                "texture_resource": "wing_kirin:abilities/unstoppable_speed/unstoppable_speed_6"
             }
         ]
     },

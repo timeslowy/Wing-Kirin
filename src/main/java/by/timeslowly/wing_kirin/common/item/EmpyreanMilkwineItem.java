@@ -28,7 +28,7 @@ public class EmpyreanMilkwineItem extends Item {
                         .usingConvertsTo(Items.GLASS_BOTTLE)
                         .build()));
     }
-    // 负面效果列表：中毒、虚弱、凋零、挖掘疲劳、反胃、失明和黑暗
+    // 负面效果列表
     // 使用 Holder<MobEffect> 类型
     @SuppressWarnings("unchecked")
     private static final Holder<MobEffect>[] NEGATIVE_EFFECTS = new Holder[]{
@@ -38,7 +38,8 @@ public class EmpyreanMilkwineItem extends Item {
             MobEffects.DIG_SLOWDOWN,    // 挖掘疲劳
             MobEffects.CONFUSION,       // 反胃
             MobEffects.BLINDNESS,       // 失明
-            MobEffects.DARKNESS         // 黑暗
+            MobEffects.DARKNESS,        // 黑暗
+            MobEffects.MOVEMENT_SLOWDOWN// 缓慢
     };
 
     // 使用饮用动画

@@ -39,6 +39,8 @@
     "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■与同胞麒麟相仿，§6翼麒麟§7亦身怀§6辟邪、消灾§7之能。将体内蕴含之“正气”播撒开来，使方圆内的友方萦绕正气，§a削除恶效，恢复元神§7。\n\n同时，根据§n所惠及之友友数（有上限）§r§7，赋予自身相应时长的§6「抗性提升V」§7效果，正所谓“仁者无敌”。\n\n■治疗的§n百分比值§r§7与§n抗性时长§r§7随§a技能等级（经验等级）§7而提升，而范围则无变。\n\n§8■仅能在§n主世界§r§8使用（除非身有§r「浩然正气」§8药水效果）。\n\n§6§o“仁者无敌”——《孟子·梁惠王上》",
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§c邪气缠蚀，仁施不得。",
     "dragon_ability.wing_kirin.unstoppable_speed": "唯快不破",
+    "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■略微沉下心来，发功使你进入短时的§6心流状态§7，刹那间，好似打通任督二脉，攻速变得§e迅猛无比，次次到肉！§7\n\n§4■然而由于对内力的透支，效果结束时将进入§n虚弱状态§r§4。当§n身受重伤时§r§4，内力亦不足以支撑其消耗。\n\n§6§o“天下武功，无坚不破，唯快不破！”",
+
     
     
     "dragon_ability.dragonsurvival.born_above_empyrean": "生于九天",
@@ -415,10 +417,10 @@
   "item.wing_kirin.wing_kirin_upgrade.description_1": "§7■§a百分之七十§r§7概率获得§a经验或其他鼓励奖§r§7，§6百分之三十§r§7概率获得§6后天五种强力技能§r§7中的一种。",
   "item.wing_kirin.wing_kirin_upgrade.description_2": "§6§o“越人语天姥，云霞明灭或可睹。”",
   
-  "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a--------------------《鼓励奖池》--------------------\n400点经验、金锭、古龙之心、金风玉露、钻石、下界之星、下界合金锭\n§6-------------------《后天技能池》-------------------\n《一支穿云箭》《聚形散气》《仁者无敌》《回光返照》《天降正义》",
+  "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a----------《鼓励奖池》----------\n400点经验、金锭、古龙之心、\n金风玉露、钻石、下界之星、下界合金锭\n§6---------《后天技能池》---------\n《一支穿云箭》《聚形散气》《仁者无敌》\n《唯快不破》《回光返照》《天降正义》",
   "item.wing_kirin.empyrean_milkwine":"奶露之合",
   "item.wing_kirin.empyrean_milkwine.description_0":"§7■将金风玉露与牛奶相混合，自然便失去了增益效果的加成，但却继承了“概念神”牛奶的一部分效果，同时保留了饱腹感。\n§6§o“玉鹭（花生）牛奶（bushi）”",
-  "item.wing_kirin.empyrean_milkwine.shift_down":"可消除中毒、虚弱、凋零、挖掘疲劳、反胃、失明和黑暗效果",
+  "item.wing_kirin.empyrean_milkwine.shift_down":"可消除中毒、虚弱、凋零、挖掘疲劳、反胃、缓慢、失明和黑暗效果",
   
   "item.wing_kirin.shift_up": "按下 §eShift§r 显示更多",
 
@@ -462,6 +464,7 @@
     "actionbar.wing_kirin.upgrade.signal_arrow.describiton_1": "《一支穿云箭》",
     "actionbar.wing_kirin.upgrade.invincible_benevolence.describiton_1": "《仁者无敌》",
     "actionbar.wing_kirin.upgrade.last_stand.describiton_1": "《回光返照》",
+    "actionbar.wing_kirin.upgrade.unstoppable_speed.describiton_1": "《唯快不破》",
     
     "actionbar.wing_kirin.upgrade.get_xp": "获得经验：§a400点",
     "actionbar.wing_kirin.upgrade.gold_ingot":"获得：§b金锭*4",

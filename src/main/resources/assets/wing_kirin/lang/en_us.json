@@ -38,6 +38,8 @@
     "dragon_ability.dragonsurvival.invincible_benevolence":"Invincible Benevolence",
     "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■As the kin of Kirin, §6Wing Kirin §7also has the ability of §6ward of evil and midfortune§7. Dispatching the Zhengqi around, enables alies §agetting treatment and debuff removal §7with a certainly radiu.\n\nThen, Giving yourself §6「Resistance V」§7§nwith alies who benefited§r§7, as \"Invincible Benevolence\".\n\n■§nHeal percentage §r§7and §nResistance duration §r§7increases with §aability level(xp level)§7, but without radiu improve.\n\n§8■Can only be used in the §nOverworld§r§8(Except having §r「Great Zhengqi」§8 effect).§r\n\n§6§o“Benevolence is invincible.——《Mengzi·Lianghui Wang》",
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§cEvil entangle, casting can not.",
+    "dragon_ability.wing_kirin.unstoppable_speed": "Unstoppable Speed",
+    "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■ Slow down slightly，cassting to make you to enter temporary§6 flow status §7，instantly \"Open the Ren and Du meridians\"，§e improving your attack speed signfifcantly and ignore PHDI!§7\n\n§4■ But due to the overuse of strength you will become§n weakness§r§4 after effect removal. When§n severely injured§r§4 you can not to cast.\n\n§6§o\"In the world of Kungfu, speed defines the winner.\"",
 
 
     "dragon_ability.dragonsurvival.born_above_empyrean": "Born Above Empyrean",
@@ -92,6 +94,7 @@
     "actionbar.wing_kirin.upgrade.signal_arrow.describiton_1": "《Signal Arrow》",
     "actionbar.wing_kirin.upgrade.invincible_benevolence.describiton_1": "《Invincible Benevolence》",
     "actionbar.wing_kirin.upgrade.last_stand.describiton_1": "《Last Stand》",
+    "actionbar.wing_kirin.upgrade.unstoppable_speed.describiton_1": "《Unstoppable Speed》",
     
     "actionbar.wing_kirin.upgrade.get_xp": "Gained Experience：§a400 points",
     "actionbar.wing_kirin.upgrade.gold_ingot":"Gained：§bGold Ingot*4",
@@ -445,10 +448,10 @@
     "item.wing_kirin.wing_kirin_upgrade.description_0": "§7■ Gathers essences into one. Using it allows you to acquire innate abilities you didn't originally possess.",
     "item.wing_kirin.wing_kirin_upgrade.description_1": "§7■§a Seventy percent§r§7 chance to gain§a experience and other award§r§7,§6 thirty percent§r§7 chance to gain one of the§6 five powerful acquired abilities§r§7.",
     "item.wing_kirin.wing_kirin_upgrade.description_2": "",
-    "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a-《Encouragement Award》-\nXp 400 points, Gold Ingot,Elder Dragon Heart , Empyrean Wine, Nether Star, Netherite Ingot\n§6-《Acquired Ability》-\n《Signal Arrow》《Instant Invisibility》《Invincible Benevolence》《Last Stand》《Heavenly Justice》",
+    "item.wing_kirin.wing_kirin_upgrade.shift_down": "§a-《Encouragement Award》-\nXp 400 points, Gold Ingot,Elder Dragon Heart ,\n Empyrean Wine, Nether Star, Netherite Ingot\n§6-《Acquired Ability》-\n《Signal Arrow》《Instant Invisibility》《Invincible Benevolence》\n 《Unstoppable Speed》《Last Stand》《Heavenly Justice》",
     "item.wing_kirin.empyrean_milkwine":"Empyrean Milkwine",
     "item.wing_kirin.empyrean_milkwine.description_0":"§7■ After mixing with milk, the beneficial effects losed, but it inherit some effects form milk.",
-    "item.wing_kirin.empyrean_milkwine.shift_down":"Could remove POISION, WEAKNESS, WITHER, MINING_FATIGUE, NAUSEA, BLINDNESS and DARKNESS",
+    "item.wing_kirin.empyrean_milkwine.shift_down":"Could remove POISION, WEAKNESS, WITHER, MINING_FATIGUE, NAUSEA, BLINDNESS, SLOWNESS and DARKNESS",
   
     "item.wing_kirin.shift_up": "Press §eShift§r for more info.",
 

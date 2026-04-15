@@ -23,9 +23,10 @@ public class UnstoppableSpeedEffect extends MobEffect {
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_2"), 0.5,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
-    // 效果结束导致虚弱，根据效果等级应用
+    // 效果结束导致虚弱与缓慢，根据效果等级应用
     public static void onEffectExpired(@NotNull LivingEntity entity, int amplifier) {
         entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 400, amplifier, false, true, true));
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, amplifier, false, true, true));
     }
 
     // 攻击无视无敌的逻辑在 Mixin 中处理
