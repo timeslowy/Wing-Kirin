@@ -1,7 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.common.item.GoldenBell;
+import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
@@ -38,7 +38,7 @@ public class WKEventHandler {
         if (damageSource.is(DamageTypes.SONIC_BOOM)) {
             if (damageSource.getDirectEntity() instanceof LivingEntity attacker) {
                 ItemStack mainHand = attacker.getMainHandItem();
-                if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBell) {
+                if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBellItem) {
                     int currentTick = Math.toIntExact(attacker.level().getGameTime());
                     Integer lastTick = LAST_DAMAGE_TICK.get(attacker);
                     if (lastTick == null || lastTick != currentTick) {
@@ -74,7 +74,7 @@ public class WKEventHandler {
          * 检查受害者的定身状态效果
          * 定身时间过长会导致"肌肉松弛"，承受更多伤害
          */
-        var DingShen = victim.getEffect(WKEffects.DingShen);
+        var DingShen = victim.getEffect(WKEffects.DING_SHEN);
         if (DingShen != null) {
             int duration = DingShen.getDuration();
             if (duration == -1 || duration > 1000 ) {

@@ -38,6 +38,7 @@
     "dragon_ability.dragonsurvival.invincible_benevolence":"仁者无敌",
     "dragon_ability.dragonsurvival.invincible_benevolence.desc": "■与同胞麒麟相仿，§6翼麒麟§7亦身怀§6辟邪、消灾§7之能。将体内蕴含之“正气”播撒开来，使方圆内的友方萦绕正气，§a削除恶效，恢复元神§7。\n\n同时，根据§n所惠及之友友数（有上限）§r§7，赋予自身相应时长的§6「抗性提升V」§7效果，正所谓“仁者无敌”。\n\n■治疗的§n百分比值§r§7与§n抗性时长§r§7随§a技能等级（经验等级）§7而提升，而范围则无变。\n\n§8■仅能在§n主世界§r§8使用（除非身有§r「浩然正气」§8药水效果）。\n\n§6§o“仁者无敌”——《孟子·梁惠王上》",
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§c邪气缠蚀，仁施不得。",
+    "dragon_ability.wing_kirin.unstoppable_speed": "唯快不破",
     
     
     "dragon_ability.dragonsurvival.born_above_empyrean": "生于九天",
@@ -397,6 +398,7 @@
   "effect.wing_kirin.ding_shen": "定身",
   "effect.wing_kirin.instant_invisibility": "聚形散气",
   "effect.wing_kirin.mace_crush": "从天而降",
+  "effect.wing_kirin.unstoppable_speed": "唯快不破",
 
   
   "item.wing_kirin.wing_kirin_treat": "翼麒麟的佳肴",

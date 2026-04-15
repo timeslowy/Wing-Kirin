@@ -3,7 +3,8 @@
   "package": "by.timeslowly.wing_kirin.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "LivingEntityMixin"
+    "LivingEntityEffectMixin",
+    "LivingEntityHurtMixin"
   ],
   "client": [
     "EntityGlowColorMixin"

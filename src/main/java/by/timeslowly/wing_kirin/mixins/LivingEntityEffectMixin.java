@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin {
+public abstract class LivingEntityEffectMixin {
 
     /**
      * 修改定身效果的持续时间，根据实体的定身抗性属性进行减免
@@ -37,7 +37,7 @@ public abstract class LivingEntityMixin {
     )
     private @NotNull MobEffectInstance modifyDingShenDuration(@NotNull MobEffectInstance original) {
         // 只处理定身效果且目标拥有抗性属性
-        if (!original.is(WKEffects.DingShen))
+        if (!original.is(WKEffects.DING_SHEN))
             return original;
 
         LivingEntity self = (LivingEntity) (Object) this;

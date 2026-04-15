@@ -14,9 +14,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class EmpyreanMilkwine extends Item {
+public class EmpyreanMilkwineItem extends Item {
     // 设置堆叠数、饥饿值和稀有度
-    public EmpyreanMilkwine() {
+    public EmpyreanMilkwineItem() {
         super(new Item.Properties()
                 .stacksTo(16)
                 .rarity(Rarity.UNCOMMON)

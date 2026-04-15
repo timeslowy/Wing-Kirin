@@ -24,8 +24,8 @@ import org.joml.Vector3f;
 import java.util.Objects;
 
 // 定身药水效果
-public class DingShen_Effect extends MobEffect {
-    public DingShen_Effect(MobEffectCategory category, int color) {
+public class DingShenEffect extends MobEffect {
+    public DingShenEffect(MobEffectCategory category, int color) {
         super(category, color);
         // 属性修改
         // 攻击速度

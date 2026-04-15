@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class EmpyreanWine extends Item {
+public class EmpyreanWineItem extends Item {
     // 设置堆叠数、饥饿值和饱和度
-    public EmpyreanWine() {
+    public EmpyreanWineItem() {
         super(new Item.Properties()
                 .stacksTo(16)
                 .rarity(Rarity.UNCOMMON)

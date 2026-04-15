@@ -1,7 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.client.particles.ThunderousShoutParticles;
+import by.timeslowly.wing_kirin.client.particles.*;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
@@ -26,7 +26,7 @@ public class WKParticles {
             PARTICLE_TYPES.register("thunderous_shout", () -> new SimpleParticleType(true));
 
 
-    // 注册什么“粒子工厂”提供贴图
+    // 注册“粒子工厂”提供贴图
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerParticleFactories(@NotNull RegisterParticleProvidersEvent event){
         event.registerSpriteSet(WKParticles.THUNDEROUS_SHOUT.get(), ThunderousShoutParticles.Provider::new);

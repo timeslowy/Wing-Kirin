@@ -14,8 +14,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class WingKirinHeart extends Item {
-    public WingKirinHeart() {
+public class WingKirinHeartItem extends Item {
+    public WingKirinHeartItem() {
         super(new Item.Properties()
                 .rarity(Rarity.EPIC)
         );
@@ -43,7 +43,7 @@ public class WingKirinHeart extends Item {
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         stack = super.finishUsingItem(stack, level, entity);
         if (entity instanceof Player _player)
-            _player.getCooldowns().addCooldown(WKItems.WingKirinHeartItem.get(), 20);
+            _player.getCooldowns().addCooldown(WKItems.WingKirinHeart.get(), 20);
         return stack;
     }
 }

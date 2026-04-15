@@ -41,7 +41,7 @@ public class EffectSyncHandler {
      */
     private static void syncEffectChange(@NotNull LivingEntity entity, MobEffectInstance instance, boolean isAdded) {
         // 仅在服务端且是定身效果时执行
-        if (!entity.level().isClientSide() && instance.getEffect().value() == WKEffects.DingShen.value()) {
+        if (!entity.level().isClientSide() && instance.getEffect().value() == WKEffects.DING_SHEN.value()) {
             if (entity.level() instanceof ServerLevel serverLevel) {
 
                 if (isAdded) {
@@ -50,7 +50,7 @@ public class EffectSyncHandler {
                     serverLevel.getChunkSource().broadcast(entity, packet);
                 } else {
                     // 发送移除包，参数为 实体ID 和 效果类型
-                    ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), WKEffects.DingShen);
+                    ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), WKEffects.DING_SHEN);
                     serverLevel.getChunkSource().broadcast(entity, packet);
                 }
             }

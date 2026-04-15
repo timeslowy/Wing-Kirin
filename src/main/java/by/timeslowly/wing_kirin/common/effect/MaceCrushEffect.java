@@ -9,8 +9,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 // 从天而降药水效果
-public class MaceCrush_Effect extends MobEffect {
-    public MaceCrush_Effect(MobEffectCategory category, int color) {
+public class MaceCrushEffect extends MobEffect {
+    public MaceCrushEffect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(DSAttributes.ARMOR_IGNORE_CHANCE,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.2,

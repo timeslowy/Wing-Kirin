@@ -18,11 +18,11 @@ public class WKCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(WKItems.WingKirinFullIconItem.get()))
                     .title(Component.translatable("item_group.wing_kirin.wing_kirin"))
                     .displayItems(((itemDisplayParameters, output) -> {
-                        output.accept(WKItems.EmpyreanWineItem);
-                        output.accept(WKItems.EmpyreanMilkwineItem);
-                        output.accept(WKItems.GoldenBellItem);
-                        output.accept(WKItems.WingKirinHeartItem);
-                        output.accept(WKItems.WingKirinTreatItem);
+                        output.accept(WKItems.EmpyreanWine);
+                        output.accept(WKItems.EmpyreanMilkwine);
+                        output.accept(WKItems.GoldenBell);
+                        output.accept(WKItems.WingKirinHeart);
+                        output.accept(WKItems.WingKirinTreat);
                     })).build());
 
     public static void register(IEventBus eventBus) {

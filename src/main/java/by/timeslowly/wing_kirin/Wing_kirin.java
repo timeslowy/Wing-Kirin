@@ -1,8 +1,6 @@
 package by.timeslowly.wing_kirin;
 
-import by.dragonsurvivalteam.dragonsurvival.DragonSurvival;
 import by.timeslowly.wing_kirin.registry.*;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;

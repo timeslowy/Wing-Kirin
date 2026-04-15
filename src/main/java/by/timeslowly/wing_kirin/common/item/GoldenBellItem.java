@@ -19,8 +19,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GoldenBell extends Item {
-    public GoldenBell() {
+public class GoldenBellItem extends Item {
+    public GoldenBellItem() {
         super(new Item.Properties()
                 .rarity(Rarity.COMMON)
                 // 设置耐久

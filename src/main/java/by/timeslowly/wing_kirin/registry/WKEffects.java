@@ -1,9 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.common.effect.DingShen_Effect;
-import by.timeslowly.wing_kirin.common.effect.GreatZhengqi_Effect;
-import by.timeslowly.wing_kirin.common.effect.MaceCrush_Effect;
+import by.timeslowly.wing_kirin.common.effect.*;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -24,14 +22,18 @@ public class WKEffects {
             Registries.MOB_EFFECT, Wing_kirin.MOD_ID
     );
 
-    public static final Holder<MobEffect> DingShen = MOB_EFFECTS.register("ding_shen",
-            () -> new DingShen_Effect(MobEffectCategory.HARMFUL, -256));
+    public static final Holder<MobEffect> DING_SHEN = MOB_EFFECTS.register("ding_shen",
+            () -> new DingShenEffect(MobEffectCategory.HARMFUL, 16506002));
 
-    public static final Holder<MobEffect> GreatZhengqi = MOB_EFFECTS.register("great_zhengqi",
-            () -> new GreatZhengqi_Effect(MobEffectCategory.BENEFICIAL, -13261));
+    public static final Holder<MobEffect> GREAT_ZHENGQI = MOB_EFFECTS.register("great_zhengqi",
+            () -> new GreatZhengqiEffect(MobEffectCategory.BENEFICIAL, 16506002));
 
-    public static final Holder<MobEffect> MaceCrush = MOB_EFFECTS.register("mace_crush",
-            () -> new MaceCrush_Effect(MobEffectCategory.BENEFICIAL, 16506000));
+    public static final Holder<MobEffect> MACE_CRUSH = MOB_EFFECTS.register("mace_crush",
+            () -> new MaceCrushEffect(MobEffectCategory.BENEFICIAL, 16506000));
+
+    public static final Holder<MobEffect> UNSTOPPABLE_SPEED = MOB_EFFECTS.register("unstoppable_speed",
+            () -> new UnstoppableSpeedEffect(MobEffectCategory.BENEFICIAL, 3190479));
+
 
     // 药水效果移除行为
     @SubscribeEvent
@@ -49,8 +51,11 @@ public class WKEffects {
         }
     }
     private static void expireEffects(LivingEntity entity, @NotNull MobEffectInstance effectInstance) {
-        if (effectInstance.getEffect().value() instanceof DingShen_Effect) {
-            DingShen_Effect.onEffectExpired(entity);
+        if (effectInstance.getEffect().value() instanceof DingShenEffect) {
+            DingShenEffect.onEffectExpired(entity);
+        }
+        if (effectInstance.getEffect().value() instanceof UnstoppableSpeedEffect) {
+            UnstoppableSpeedEffect.onEffectExpired(entity, effectInstance.getAmplifier());
         }
     }
 

@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class WingKirinTreat extends Item {
-    public WingKirinTreat() {
+public class WingKirinTreatItem extends Item {
+    public WingKirinTreatItem() {
         super(new Properties().
                 rarity(Rarity.RARE)
         );
