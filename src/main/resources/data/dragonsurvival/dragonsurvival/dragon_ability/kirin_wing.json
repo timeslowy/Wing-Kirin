@@ -25,11 +25,11 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/kirin_wing/kirin_wing_0"
+        "texture_resource": "wing_kirin:abilities/kirin_wing/kirin_wing_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/kirin_wing/kirin_wing_1"
+        "texture_resource": "wing_kirin:abilities/kirin_wing/kirin_wing_1"
       }
     ]
   },

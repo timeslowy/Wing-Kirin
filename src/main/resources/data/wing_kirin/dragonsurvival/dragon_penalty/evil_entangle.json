@@ -47,7 +47,7 @@
       }
     ]
   },
-  "icon": "dragonsurvival:penalties/wing_kirin/evil_entangle",
+  "icon": "wing_kirin:penalities/evil_entangle",
   "trigger": {
     "display_like_hunger_bar": true,
     "penalty_trigger": "dragonsurvival:supply",

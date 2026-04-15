@@ -43,39 +43,39 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_0"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_1"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_1"
       },
       {
         "from_level": 2,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_2"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_2"
       },
       {
         "from_level": 3,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_3"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_3"
       },
       {
         "from_level": 4,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_4"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_4"
       },
       {
         "from_level": 5,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_5"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_5"
       },
       {
         "from_level": 6,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_6"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_6"
       },
       {
         "from_level": 7,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_7"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_7"
       },
       {
         "from_level": 8,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/good_overcome_evil/good_overcome_evil_8"
+        "texture_resource": "wing_kirin:abilities/good_overcome_evil/good_overcome_evil_8"
       }
     ]
   },

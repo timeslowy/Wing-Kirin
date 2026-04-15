@@ -77,27 +77,27 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_0"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_1"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_1"
       },
       {
         "from_level": 2,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_2"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_2"
       },
       {
         "from_level": 3,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_3"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_3"
       },
       {
         "from_level": 4,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_4"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_4"
       },
       {
         "from_level": 5,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/signal_arrow/signal_arrow_5"
+        "texture_resource": "wing_kirin:abilities/signal_arrow/signal_arrow_5"
       }
     ]
   },

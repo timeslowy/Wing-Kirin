@@ -97,39 +97,39 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_0"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_1"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_1"
       },
       {
         "from_level": 2,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_2"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_2"
       },
       {
         "from_level": 3,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_3"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_3"
       },
       {
         "from_level": 4,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_4"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_4"
       },
       {
         "from_level": 5,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_5"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_5"
       },
       {
         "from_level": 6,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_6"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_6"
       },
       {
         "from_level": 7,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_7"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_7"
       },
       {
         "from_level": 8,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/fly_higher/fly_higher_8"
+        "texture_resource": "wing_kirin:abilities/fly_higher/fly_higher_8"
       }
     ]
   },

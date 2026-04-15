@@ -133,27 +133,27 @@
   "icon": {
     "texture_entries": [
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_0",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_0",
         "from_level": 0
       },
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_1",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_1",
         "from_level": 1
       },
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_2",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_2",
         "from_level": 2
       },
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_3",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_3",
         "from_level": 3
       },
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_4",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_4",
         "from_level": 4
       },
       {
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/empyrean_wine/empyrean_wine_5",
+        "texture_resource": "wing_kirin:abilities/empyrean_wine/empyrean_wine_5",
         "from_level": 5
       }
     ]
