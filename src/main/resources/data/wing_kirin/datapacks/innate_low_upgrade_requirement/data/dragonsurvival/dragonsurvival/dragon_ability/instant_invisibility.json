@@ -15,7 +15,7 @@
                   "base": {
                     "id": "wing_kirin:instant_invisibility_1",
                     "should_remove_automatically": false,
-                    "custom_icon":"dragonsurvival:textures/ability_effect/instant_invisibility.png" ,
+                    "custom_icon":"wing_kirin:textures/ability_effect/instant_invisibility.png" ,
                     "duration": {
                       "type": "minecraft:linear",
                       "base": 200,
@@ -50,7 +50,7 @@
                       "base": 200,
                       "per_level_above_first": 200
                     },
-                    "custom_icon": "dragonsurvival:textures/ability_effect/instant_invisibility.png",
+                    "custom_icon": "wing_kirin:textures/ability_effect/instant_invisibility.png",
                     "is_hidden": false,
                     "should_remove_automatically": false,
                     "early_removal_condition": {
@@ -183,19 +183,19 @@
     "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_0"
+        "texture_resource": "wing_kirin:abilities/instant_invisibility/instant_invisibility_0"
       },
       {
         "from_level": 1,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_1"
+        "texture_resource": "wing_kirin:abilities/instant_invisibility/instant_invisibility_1"
       },
       {
         "from_level": 2,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_2"
+        "texture_resource": "wing_kirin:abilities/instant_invisibility/instant_invisibility_2"
       },
       {
         "from_level": 3,
-        "texture_resource": "dragonsurvival:abilities/wing_kirin/instant_invisibility/instant_invisibility_3"
+        "texture_resource": "wing_kirin:abilities/instant_invisibility/instant_invisibility_3"
       }
     ]
   },

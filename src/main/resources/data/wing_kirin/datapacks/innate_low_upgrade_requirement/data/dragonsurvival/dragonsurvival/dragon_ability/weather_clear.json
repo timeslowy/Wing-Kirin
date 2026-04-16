@@ -72,11 +72,11 @@
     "icon": {
         "texture_entries": [
             {
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/weather_clear/weather_clear_0",
+                "texture_resource": "wing_kirin:abilities/weather_clear/weather_clear_0",
                 "from_level": 0
             },
             {
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/weather_clear/weather_clear_1",
+                "texture_resource": "wing_kirin:abilities/weather_clear/weather_clear_1",
                 "from_level": 1
             }
         ]

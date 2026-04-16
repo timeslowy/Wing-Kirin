@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-// TODO:使得模组整体更规范化
 @Mod(Wing_kirin.MOD_ID)
 public class Wing_kirin {
     // 定义模组ID以供他处调用

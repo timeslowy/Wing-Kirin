@@ -190,19 +190,19 @@
         "texture_entries": [
             {
                 "from_level": 0,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_0"
+                "texture_resource": "wing_kirin:abilities/stasis_hex/stasis_hex_0"
             },
             {
                 "from_level": 1,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_1"
+                "texture_resource": "wing_kirin:abilities/stasis_hex/stasis_hex_1"
             },
             {
                 "from_level": 2,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_2"
+                "texture_resource": "wing_kirin:abilities/stasis_hex/stasis_hex_2"
             },
             {
                 "from_level": 3,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/stasis_hex/stasis_hex_3"
+                "texture_resource": "wing_kirin:abilities/stasis_hex/stasis_hex_3"
             }
         ]
     }

@@ -174,27 +174,27 @@
         "texture_entries": [
             {
                 "from_level": 0,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_0"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_0"
             },
             {
                 "from_level": 1,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_1"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_1"
             },
             {
                 "from_level": 2,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_2"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_2"
             },
             {
                 "from_level": 3,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_3"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_3"
             },
             {
                 "from_level": 4,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_4"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_4"
             },
             {
                 "from_level": 5,
-                "texture_resource": "dragonsurvival:abilities/wing_kirin/invincible_benevolence/invincible_benevolence_5"
+                "texture_resource": "wing_kirin:abilities/invincible_benevolence/invincible_benevolence_5"
             }
         ]
     },
