@@ -12,7 +12,11 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.jetbrains.annotations.NotNull;
 
 public class UnstoppableSpeedEffect extends MobEffect {
+    /**
+     * 修改受击冷却的逻辑见： {@link by.timeslowly.wing_kirin.mixins.LivingEntityHurtMixin}
+     */
     public UnstoppableSpeedEffect(MobEffectCategory category, int color) {
+
         super(category, color);
         // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
@@ -29,5 +33,4 @@ public class UnstoppableSpeedEffect extends MobEffect {
         entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, amplifier, false, true, true));
     }
 
-    // 攻击无视无敌的逻辑在 Mixin 中处理
 }

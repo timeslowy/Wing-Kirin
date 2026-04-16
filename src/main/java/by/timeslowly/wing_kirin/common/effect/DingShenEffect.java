@@ -25,6 +25,9 @@ import java.util.Objects;
 
 // 定身药水效果
 public class DingShenEffect extends MobEffect {
+    /**
+     * 修改发光效果的逻辑见： {@link by.timeslowly.wing_kirin.mixins.EntityGlowColorMixin} 和 {@link by.timeslowly.wing_kirin.network.EffectSyncHandler}
+     */
     public DingShenEffect(MobEffectCategory category, int color) {
         super(category, color);
         // 属性修改

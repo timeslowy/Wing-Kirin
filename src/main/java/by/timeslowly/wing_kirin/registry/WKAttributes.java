@@ -16,6 +16,9 @@ import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class WKAttributes {
+    /**
+     * 重锤猛击倍率和音爆伤害倍率的逻辑见： {@link WKEventHandler}
+     */
     public static final DeferredRegister<Attribute> ATTRIBUTES =
             DeferredRegister.create(Registries.ATTRIBUTE, Wing_kirin.MOD_ID);
 
@@ -37,6 +40,9 @@ public class WKAttributes {
                             1024.0)
                             .setSyncable(true));
 
+    /**
+     * 修改定身效果药水时长的逻辑见： {@link by.timeslowly.wing_kirin.mixins.LivingEntityEffectMixin}
+     */
     // 定身药水效果抗性属性，默认0.0，范围0~1
     public static final DeferredHolder<Attribute, Attribute> DINGSHEN_EFFECT_RESISTANCE =
             ATTRIBUTES.register("dingshen_effect_resistance",
