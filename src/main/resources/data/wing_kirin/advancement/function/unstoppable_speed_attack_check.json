@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "wing_kirin:unstoppable_speed_attack_check": {
+            "trigger": "player_hurt_entity",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "effects": {
+                                "wing_kirin:unstoppable_speed": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "wing_kirin:dragon_ability/unstoppable_speed/main"
+    }
+}

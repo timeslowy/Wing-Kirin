@@ -5,6 +5,10 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/unstoppable_speed/reset_count"
+                        },
+                        {
                             "effect_type": "dragonsurvival:potion",
                             "potion": {
                                 "effects": "wing_kirin:unstoppable_speed",

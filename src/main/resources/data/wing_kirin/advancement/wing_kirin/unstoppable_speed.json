@@ -1,0 +1,29 @@
+{
+    "parent": "wing_kirin:wing_kirin/delay_death",
+    "criteria": {
+        "Attacks_over_100_Times_Once":{
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "icon": {
+            "id": "wing_kirin:unstoppable_speed_icon",
+            "count": 1
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/unstoppable_speed"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc"
+        },
+        "frame": "challenge"
+    },
+    "requirements": [
+        [
+            "Attacks_over_100_Times_Once"
+        ]
+    ],
+    "rewards": {
+        "experience": 300
+    }
+}

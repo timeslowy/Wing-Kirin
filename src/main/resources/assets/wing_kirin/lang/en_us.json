@@ -428,6 +428,8 @@
     "dragonsurvival.advancement.wing_kirin/breaking_invisibility_strike.desc" : "Striking entity with 「Instant Invisibility」,tell them: \"I am everywhere.\"",
     "dragonsurvival.advancement.wing_kirin/indestructible_body": "Indestructible Body",
     "dragonsurvival.advancement.wing_kirin/indestructible_body.desc": "Counter Shock more than 10 times in single casting 「Indestructible Body」, making their attacking invalid.",
+    "dragonsurvival.advancement.wing_kirin/unstoppable_speed": "Unstoppable Speed",
+    "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "Attacks over 100 times during 「Unstoppable Speed」activing, leading them can not define direction.",
 
     "effect.wing_kirin.health_decline": "Entangled by Evil Qi",
     "effect.wing_kirin.great_zhengqi": "Geat Zhengqi",
@@ -460,6 +462,7 @@
     "item.wing_kirin.wing_kirin_full_icon": "Wing Kirin Full Icon",
     "item.wing_kirin.wing_kirin_icon": "Wing Kirin Icon",
     "item.wing_kirin.great_zhengqi_icon": "Great Zhengqi Icon",
+    "item.wing_kirin.unstoppable_speed_icon": "Unstoppable Speed Icon",
 
     "painting.wing_kirin.mountain_water.author": "Timeslowly",
     "painting.wing_kirin.mountain_water.title": "Mountain and Water",

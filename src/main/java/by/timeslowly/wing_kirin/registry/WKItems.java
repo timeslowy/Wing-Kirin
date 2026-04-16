@@ -38,6 +38,9 @@ public class WKItems {
     // 定身药水效果图标（空物品）
     public static final DeferredItem<Item> DingshenIconItem = ITEMS.register("dingshen_icon",
             () -> new Item(new Item.Properties()));
+    // 「唯快不破」进度图标（空图标）
+    public static final DeferredItem<Item> UnstoppableSpeedIcon = ITEMS.register("unstoppable_speed_icon",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

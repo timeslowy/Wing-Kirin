@@ -44,6 +44,9 @@ scoreboard objectives add wk.invincible_benevolence.beneficiary_amount dummy
 # 天降正义 倒计时
 scoreboard objectives add wk.heavenly_justice.countdown dummy
 
+# 唯快不破 单次攻击计数
+scoreboard objectives add wk.unstoppable_speed.attack_count dummy
+
 # 玩家死亡发生
 scoreboard objectives add wk.death_check deathCount
 

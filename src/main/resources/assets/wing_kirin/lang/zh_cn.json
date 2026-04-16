@@ -392,6 +392,8 @@
   "dragonsurvival.advancement.wing_kirin/breaking_invisibility_strike.desc" : "在身形化作一团“散气”的情况下，给予目标一个“惊喜”，正如”润物细无声“的春风，无处不在。",
   "dragonsurvival.advancement.wing_kirin/indestructible_body": "金身不坏",
   "dragonsurvival.advancement.wing_kirin/indestructible_body.desc": "在一次施法中反震敌人超过10次，将他们的一切无功徒劳付之东流。",
+  "dragonsurvival.advancement.wing_kirin/unstoppable_speed": "唯快不破",
+  "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "在打通“任督二脉”的短暂时机发动超过100次攻击，把对手揍得七荤八素、晕头转向。",
   
 
 
@@ -430,6 +432,7 @@
   "item.wing_kirin.wing_kirin_full_icon": "Wing Kirin Full Icon",
   "item.wing_kirin.wing_kirin_icon": "Wing Kirin Icon",
   "item.wing_kirin.great_zhengqi_icon": "Great Zhengqi Icon",
+  "item.wing_kirin.unstoppable_speed_icon": "Unstoppable Speed Icon",
   
 
   "painting.wing_kirin.mountain_water.author": "时光不匆（Timeslowly）",

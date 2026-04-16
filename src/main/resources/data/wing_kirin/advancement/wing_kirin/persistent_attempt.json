@@ -1,5 +1,5 @@
 {
-    "parent": "wing_kirin:wing_kirin/delay_death",
+    "parent": "wing_kirin:wing_kirin/unstoppable_speed",
     "criteria": {
         "master_last_stand": {
             "conditions": {
@@ -28,6 +28,12 @@
         "master_heavenly_justice": {
             "conditions": {
                 "ability": "dragonsurvival:heavenly_justice"
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_unstoppable_speed": {
+            "conditions": {
+                "ability": "wing_kirin:unstoppable_speed"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         }
@@ -60,6 +66,9 @@
         ],
         [
             "master_signal_arrow"
+        ],
+        [
+            "master_unstoppable_speed"
         ]
     ],
     "rewards": {
