@@ -29,8 +29,8 @@ public class UnstoppableSpeedEffect extends MobEffect {
     }
     // 效果结束导致虚弱与缓慢，根据效果等级应用
     public static void onEffectExpired(@NotNull LivingEntity entity, int amplifier) {
-        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 400, amplifier, false, true, true));
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, amplifier, false, true, true));
+        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, amplifier, false, true, true));
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, amplifier, false, true, true));
     }
 
 }

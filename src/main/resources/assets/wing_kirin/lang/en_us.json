@@ -40,6 +40,8 @@
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§cEvil entangle, casting can not.",
     "dragon_ability.wing_kirin.unstoppable_speed": "Unstoppable Speed",
     "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■ Slow down slightly，cassting to make you to enter temporary§6 flow status §7，instantly \"Open the Ren and Du meridians\"，§e improving your attack speed signfifcantly and ignore PHDI!§7\n\n§4■ But due to the overuse of strength you will become§n weakness§r§4 after effect removal. When§n severely injured§r§4 you can not to cast.\n\n§6§o\"In the world of Kungfu, speed defines the winner.\"",
+    "dragon_ability.wing_kirin.reverse_aging":"Reverse Aging",
+    "dragon_ability.wing_kirin.reverse_aging.desc":"",
 
 
     "dragon_ability.dragonsurvival.born_above_empyrean": "Born Above Empyrean",
@@ -500,5 +502,10 @@
 
     "attribute.name.wing_kirin.mace_smash_damage_multiplier": "Mace Smash Damage Multipilier",
     "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "Sonic Boom Damage Multiplier" ,
-    "attribute.name.wing_kirin.dingshen_effect_resistance": "Dingshen Resistance"
+    "attribute.name.wing_kirin.dingshen_effect_resistance": "Dingshen Resistance",
+
+    "dragon_stage.wing_kirin.newborn": "NEWBORN",
+    "dragon_stage.wing_kirin.young": "YOUNG",
+    "dragon_stage.wing_kirin.adult": "ADULT",
+    "dragon_stage.wing_kirin.ancient": "ANCIENT"
 }

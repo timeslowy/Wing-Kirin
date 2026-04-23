@@ -34,6 +34,12 @@
 		"dragonsurvival:center",
 		"dragonsurvival:east"
 	],
+	"custom_stage_progression": [
+		"wing_kirin:newborn",
+		"wing_kirin:young",
+		"wing_kirin:adult",
+		"wing_kirin:ancient"
+	],
 	"unlockable_behavior": {
 		"unlock_condition": {
 			"condition": "minecraft:all_of",

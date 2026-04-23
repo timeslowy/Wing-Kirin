@@ -37,4 +37,26 @@ public abstract class LivingEntityHurtMixin {
         // 其他情况保持原版逻辑
         return source.is(tagKey);
     }
+
+    /**
+     * 拦截护甲减免中对伤害来源 bypasses_enchantments 标签的检查。
+     * 若攻击者拥有 唯快不破 效果，则强制返回 true，从而使攻击穿透附魔。
+     */
+    @Redirect(
+            method = "getDamageAfterMagicAbsorb",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z"
+            )
+    )
+    private boolean redirectArmorBypassCheck(DamageSource source, TagKey<DamageType> tagKey) {
+        if (tagKey == DamageTypeTags.BYPASSES_ENCHANTMENTS) {
+            if (source.getEntity() instanceof LivingEntity attacker) {
+                if (attacker.hasEffect(WKEffects.UNSTOPPABLE_SPEED)) {
+                    return true;
+                }
+            }
+        }
+        return source.is(tagKey);
+    }
 }

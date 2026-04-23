@@ -1,0 +1,168 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:dragon_growth",
+                            "action_type": "percent",
+                            "amount": -0.005,
+                            "growth_type": "add"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:experience",
+                            "experience_type": "points",
+                            "amount": 50,
+                            "probability": {
+                                "type": "linear",
+                                "base": 0.5,
+                                "per_level_above_first": -0.1
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "weakness",
+                                "amplifier": 4,
+                                "duration": 40
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:particle",
+                            "particle_count": 30,
+                            "particle_data": {
+                                "particle": {
+                                    "type": "dragonsurvival:treasure",
+                                    "scale": 1,
+                                    "blue": 0.98,
+                                    "green": 0.86,
+                                    "red": 0.57
+                                },
+                                "horizontal_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "vertical_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "horizontal_velocity": {
+                                    "base": 1.0
+                                },
+                                "vertical_velocity": {
+                                    "base": 1.0
+                                }
+                            }
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_rate": 20
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:channeled",
+        "initial_mana_cost": 2,
+        "continuous_mana_cost": {
+            "type": "ticking",
+            "amount": 0.1
+        },
+        "can_move_while_casting": false,
+        "cast_time": 40,
+        "cooldown": {
+            "type": "linear",
+            "base": 400,
+            "per_level_above_first": 200
+        },
+        "max_duration": {
+            "type": "linear",
+            "base": 100,
+            "per_level_above_first": 100
+        },
+        "animations": {
+            "start_and_charging": {
+                "animation_key": "blend_sad",
+                "layer": "BITE",
+                "locks_neck": false,
+                "locks_tail": true,
+                "transition_length": 1
+            },
+            "end": {
+                "animation_key": "self_buff",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true,
+                "transition_length": 1
+            },
+            "looping": {
+                "animation_key": "cast_self_buff",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true,
+                "transition_length": 2
+            }
+        },
+        "sound": {
+            "start": "block.grindstone.use",
+            "looping": "block.bone_block.step",
+            "end": "block.grindstone.use",
+            "charging": "dragonsurvival:activate_beacon"
+        }
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:test"
+            }
+        ]
+    },
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:dragon_growth",
+        "maximum_level": 4,
+        "growth_requirement": {
+            "type": "lookup",
+            "fallback": 30,
+            "values": [
+                40,
+                60,
+                80,
+                110
+            ]
+        }
+    },
+    "can_be_manually_disabled": true,
+    "usage_blocked": {
+        "condition": "any_of",
+        "terms": [
+            {
+                "condition": "inverted",
+                "term": {
+                    "condition": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "type_specific": {
+                        "type": "dragonsurvival:dragon_predicate",
+                        "stage_specific": {
+                            "growth": {
+                                "min":250
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

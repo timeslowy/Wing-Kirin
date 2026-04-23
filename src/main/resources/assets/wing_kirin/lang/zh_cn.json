@@ -40,6 +40,8 @@
     "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked": "§c邪气缠蚀，仁施不得。",
     "dragon_ability.wing_kirin.unstoppable_speed": "唯快不破",
     "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■略微沉下心来，发功使你进入短时的§6心流状态§7，刹那间，好似打通任督二脉，攻速变得§e迅猛无比，次次到肉！§7\n\n§4■然而由于对内力的透支，效果结束时将进入§n虚弱状态§r§4。当§n身受重伤时§r§4，内力亦不足以支撑其消耗。\n\n§6§o“天下武功，无坚不破，唯快不破！”",
+    "dragon_ability.wing_kirin.reverse_aging":"返老还童",
+    "dragon_ability.wing_kirin.reverse_aging.desc":"逆龄生长看似绝无可能，但在游戏里可不受客观物理法则的限制！施展此技能，便可§a暂时逆转年龄增长§r，§e延缓衰老§r，甚至§a倒退成长§r！\n\n■施法时长随§a技能等级（成长阶度）§r§7提升；每次生效时有概率§a获得经验奖励§r。\n\n■只能在成长阶度大于40小于250时使用，不再范围之内也无能为力。\n\n§6§o“人生自古谁无死，留取丹心照汗青。”",
 
     
     
@@ -522,5 +524,10 @@
     
     "attribute.name.wing_kirin.mace_smash_damage_multiplier": "重锤猛击伤害倍率",
     "attribute.name.wing_kirin.sonic_boom_damage_multiplier": "音波伤害倍率" ,
-    "attribute.name.wing_kirin.dingshen_effect_resistance": "定身抗性"
+    "attribute.name.wing_kirin.dingshen_effect_resistance": "定身抗性",
+
+    "dragon_stage.wing_kirin.newborn": "幼年麒麟",
+    "dragon_stage.wing_kirin.young": "青年麒麟",
+    "dragon_stage.wing_kirin.adult": "成年麒麟",
+    "dragon_stage.wing_kirin.ancient": "壮年麒麟"
 }
