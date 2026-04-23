@@ -23,6 +23,7 @@ public class WKCreativeTabs {
                         output.accept(WKItems.GoldenBell);
                         output.accept(WKItems.WingKirinHeart);
                         output.accept(WKItems.WingKirinTreat);
+                        output.accept(WKItems.EmpyreanEssence);
                     })).build());
 
     public static void register(IEventBus eventBus) {

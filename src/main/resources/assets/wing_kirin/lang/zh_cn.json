@@ -41,7 +41,7 @@
     "dragon_ability.wing_kirin.unstoppable_speed": "唯快不破",
     "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■略微沉下心来，发功使你进入短时的§6心流状态§7，刹那间，好似打通任督二脉，攻速变得§e迅猛无比，次次到肉！§7\n\n§4■然而由于对内力的透支，效果结束时将进入§n虚弱状态§r§4。当§n身受重伤时§r§4，内力亦不足以支撑其消耗。\n\n§6§o“天下武功，无坚不破，唯快不破！”",
     "dragon_ability.wing_kirin.reverse_aging":"返老还童",
-    "dragon_ability.wing_kirin.reverse_aging.desc":"逆龄生长看似绝无可能，但在游戏里可不受客观物理法则的限制！施展此技能，便可§a暂时逆转年龄增长§r，§e延缓衰老§r，甚至§a倒退成长§r！\n\n■施法时长随§a技能等级（成长阶度）§r§7提升；每次生效时有概率§a获得经验奖励§r。\n\n■只能在成长阶度大于40小于250时使用，不再范围之内也无能为力。\n\n§6§o“人生自古谁无死，留取丹心照汗青。”",
+    "dragon_ability.wing_kirin.reverse_aging.desc":"§7■逆龄生长看似绝无可能，但在游戏里可不受客观物理法则的限制。此技能的奥妙，便在于通过引导体内气息之逸散，从而§a逆转年龄§7实现“返老还童”。\n\n§7■§l施法时长§r§7随§a技能等级（成长阶度）§7提升；每次生效时有概率§a获得经验奖励§r。\n\n§7■只能在成长阶度§n大于40小于250§r§7时使用，不再范围之内也§l无能为力§r§7。\n\n§6§o“神胎剖判，氤氲圣体，轻健还童。”",
 
     
     
@@ -425,6 +425,9 @@
   "item.wing_kirin.empyrean_milkwine":"奶露之合",
   "item.wing_kirin.empyrean_milkwine.description_0":"§7■将金风玉露与牛奶相混合，自然便失去了增益效果的加成，但却继承了“概念神”牛奶的一部分效果，同时保留了饱腹感。\n§6§o“玉鹭（花生）牛奶（bushi）”",
   "item.wing_kirin.empyrean_milkwine.shift_down":"可消除中毒、虚弱、凋零、挖掘疲劳、反胃、缓慢、失明和黑暗效果",
+  "item.wing_kirin.empyrean_essence": "天仙玉露",
+  "item.wing_kirin.empyrean_essence.description_0": "§7■俗话说：“浓缩就是精华”。将「金风玉露」与「附魔之瓶」缩合而制得此物，不仅使得原有功效大增，翼麒麟更可吸收其中蕴含的§6“生元”§7之素，§a促自身之成长§7。",
+  "item.wing_kirin.empyrean_essence.description_1": "§6§o“天仙玉露，滋养万物。”",
   
   "item.wing_kirin.shift_up": "按下 §eShift§r 显示更多",
 

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "wing_kirin:empyrean_wine"
+    },
+    "b":{
+      "item": "minecraft:experience_bottle"
+    }
+  },
+  "result": {
+    "id": "wing_kirin:empyrean_essence",
+    "count": 1
+  }
+}

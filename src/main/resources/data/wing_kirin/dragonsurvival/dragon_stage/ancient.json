@@ -12,11 +12,7 @@
   "growth_items": [
     {
       "growth_in_ticks": 72000,
-      "items": "dragonsurvival:elder_dragon_heart"
-    },
-    {
-      "growth_in_ticks": -72000,
-      "items": "dragonsurvival:star_bone"
+      "items": "wing_kirin:empyrean_essence"
     },
     {
       "growth_in_ticks": 0,

@@ -2,7 +2,8 @@
   "values": {
     "dragonsurvival:wing_kirin": [
         {
-          "items": "#c:foods"
+          "items": "#c:foods",
+          "retain_effects": true
         },
         {
           "items": "wing_kirin:empyrean_wine",
@@ -64,6 +65,11 @@
           "retain_effects": true
         },
         {
+          "items": "wing_kirin:empyrean_essence",
+          "retain_effects": true
+          
+        },
+        {
           "items": "wing_kirin:wing_kirin_upgrade",
           "properties": {
             "nutrition": 0,
@@ -82,132 +88,6 @@
         },
         {
           "items": "#farmersdelight:meals"
-        },
-        {
-          "items": "duacandelight:godonggui"
-        },
-        {
-          "items": "duacandelight:smallinstine_tofu_soup"
-        },
-        {
-          "items": "duacandelight:wuling_roast_rabbit"
-        },
-        {
-          "items": "duacandelight:smallinstine_kucai_soup"
-        },
-        {
-          "items": "duacandelight:zhujiaoganfan"
-        },
-        {
-          "items": "duacandelight:xianfan"
-        },
-        {
-          "items": "duacandelight:laver_pork_soup"
-        },
-        {
-          "items": "duacandelight:pig_liver_soup"
-        },
-        {
-          "items": "duacandelight:beef_soup"
-        },
-        {
-          "items": "duacandelight:cooked_mifen"
-        },
-        {
-          "items": "duacandelight:russula_mianxian"
-        },
-        {
-          "items": "duacandelight:cuma"
-        },
-        {
-          "items": "duacandelight:eajian"
-        },
-        {
-          "items": "duacandelight:eajian_tomato_sauce"
-        },
-        {
-          "items": "duacandelight:dachangchaosuancai"
-        },
-        {
-          "items": "duacandelight:midenggui"
-        },
-        {
-          "items": "duacandelight:chicken_consomme"
-        },
-        {
-          "items": "duacandelight:giteng_mianxian"
-        },
-        {
-          "items": "duacandelight:clam_tofu_soup"
-        },
-        {
-          "items": "duacandelight:guojiao"
-        },
-        {
-          "items": "duacandelight:caoguo"
-        },
-        {
-          "items": "duacandelight:fensi_steamed_crab"
-        },
-        {
-          "items": "duacandelight:fensi_steamed_clawster"
-        },
-        {
-          "items": "duacandelight:roasted_minced_garlic_oyster"
-        },
-        {
-          "items": "duacandelight:braised_bambooshoot_with_suancai"
-        },
-        {
-          "items": "duacandelight:xifan"
-        },
-        {
-          "items": "duacandelight:sweety_potato_porrideg"
-        },
-        {
-          "items": "duacandelight:rousongxifan"
-        },
-        {
-          "items": "duacandelight:xifan_with_mushroom_meat_sauce"
-        },
-        {
-          "items": "duacandelight:kelp_tofu_soup"
-        },
-        {
-          "items": "duacandelight:laver_egg_soup"
-        },
-        {
-          "items": "duacandelight:seaweed_salad"
-        },
-        {
-          "items": "duacandelight:rousong"
-        },
-        {
-          "items": "duacandelight:youzha"
-        },
-        {
-          "items": "duacandelight:angleng"
-        },
-        {
-          "items": "duacandelight:fried_tofu"
-        },
-        {
-          "items": "duacandelight:xiancaodong"
-        },
-        {
-          "items": "duacandelight:siguoteng"
-        },
-        {
-          "items": "duacandelight:mushroom_meat_sauce"
-        },
-        {
-          "items": "duacandelight:peanuts_milk"
-        },
-        {
-          "items": "duacandelight:vegetables_juice"
-        },
-        {
-          "items": "duacandelight:oil_cut_wheat_tea"
         },
         {
           "items": "create:bar_of_chocolate"

@@ -1,16 +1,8 @@
 {
   "growth_items": [
     {
-      "growth_in_ticks": 72000,
-      "items": "dragonsurvival:elder_dragon_heart"
-    },
-    {
-      "growth_in_ticks": 36000,
-      "items": "dragonsurvival:weak_dragon_heart"
-    },
-    {
-      "growth_in_ticks": -72000,
-      "items": "dragonsurvival:star_bone"
+      "growth_in_ticks": 108000,
+      "items": "wing_kirin:empyrean_essence"
     },
     {
       "growth_in_ticks": 0,
