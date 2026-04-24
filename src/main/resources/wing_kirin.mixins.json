@@ -5,10 +5,14 @@
   "mixins": [
     "LivingEntityEffectMixin",
     "LivingEntityHurtMixin",
-    "ManaHandlerMixin"
+    "ManaHandlerMixin",
+    "DragonAbilityInstanceMixin"
   ],
   "client": [
-    "EntityGlowColorMixin"
+    "EntityGlowColorMixin",
+    "MagicHUDMixin",
+    "OutlineColorDataAccessor",
+    "ClientCastingHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

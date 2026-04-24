@@ -110,6 +110,7 @@
     
     "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "Will cast §6「Arrow Hit Stasis Hex」",
     "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "Will cast §6「Area Stasis Hex」",
+    "actionbar.wing_kirin.ability.stasis_hex.disable_ability": "§eYou can not casting with DING SHEN effect",
     
     "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "GUIDED MISSLE HAS LUANCHED!",
     "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "FAILED LOCATING POSITION!", 

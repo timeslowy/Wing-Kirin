@@ -488,6 +488,7 @@
 
     "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "将施放§6「箭击定身」",
     "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "将施放§6「范围定身」",
+    "actionbar.wing_kirin.ability.stasis_hex.disable_ability": "§e定身使你施法不得",
 
 
     "title.wing_kirin.last_stand": "回光返照",
