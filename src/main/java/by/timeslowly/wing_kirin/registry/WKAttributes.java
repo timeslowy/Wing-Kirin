@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class WKAttributes {
     /**
-     * 重锤猛击倍率和音爆伤害倍率的逻辑见： {@link WKEventHandler}
+     * 重锤猛击倍率和音爆伤害倍率的逻辑见： {@link by.timeslowly.wing_kirin.common.eventhandler.AttributeEventHandler}
      */
     public static final DeferredRegister<Attribute> ATTRIBUTES =
             DeferredRegister.create(Registries.ATTRIBUTE, Wing_kirin.MOD_ID);

@@ -11,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 // 从天而降药水效果
 public class MaceCrushEffect extends MobEffect {
     /**
-     * 修改重锤猛击伤害的逻辑见： {@link by.timeslowly.wing_kirin.registry.WKEventHandler}
+     * 修改重锤猛击伤害的逻辑见： {@link by.timeslowly.wing_kirin.common.eventhandler.AttributeEventHandler}
      */
     public MaceCrushEffect(MobEffectCategory category, int color) {
         super(category, color);

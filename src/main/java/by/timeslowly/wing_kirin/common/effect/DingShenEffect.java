@@ -54,18 +54,16 @@ public class DingShenEffect extends MobEffect {
         return true;
     }
 
+    /**
+     * 修改原版交互和视觉效果的逻辑见： {@link by.timeslowly.wing_kirin.common.eventhandler.EffectEventHandler}
+     */
     @Override
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
         // 阻止移动
         entity.setDeltaMovement(Vec3.ZERO);
 
-        // 物品冷却
-        if (entity instanceof Player player) {
-            player.getCooldowns().addCooldown(player.getMainHandItem().getItem(), 10);
-        }
-
         // 随机关闭 GUI（使用实体自身的随机源）
-        if (entity.getRandom().nextInt(1, 51) == 1) {  // nextInt(1,51) 等价于原 1~50 范围
+        if (entity.getRandom().nextInt(1, 101) == 1) {  // nextInt(1,51) 等价于原 1~50 范围
             if (entity instanceof Player player) {
                 player.closeContainer();
             }
@@ -74,6 +72,9 @@ public class DingShenEffect extends MobEffect {
         return super.applyEffectTick(entity, amplifier);
     }
 
+    /**
+     * 禁用龙生法力系统的逻辑见： {@link by.timeslowly.wing_kirin.mixins.DragonAbilityInstanceMixin} 和 {@link by.timeslowly.wing_kirin.mixins.MagicHUDMixin}
+     */
     // 效果初应用时
     @Override
     public void onEffectAdded(@NotNull LivingEntity entity, int amplifier) {

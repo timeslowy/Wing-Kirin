@@ -7,9 +7,11 @@ import software.bernie.geckolib.util.Color;
 
 @Mixin(MagicHUD.OutlineColorData.class)
 public interface OutlineColorDataAccessor {
+    // 颜色
     @Accessor("color")
     void setColor(Color color);
 
+    // 延迟
     @Accessor("pastDelay")
     void setPastDelay(boolean pastDelay);
 }
