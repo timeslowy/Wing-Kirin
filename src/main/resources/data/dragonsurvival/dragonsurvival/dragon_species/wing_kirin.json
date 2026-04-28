@@ -1,16 +1,16 @@
 {
 	"abilities": "#dragonsurvival:wing_kirin",
 	"misc_resources": {
-		"ability_bar": "dragonsurvival:textures/gui/custom/casting_bars/wing_kirin/cast_bar.png",
-		"altar_banner": "dragonsurvival:textures/gui/custom/altar/wing_kirin/altar_icon.png",
+		"ability_bar": "wing_kirin:textures/gui/custom/casting_bars/cast_bar.png",
+		"altar_banner": "wing_kirin:textures/gui/custom/altar/altar_icon.png",
 		"food_tooltip": {
 			"font": "wing_kirin:food_tooltip_icon_font",
 			"nutrition_icon": "\\uEA01",
 			"saturation_icon": "\\uEA02"
 		},
 		"growth_crystal": {
-			"empty": "dragonsurvival:textures/gui/custom/stage/wing_kirin/point_main.png",
-			"full": "dragonsurvival:textures/gui/custom/stage/wing_kirin/point_hover.png"
+			"empty": "wing_kirin:textures/gui/custom/growth_crystal/point_main.png",
+			"full": "wing_kirin:textures/gui/custom/growth_crystal/point_hover.png"
 		},
 		"growth_left_arrow": {
 			"hover_icon": "dragonsurvival:textures/gui/custom/stage/sea/left_arrow_hover.png",
@@ -21,10 +21,10 @@
 			"icon": "dragonsurvival:textures/gui/custom/stage/sea/right_arrow_main.png"
 		},
 		"mana_sprites": {
-			"empty": "dragonsurvival:textures/gui/custom/mana_icons/wing_kirin/empty.png",
-			"full": "dragonsurvival:textures/gui/custom/mana_icons/wing_kirin/full.png",
-			"recovery": "dragonsurvival:textures/gui/custom/mana_icons/wing_kirin/recovery.png",
-			"reserved": "dragonsurvival:textures/gui/custom/mana_icons/wing_kirin/reserved.png"
+			"empty": "wing_kirin:textures/gui/custom/mana_icons/empty.png",
+			"full": "wing_kirin:textures/gui/custom/mana_icons/full.png",
+			"recovery": "wing_kirin:textures/gui/custom/mana_icons/recovery.png",
+			"reserved": "wing_kirin:textures/gui/custom/mana_icons/reserved.png"
 		},
 		"primary_color": "#fbdc92",
 		"secondary_color": "#30aecf",

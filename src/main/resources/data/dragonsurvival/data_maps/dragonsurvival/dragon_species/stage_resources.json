@@ -3,42 +3,42 @@
 		"dragonsurvival:wing_kirin": {
 			"wing_kirin:adult": {
 				"default_skin": {
-					"glow_skin": "dragonsurvival:textures/dragon/wing_kirin/adult_glow.png",
-					"skin": "dragonsurvival:textures/dragon/wing_kirin/adult.png"
+					"glow_skin": "wing_kirin:textures/dragon/default_skin/adult_glow.png",
+					"skin": "wing_kirin:textures/dragon/default_skin/adult.png"
 				},
 				"growth_icon": {
-					"hover_icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/adult_stage_hover.png",
-					"icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/adult_stage_main.png"
+					"hover_icon": "wing_kirin:textures/gui/custom/stage/adult_stage_hover.png",
+					"icon": "wing_kirin:textures/gui/custom/stage/adult_stage_main.png"
 				}
 			},
 			"wing_kirin:ancient": {
 				"default_skin": {
-					"glow_skin": "dragonsurvival:textures/dragon/wing_kirin/ancient_glow.png",
-					"skin": "dragonsurvival:textures/dragon/wing_kirin/ancient.png"
+					"glow_skin": "wing_kirin:textures/dragon/default_skin/ancient_glow.png",
+					"skin": "wing_kirin:textures/dragon/default_skin/ancient.png"
 				},
 				"growth_icon": {
-					"hover_icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/ancient_stage_hover.png",
-					"icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/ancient_stage_main.png"
+					"hover_icon": "wing_kirin:textures/gui/custom/stage/ancient_stage_hover.png",
+					"icon": "wing_kirin:textures/gui/custom/stage/ancient_stage_main.png"
 				}
 			},
 			"wing_kirin:newborn": {
 				"default_skin": {
-					"glow_skin": "dragonsurvival:textures/dragon/wing_kirin/newborn_glow.png",
-					"skin": "dragonsurvival:textures/dragon/wing_kirin/newborn.png"
+					"glow_skin": "wing_kirin:textures/dragon/default_skin/newborn_glow.png",
+					"skin": "wing_kirin:textures/dragon/default_skin/newborn.png"
 				},
 				"growth_icon": {
-					"hover_icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/newborn_stage_hover.png",
-					"icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/newborn_stage_main.png"
+					"hover_icon": "wing_kirin:textures/gui/custom/stage/newborn_stage_hover.png",
+					"icon": "wing_kirin:textures/gui/custom/stage/newborn_stage_main.png"
 				}
 			},
 			"wing_kirin:young": {
 				"default_skin": {
-					"glow_skin": "dragonsurvival:textures/dragon/wing_kirin/young_glow.png",
-					"skin": "dragonsurvival:textures/dragon/wing_kirin/young.png"
+					"glow_skin": "wing_kirin:textures/dragon/default_skin/young_glow.png",
+					"skin": "wing_kirin:textures/dragon/default_skin/young.png"
 				},
 				"growth_icon": {
-					"hover_icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/young_stage_hover.png",
-					"icon": "dragonsurvival:textures/gui/custom/stage/wing_kirin/young_stage_main.png"
+					"hover_icon": "wing_kirin:textures/gui/custom/stage/young_stage_hover.png",
+					"icon": "wing_kirin:textures/gui/custom/stage/young_stage_main.png"
 				}
 			}
 		}

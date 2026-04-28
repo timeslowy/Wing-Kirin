@@ -63,7 +63,7 @@
     ],
     "reduction_rate": 0.1,
     "regeneration_rate": 0.05,
-    "supply_type": "dragonsurvival:healthy_atmosphere",
+    "supply_type": "wing_kirin:healthy_atmosphere",
     "trigger_rate": 80
   }
 }
