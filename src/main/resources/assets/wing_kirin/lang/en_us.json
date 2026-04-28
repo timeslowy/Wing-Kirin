@@ -42,7 +42,7 @@
     "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■ Slow down slightly，cassting to make you to enter temporary§6 flow status §7，instantly \"Open the Ren and Du meridians\"，§e improving your attack speed signfifcantly and ignore PHDI!§7\n\n§4■ But due to the overuse of strength you will become§n weakness§r§4 after effect removal. When§n severely injured§r§4 you can not to cast.\n\n§6§o\"In the world of Kungfu, speed defines the winner.\"",
     "dragon_ability.wing_kirin.reverse_aging":"Reverse Aging",
     "dragon_ability.wing_kirin.reverse_aging.desc": "§7■ Reverse aging seems impossible, but in games, it is not bound by objective physical laws. The secret of this ability lies in guiding the dissipation of internal energy to §areverse age§7 and achieve \"rejuvenation\".\n\n§7■ §lCasting Time§r§7 increases with §askill level (growth stage)§7; each successful use has a chance to §again experience rewards§r.\n\n§7■ Can only be used when growth stage is §ngreater than 40 and less than 250§r§7; if not within this range, it is §lpowerless§r§7.\n\n§6§o\"Divine womb differentiated, misty sacred body, light and healthy rejuvenation.\"",
-
+    "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "This is too late.",
 
     "dragon_ability.dragonsurvival.born_above_empyrean": "Born Above Empyrean",
     "dragon_ability.dragonsurvival.born_above_empyrean.desc": "§7■ When high above the clouds, bathed in the celestial winds, the§6 Wing Kirin§r§7 feels as if returned to its \"spring,\" granting itself several excellent§a beneficial effects§r.\n\n§6§o\"Infinite scenery lies on the perilous peak, calm amidst the chaotic flying clouds.\"§r",
@@ -111,6 +111,7 @@
     "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "Will cast §6「Arrow Hit Stasis Hex」",
     "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "Will cast §6「Area Stasis Hex」",
     "actionbar.wing_kirin.ability.stasis_hex.disable_ability": "§eYou can not casting with DING SHEN effect",
+    "actionbar.wing_kirin.ability.stasis_hex.disable_interaction": "§eYou can not interact with world with DING SHEN effect",
     
     "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "GUIDED MISSLE HAS LUANCHED!",
     "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "FAILED LOCATING POSITION!", 

@@ -4,8 +4,11 @@ import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.InputEvent;
@@ -49,18 +52,24 @@ public class EffectEventHandler {
         }
         // 3. 判断是否拥有效果
         if (player.hasEffect(WKEffects.DING_SHEN)) {
+            // 提示
+            player.displayClientMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_interaction"),true);
             event.setCanceled(true);
         }
     }
 
     // 显示快捷栏禁用视觉效果
+    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onRenderHotbar(RenderGuiLayerEvent.@NotNull Post event) {
         // 检查当前渲染的元素是否为快捷栏 (HOTBAR)
         if (event.getName().equals(VanillaGuiLayers.HOTBAR)) {
             Player player = Minecraft.getInstance().player;
             if (player == null) return;
-
+            // 1. 检查全局HUD是否可见 (响应F1键)
+            if (Minecraft.getInstance().options.hideGui) {
+                return; // F1模式下跳过渲染
+            }
             // 检查玩家是否拥有“定身”效果
             if (player.hasEffect(WKEffects.DING_SHEN)) {
                 GuiGraphics guiGraphics = event.getGuiGraphics();
@@ -72,7 +81,7 @@ public class EffectEventHandler {
                 int hotbarHeight = 22;
                 int x = (screenWidth - hotbarWidth) / 2;
                 int y = screenHeight - hotbarHeight;
-
+                // 副手
                 int offhandWidth = 22;
                 int offhandHeight = 22;
                 int offhandX = x - offhandWidth - 8; // 主快捷栏左侧，留出8像素间隔
@@ -80,7 +89,7 @@ public class EffectEventHandler {
                 // 主快捷栏蒙版
                 guiGraphics.fill(x, y, x + hotbarWidth, y + hotbarHeight, 0xB34D4D4D);
                 // 副手槽位蒙版
-                guiGraphics.fill(offhandX, y, offhandX + offhandWidth, y + offhandHeight, 0x80AAAAAA);
+                guiGraphics.fill(offhandX, y, offhandX + offhandWidth, y + offhandHeight, 0xB34D4D4D);
             }
         }
     }

@@ -99,6 +99,11 @@
             "looping": "block.bone_block.step",
             "end": "block.grindstone.use",
             "charging": "dragonsurvival:activate_beacon"
+        },
+        "notification": {
+            "usage_blocked": {
+                "translate": "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked"
+            }
         }
     },
     "icon": {

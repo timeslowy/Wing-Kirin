@@ -8,6 +8,8 @@ import by.timeslowly.wing_kirin.registry.WKEffects;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -15,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@OnlyIn(Dist.CLIENT)
 @Mixin(value = ClientCastingHandler.class, remap = false)
 public abstract class ClientCastingHandlerMixin {
 
