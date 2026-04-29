@@ -9,7 +9,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.neoforged.neoforge.common.EffectCure;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 public class UnstoppableSpeedEffect extends MobEffect {
     /**
@@ -31,6 +34,12 @@ public class UnstoppableSpeedEffect extends MobEffect {
     public static void onEffectExpired(@NotNull LivingEntity entity, int amplifier) {
         entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, amplifier, false, true, true));
         entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, amplifier, false, true, true));
+    }
+
+    // 使其无法被常规手段消去
+    @Override
+    public void fillEffectCures(final @NotNull Set<EffectCure> cures, @NotNull final MobEffectInstance effectInstance) {
+        cures.clear();
     }
 
 }

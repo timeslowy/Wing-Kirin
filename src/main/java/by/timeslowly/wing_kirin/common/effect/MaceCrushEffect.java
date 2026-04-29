@@ -6,7 +6,12 @@ import by.timeslowly.wing_kirin.registry.WKAttributes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.neoforged.neoforge.common.EffectCure;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 // 从天而降药水效果
 public class MaceCrushEffect extends MobEffect {
@@ -26,5 +31,10 @@ public class MaceCrushEffect extends MobEffect {
         );
     }
 
+    // 使其无法被常规手段消去
+    @Override
+    public void fillEffectCures(final @NotNull Set<EffectCure> cures, @NotNull final MobEffectInstance effectInstance) {
+        cures.clear();
+    }
 }
 
