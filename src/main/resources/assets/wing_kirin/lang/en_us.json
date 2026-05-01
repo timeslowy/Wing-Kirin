@@ -512,5 +512,7 @@
     "dragon_stage.wing_kirin.newborn": "NEWBORN",
     "dragon_stage.wing_kirin.young": "YOUNG",
     "dragon_stage.wing_kirin.adult": "ADULT",
-    "dragon_stage.wing_kirin.ancient": "ANCIENT"
+    "dragon_stage.wing_kirin.ancient": "ANCIENT",
+
+    "stat.wing_kirin.trigger_dingshen": "Times Ding Shen Triggered"
 }

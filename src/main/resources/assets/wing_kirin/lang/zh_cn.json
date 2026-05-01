@@ -534,5 +534,7 @@
     "dragon_stage.wing_kirin.newborn": "幼年麒麟",
     "dragon_stage.wing_kirin.young": "青年麒麟",
     "dragon_stage.wing_kirin.adult": "成年麒麟",
-    "dragon_stage.wing_kirin.ancient": "壮年麒麟"
+    "dragon_stage.wing_kirin.ancient": "壮年麒麟",
+
+    "stat.wing_kirin.trigger_dingshen": "触发定身效果次数"
 }
