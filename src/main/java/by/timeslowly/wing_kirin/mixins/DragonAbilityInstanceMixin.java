@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.mixins;
 
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.activation.Activation;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
@@ -41,10 +42,14 @@ public abstract class DragonAbilityInstanceMixin {
     }
 
     /**
-     * 判断逻辑：非被动技能 且 玩家拥有定身效果
+     * 判断逻辑：配置启用 且 非被动技能 且 玩家拥有定身效果
      */
     @Unique
     private boolean wingKirin$shouldBlock(Player player) {
+        // 配置未启用则不阻止
+        if (!WKServerConfig.shouldDingShenDisableAbilities()) {
+            return false;
+        }
         // 获取技能的类型（被动/主动）
         // 注意：value() 是目标类已有的 public 方法，可直接调用，无需 @Shadow
         if (((DragonAbilityInstance) (Object) this).value().activation().type() == Activation.Type.PASSIVE) {

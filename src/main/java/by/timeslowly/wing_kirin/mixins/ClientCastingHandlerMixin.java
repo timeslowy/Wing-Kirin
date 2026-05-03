@@ -4,6 +4,7 @@ import by.dragonsurvivalteam.dragonsurvival.client.handlers.magic.ClientCastingH
 import by.dragonsurvivalteam.dragonsurvival.config.ClientConfig;
 import by.dragonsurvivalteam.dragonsurvival.input.Keybind;
 import by.dragonsurvivalteam.dragonsurvival.registry.attachments.MagicData;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.network.chat.Component;
@@ -26,7 +27,7 @@ public abstract class ClientCastingHandlerMixin {
      */
     @Inject(method = "beginCast", at = @At("HEAD"), cancellable = true, remap = false)
     private static void blockBeginCastWhenDingShen(@NotNull Player player, InputConstants.Key input, CallbackInfo ci) {
-        if (player.hasEffect(WKEffects.DING_SHEN)) {
+        if (player.hasEffect(WKEffects.DING_SHEN) && WKServerConfig.shouldDingShenDisableAbilities()) {
             MagicData magicData = MagicData.getData(player);
             int selectedSlot = magicData.getSelectedAbilitySlot();
             Keybind castKey = ClientConfig.alternateCastMode ? wingKirin$getSlotKeybind(selectedSlot) : Keybind.USE_ABILITY;

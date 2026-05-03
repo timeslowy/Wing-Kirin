@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -62,10 +63,14 @@ public class DingShenEffect extends MobEffect {
         // 阻止移动
         entity.setDeltaMovement(Vec3.ZERO);
 
-        // 随机关闭 GUI（使用实体自身的随机源）
-        if (entity.getRandom().nextInt(1, 101) == 1) {  // nextInt(1,51) 等价于原 1~50 范围
+        // 随机关闭容器 GUI（使用实体自身的随机源），不会关闭游戏菜单（暂停界面）
+        int chance = WKServerConfig.getDingShenCloseGuiChance();
+        if (chance > 0 && entity.getRandom().nextInt(100) < chance) {
             if (entity instanceof Player player) {
-                player.closeContainer();
+                // 仅关闭实际打开的容器（箱子、熔炉等），不关闭游戏菜单/暂停界面
+                if (player.containerMenu != player.inventoryMenu) {
+                    player.closeContainer();
+                }
             }
         }
 

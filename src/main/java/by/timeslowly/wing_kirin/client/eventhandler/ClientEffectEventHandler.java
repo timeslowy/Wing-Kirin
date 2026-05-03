@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.client.eventhandler;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -26,8 +27,8 @@ public class ClientEffectEventHandler {
         if (player == null) {
             return;
         }
-        // 3. 判断是否拥有效果
-        if (player.hasEffect(WKEffects.DING_SHEN)) {
+        // 3. 判断是否拥有效果且配置启用禁用交互
+        if (WKServerConfig.shouldDingShenDisableInteraction() && player.hasEffect(WKEffects.DING_SHEN)) {
             // 提示
             player.displayClientMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_interaction"), true);
             event.setCanceled(true);
@@ -45,8 +46,8 @@ public class ClientEffectEventHandler {
             if (Minecraft.getInstance().options.hideGui) {
                 return; // F1模式下跳过渲染
             }
-            // 检查玩家是否拥有"定身"效果
-            if (player.hasEffect(WKEffects.DING_SHEN)) {
+            // 检查玩家是否拥有"定身"效果且配置启用禁用交互
+            if (WKServerConfig.shouldDingShenDisableInteraction() && player.hasEffect(WKEffects.DING_SHEN)) {
                 GuiGraphics guiGraphics = event.getGuiGraphics();
 
                 // 获取屏幕尺寸并计算主快捷栏位置

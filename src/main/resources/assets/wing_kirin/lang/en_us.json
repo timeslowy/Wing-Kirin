@@ -514,5 +514,36 @@
     "dragon_stage.wing_kirin.adult": "ADULT",
     "dragon_stage.wing_kirin.ancient": "ANCIENT",
 
-    "stat.wing_kirin.trigger_dingshen": "Times Ding Shen Triggered"
+    "stat.wing_kirin.triggered_dingshen_count": "「Wing Kirin」Times Ding Shen Triggered",
+    "stat.wing_kirin.triggered_last_stand_times": "「Wing Kirin」Times Last Stand Triggred",
+    "stat.wing_kirin.casted_empyrean_wine_seconds": "「Wing Kirin」Casted Empyrean Wine Seconds",
+    "stat.wing_kirin.casted_weather_clear_times": "「Wing Kirin」Casted Weather Clear Times",
+    "stat.wing_kirin.shoot_signal_arrow_count": "「Wing Kirin」Shoot Signal Arrow Count",
+    "stat.wing_kirin.indestructible_body_countershock_times": "「Wing Kirin」Indestructible Body Countershock Times",
+    "stat.wing_kirin.triggered_heavenly_justice_times": "「Wing Kirin」Triggered Heavenly Justice Times",
+    "stat.wing_kirin.broken_instant_invisibility_times": "「Wing Kirin」Broken Instant Invisibility Times",
+    "stat.wing_kirin.triggered_reversing_aging_times": "「Wing Kirin」Triggered Reversing Aging Times",
+
+
+    "command.wing_kirin.wk_stats.set_success.single": "Set stat §a%s§r's §b%s§r to §e%d§r",
+    "command.wing_kirin.wk_stats.set_success.multiple": "Set stat §b%s§r to §e%d§r for §a%d§r players",
+    "command.wing_kirin.wk_stats.add_success.single": "Added §e%d§r to §a%s§r's stat §b%s§r (now §e%d§r)",
+    "command.wing_kirin.wk_stats.add_success.multiple": "Added §e%d§r to stat §b%s§r for §a%d§r players",
+    "command.wing_kirin.wk_stats.unknown_stat": "§cUnknown stat: %s§r",
+
+    "wing_kirin.config.ding_shen": "Ding Shen Effect Settings",
+    "wing_kirin.config.ding_shen.tooltip": "Configuration for the Ding Shen (Stasis Hex) effect behavior.",
+    "wing_kirin.config.ding_shen.button": "Configure",
+    "wing_kirin.config.ding_shen.disableAbilities": "Disable Active Abilities",
+    "wing_kirin.config.ding_shen.disableAbilities.tooltip": "Whether the Ding Shen effect disables dragon active abilities.",
+    "wing_kirin.config.ding_shen.disableInteraction": "Disable Player Interaction",
+    "wing_kirin.config.ding_shen.disableInteraction.tooltip": "Whether the Ding Shen effect disables player interaction with the world.",
+    "wing_kirin.config.ding_shen.closeGuiChance": "Random GUI Close Chance",
+    "wing_kirin.config.ding_shen.closeGuiChance.tooltip": "The chance per tick to randomly close the player's container GUI. 0 = never, 100 = always. Does not close the game menu (pause screen).",
+
+    "wing_kirin.config.great_zhengqi": "Great Zhengqi Effect Settings",
+    "wing_kirin.config.great_zhengqi.tooltip": "Configuration for the Great Zhengqi effect behavior.",
+    "wing_kirin.config.great_zhengqi.button": "Configure",
+    "wing_kirin.config.great_zhengqi.ignoreManaCost": "Ignore Mana Cost",
+    "wing_kirin.config.great_zhengqi.ignoreManaCost.tooltip": "Whether Wing Kirin dragons can ignore mana cost under the Great Zhengqi effect."
 }

@@ -4,6 +4,7 @@ import by.dragonsurvivalteam.dragonsurvival.DragonSurvival;
 import by.dragonsurvivalteam.dragonsurvival.common.capability.DragonStateProvider;
 import by.dragonsurvivalteam.dragonsurvival.common.handlers.magic.ManaHandler;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.DragonSpecies;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.player.Player;
@@ -36,6 +37,10 @@ public abstract class ManaHandlerMixin {
     // 核心方法
     @Unique
     private static boolean shouldIgnoreManaCost$wingkirin(Player player) {
+        // 是否启用浩然正气无视法力消耗配置
+        if (!WKServerConfig.shouldGreatZhengqiIgnoreManaCost()) {
+            return false;
+        }
         // 是否为龙玩家
         if (!DragonStateProvider.isDragon(player)) {
             return false;

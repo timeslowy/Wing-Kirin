@@ -3,6 +3,7 @@ package by.timeslowly.wing_kirin.mixins;
 import by.dragonsurvivalteam.dragonsurvival.client.gui.hud.MagicHUD;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.activation.Activation;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.DeltaTracker;
@@ -43,8 +44,8 @@ public abstract class MagicHUDMixin {
         Player player = Minecraft.getInstance().player;
         if (player == null || ability == null) return;
 
-        // 若有定身效果则覆盖灰色遮罩
-        if (player.hasEffect(WKEffects.DING_SHEN) && ability.value().activation().type() != Activation.Type.PASSIVE) {
+        // 若有定身效果且配置启用禁用技能，则覆盖灰色遮罩
+        if (WKServerConfig.shouldDingShenDisableAbilities() && player.hasEffect(WKEffects.DING_SHEN) && ability.value().activation().type() != Activation.Type.PASSIVE) {
             MagicHUD.OutlineColorData data = colors[x];
             ((OutlineColorDataAccessor) data).setColor(Color.ofRGBA(0.3f, 0.3f, 0.3f, 0.7f));
             ((OutlineColorDataAccessor) data).setPastDelay(false);
@@ -59,7 +60,7 @@ public abstract class MagicHUDMixin {
             remap = false)
     private static void grayOutManaSprites(Args args) {
         Player player = Minecraft.getInstance().player;
-        if (player != null && player.hasEffect(WKEffects.DING_SHEN)) {
+        if (player != null && WKServerConfig.shouldDingShenDisableAbilities() && player.hasEffect(WKEffects.DING_SHEN)) {
             args.set(6, 0.3f); // red
             args.set(7, 0.3f); // green
             args.set(8, 0.3f); // blue
