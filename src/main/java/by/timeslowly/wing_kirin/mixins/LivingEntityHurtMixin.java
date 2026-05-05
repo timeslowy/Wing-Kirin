@@ -1,5 +1,6 @@
 package by.timeslowly.wing_kirin.mixins;
 
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.TagKey;
@@ -15,7 +16,9 @@ public abstract class LivingEntityHurtMixin {
 
     /**
      * 拦截无敌判定中对伤害来源 bypasses_cooldown 标签的检查。
-     * 若攻击者拥有 唯快不破 效果，则强制返回 true，从而无视受击冷却。
+     * 若攻击者拥有 唯快不破 效果，则根据配置决定是否无视受击冷却：
+     * - 配置开启时：所有伤害类型均可无视受击冷却
+     * - 配置关闭时：仅近战攻击（is_player_attack）可无视受击冷却
      */
 
     @Redirect(
@@ -26,15 +29,19 @@ public abstract class LivingEntityHurtMixin {
             )
     )
     private boolean redirectBypassCheck(DamageSource source, TagKey<DamageType> tagKey) {
-        // 当检查的是 BYPASSES_COOLDOWN 标签，且攻击者拥有「唯快不破」效果时，返回 true
         if (tagKey == DamageTypeTags.BYPASSES_COOLDOWN) {
             if (source.getEntity() instanceof LivingEntity attacker) {
                 if (attacker.hasEffect(WKEffects.UNSTOPPABLE_SPEED)) {
-                    return true;
+                    if (WKServerConfig.shouldUnstoppableSpeedApplyToAllDamageTypes()) {
+                        return true;
+                    }
+                    // 配置关闭时，仅近战攻击（is_player_attack）可无视受击冷却
+                    if (source.is(DamageTypeTags.IS_PLAYER_ATTACK)) {
+                        return true;
+                    }
                 }
             }
         }
-        // 其他情况保持原版逻辑
         return source.is(tagKey);
     }
 

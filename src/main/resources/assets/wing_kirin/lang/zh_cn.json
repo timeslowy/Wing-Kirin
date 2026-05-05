@@ -561,10 +561,14 @@
     "wing_kirin.config.ding_shen.disableInteraction.tooltip": "定身效果是否禁用玩家与世界交互（如使用物品、对方块操作等）。",
     "wing_kirin.config.ding_shen.closeGuiChance": "随机关闭GUI概率",
     "wing_kirin.config.ding_shen.closeGuiChance.tooltip": "每刻随机关闭玩家容器GUI的概率。0 = 从不，100 = 必定。不会关闭游戏菜单（暂停界面）。",
-
     "wing_kirin.config.great_zhengqi": "浩然正气效果设置",
     "wing_kirin.config.great_zhengqi.tooltip": "「浩然正气」效果的行为配置。",
     "wing_kirin.config.great_zhengqi.button": "编辑",
     "wing_kirin.config.great_zhengqi.ignoreManaCost": "无视法力消耗",
-    "wing_kirin.config.great_zhengqi.ignoreManaCost.tooltip": "翼麒麟龙种是否能在「浩然正气」效果下无视法力消耗。"
+    "wing_kirin.config.great_zhengqi.ignoreManaCost.tooltip": "翼麒麟龙种是否能在「浩然正气」效果下无视法力消耗。",
+    "wing_kirin.config.unstoppable_speed": "唯快不破效果设置",
+    "wing_kirin.config.unstoppable_speed.tooltip": "「唯快不破」效果的行为配置。",
+    "wing_kirin.config.unstoppable_speed.button": "编辑",
+    "wing_kirin.config.unstoppable_speed.allDamageTypes": "所有伤害类型无视受击冷却",
+    "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "「唯快不破」效果是否使所有伤害类型均能无视受击冷却。关闭时仅近战攻击（玩家攻击）可无视受击冷却。"
 }

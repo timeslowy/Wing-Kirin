@@ -23,6 +23,9 @@ public class WKServerConfig {
     /** 浩然正气是否使翼麒麟无视法力消耗 */
     public static final ModConfigSpec.BooleanValue GREAT_ZHENGQI_IGNORE_MANA_COST;
 
+    /** 唯快不破是否对所有伤害类型生效（默认关，仅近战攻击） */
+    public static final ModConfigSpec.BooleanValue UNSTOPPABLE_SPEED_ALL_DAMAGE_TYPES;
+
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
@@ -58,6 +61,17 @@ public class WKServerConfig {
 
         builder.pop();
 
+        builder.comment("Unstoppable Speed Effect Settings")
+               .translation("wing_kirin.config.unstoppable_speed")
+               .push("unstoppable_speed");
+
+        UNSTOPPABLE_SPEED_ALL_DAMAGE_TYPES = builder
+                .comment("Whether the Unstoppable Speed effect allows ALL damage types to bypass invulnerability cooldown. If false, only player attack (melee) damage bypasses cooldown.")
+                .translation("wing_kirin.config.unstoppable_speed.allDamageTypes")
+                .define("allDamageTypes", false);
+
+        builder.pop();
+
         SPEC = builder.build();
     }
 
@@ -79,5 +93,10 @@ public class WKServerConfig {
     /** 便捷方法：获取浩然正气是否使翼麒麟无视法力消耗 */
     public static boolean shouldGreatZhengqiIgnoreManaCost() {
         return GREAT_ZHENGQI_IGNORE_MANA_COST.get();
+    }
+
+    /** 便捷方法：获取唯快不破是否对所有伤害类型生效（否则仅近战攻击） */
+    public static boolean shouldUnstoppableSpeedApplyToAllDamageTypes() {
+        return UNSTOPPABLE_SPEED_ALL_DAMAGE_TYPES.get();
     }
 }
