@@ -21,9 +21,9 @@ public class WKStats {
 
     // 自定义统计信息项
     // 定身数项
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredDingShenCount =
-            CUSTOM_STATS.register("triggered_dingshen_count", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_dingshen_count"));
+    public static final DeferredHolder<ResourceLocation, ResourceLocation> CastedStasisHexCTimes =
+            CUSTOM_STATS.register("casted_stasis_hex_times", () ->
+                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_stasis_hex_times"));
 
     // 触发回光返照次数
     public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggerLastStandTimes =
@@ -61,9 +61,9 @@ public class WKStats {
                     ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "broken_instant_invisibility_times"));
 
     //触发 返老还童 次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredReversingAgingTimes =
-            CUSTOM_STATS.register("triggered_reversing_aging_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_reversing_aging_times"));
+    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredReverseAgingTimes =
+            CUSTOM_STATS.register("triggered_reverse_aging_times", () ->
+                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_reverse_aging_times"));
 
     /**
      * 秒数格式化器：将整数值作为秒数显示，自动转换为合适的单位（s/m/h/d）

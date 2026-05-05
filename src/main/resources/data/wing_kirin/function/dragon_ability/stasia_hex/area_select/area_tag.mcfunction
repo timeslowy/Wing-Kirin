@@ -6,7 +6,6 @@ tag @s add caster
 execute on passengers run tag @s add caster
 execute on vehicle run tag @s add caster
 
-
 # 储存玩家的技能等级至命令存储
 execute store result storage wing_kirin:ram stasis_hex.level int 1 run dragon-ability query @s dragonsurvival:stasis_hex level
 

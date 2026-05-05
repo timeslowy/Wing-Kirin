@@ -9,3 +9,7 @@ $execute as $(hex_Owner) run scoreboard players reset @s wk.heavenly_justice.cou
 
 # 播放成功音效
 $execute as $(hex_Owner) at @s run playsound entity.arrow.hit_player player @s
+
+# 增加“触发天降正义”统计数据值
+$execute as $(hex_Owner) run wk-stats add @s wing_kirin:triggered_heavenly_justice_times 1
+

@@ -13,3 +13,6 @@ playsound block.fire.extinguish player @a ~ ~ ~
 
 # 剥夺进度使其可反复触发
 advancement revoke @s only wing_kirin:function/instant_invisibility_check
+
+# 增加“破隐一击次数”统计数据值
+wk-stats add @s wing_kirin:broken_instant_invisibility_times 1

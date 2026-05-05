@@ -536,7 +536,7 @@
     "dragon_stage.wing_kirin.adult": "成年麒麟",
     "dragon_stage.wing_kirin.ancient": "壮年麒麟",
 
-    "stat.wing_kirin.triggered_dingshen_count": "「翼麒麟」触发定身效果次数",
+    "stat.wing_kirin.casted_stasis_hex_times": "「翼麒麟」施用定身法术次数",
     "stat.wing_kirin.triggered_last_stand_times": "「翼麒麟」触发回光返照次数",
     "stat.wing_kirin.casted_empyrean_wine_seconds": "「翼麒麟」施法金风玉露总时长",
     "stat.wing_kirin.casted_weather_clear_times": "「翼麒麟」施放「云销雨霁」总次数",
@@ -544,7 +544,7 @@
     "stat.wing_kirin.indestructible_body_countershock_times": "「翼麒麟」「不坏金身」总反震次数",
     "stat.wing_kirin.triggered_heavenly_justice_times": "「翼麒麟」施放「天降正义」总次数",
     "stat.wing_kirin.broken_instant_invisibility_times": "「翼麒麟」“破隐一击”总次数",
-    "stat.wing_kirin.triggered_reversing_aging_times": "「翼麒麟」施用「返老还童」总次数",
+    "stat.wing_kirin.triggered_reverse_aging_times": "「翼麒麟」施用「返老还童」总次数",
 
     "command.wing_kirin.wk_stats.set_success.single": "已将 §a%s§r 的统计项 §b%s§r 设置为 §e%d§r",
     "command.wing_kirin.wk_stats.set_success.multiple": "已将 §a%d§r 名玩家的统计项 §b%s§r 设置为 §e%d§r",

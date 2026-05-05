@@ -5,3 +5,6 @@ scoreboard players add @s wk.empyrean_wine.attempt_count 1
 title @s actionbar [{"translate": "actionbar.wing_kirin.empyrean_wine.cast_describiton_0"}, \
     {"score": {"name": "@s","objective": "wk.empyrean_wine.attempt_count" },"color": "#fbdc92"}, \
     {"translate": "actionbar.wing_kirin.empyrean_wine.cast_describiton_1"}]
+
+# 增加“金风玉露施法时长”统计数据值
+wk-stats add @s wing_kirin:casted_empyrean_wine_seconds 1

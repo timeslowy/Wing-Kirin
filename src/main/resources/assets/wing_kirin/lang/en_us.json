@@ -514,7 +514,7 @@
     "dragon_stage.wing_kirin.adult": "ADULT",
     "dragon_stage.wing_kirin.ancient": "ANCIENT",
 
-    "stat.wing_kirin.triggered_dingshen_count": "「Wing Kirin」Times Ding Shen Triggered",
+    "stat.wing_kirin.casted_stasis_hex_times": "「Wing Kirin」Times Stasis Hex Casted",
     "stat.wing_kirin.triggered_last_stand_times": "「Wing Kirin」Times Last Stand Triggred",
     "stat.wing_kirin.casted_empyrean_wine_seconds": "「Wing Kirin」Casted Empyrean Wine Seconds",
     "stat.wing_kirin.casted_weather_clear_times": "「Wing Kirin」Casted Weather Clear Times",
@@ -522,7 +522,7 @@
     "stat.wing_kirin.indestructible_body_countershock_times": "「Wing Kirin」Indestructible Body Countershock Times",
     "stat.wing_kirin.triggered_heavenly_justice_times": "「Wing Kirin」Triggered Heavenly Justice Times",
     "stat.wing_kirin.broken_instant_invisibility_times": "「Wing Kirin」Broken Instant Invisibility Times",
-    "stat.wing_kirin.triggered_reversing_aging_times": "「Wing Kirin」Triggered Reversing Aging Times",
+    "stat.wing_kirin.triggered_reverse_aging_times": "「Wing Kirin」Triggered Reverse Aging Times",
 
 
     "command.wing_kirin.wk_stats.set_success.single": "Set stat §a%s§r's §b%s§r to §e%d§r",

@@ -11,6 +11,10 @@
                             "growth_type": "add"
                         },
                         {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/reverse_aging/main"
+                        },
+                        {
                             "effect_type": "dragonsurvival:experience",
                             "experience_type": "points",
                             "amount": 50,
