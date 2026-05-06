@@ -545,6 +545,7 @@
     "stat.wing_kirin.triggered_heavenly_justice_times": "「翼麒麟」施放「天降正义」总次数",
     "stat.wing_kirin.broken_instant_invisibility_times": "「翼麒麟」“破隐一击”总次数",
     "stat.wing_kirin.triggered_reverse_aging_times": "「翼麒麟」施用「返老还童」总次数",
+    "stat.wing_kirin.cured_alies_count": "「翼麒麟」「仁者无敌」惠及友方总数",
 
     "command.wing_kirin.wk_stats.set_success.single": "已将 §a%s§r 的统计项 §b%s§r 设置为 §e%d§r",
     "command.wing_kirin.wk_stats.set_success.multiple": "已将 §a%d§r 名玩家的统计项 §b%s§r 设置为 §e%d§r",

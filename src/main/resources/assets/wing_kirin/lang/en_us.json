@@ -523,6 +523,7 @@
     "stat.wing_kirin.triggered_heavenly_justice_times": "「Wing Kirin」Triggered Heavenly Justice Times",
     "stat.wing_kirin.broken_instant_invisibility_times": "「Wing Kirin」Broken Instant Invisibility Times",
     "stat.wing_kirin.triggered_reverse_aging_times": "「Wing Kirin」Triggered Reverse Aging Times",
+    "stat.wing_kirin.cured_alies_count": "「Wing Kirin」Cured Alies Count by Invincible Benevolence",
 
 
     "command.wing_kirin.wk_stats.set_success.single": "Set stat §a%s§r's §b%s§r to §e%d§r",

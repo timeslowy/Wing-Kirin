@@ -1,4 +1,4 @@
-# 末地烛粒子，参考自冰焰龙模组
+# 末地烛粒子
 particle end_rod ~ ~ ~ 0.09 0 0 9 0 force
 particle end_rod ~ ~ ~ 0.0886327 0 0.0156283 9 0 force
 particle end_rod ~ ~ ~ 0.0845723 0 0.0307818 9 0 force

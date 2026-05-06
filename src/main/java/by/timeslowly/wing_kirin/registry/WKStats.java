@@ -60,10 +60,15 @@ public class WKStats {
             CUSTOM_STATS.register("broken_instant_invisibility_times", () ->
                     ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "broken_instant_invisibility_times"));
 
-    //触发 返老还童 次数
+    // 触发 返老还童 次数
     public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredReverseAgingTimes =
             CUSTOM_STATS.register("triggered_reverse_aging_times", () ->
                     ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_reverse_aging_times"));
+
+    // 仁者无敌 治愈友方总数
+    public static final DeferredHolder<ResourceLocation, ResourceLocation> CuredAliesCount =
+            CUSTOM_STATS.register("cured_alies_count", () ->
+                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "cured_alies_count"));
 
     /**
      * 秒数格式化器：将整数值作为秒数显示，自动转换为合适的单位（s/m/h/d）

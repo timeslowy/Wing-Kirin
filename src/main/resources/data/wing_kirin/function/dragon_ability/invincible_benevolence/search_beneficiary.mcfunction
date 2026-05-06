@@ -11,6 +11,9 @@ execute if score @s wk.invincible_benevolence.beneficiary_amount matches 88.. \
 execute if entity @n[distance=..9,tag=beneficiary] run \
     scoreboard players add @s wk.invincible_benevolence.beneficiary_amount 1
 
+# 增加“仁者无敌惠及友方总数”统计数据值
+wk-stats add @s wing_kirin:cured_alies_count 1
+
 # 并移除此实体的标签以防重复统计
 tag @n[distance=..9,tag=beneficiary] remove beneficiary
 
