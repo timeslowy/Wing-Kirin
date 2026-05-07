@@ -1,13 +1,13 @@
 {
     "replace": false,
     "values": [
-        "dragonsurvival:stasis_hex",
+        "wing_kirin:stasis_hex",
         "wing_kirin:uppersky_wind_breath",
         "wing_kirin:weather_clear",
         "wing_kirin:empyrean_wine",
         "wing_kirin:thunderous_shout",
         "wing_kirin:fall_like_meteorite",
-        "dragonsurvival:indestructible_body",
+        "wing_kirin:indestructible_body",
         "wing_kirin:scale_down",
         "wing_kirin:reverse_aging",
         "wing_kirin:empyrean_magic",

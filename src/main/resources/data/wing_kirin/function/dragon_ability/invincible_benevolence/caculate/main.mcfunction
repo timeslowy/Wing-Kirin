@@ -3,7 +3,7 @@ tag @e[distance=..9,tag=beneficiary] remove beneficiary
 
 # 将玩家技能等级存至命令存储格式
 execute store result storage wing_kirin:ram invincible_benevolence.level int 1 \
-    run dragon-ability query @s dragonsurvival:invincible_benevolence level
+    run dragon-ability query @s wing_kirin:invincible_benevolence level
 
 # 如果拥有「浩然正气」效果则增加20%的相对受惠实体数
 execute if data entity @s active_effects[{id:"wing_kirin:great_zhengqi"}] \

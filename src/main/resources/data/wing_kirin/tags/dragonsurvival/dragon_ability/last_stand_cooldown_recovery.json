@@ -1,12 +1,12 @@
 {
     "values": [
         "wing_kirin:thunderous_shout",
-        "dragonsurvival:stasis_hex",
+        "wing_kirin:stasis_hex",
         "wing_kirin:uppersky_wind_breath",
-        "dragonsurvival:signal_arrow",
-        "dragonsurvival:indestructible_body",
+        "wing_kirin:signal_arrow",
+        "wing_kirin:indestructible_body",
         "wing_kirin:fall_like_meteorite",
-        "dragonsurvival:instant_invisibility",
+        "wing_kirin:instant_invisibility",
         "wing_kirin:scale_down",
         "wing_kirin:empyrean_wine"
     ]

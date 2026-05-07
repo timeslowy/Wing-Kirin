@@ -3,31 +3,31 @@
     "criteria": {
         "master_last_stand": {
             "conditions": {
-                "ability": "dragonsurvival:last_stand"
+                "ability": "wing_kirin:last_stand"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_instant_invisibility": {
             "conditions": {
-                "ability": "dragonsurvival:instant_invisibility"
+                "ability": "wing_kirin:instant_invisibility"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_signal_arrow": {
             "conditions": {
-                "ability": "dragonsurvival:signal_arrow"
+                "ability": "wing_kirin:signal_arrow"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_invincible_benevolence": {
             "conditions": {
-                "ability": "dragonsurvival:invincible_benevolence"
+                "ability": "wing_kirin:invincible_benevolence"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_heavenly_justice": {
             "conditions": {
-                "ability": "dragonsurvival:heavenly_justice"
+                "ability": "wing_kirin:heavenly_justice"
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },

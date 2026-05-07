@@ -9,7 +9,7 @@ data modify storage wing_kirin:ram math.UUID set from entity @s UUID
 function wing_kirin:lib/math/uuid-dec_to_hex/main
 
 # 将玩家的技能等级存入命令存储
-execute store result storage wing_kirin:ram instant_invisibility.level int 1 run dragon-ability query @s dragonsurvival:instant_invisibility level
+execute store result storage wing_kirin:ram instant_invisibility.level int 1 run dragon-ability query @s wing_kirin:instant_invisibility level
 
 # 生成标志实体来框定法术范围（施法位置处）
 summon minecraft:marker ~ ~ ~ {Tags:[new_spawn,instant_invisibility]}

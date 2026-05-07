@@ -1,7 +1,7 @@
 ## 执行者：玩家
 ## 显示箭雨大致范围
 # 将玩家技能等级存入命令存储
-execute store result storage wing_kirin:ram signal_arrow.level int 1 run dragon-ability query @s dragonsurvival:signal_arrow level
+execute store result storage wing_kirin:ram signal_arrow.level int 1 run dragon-ability query @s wing_kirin:signal_arrow level
 
 # 根据不同等级以粒子显示范围
 # 1级（12）
