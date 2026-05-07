@@ -54,6 +54,8 @@
     "dragon_ability.dragonsurvival.fly_higher.desc": "§7■ When the harsh winds above the Nine Heavens brush past its wings, the§6 Wing Kirin§r§7 can draw upon their boundless energy, greatly§a increasing flight speed§r§7, and also ride the wind to§a reduce food consumption§r§7. In the azure sky above the limit of construction, it streaks across the firmament like light.\n\n■「Flight Speed Bonus」and「Flight Consumption Reduction」increase with§a ability level (experience cost)§r§7.\n\n§6§o\"The vast sea lets fish leap, the high sky lets dragons fly.\"",
     "dragon_ability.dragonsurvival.last_stand": "Last Stand",
     "dragon_ability.dragonsurvival.last_stand.desc": "§7■The name of this abiliy doesnot sounds good,but the capability is likes its name.It can §edelay your death,and boosting some function of body temporarily,even reset cooldown of some abilities§r.§7\n\n■The delayed duration is upgrade with §nability level.§r\n\n§4■⚠Attention:The cooldown will not reset after real death instantly!§r\n\n§6§o“Donot Fear The Reaper”",
+    "dragon_ability.wing_kirin.transposition": "Transposition",
+    "dragon_ability.wing_kirin.transposition.desc": "§7■ Whether the opponent is rushing towards you with momentum or completely unaware with their back turned, in just an instant, you can move§n behind them§e, catching them off guard. §7\n\n■ The ability level increases with §aability level (experience cost)§r§7;\n\n§8■ Cannot be used when §l\"Ding Shen\"§r§8 is applied!§r\n\n§6§o\"Vanishing from sight, drifting like a meteor.\"",
 
 
     "dragon_ability.dragonsurvival.kirin_wing": "Kirin's Wings",

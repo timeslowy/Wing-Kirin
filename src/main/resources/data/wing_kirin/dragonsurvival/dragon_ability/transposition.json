@@ -1,0 +1,104 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "resistance",
+                                "amplifier": 4,
+                                "duration": 20
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/transposition/ready"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/transposition/main"
+                        }
+                    ],
+                    "targeting_mode": "all_except_self"
+                },
+                "range": 10,
+                "target_type": "dragonsurvival:looking_at"
+            }
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:passive",
+        "continuous_mana_cost": {
+            "amount": 1,
+            "type": "reserved"
+        },
+        "trigger": {
+            "trigger_type": "dragonsurvival:on_key_pressed",
+            "keys": [
+                "key.keyboard.left.alt"
+            ]
+        },
+        "cooldown": {
+            "type": "linear",
+            "base": 120,
+            "per_level_above_first": -40
+        }
+    },
+    "can_be_manually_disabled": true,
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_points",
+        "maximum_level": 3,
+        "experience_cost": {
+            "type": "linear",
+            "base": 100,
+            "per_level_above_first": 100
+        }
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:test"
+            }
+        ]
+    },
+    "usage_blocked": {
+        "condition": "any_of",
+        "terms": [
+            {
+                "condition": "inverted",
+                "term": {
+                    "condition": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "effects": {
+                        "wing_kirin:ding_shen": {}
+                    }
+                }
+            }
+        ]
+    }
+}
