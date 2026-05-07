@@ -54,7 +54,7 @@
   "dragon_ability.dragonsurvival.last_stand": "回光返照",
   "dragon_ability.dragonsurvival.last_stand.desc": "§7■此技能称号不太中听，但名副其实。其作用似于§n另类的不死图腾§r§7，在命悬一线之际可以暂时“力挽狂澜”，并§e短暂提高身体各项机能，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股能量散尽（对应属性调整效果消失），自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r\n\n§6§o“阎王要你三更死，它能留你到五更”",
   "dragon_ability.wing_kirin.transposition": "移形换位",
-  "dragon_ability.wing_kirin.transposition.desc": "§7■无论对方是气势汹汹向你奔来，还是毫无察觉地背对着，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■技能等级随§a技能等级（经验消耗）§r§7提升；\n\n§8■被§l“定身”§r§8时§l无法使用！§r\n\n§6§o“去影忽不见，飘然若流星。”",
+  "dragon_ability.wing_kirin.transposition.desc": "§7■无论对方是气势汹汹向你奔来，还是毫无察觉地背对着，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■冷却时间随§a技能等级（经验消耗）§r§7提升；\n\n§8■适用距离较短；被§l“定身”§r§8时§l无法使用！§r\n\n§6§o“去影忽不见，飘然若流星。”",
 
   "dragon_ability.dragonsurvival.kirin_wing": "麒麟之翼",
   "dragon_ability.dragonsurvival.kirin_wing.desc": "§7■不类其他龙种，§6翼麒麟§r§7诞于九天之上，生来自会翱翔万里长空。\n\n§6§o“其翼若垂天之云”§r",
@@ -531,7 +531,7 @@
   "command.wing_kirin.wk_stats.unknown_stat": "§c未知的统计项：%s§r",
 
   
-  "wing_kirin.config.ding_shen": "定身效果设置",
+  "wing_kirin.config.ding_shen": "「定身」",
   "wing_kirin.config.ding_shen.tooltip": "定身（定身术）药水效果的行为配置。",
   "wing_kirin.config.ding_shen.button": "编辑",
   "wing_kirin.config.ding_shen.disableAbilities": "禁用主动技能",
@@ -540,14 +540,19 @@
   "wing_kirin.config.ding_shen.disableInteraction.tooltip": "定身效果是否禁用玩家与世界交互（如使用物品、对方块操作等）。",
   "wing_kirin.config.ding_shen.closeGuiChance": "随机关闭GUI概率",
   "wing_kirin.config.ding_shen.closeGuiChance.tooltip": "每刻随机关闭玩家容器GUI的概率。0 = 从不，100 = 必定。不会关闭游戏菜单（暂停界面）。",
-  "wing_kirin.config.great_zhengqi": "浩然正气效果设置",
+  "wing_kirin.config.great_zhengqi": "「浩然正气」",
   "wing_kirin.config.great_zhengqi.tooltip": "「浩然正气」效果的行为配置。",
   "wing_kirin.config.great_zhengqi.button": "编辑",
   "wing_kirin.config.great_zhengqi.ignoreManaCost": "无视法力消耗",
   "wing_kirin.config.great_zhengqi.ignoreManaCost.tooltip": "翼麒麟龙种是否能在「浩然正气」效果下无视法力消耗。",
-  "wing_kirin.config.unstoppable_speed": "唯快不破效果设置",
+  "wing_kirin.config.unstoppable_speed": "「唯快不破」",
   "wing_kirin.config.unstoppable_speed.tooltip": "「唯快不破」效果的行为配置。",
   "wing_kirin.config.unstoppable_speed.button": "编辑",
   "wing_kirin.config.unstoppable_speed.allDamageTypes": "所有伤害类型无视受击冷却",
-  "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "「唯快不破」效果是否使所有伤害类型均能无视受击冷却。关闭时仅近战攻击（玩家攻击）可无视受击冷却。"
+  "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "「唯快不破」效果是否使所有伤害类型均能无视受击冷却。关闭时仅近战攻击（玩家攻击）可无视受击冷却。",
+  "wing_kirin.config.thunderous_shout_settings": "「龙吼功」",
+  "wing_kirin.config.thunderous_shout_settings.tooltip": "「龙吼功」相关行为配置",
+  "wing_kirin.config.thunderous_shout_settings.button": "编辑",
+  "wing_kirin.config.thunderous_shout.fastDurabilityHurt": "金钟是否快速消耗耐久",
+  "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "金钟是否会随音爆伤害每个实体而快速消耗耐久"
 }

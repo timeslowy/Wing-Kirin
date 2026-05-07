@@ -55,7 +55,7 @@
     "dragon_ability.dragonsurvival.last_stand": "Last Stand",
     "dragon_ability.dragonsurvival.last_stand.desc": "§7■The name of this abiliy doesnot sounds good,but the capability is likes its name.It can §edelay your death,and boosting some function of body temporarily,even reset cooldown of some abilities§r.§7\n\n■The delayed duration is upgrade with §nability level.§r\n\n§4■⚠Attention:The cooldown will not reset after real death instantly!§r\n\n§6§o“Donot Fear The Reaper”",
     "dragon_ability.wing_kirin.transposition": "Transposition",
-    "dragon_ability.wing_kirin.transposition.desc": "§7■ Whether the opponent is rushing towards you with momentum or completely unaware with their back turned, in just an instant, you can move§n behind them§e, catching them off guard. §7\n\n■ The ability level increases with §aability level (experience cost)§r§7;\n\n§8■ Cannot be used when §l\"Ding Shen\"§r§8 is applied!§r\n\n§6§o\"Vanishing from sight, drifting like a meteor.\"",
+    "dragon_ability.wing_kirin.transposition.desc": "§7■ Whether the opponent is rushing towards you with momentum or completely unaware with their back turned, in just an instant, you can move§n behind them§e, catching them off guard. §7\n\n■ The cooldown reduces with §aability level (experience cost)§r§7;\n\n§8■ With short distance; Cannot be used when §l\"Ding Shen\"§r§8 is applied!§r\n\n§6§o\"Vanishing from sight, drifting like a meteor.\"",
 
 
     "dragon_ability.dragonsurvival.kirin_wing": "Kirin's Wings",
@@ -552,5 +552,10 @@
     "wing_kirin.config.unstoppable_speed.tooltip": "Configuration for the Unstoppable Speed effect behavior.",
     "wing_kirin.config.unstoppable_speed.button": "Configure",
     "wing_kirin.config.unstoppable_speed.allDamageTypes": "All Damage Types Bypass Cooldown",
-    "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "Whether the Unstoppable Speed effect allows ALL damage types to bypass invulnerability cooldown. If false, only player attack (melee) damage bypasses cooldown."
+    "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "Whether the Unstoppable Speed effect allows ALL damage types to bypass invulnerability cooldown. If false, only player attack (melee) damage bypasses cooldown.",
+    "wing_kirin.config.thunderous_shout_settings": "Thunderous Shout",
+    "wing_kirin.config.thunderous_shout_settings.tooltip": "Configuration for the Thunderous Shout (Golden Bell) behavior.",
+    "wing_kirin.config.thunderous_shout_settings.button": "Configure",
+    "wing_kirin.config.thunderous_shout.fastDurabilityHurt": "Golden Bell Quick Durability Consumption",
+    "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "Whether the Golden Bell quickly consumes durability with each sonic boom damage instance"
 }

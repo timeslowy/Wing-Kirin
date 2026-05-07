@@ -26,6 +26,9 @@ public class WKServerConfig {
     /** 唯快不破是否对所有伤害类型生效（默认关，仅近战攻击） */
     public static final ModConfigSpec.BooleanValue UNSTOPPABLE_SPEED_ALL_DAMAGE_TYPES;
 
+    /** 金钟是否会随音爆伤害每个实体而快速消耗耐久 */
+    public static final ModConfigSpec.BooleanValue FAST_DURABILITY_HURT;
+
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
@@ -72,6 +75,15 @@ public class WKServerConfig {
 
         builder.pop();
 
+        builder.comment("Thunderous Shout Settings")
+                .translation("wing_kirin.config.thunderous_shout_settings")
+                .push("thunderous_shout");
+
+        FAST_DURABILITY_HURT = builder
+                .comment("Whether the Golden Bell will fast hurt durability with every entity hurt.")
+                .translation("wing_kirin.config.thunderous_shout.fastDurabilityHurt")
+                .define("fastDurabilityHurt",false);
+
         SPEC = builder.build();
     }
 
@@ -98,5 +110,10 @@ public class WKServerConfig {
     /** 便捷方法：获取唯快不破是否对所有伤害类型生效（否则仅近战攻击） */
     public static boolean shouldUnstoppableSpeedApplyToAllDamageTypes() {
         return UNSTOPPABLE_SPEED_ALL_DAMAGE_TYPES.get();
+    }
+
+    /** 便捷方法：获取是否要快速消耗金钟耐久 */
+    public static boolean shouldFastDurabilityHurt() {
+        return FAST_DURABILITY_HURT.get();
     }
 }
