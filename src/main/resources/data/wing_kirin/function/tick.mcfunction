@@ -2,9 +2,8 @@
 ## 初始执行者：服务器（server）
 ## （已为每条指令添加前置守卫，空闲时跳过无效遍历）
 
-# 给 定身术 每刻执行刻函数（守卫：仅在有被冻结实体时执行，且防止双 tag 共存时重复调用）
-execute if entity @e[tag=being_frozen-arrow] run function wing_kirin:dragon_ability/stasia_hex/tick
-execute if entity @e[tag=being_frozen-area] unless entity @e[tag=being_frozen-arrow] run function wing_kirin:dragon_ability/stasia_hex/tick
+# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen）
+function wing_kirin:dragon_ability/stasia_hex/tick
 
 # 给 金风玉露 执行刻函数（守卫：working_symbol 在 0..25 之间，即技能激活或待重置）
 execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.empyrean_wine.working_symbol matches 0.. run function wing_kirin:dragon_ability/empyrean_wine/tick

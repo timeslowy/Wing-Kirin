@@ -1,10 +1,8 @@
 ##加载计分板
 
 # 定身术使用
-# 箭击生物定身计时器
-scoreboard objectives add wk.stasis_hex.freezeTimer-arrow dummy
-# 范围施法定身计时器
-scoreboard objectives add wk.stasis_hex.freezeTimer-area dummy
+# 统一计时器（v3.0 合并了 arrow 和 area 两套计时系统）
+scoreboard objectives add wk.stasis_hex.freezeTimer dummy
 # 单个实体最大定身次数上限
 scoreboard objectives add wk.stasis_hex.freezeTimer-max_count dummy
 # 临时存储

@@ -1,6 +1,8 @@
-## 箭击定身
+## 执行者：被定身实体（统一标签 being_frozen）
+## 将统一计时器 freezeTimer 转换为药水效果时长并应用
+
 # 获取计时器分数并存入命令存储：转存入临时计分板，除以20后+1存入命令存储，再重置临时计分板
-scoreboard players operation @s wk.stasis_hex.temp = @s wk.stasis_hex.freezeTimer-arrow
+scoreboard players operation @s wk.stasis_hex.temp = @s wk.stasis_hex.freezeTimer
 scoreboard players operation @s wk.stasis_hex.temp /= #20 wk.math
 execute store result storage wing_kirin:ram stasis_hex.duration int 1 \
     run scoreboard players operation @s wk.stasis_hex.temp += #01 wk.math

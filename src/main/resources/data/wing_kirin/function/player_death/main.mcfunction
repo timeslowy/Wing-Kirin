@@ -1,9 +1,8 @@
 ## 执行者：死亡的玩家
 # 此时计分板 wk.death_check 的值为1
 
-# 定身术：清除计分板
-function wing_kirin:dragon_ability/stasia_hex/desctuor/remove_effects-arrow
-function wing_kirin:dragon_ability/stasia_hex/desctuor/remove_effects-area
+# 定身术：清除定身效果与计分板（已统一标签和计时器）
+function wing_kirin:dragon_ability/stasia_hex/desctuor/remove_effects
 
 # 回光返照：将玩家的倒计时计分板和死亡计数计分板重置
 scoreboard players reset @s wk.last_stand.death_countdown

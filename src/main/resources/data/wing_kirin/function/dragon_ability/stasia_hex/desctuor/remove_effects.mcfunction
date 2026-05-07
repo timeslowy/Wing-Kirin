@@ -1,4 +1,5 @@
-## 执行者：在wing_kirin:dragon_ability/stasia_hex/main （“定身术”主函数）中已指定被箭击定身的实体为执行者
+## 执行者：定身时间结束的被冻结实体（合并自 remove_effects-arrow + remove_effects-area）
+## 恢复AI、清除效果、移除标签、重置计分板、杀死展示实体
 
 # 恢复生物AI效果(双保险)
 data modify entity @s NoAI set value false
@@ -9,10 +10,10 @@ effect clear @s dragonsurvival:magic_disabled
 effect clear @s wing_kirin:ding_shen
 
 # 移除所用标签
-tag @s remove being_frozen-arrow
+tag @s remove being_frozen
 
 # 重置所属计分板
-scoreboard players reset @s wk.stasis_hex.freezeTimer-arrow
+scoreboard players reset @s wk.stasis_hex.freezeTimer
 scoreboard players reset @s wk.stasis_hex.freezeTimer-max_count
 
 # 杀死骑乘的物品展示实体（定）
