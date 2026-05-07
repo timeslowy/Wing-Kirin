@@ -3,28 +3,28 @@
     "criteria": {
         "master_fly_higher": {
             "conditions": {
-                "ability": "dragonsurvival:fly_higher",
+                "ability": "wing_kirin:fly_higher",
                 "level": 8
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_good_overcome_evil": {
             "conditions": {
-                "ability": "dragonsurvival:good_overcome_evil",
+                "ability": "wing_kirin:good_overcome_evil",
                 "level": 8
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_empyrean_magic": {
             "conditions": {
-                "ability": "dragonsurvival:empyrean_magic",
+                "ability": "wing_kirin:empyrean_magic",
                 "level": 10
             },
             "trigger": "dragonsurvival:upgrade_ability"
         },
         "master_born_above_empyrean": {
             "conditions": {
-                "ability": "dragonsurvival:born_above_empyrean",
+                "ability": "wing_kirin:born_above_empyrean",
                 "level": 2
             },
             "trigger": "dragonsurvival:upgrade_ability"

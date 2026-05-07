@@ -1,5 +1,5 @@
 # 将玩家技能等级存至命令存储格式
-execute store result storage wing_kirin:ram empyrean_wine.level int 1 run dragon-ability query @s dragonsurvival:empyrean_wine level
+execute store result storage wing_kirin:ram empyrean_wine.level int 1 run dragon-ability query @s wing_kirin:empyrean_wine level
 
 # 根据等级设置参数
 # 1级：1%

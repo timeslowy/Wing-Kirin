@@ -1,13 +1,13 @@
 {
     "values": [
-        "dragonsurvival:thunderous_shout",
+        "wing_kirin:thunderous_shout",
         "dragonsurvival:stasis_hex",
-        "dragonsurvival:uppersky_wind_breath",
+        "wing_kirin:uppersky_wind_breath",
         "dragonsurvival:signal_arrow",
         "dragonsurvival:indestructible_body",
-        "dragonsurvival:fall_like_meteorite",
+        "wing_kirin:fall_like_meteorite",
         "dragonsurvival:instant_invisibility",
-        "dragonsurvival:scale_down",
-        "dragonsurvival:empyrean_wine"
+        "wing_kirin:scale_down",
+        "wing_kirin:empyrean_wine"
     ]
 }

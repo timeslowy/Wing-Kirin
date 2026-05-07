@@ -6,7 +6,7 @@
         "cooldown": 12000,
         "notification": {
             "usage_blocked": {
-                "translate": "dragon_ability.dragonsurvival.weather_clear.activation.notification.usage_blocked"
+                "translate": "dragon_ability.wing_kirin.weather_clear.activation.notification.usage_blocked"
             }
         },
         "can_move_while_casting": false,
@@ -92,7 +92,7 @@
                 "per_level_above_first": 5
             },
             "values": [
-                30
+                60
             ]
         }
     },

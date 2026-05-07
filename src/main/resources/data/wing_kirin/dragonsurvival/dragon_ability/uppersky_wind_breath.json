@@ -21,6 +21,17 @@
                 "duration": 200,
                 "probability": 0.5
               }
+            },
+            {
+              "effect_type": "dragonsurvival:push",
+              "push_force": {
+                "type": "minecraft:linear",
+                "base": 0.02,
+                "per_level_above_first": 0.02
+              },
+              "target_direction": {
+                "direction": "looking_at"
+              }
             }
           ],
           "target_conditions": {

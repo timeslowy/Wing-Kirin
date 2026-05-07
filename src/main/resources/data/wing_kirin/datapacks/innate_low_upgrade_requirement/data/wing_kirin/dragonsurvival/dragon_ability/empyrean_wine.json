@@ -100,7 +100,7 @@
     "cooldown": 1,
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.dragonsurvival.empyrean_wine.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.empyrean_wine.activation.notification.usage_blocked"
       }
     },
     "can_move_while_casting": false,
