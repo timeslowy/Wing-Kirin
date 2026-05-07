@@ -21,6 +21,7 @@ build
 # VSCode
 .vscode/
 /src/main/resources/spyglass.json
+/src/main/resources/wing_kirin.code-workspace
 
 # zip
 *.zip

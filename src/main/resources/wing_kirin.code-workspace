@@ -1,16 +1,24 @@
 {
 	"folders": [
 		{
+			"name": "resources",
 			"path": "."
 		},
 		{
+			"name": "doc",
 			"path": "../../../doc"
 		},
 		{
+			"name": "object",
 			"path": "../../../object"
 		},
 		{
+			"name": "other",
 			"path": "../../../other"
+		},
+		{
+			"name": "java",
+			"path": "../java"
 		}
 	],
 	"settings": {}
