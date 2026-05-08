@@ -44,15 +44,16 @@
 
 ---
 
-#### 2. `invincible_benevolence/particle.mcfunction` — 36 条硬编码粒子环
+#### 2. `invincible_benevolence/particle.mcfunction` — 36 条硬编码粒子环 ✅ 已完成
 
-**问题：** 36 条 `particle end_rod ~ ~ ~ <dx> 0 <dz> 9 0 force` 命令，每条只有 x/z 偏移不同，完全可以用宏 + 少量命令替代。
+**问题：** 36 条 `particle end_rod ~ ~ ~ <dx> 0 <dz> 9 0 force` 命令，每条只有 x/z 偏移不同。
 
-**优化方案：**
-- 在 load 中预计算粒子 x/z 偏移数组存入 `storage`
-- 使用时用一条 `particle` 配合 `dust` 或改用少量随机偏移的 `particle` 指令
-- 或者使用 `/particle` 的 `delta` 参数配合较大扩散范围来近似环形
-- **预计减少指令数**：36 条 → 1~4 条
+**已实施方案（2026-05-08）：** Minecraft 粒子系统无法原生生成环形粒子，因此采用了**等角度降采样**策略：从 36 等分（每 10°）降为 12 等分（每 30°）。每条粒子的方向向量、速度、扩散参数完全保留。环的视觉效果基本不变——12 条 `end_rod` 射线的径向扩散仍然形成清晰的圆形轮廓。
+
+| 指标 | 优化前 | 优化后 | 减少 |
+|------|:-----:|:-----:|:----:|
+| 粒子命令数 | 36 | **12** | **67%** |
+| 文件行数 | 38 | **14** | **63%** |
 
 ---
 
@@ -66,7 +67,7 @@
 
 | 能力 | 原入口 | 新增守卫 | 空闲时行为 |
 |------|--------|---------|-----------|
-| stasia_hex | 直接 `function` | `if entity @e[tag=being_frozen-arrow]` + 防重复守卫 | 无冻结实体→跳过函数调用 |
+| stasia_hex | 直接 `function` | `if entity @e[tag=being_frozen]` → 已随双轨合并简化 | 无冻结实体→跳过函数调用 |
 | empyrean_wine | `as @a[predicate]` | `if score matches 0..` | 无激活酒壶→跳过函数调用 |
 | last_stand | `as @a`（无过滤） | `if score matches 0..` | 无回光返照→跳过函数调用 |
 | indestructible_body | `as @a[predicate]` | `if score matches ..26` | 无激活金身→跳过函数调用 |
@@ -76,11 +77,7 @@
 | heavenly_justice tick | `as @e[tag]` | 已充分过滤 | 无需修改 |
 | player_death | `as @a if score` | 已有 per-player 过滤 | 无需修改 |
 
-**stasia_hex 特殊处理：** 由于 `being_frozen-arrow` 和 `being_frozen-area` 两种标签可能在同一刻共存，使用双守卫防止函数被重复调用：
-```
-execute if entity @e[tag=being_frozen-arrow] run function ...
-execute if entity @e[tag=being_frozen-area] unless entity @e[tag=being_frozen-arrow] run function ...
-```
+**stasia_hex 已后续简化：** 随双轨合并（`stasia_hex_merge_analysis.md`），守卫已从 2 条简化为 1 条：`if entity @e[tag=being_frozen]`
 
 **实际效果：** 空闲服务器上，原 9 条 tick 指令中有 5 条被有效守卫跳过，显著减少无意义的 `execute as @a` 遍历和函数调用开销。
 
@@ -119,26 +116,19 @@ execute if entity @e[tag=being_frozen-area] unless entity @e[tag=being_frozen-ar
 
 ---
 
-#### 6. `stasia_hex/apply/arrow.mcfunction` 与 `area.mcfunction` — 高度重复代码
+#### 6. `stasia_hex/apply/arrow.mcfunction` 与 `area.mcfunction` — 高度重复代码 ✅ 已完成（双轨合并）
 
 **问题：** 两个文件内容几乎完全相同（4 行计分板操作 + 1 行 apply 调用），仅使用的计分板名不同（`freezeTimer-arrow` vs `freezeTimer-area`）。
 
-**优化方案：**
-- 合并为一个带宏参数的函数：
-  ```
-  $scoreboard players operation @s wk.stasis_hex.temp = @s wk.stasis_hex.freezeTimer-$(type)
-  ```
-- **预计减少文件数**：2 → 1
+**已实施方案（2026-05-07）：** 随定身术双轨合并统一为 `apply/set_duration.mcfunction`，直接引用统一后的 `freezeTimer` 计分板。原 `apply/main.mcfunction`（路由）、`apply/arrow.mcfunction`、`apply/area.mcfunction` 均已删除。详见 `stasia_hex_merge_analysis.md`。
 
 ---
 
-#### 7. `stasia_hex/desctuor/remove_effects-arrow.mcfunction` 与 `remove_effects-area.mcfunction` — 高度重复
+#### 7. `stasia_hex/desctuor/remove_effects-arrow.mcfunction` 与 `remove_effects-area.mcfunction` — 高度重复 ✅ 已完成（双轨合并）
 
 **问题：** 两个文件几乎完全相同，仅 tag 名称不同（`being_frozen-arrow` vs `being_frozen-area`）。
 
-**优化方案：**
-- 同样合并为带宏参数的单一函数
-- **预计减少文件数**：2 → 1
+**已实施方案（2026-05-07）：** 随定身术双轨合并统一为 `desctuor/remove_effects.mcfunction`，使用统一标签 `being_frozen` 和统一计时器 `freezeTimer`。原两个文件已删除。详见 `stasia_hex_merge_analysis.md`。
 
 ---
 
@@ -159,7 +149,7 @@ data modify entity @s data.Owner set from entity @s "neoforge:attachments"."drag
 
 ### 🟢 低优先级 — 微优化 & 规范
 
-#### 9. `instant_invisibility/main.mcfunction` — 重复的 `@n` 选择器
+#### 9. `instant_invisibility/main.mcfunction` — 重复的 `@n` 选择器 ✅ 已完成
 
 **问题：** 
 ```
@@ -168,9 +158,7 @@ execute as @n[type=marker,tag=new_spawn] run ...
 ```
 该选择器被调用了 3 次。虽然执行效率尚可，但更好的做法是先 `execute as @n[...] run function ...` 一次性切换执行者，内部使用 `@s`。
 
-**优化方案：**
-- 将 3 条分散的 `execute as @n[...]` 合并为一条，在子函数中统一处理
-- **预计减少指令数**：可减少 2 条 `@n` 选择
+**已实施方案（2026-05-08）：** 创建 `instant_invisibility/init_marker.mcfunction`，将 3 条分散的 `@n` 操作（UUID设置、计时器初始化、临时标签清除）合并为一次 `execute as @n[...] run function ...` 调用。`@n` 选择从 3 次减为 1 次。
 
 ---
 
@@ -182,7 +170,7 @@ execute as @n[type=marker,tag=new_spawn] run ...
 
 ---
 
-#### 11. `indestructible_body/tick.mcfunction` — 空计分板重置逻辑
+#### 11. `indestructible_body/tick.mcfunction` — 重复条件合并 ✅ 已完成
 
 **问题：**
 ```
@@ -191,16 +179,15 @@ execute if score @s wk.indestructible_body.working_symbol matches 26 run scorebo
 ```
 两条命令条件完全相同，可以合并到子函数中一起执行。
 
-**优化方案：** 合并为单条 `run function ...` 调用，内部执行两次 reset
-- **预计减少指令数**：2 → 1
+**已实施方案（2026-05-08）：** 创建 `indestructible_body/reset.mcfunction` 内含两条 reset 命令，tick 中合并为单条 `execute if ... matches 26 run function .../reset`。条件判断从 2 次减为 1 次。
 
 ---
 
-#### 12. `empyrean_wine/tick.mcfunction` — 同样的重复条件
+#### 12. `empyrean_wine/tick.mcfunction` — 同样的重复条件 ✅ 已完成
 
 **问题：** 和 #11 类似，两个 `matches 0` 条件重复。
 
-**优化方案：** 合并
+**已实施方案（2026-05-08）：** 创建 `empyrean_wine/reset.mcfunction`，tick 中合并为单条 `execute if ... matches 0 run function .../reset`。
 
 ---
 

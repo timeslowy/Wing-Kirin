@@ -2,7 +2,7 @@
 ## 初始执行者：服务器（server）
 ## （已为每条指令添加前置守卫，空闲时跳过无效遍历）
 
-# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen）
+# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen），此处因为里函数检查“定”字展示实体的骑乘状态，因此不能用实体选择器限定否则会失效。
 function wing_kirin:dragon_ability/stasia_hex/tick
 
 # 给 金风玉露 执行刻函数（守卫：working_symbol 在 0..25 之间，即技能激活或待重置）

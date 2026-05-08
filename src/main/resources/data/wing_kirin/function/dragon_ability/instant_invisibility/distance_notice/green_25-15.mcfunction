@@ -7,4 +7,4 @@ execute if entity @s[distance=1..4] run return \
 execute if entity @s[distance=4..7] run return \
     run title @s actionbar [{"translate": "actionbar.wing_kirin.instant_invisibility.distance_notice"},{"text": ">18","color": "#35e035"}]
 
-return run title @s actionbar [{"translate": "actionbar.wing_kirin.instant_invisibility.distance_notice"},{"text": "15","color": "#35e035"}]
+return run title @s actionbar [{"translate": "actionbar.wing_kirin.instant_invisibility.distance_notice"},{"text": ">15","color": "#35e035"}]
