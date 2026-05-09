@@ -1,0 +1,29 @@
+{
+    "parent": "wing_kirin:wing_kirin/persistent_attempt",
+    "criteria": {
+        "every_advancements": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "display": {
+        "hidden": true,
+        "frame": "challenge",
+        "icon": {
+            "id": "wing_kirin:empyrean_essence"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin.stinger"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin.stinger.desc"
+        }
+    },
+    "requirements": [
+        [
+            "every_advancements"
+        ]
+    ],
+    "rewards": {
+        "function": "wing_kirin:stinger"
+    }
+}

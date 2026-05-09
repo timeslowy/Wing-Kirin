@@ -277,14 +277,17 @@
 2. 新先天技能「移形换位」；  
 3. 添加有关技能使用的统计信息；   
 4. 添加与统计信息使用相关的指令；  
-5. 新增服务器配置，可调节一些技能的行为.
+5. 新增服务器配置，可调节一些技能的行为；
+6. 优化大量数据包性能。
 
 ---
 
 **⚠ Strongly Destructive Update, Please Consider Carefully!!**
+
 1. Changed the namespace of all abilities!
 2. New innate ability 「Teleportation」;
 3. Added statistics about ability usage;
 4. Added commands related to statistics usage;
-5. Added server configuration to adjust the behavior of some abilities.
+5. Added server configuration to adjust the behavior of some abilities;
+6. Optimized the performance of a large number of datapacks.
 
