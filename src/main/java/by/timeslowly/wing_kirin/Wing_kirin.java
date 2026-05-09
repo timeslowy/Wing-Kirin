@@ -6,8 +6,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -23,9 +21,7 @@ public class Wing_kirin {
         // 注册服务端配置
         container.registerConfig(ModConfig.Type.SERVER, WKServerConfig.SPEC);
 
-        // 注册模组配置界面（单人游戏内可实时修改，多人游戏只读）
-        container.registerExtensionPoint(IConfigScreenFactory.class,
-                (mc, parent) -> new ConfigurationScreen(container, parent));
+        // 注册模组配置界面已移至 ClientSetup（客户端专用事件处理器），以避免服务端加载客户端类
 
         // 注册模组加载的通用内容设置
 
