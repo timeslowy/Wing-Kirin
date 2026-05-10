@@ -16,10 +16,6 @@ public class WKSounds {
             SOUND_EVENT.register("thunderous_shout", () -> SoundEvent.createVariableRangeEvent(
                             ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "thunderous_shout")));
 
-
-
-
-
     public static void register(IEventBus eventBus) {
         SOUND_EVENT.register(eventBus);
     }

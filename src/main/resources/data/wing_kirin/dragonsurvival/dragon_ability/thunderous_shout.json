@@ -189,7 +189,7 @@
     },
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.wing_kirin.thunderous_shuot.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.thunderous_shout.activation.notification.usage_blocked"
       }
     }
   },

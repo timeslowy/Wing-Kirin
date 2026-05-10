@@ -13,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class PackFinders {
-    public PackFinders() {
-    }
 
     @SubscribeEvent
     public static void addPackFinders(@NotNull AddPackFindersEvent event) {
@@ -29,7 +27,7 @@ public class PackFinders {
         event.addPackFinders(
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "assets/wing_kirin/resourcepacks/wing_kirin_ui"),
                 PackType.CLIENT_RESOURCES,
-                Component.translatable("resoucepack.wing_kirin.wing_kirin_ui"),
+                Component.translatable("resourcepack.wing_kirin.wing_kirin_ui"),
                 PackSource.FEATURE,
                 false,
                 Pack.Position.TOP
