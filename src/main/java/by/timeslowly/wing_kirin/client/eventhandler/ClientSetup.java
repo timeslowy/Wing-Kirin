@@ -1,6 +1,6 @@
 package by.timeslowly.wing_kirin.client.eventhandler;
 
-import by.timeslowly.wing_kirin.WKClientHelper;
+import by.timeslowly.wing_kirin.client.ClientHelper;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.client.gui.screens.Screen;
 import net.neoforged.api.distmarker.Dist;
@@ -22,7 +22,7 @@ public class ClientSetup {
     @SubscribeEvent
     public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
         // 初始化 Shift 键状态检查（客户端实现）
-        WKClientHelper.SHIFT_DOWN = Screen::hasShiftDown;
+        ClientHelper.SHIFT_DOWN = Screen::hasShiftDown;
 
         // 注册模组配置界面（单人游戏内可实时修改，多人游戏只读）
         event.enqueueWork(() -> ModList.get().getModContainerById(Wing_kirin.MOD_ID).ifPresent(container ->

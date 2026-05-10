@@ -1,6 +1,6 @@
 package by.timeslowly.wing_kirin.common.item;
 
-import by.timeslowly.wing_kirin.WKClientHelper;
+import by.timeslowly.wing_kirin.client.ClientHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
@@ -59,7 +59,7 @@ public class EmpyreanMilkwineItem extends Item {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
         tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_milkwine.description_0"));
         // Shift描述
-        if (WKClientHelper.SHIFT_DOWN.getAsBoolean())
+        if (ClientHelper.SHIFT_DOWN.getAsBoolean())
             tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_milkwine.shift_down"));
         else
             tooltipComponents.add(Component.translatable("item.wing_kirin.shift_up"));

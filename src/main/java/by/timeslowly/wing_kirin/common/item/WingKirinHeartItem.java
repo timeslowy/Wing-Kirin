@@ -1,6 +1,6 @@
 package by.timeslowly.wing_kirin.common.item;
 
-import by.timeslowly.wing_kirin.WKClientHelper;
+import by.timeslowly.wing_kirin.client.ClientHelper;
 import by.timeslowly.wing_kirin.registry.WKItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,7 +33,7 @@ public class WingKirinHeartItem extends Item {
         tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_1"));
         tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.description_2"));
         // Shift描述
-        if (WKClientHelper.SHIFT_DOWN.getAsBoolean())
+        if (ClientHelper.SHIFT_DOWN.getAsBoolean())
             tooltipComponents.add(Component.translatable("item.wing_kirin.wing_kirin_upgrade.shift_down"));
         else
             tooltipComponents.add(Component.translatable("item.wing_kirin.shift_up"));
