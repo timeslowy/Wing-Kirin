@@ -533,6 +533,8 @@
     "command.wing_kirin.wk_stats.add_success.single": "Added §e%d§r to §a%s§r's stat §b%s§r (now §e%d§r)",
     "command.wing_kirin.wk_stats.add_success.multiple": "Added §e%d§r to stat §b%s§r for §a%d§r players",
     "command.wing_kirin.wk_stats.unknown_stat": "§cUnknown stat: %s§r",
+    "command.wing_kirin.wk_stats.not_mod_stat": "§c'%s' is not a Wing Kirin custom stat — this command only works with Wing Kirin statistics§r",
+    "command.wing_kirin.wk_stats.overflow": "§cStat value overflow detected for %s — the resulting value would exceed the maximum allowed integer§r",
 
     "wing_kirin.config.ding_shen": "Ding Shen Effect Settings",
     "wing_kirin.config.ding_shen.tooltip": "Configuration for the Ding Shen (Stasis Hex) effect behavior.",

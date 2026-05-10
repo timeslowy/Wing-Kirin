@@ -29,9 +29,7 @@ public class EmpyreanMilkwineItem extends Item {
                         .build()));
     }
     // 负面效果列表
-    // 使用 Holder<MobEffect> 类型
-    @SuppressWarnings("unchecked")
-    private static final Holder<MobEffect>[] NEGATIVE_EFFECTS = new Holder[]{
+    private static final List<Holder<MobEffect>> NEGATIVE_EFFECTS = List.of(
             MobEffects.POISON,          // 中毒
             MobEffects.WEAKNESS,        // 虚弱
             MobEffects.WITHER,          // 凋零
@@ -40,7 +38,7 @@ public class EmpyreanMilkwineItem extends Item {
             MobEffects.BLINDNESS,       // 失明
             MobEffects.DARKNESS,        // 黑暗
             MobEffects.MOVEMENT_SLOWDOWN// 缓慢
-    };
+    );
 
     // 使用饮用动画
     @Override

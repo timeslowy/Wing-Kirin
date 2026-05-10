@@ -4,6 +4,7 @@ import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.registry.WKStats;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.minecraft.commands.CommandSourceStack;
@@ -41,6 +42,20 @@ public class WKStatsCommand {
             );
 
     // 修改统计信息命令主体：/wk-stats add/set <targets> <stats_id> <int>
+    /**
+     * 构建 set/add 子命令共享的参数树：targets → stat → value
+     * @param executor 最终执行逻辑（set 或 add）
+     */
+    private static ArgumentBuilder<CommandSourceStack, ?> statsValueArg(com.mojang.brigadier.Command<CommandSourceStack> executor) {
+        return Commands.argument("targets", EntityArgument.players())
+                .then(Commands.argument("stat", ResourceLocationArgument.id())
+                        .suggests(STAT_SUGGESTIONS)
+                        .then(Commands.argument("value", IntegerArgumentType.integer(0, 999999999))
+                                .executes(executor)
+                        )
+                );
+    }
+
     @SubscribeEvent
     public static void register(@NotNull RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
@@ -48,27 +63,13 @@ public class WKStatsCommand {
                 Commands.literal("wk-stats")
                         .requires(source -> source.hasPermission(2))
                         .then(Commands.literal("set")
-                                .then(Commands.argument("targets", EntityArgument.players())
-                                        .then(Commands.argument("stat", ResourceLocationArgument.id())
-                                                .suggests(STAT_SUGGESTIONS)
-                                                .then(Commands.argument("value", IntegerArgumentType.integer(0))
-                                                        .executes(ctx -> executeSet(ctx, EntityArgument.getPlayers(ctx, "targets"),
-                                                                IntegerArgumentType.getInteger(ctx, "value")))
-                                                )
-                                        )
-                                )
-                        )
+                                .then(statsValueArg(ctx -> executeSet(ctx,
+                                        EntityArgument.getPlayers(ctx, "targets"),
+                                        IntegerArgumentType.getInteger(ctx, "value")))))
                         .then(Commands.literal("add")
-                                .then(Commands.argument("targets", EntityArgument.players())
-                                        .then(Commands.argument("stat", ResourceLocationArgument.id())
-                                                .suggests(STAT_SUGGESTIONS)
-                                                .then(Commands.argument("value", IntegerArgumentType.integer(0))
-                                                        .executes(ctx -> executeAdd(ctx, EntityArgument.getPlayers(ctx, "targets"),
-                                                                IntegerArgumentType.getInteger(ctx, "value")))
-                                                )
-                                        )
-                                )
-                        )
+                                .then(statsValueArg(ctx -> executeAdd(ctx,
+                                        EntityArgument.getPlayers(ctx, "targets"),
+                                        IntegerArgumentType.getInteger(ctx, "value")))))
         );
     }
 
@@ -87,6 +88,18 @@ public class WKStatsCommand {
     }
 
     /**
+     * 向命令执行者发送统计项未找到的错误消息。
+     * 根据 namespace 区分：wing_kirin → 可能是拼写错误；其他 → 非本模组统计项
+     */
+    private static void sendStatNotFoundError(CommandSourceStack source, ResourceLocation statId) {
+        if (Wing_kirin.MOD_ID.equals(statId.getNamespace())) {
+            source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.unknown_stat", statId.toString()));
+        } else {
+            source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.not_mod_stat", statId.toString()));
+        }
+    }
+
+    /**
      * /wk-stats set <targets> <stat> <value>
      * 将指定玩家的指定统计项设置为给定值
      */
@@ -96,7 +109,7 @@ public class WKStatsCommand {
 
         Stat<ResourceLocation> stat = resolveStat(ctx);
         if (stat == null) {
-            source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.unknown_stat", statId.toString()));
+            sendStatNotFoundError(source, statId);
             return 0;
         }
 
@@ -104,6 +117,9 @@ public class WKStatsCommand {
             ServerStatsCounter statsCounter = Objects.requireNonNull(player.getServer()).getPlayerList().getPlayerStats(player);
             statsCounter.setValue(player, stat, value);
         }
+
+        Wing_kirin.LOGGER.info("{} set stat {} to {} for {} player(s)",
+                source.getTextName(), statId, value, targets.size());
 
         if (targets.size() == 1) {
             source.sendSuccess(
@@ -135,26 +151,34 @@ public class WKStatsCommand {
 
         Stat<ResourceLocation> stat = resolveStat(ctx);
         if (stat == null) {
-            source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.unknown_stat", statId.toString()));
+            sendStatNotFoundError(source, statId);
             return 0;
         }
 
+        int lastNewValue = 0;
         for (ServerPlayer player : targets) {
             ServerStatsCounter statsCounter = Objects.requireNonNull(player.getServer()).getPlayerList().getPlayerStats(player);
             int oldValue = statsCounter.getValue(stat);
-            int newValue = oldValue + value;
-            statsCounter.setValue(player, stat, newValue);
+            try {
+                lastNewValue = Math.addExact(oldValue, value);
+            } catch (ArithmeticException e) {
+                source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.overflow", statId.toString()));
+                return 0;
+            }
+            statsCounter.setValue(player, stat, lastNewValue);
         }
+
+        Wing_kirin.LOGGER.info("{} added {} to stat {} for {} player(s)",
+                source.getTextName(), value, statId, targets.size());
 
         if (targets.size() == 1) {
             ServerPlayer target = targets.iterator().next();
-            ServerStatsCounter statsCounter = Objects.requireNonNull(target.getServer()).getPlayerList().getPlayerStats(target);
-            int newValue = statsCounter.getValue(stat);
+            int finalNewValue = lastNewValue;
             source.sendSuccess(
                     () -> Component.translatable("command.wing_kirin.wk_stats.add_success.single",
                             target.getDisplayName(),
                             Component.translatable("stat." + statId.getNamespace() + "." + statId.getPath()),
-                            value, newValue),
+                            value, finalNewValue),
                     true
             );
         } else {

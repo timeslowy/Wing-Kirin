@@ -11,7 +11,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -81,6 +83,11 @@ public class WKStats {
     };
 
     /**
+     * 统计项 ID → DeferredHolder 的 O(1) 查找缓存，在 FMLCommonSetupEvent 阶段构建
+     */
+    private static Map<ResourceLocation, DeferredHolder<ResourceLocation, ? extends ResourceLocation>> holderCache;
+
+    /**
      * 获取所有已注册统计项的注册名（ResourceLocation key）流
      */
     public static Stream<ResourceLocation> getStatEntries() {
@@ -96,14 +103,15 @@ public class WKStats {
     }
 
     /**
-     * 根据注册名查找对应的 DeferredHolder
+     * 根据注册名查找对应的 DeferredHolder（O(1) HashMap 查找）
      * @param id 注册名 ResourceLocation
      * @return 对应的 DeferredHolder，若不存在则返回 Optional.empty()
      */
     public static @NotNull Optional<DeferredHolder<ResourceLocation, ? extends ResourceLocation>> getHolder(ResourceLocation id) {
-        return CUSTOM_STATS.getEntries().stream()
-                .filter(holder -> holder.getId().equals(id))
-                .findFirst();
+        if (holderCache == null) {
+            return Optional.empty();
+        }
+        return Optional.ofNullable(holderCache.get(id));
     }
 
     /**
@@ -111,6 +119,12 @@ public class WKStats {
      * 通过 Stats.CUSTOM.get(value, formatter) 预先注册带自定义格式化器的 Stat 对象。
      */
     private static void setupCustomFormatters() {
+        // 构建 O(1) 查询缓存
+        holderCache = new HashMap<>();
+        for (var holder : CUSTOM_STATS.getEntries()) {
+            holderCache.put(holder.getId(), holder);
+        }
+
         // 施法金风玉露总时长 → 秒数格式化器
         Stats.CUSTOM.get(CastedEmpyreanWineSeconds.get(), SECONDS_FORMATTER);
     }

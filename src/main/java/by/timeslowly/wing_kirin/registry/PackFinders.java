@@ -11,7 +11,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import org.jetbrains.annotations.NotNull;
 
-@EventBusSubscriber
+@EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class PackFinders {
     public PackFinders() {
     }

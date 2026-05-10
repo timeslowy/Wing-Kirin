@@ -18,6 +18,19 @@ import org.jetbrains.annotations.NotNull;
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID, value = Dist.CLIENT)
 public class ClientEffectEventHandler {
 
+    // 快捷栏蒙版尺寸常量
+    private static final int HOTBAR_WIDTH = 182;
+    private static final int HOTBAR_HEIGHT = 22;
+    private static final int OFFHAND_WIDTH = 22;
+    private static final int OFFHAND_GAP = 8;
+
+    // 屏幕尺寸缓存，仅在窗口大小变化时重新计算布局位置
+    private static int cachedScreenWidth = -1;
+    private static int cachedScreenHeight = -1;
+    private static int cachedHotbarX;
+    private static int cachedHotbarY;
+    private static int cachedOffhandX;
+
     // 禁用交互
     @SubscribeEvent
     public static void onPlayerInteract(InputEvent.@NotNull InteractionKeyMappingTriggered event) {
@@ -50,22 +63,22 @@ public class ClientEffectEventHandler {
             if (WKServerConfig.shouldDingShenDisableInteraction() && player.hasEffect(WKEffects.DING_SHEN)) {
                 GuiGraphics guiGraphics = event.getGuiGraphics();
 
-                // 获取屏幕尺寸并计算主快捷栏位置
                 int screenWidth = Minecraft.getInstance().getWindow().getGuiScaledWidth();
                 int screenHeight = Minecraft.getInstance().getWindow().getGuiScaledHeight();
-                int hotbarWidth = 182;
-                int hotbarHeight = 22;
-                int x = (screenWidth - hotbarWidth) / 2;
-                int y = screenHeight - hotbarHeight;
-                // 副手
-                int offhandWidth = 22;
-                int offhandHeight = 22;
-                int offhandX = x - offhandWidth - 8; // 主快捷栏左侧，留出8像素间隔
+
+                // 仅在窗口尺寸变化时重新计算位置（避免每帧重复运算）
+                if (screenWidth != cachedScreenWidth || screenHeight != cachedScreenHeight) {
+                    cachedScreenWidth = screenWidth;
+                    cachedScreenHeight = screenHeight;
+                    cachedHotbarX = (screenWidth - HOTBAR_WIDTH) / 2;
+                    cachedHotbarY = screenHeight - HOTBAR_HEIGHT;
+                    cachedOffhandX = cachedHotbarX - OFFHAND_WIDTH - OFFHAND_GAP;
+                }
 
                 // 主快捷栏蒙版
-                guiGraphics.fill(x, y, x + hotbarWidth, y + hotbarHeight, 0xB34D4D4D);
+                guiGraphics.fill(cachedHotbarX, cachedHotbarY, cachedHotbarX + HOTBAR_WIDTH, cachedHotbarY + HOTBAR_HEIGHT, 0xB34D4D4D);
                 // 副手槽位蒙版
-                guiGraphics.fill(offhandX, y, offhandX + offhandWidth, y + offhandHeight, 0xB34D4D4D);
+                guiGraphics.fill(cachedOffhandX, cachedHotbarY, cachedOffhandX + OFFHAND_WIDTH, cachedHotbarY + HOTBAR_HEIGHT, 0xB34D4D4D);
             }
         }
     }

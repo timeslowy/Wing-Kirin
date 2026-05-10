@@ -529,6 +529,8 @@
   "command.wing_kirin.wk_stats.add_success.single": "已为 §a%s§r 的统计项 §b%s§r 增加 §e%d§r（当前值：§e%d§r）",
   "command.wing_kirin.wk_stats.add_success.multiple": "已为 §a%d§r 名玩家的统计项 §b%s§r 增加 §e%d§r",
   "command.wing_kirin.wk_stats.unknown_stat": "§c未知的统计项：%s§r",
+  "command.wing_kirin.wk_stats.not_mod_stat": "§c'%s' 并非翼麒麟的自定义统计项 — 此命令只对翼麒麟的统计项有效§r",
+  "command.wing_kirin.wk_stats.overflow": "§c数值溢出：%s — 运算结果将超出整数上限§r",
 
   
   "wing_kirin.config.ding_shen": "「定身」",

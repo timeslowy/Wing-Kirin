@@ -40,9 +40,9 @@ public class EmpyreanWineItem extends Item {
     // 添加描述
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
         tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_wine.description_0"));
         tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_wine.description_1"));
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
 }
