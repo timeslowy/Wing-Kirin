@@ -10,7 +10,7 @@
         },
         "notification": {
             "usage_blocked": {
-                "translate": "dragon_ability.dragonsurvival.scale.activation.notification.usage_blocked"
+                "translate": "dragon_ability.wing_kirin.scale_down.activation.notification.usage_blocked"
             }
         },
         "can_move_while_casting": false,

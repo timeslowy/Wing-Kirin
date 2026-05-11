@@ -9,6 +9,8 @@
 > 翼麒麟的灵感最初来源于作者的守护兽——青云。在龙之生存的世界里，他是一只长着一对鹤翼的麒麟。  
 > 翼麒麟是生于九天之上的瑞兽（神兽），日月天地间浩然的正气赋予了其使用某些“神通”的能力。大部分“神通”威力强大，而解锁条件又较为苛刻，因此其定位为后期龙种。
 
+<img src="https://pic1.imgdb.cn/item/6a013156513451700bced546.jpg" alt="2026-03-11_21.54.36.jpg" style="width: auto; height: auto;">
+
 ---
 
 ## 📖 简介
@@ -61,6 +63,8 @@
 
 - @冰焰-龙冰：帮助作者皮肤上传。
 
+<img src="https://pic1.imgdb.cn/item/6a012e6b513451700bced1a0.png" alt="2026-01-17_16.53.59.png" style="width: auto; height: auto;" >
+
  ---
 
 ## 后语
@@ -80,4 +84,6 @@
 祝好，
 **timeslowy**
 
-*“我赠青云一片天，青云还我漫天霞。”*
+*“我赠青云一片天，青云还我满天霞。”*
+
+<img src="https://pic1.imgdb.cn/item/6a0132b1513451700bced619.jpg" alt="2026-03-16_21.19.04.jpg" style="width: auto; height: auto;">
