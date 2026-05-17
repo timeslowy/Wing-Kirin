@@ -554,6 +554,8 @@
   "wing_kirin.config.unstoppable_speed.button": "编辑",
   "wing_kirin.config.unstoppable_speed.allDamageTypes": "所有伤害类型无视受击冷却",
   "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "「唯快不破」效果是否使所有伤害类型均能无视受击冷却。关闭时仅近战攻击（玩家攻击）可无视受击冷却。",
+  "wing_kirin.config.unstoppable_speed.bypassArmor": "穿透护甲",
+  "wing_kirin.config.unstoppable_speed.bypassArmor.tooltip": "「唯快不破」效果是否使攻击完全穿透目标的护甲减免（无视盔甲值与盔甲韧性）。",
   "wing_kirin.config.thunderous_shout_settings": "「龙吼功」",
   "wing_kirin.config.thunderous_shout_settings.tooltip": "「龙吼功」相关行为配置",
   "wing_kirin.config.thunderous_shout_settings.button": "编辑",

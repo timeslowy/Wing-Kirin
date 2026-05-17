@@ -510,6 +510,8 @@
   "wing_kirin.config.unstoppable_speed.button": "Configure",
   "wing_kirin.config.unstoppable_speed.allDamageTypes": "All Damage Types Bypass Cooldown",
   "wing_kirin.config.unstoppable_speed.allDamageTypes.tooltip": "Whether the Unstoppable Speed effect allows ALL damage types to bypass invulnerability cooldown. If false, only player attack (melee) damage bypasses cooldown.",
+  "wing_kirin.config.unstoppable_speed.bypassArmor": "Bypass Armor",
+  "wing_kirin.config.unstoppable_speed.bypassArmor.tooltip": "Whether the Unstoppable Speed effect allows attacks to completely bypass the target's armor (ignores armor points and armor toughness).",
   "wing_kirin.config.thunderous_shout_settings": "Thunderous Shout",
   "wing_kirin.config.thunderous_shout_settings.tooltip": "Configuration for the Thunderous Shout (Golden Bell) behavior.",
   "wing_kirin.config.thunderous_shout_settings.button": "Configure",
