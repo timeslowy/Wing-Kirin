@@ -540,6 +540,8 @@
   "wing_kirin.config.ding_shen.button": "编辑",
   "wing_kirin.config.ding_shen.disableAbilities": "禁用主动技能",
   "wing_kirin.config.ding_shen.disableAbilities.tooltip": "定身效果是否禁用龙玩家的主动技能。",
+  "wing_kirin.config.ding_shen.disablePassiveAbilities": "禁用被动技能",
+  "wing_kirin.config.ding_shen.disablePassiveAbilities.tooltip": "定身效果是否禁用龙玩家的被动技能。与主动技能禁用配置独立运作。",
   "wing_kirin.config.ding_shen.disableInteraction": "禁用玩家交互",
   "wing_kirin.config.ding_shen.disableInteraction.tooltip": "定身效果是否禁用玩家与世界交互（如使用物品、对方块操作等）。",
   "wing_kirin.config.ding_shen.closeGuiChance": "随机关闭GUI概率",

@@ -5,6 +5,7 @@ import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.activation.A
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -22,39 +23,40 @@ public abstract class DragonAbilityInstanceMixin {
     private void stopCasting(Player dragon, boolean notifyServer) {}
 
     /**
-     * 阻止在定身状态下激活主动技能
+     * 阻止在定身状态下激活技能（主动/被动均可拦截，取决于配置）。
      */
     @Inject(method = "setActive", at = @At("HEAD"), cancellable = true, remap = false)
     private void wingKirin$preventActivation(Player player, boolean isActive, CallbackInfo ci) {
-        if (isActive && wingKirin$shouldBlock(player)) {
+        if (isActive && wingKirin$shouldBlockByType(player)) {
             ci.cancel();
         }
     }
 
     /**
-     * 如果已经激活的主动技能在定身效果下，立刻强制停止
+     * 如果已经激活的技能在定身效果下，立刻强制停止。
      */
     @Inject(method = "tick", at = @At("HEAD"), remap = false)
     private void wingKirin$stopActiveWhenDingShen(Player dragon, CallbackInfo ci) {
-        if (isActive && wingKirin$shouldBlock(dragon)) {
+        if (isActive && wingKirin$shouldBlockByType(dragon)) {
             stopCasting(dragon, true);
         }
     }
 
     /**
-     * 判断逻辑：配置启用 且 非被动技能 且 玩家拥有定身效果
+     * 根据技能类型和对应配置决定是否阻止：
+     * - 主动技能 → {@link WKServerConfig#shouldDingShenDisableAbilities()}
+     * - 被动技能 → {@link WKServerConfig#shouldDingShenDisablePassiveAbilities()}
+     * 两个配置互不干扰。
      */
     @Unique
-    private boolean wingKirin$shouldBlock(Player player) {
-        // 配置未启用则不阻止
-        if (!WKServerConfig.shouldDingShenDisableAbilities()) {
+    private boolean wingKirin$shouldBlockByType(@NotNull Player player) {
+        if (!player.hasEffect(WKEffects.DING_SHEN)) {
             return false;
         }
-        // 获取技能的类型（被动/主动）
-        // 注意：value() 是目标类已有的 public 方法，可直接调用，无需 @Shadow
-        if (((DragonAbilityInstance) (Object) this).value().activation().type() == Activation.Type.PASSIVE) {
-            return false;
+        boolean isPassive = ((DragonAbilityInstance) (Object) this).value().activation().type() == Activation.Type.PASSIVE;
+        if (isPassive) {
+            return WKServerConfig.shouldDingShenDisablePassiveAbilities();
         }
-        return player.hasEffect(WKEffects.DING_SHEN);
+        return WKServerConfig.shouldDingShenDisableAbilities();
     }
 }

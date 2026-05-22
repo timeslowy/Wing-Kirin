@@ -496,6 +496,8 @@
   "wing_kirin.config.ding_shen.button": "Configure",
   "wing_kirin.config.ding_shen.disableAbilities": "Disable Active Abilities",
   "wing_kirin.config.ding_shen.disableAbilities.tooltip": "Whether the Ding Shen effect disables dragon active abilities.",
+  "wing_kirin.config.ding_shen.disablePassiveAbilities": "Disable Passive Abilities",
+  "wing_kirin.config.ding_shen.disablePassiveAbilities.tooltip": "Whether the Ding Shen effect disables dragon passive abilities. Operates independently of the active abilities setting.",
   "wing_kirin.config.ding_shen.disableInteraction": "Disable Player Interaction",
   "wing_kirin.config.ding_shen.disableInteraction.tooltip": "Whether the Ding Shen effect disables player interaction with the world.",
   "wing_kirin.config.ding_shen.closeGuiChance": "Random GUI Close Chance",

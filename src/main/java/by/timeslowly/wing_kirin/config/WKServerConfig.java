@@ -14,6 +14,9 @@ public class WKServerConfig {
     /** 定身效果是否禁用龙玩家主动技能 */
     public static final ModConfigSpec.BooleanValue DING_SHEN_DISABLE_ABILITIES;
 
+    /** 定身效果是否禁用龙玩家被动技能 */
+    public static final ModConfigSpec.BooleanValue DING_SHEN_DISABLE_PASSIVE_ABILITIES;
+
     /** 定身效果是否禁用玩家交互 */
     public static final ModConfigSpec.BooleanValue DING_SHEN_DISABLE_INTERACTION;
 
@@ -46,13 +49,19 @@ public class WKServerConfig {
                 .translation("wing_kirin.config.ding_shen.disableAbilities")
                 .define("disableAbilities", true);
 
-        // 2.是否禁用玩家交互
+        // 2.是否禁用龙玩家被动技能
+        DING_SHEN_DISABLE_PASSIVE_ABILITIES = builder
+                .comment("Whether the Ding Shen effect disables dragon passive abilities. Independent of the active abilities setting.")
+                .translation("wing_kirin.config.ding_shen.disablePassiveAbilities")
+                .define("disablePassiveAbilities", false);
+
+        // 4.是否禁用玩家交互
         DING_SHEN_DISABLE_INTERACTION = builder
                 .comment("Whether the Ding Shen effect disables player interaction.")
                 .translation("wing_kirin.config.ding_shen.disableInteraction")
                 .define("disableInteraction", true);
 
-        // 3.随机关闭GUI概率
+        // 5.随机关闭GUI概率
         DING_SHEN_CLOSE_GUI_CHANCE = builder
                 .comment("The chance per tick to randomly close the player's container GUI when affected by Ding Shen. 0 = never, 100 = always. Does not close the game menu (pause screen).")
                 .translation("wing_kirin.config.ding_shen.closeGuiChance")
@@ -109,6 +118,11 @@ public class WKServerConfig {
     /** 便捷方法：获取定身是否禁用主动技能的配置值 */
     public static boolean shouldDingShenDisableAbilities() {
         return DING_SHEN_DISABLE_ABILITIES.get();
+    }
+
+    /** 便捷方法：获取定身是否禁用被动技能的配置值 */
+    public static boolean shouldDingShenDisablePassiveAbilities() {
+        return DING_SHEN_DISABLE_PASSIVE_ABILITIES.get();
     }
 
     /** 便捷方法：获取定身是否禁用玩家交互的配置值 */
