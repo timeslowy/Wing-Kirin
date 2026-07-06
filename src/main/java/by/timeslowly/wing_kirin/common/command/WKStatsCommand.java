@@ -91,7 +91,7 @@ public class WKStatsCommand {
      * 向命令执行者发送统计项未找到的错误消息。
      * 根据 namespace 区分：wing_kirin → 可能是拼写错误；其他 → 非本模组统计项
      */
-    private static void sendStatNotFoundError(CommandSourceStack source, ResourceLocation statId) {
+    private static void sendStatNotFoundError(CommandSourceStack source, @NotNull ResourceLocation statId) {
         if (Wing_kirin.MOD_ID.equals(statId.getNamespace())) {
             source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.unknown_stat", statId.toString()));
         } else {

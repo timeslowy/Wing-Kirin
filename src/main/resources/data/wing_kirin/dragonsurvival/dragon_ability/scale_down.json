@@ -46,21 +46,25 @@
                                         "id": "wing_kirin:scale_down",
                                         "custom_icon": "wing_kirin:textures/ability_effect/scale_down.png",
                                         "is_hidden": false,
-                                        "duration": {
-                                            "type": "minecraft:linear",
-                                            "base": 400,
-                                            "per_level_above_first": 400
-                                        }
+                                        "duration": 1800
                                     },
                                     "modifiers": [
                                         {
                                             "attribute": "minecraft:generic.scale",
-                                            "amount": -0.7,
+                                            "amount": {
+                                                "type": "linear",
+                                                "base": -0.2,
+                                                "per_level_above_first": -0.2
+                                            },
                                             "operation": "add_multiplied_total"
                                         },
                                         {
                                             "attribute": "minecraft:generic.attack_damage",
-                                            "amount": -0.5,
+                                            "amount": {
+                                                "type": "linear",
+                                                "base": -0.125,
+                                                "per_level_above_first": -0.125
+                                            },
                                             "operation": "add_multiplied_total"
                                         }
                                     ]
@@ -120,22 +124,9 @@
         ]
     },
     "upgrade": {
-        "upgrade_type": "dragonsurvival:experience_levels",
+        "upgrade_type": "dragonsurvival:experience_points",
         "maximum_level": 4,
-        "level_requirement": {
-            "type": "minecraft:lookup",
-            "fallback": {
-                "type": "minecraft:linear",
-                "base": 5,
-                "per_level_above_first": 5
-            },
-            "values": [
-                60,
-                70,
-                80,
-                90
-            ]
-        }
+        "experience_cost": 1
     },
     "usage_blocked": {
         "condition": "minecraft:any_of",

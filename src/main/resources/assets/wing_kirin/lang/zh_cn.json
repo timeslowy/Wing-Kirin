@@ -29,7 +29,7 @@
   "dragon_ability.wing_kirin.signal_arrow.desc": "§7■竖直朝天射出一支§r§6「穿云箭」§r§7，可呼叫“火力支援”，从天落下§r§6箭雨§r§8§m（暴雨梨花针）§r§7砸向你所在之地，落在蓄力时§n用粒子大致标注的范围§r§7，将任何来犯之敌扎成刺猬！\n\n■箭雨的§n范围、伤害和数量§r§7均随§a技能等级（经验等级）§r§7提升，且§n伤害§r§7还能受§n龙爪牙槽§r§7内剑§a锋利附魔等级、浩然正气效果和力量效果加成。§r\n\n§8■为保证最佳效果，建议竖直向上发射，否则箭雨会落至他处；§9水里§r§8不可用；§4非主世界§r§8不可用（除非拥有§r「浩然正气」§8药水效果）；§n露天使用！§r\n\n§6§o“一支穿云箭，千军万马来相见！”§r",
   "dragon_ability.wing_kirin.signal_arrow.activation.notification.usage_blocked": "§4露天，露天，露天，重要的事情说三遍！其他条件自己看介绍。",
   "dragon_ability.wing_kirin.scale_down": "身形如意",
-  "dragon_ability.wing_kirin.scale_down.desc": "§7■若§n血量不太健康§r§7，默念几声咒语，顷刻间，§a体型缩小七成§r§7，让你更轻松躲避攻势，亦或是潜穿于逼仄之地，逃出生天。\n\n■§n持续时长§r§7随§a技能等级（经验等级）§r§7而提升。\n\n■当然，也并非没有代价，由于体型缩小，§n近战伤害§r§7也§4相应减少§r§7。\n\n§6§o“如意如意，随我心意！”§r",
+  "dragon_ability.wing_kirin.scale_down.desc": "§7■若§n血量不太健康§r§7，默念几声咒语，在顷刻间§a缩小身形§r§7，让你更轻松躲避攻势，亦或是潜穿于逼仄之地，逃出生天。\n\n■§n缩小范围§r§7随§a技能等级§r§7而提升，可自由加点，而§n持续时间不变§r§7。\n\n■当然，也并非没有代价，由于体型缩小，§n近战伤害§r§7也§4相应减少§r§7。\n\n§6§o“如意如意，随我心意！”§r",
   "dragon_ability.wing_kirin.scale_down.activation.notification.usage_blocked": "血量充足，无需缩形。",
   "dragon_ability.wing_kirin.indestructible_body": "不坏金身",
   "dragon_ability.wing_kirin.indestructible_body.desc": "§7■凝神聚气，将§6正气§r§7凝聚于体表，片刻过后体表发出金光，瞬时身躯§6如金石般坚硬§r§7，短时内能§a抵御几乎一切外来伤害§r§7并造成定量§e反震伤害§r§7，从而争取§n喘息之机§r§7。\n\n■§n施法上限时间§r§7随§a技能等级（经验消耗）§r§7而提升。§r§4\n\n■然当对手对你施予如漂浮等离地之法术，则功力将烟消云散！§r§6\n\n§o“金铁击石全无力，枪刀剑戟浑不避”",
