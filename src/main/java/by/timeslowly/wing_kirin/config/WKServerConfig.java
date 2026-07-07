@@ -23,6 +23,9 @@ public class WKServerConfig {
     /** 定身效果每刻随机关闭GUI的概率（0-100） */
     public static final ModConfigSpec.IntValue DING_SHEN_CLOSE_GUI_CHANCE;
 
+    /** 定身效果是否禁用玩家视角旋转 */
+    public static final ModConfigSpec.BooleanValue DING_SHEN_DISABLE_LOOK_ROTATION;
+
     /** 浩然正气是否使翼麒麟无视法力消耗 */
     public static final ModConfigSpec.BooleanValue GREAT_ZHENGQI_IGNORE_MANA_COST;
 
@@ -66,6 +69,12 @@ public class WKServerConfig {
                 .comment("The chance per tick to randomly close the player's container GUI when affected by Ding Shen. 0 = never, 100 = always. Does not close the game menu (pause screen).")
                 .translation("wing_kirin.config.ding_shen.closeGuiChance")
                 .defineInRange("closeGuiChance", 1, 0, 100);
+
+        // 6.是否禁用玩家视角旋转
+        DING_SHEN_DISABLE_LOOK_ROTATION = builder
+                .comment("Whether the Ding Shen effect disables the player's ability to rotate their view (camera/look rotation).")
+                .translation("wing_kirin.config.ding_shen.disableLookRotation")
+                .define("disableLookRotation", false);
 
         builder.pop();
 
@@ -133,6 +142,11 @@ public class WKServerConfig {
     /** 便捷方法：获取定身随机关闭GUI的概率（0-100） */
     public static int getDingShenCloseGuiChance() {
         return DING_SHEN_CLOSE_GUI_CHANCE.get();
+    }
+
+    /** 便捷方法：获取定身是否禁用玩家视角旋转 */
+    public static boolean shouldDingShenDisableLookRotation() {
+        return DING_SHEN_DISABLE_LOOK_ROTATION.get();
     }
 
     /** 便捷方法：获取浩然正气是否使翼麒麟无视法力消耗 */

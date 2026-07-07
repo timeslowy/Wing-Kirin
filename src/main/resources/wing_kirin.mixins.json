@@ -12,7 +12,8 @@
     "EntityGlowColorMixin",
     "MagicHUDMixin",
     "OutlineColorDataAccessor",
-    "ClientCastingHandlerMixin"
+    "ClientCastingHandlerMixin",
+    "MouseHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

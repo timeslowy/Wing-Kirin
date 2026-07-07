@@ -5,6 +5,7 @@ import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -62,5 +63,25 @@ public abstract class LivingEntityEffectMixin {
         return newDuration == originalDuration ? original :
                 new MobEffectInstance(original.getEffect(), newDuration, original.getAmplifier(),
                         original.isAmbient(), original.isVisible(), original.showIcon());
+    }
+
+    /**
+     * 将 travel() 的输入向量替换为零向量，彻底阻止定身实体的输入式移动。
+     * <p>
+     * aiStep 中在 travel 调用前已构建好 Vec3(xxa, yya, zza)，仅置零 xxa/zza
+     * 无法影响已构造的对象，因此直接修改 travel 的参数。
+     * </p>
+     */
+    @ModifyVariable(
+            method = "travel",
+            at = @At("HEAD"),
+            argsOnly = true
+    )
+    private Vec3 wing_kirin$zeroDingShenTravel(Vec3 travelVector) {
+        LivingEntity self = (LivingEntity) (Object) this;
+        if (self.hasEffect(WKEffects.DING_SHEN)) {
+            return Vec3.ZERO;
+        }
+        return travelVector;
     }
 }

@@ -502,6 +502,8 @@
   "wing_kirin.config.ding_shen.disableInteraction.tooltip": "Whether the Ding Shen effect disables player interaction with the world.",
   "wing_kirin.config.ding_shen.closeGuiChance": "Random GUI Close Chance",
   "wing_kirin.config.ding_shen.closeGuiChance.tooltip": "The chance per tick to randomly close the player's container GUI. 0 = never, 100 = always. Does not close the game menu (pause screen).",
+  "wing_kirin.config.ding_shen.disableLookRotation": "Disable Look Rotation",
+  "wing_kirin.config.ding_shen.disableLookRotation.tooltip": "Whether the Ding Shen effect disables the player's ability to rotate their view (mouse look). Off by default.",
   "wing_kirin.config.great_zhengqi": "Great Zhengqi Effect Settings",
   "wing_kirin.config.great_zhengqi.tooltip": "Configuration for the Great Zhengqi effect behavior.",
   "wing_kirin.config.great_zhengqi.button": "Configure",
