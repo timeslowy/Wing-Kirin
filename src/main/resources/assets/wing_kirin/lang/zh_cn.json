@@ -548,6 +548,8 @@
   "wing_kirin.config.ding_shen.closeGuiChance.tooltip": "每刻随机关闭玩家容器GUI的概率。0 = 从不，100 = 必定。不会关闭游戏菜单（暂停界面）。",
   "wing_kirin.config.ding_shen.disableLookRotation": "禁用视角旋转",
   "wing_kirin.config.ding_shen.disableLookRotation.tooltip": "定身效果是否禁用玩家操作视角旋转（鼠标移动镜头）。默认关闭。",
+  "wing_kirin.config.ding_shen.lockPosition": "完全锁定位置",
+  "wing_kirin.config.ding_shen.lockPosition.tooltip": "定身效果是否完全锁定实体位置（含维度），禁止任何移动、传送与维度切换。默认关闭。需谨慎使用。",
   "wing_kirin.config.great_zhengqi": "「浩然正气」",
   "wing_kirin.config.great_zhengqi.tooltip": "「浩然正气」效果的行为配置。",
   "wing_kirin.config.great_zhengqi.button": "编辑",

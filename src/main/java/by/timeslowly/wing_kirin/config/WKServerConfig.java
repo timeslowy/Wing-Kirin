@@ -26,6 +26,9 @@ public class WKServerConfig {
     /** 定身效果是否禁用玩家视角旋转 */
     public static final ModConfigSpec.BooleanValue DING_SHEN_DISABLE_LOOK_ROTATION;
 
+    /** 定身效果是否完全锁定实体位置（禁止任何移动、传送与维度切换） */
+    public static final ModConfigSpec.BooleanValue DING_SHEN_LOCK_POSITION;
+
     /** 浩然正气是否使翼麒麟无视法力消耗 */
     public static final ModConfigSpec.BooleanValue GREAT_ZHENGQI_IGNORE_MANA_COST;
 
@@ -75,6 +78,12 @@ public class WKServerConfig {
                 .comment("Whether the Ding Shen effect disables the player's ability to rotate their view (camera/look rotation).")
                 .translation("wing_kirin.config.ding_shen.disableLookRotation")
                 .define("disableLookRotation", false);
+
+        // 7.是否完全锁定实体位置
+        DING_SHEN_LOCK_POSITION = builder
+                .comment("Whether the Ding Shen effect completely locks the entity's position, preventing ALL forms of movement, teleportation, and dimension changes. Off by default. Use with caution.")
+                .translation("wing_kirin.config.ding_shen.lockPosition")
+                .define("lockPosition", false);
 
         builder.pop();
 
@@ -147,6 +156,11 @@ public class WKServerConfig {
     /** 便捷方法：获取定身是否禁用玩家视角旋转 */
     public static boolean shouldDingShenDisableLookRotation() {
         return DING_SHEN_DISABLE_LOOK_ROTATION.get();
+    }
+
+    /** 便捷方法：获取定身是否完全锁定实体位置 */
+    public static boolean shouldDingShenLockPosition() {
+        return DING_SHEN_LOCK_POSITION.get();
     }
 
     /** 便捷方法：获取浩然正气是否使翼麒麟无视法力消耗 */

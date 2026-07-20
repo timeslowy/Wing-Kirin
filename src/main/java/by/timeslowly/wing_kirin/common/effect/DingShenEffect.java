@@ -89,6 +89,11 @@ public class DingShenEffect extends MobEffect {
             mob.setNoAi(true);
         }
 
+        // 锁位模式下强制解除骑乘关系，防止被坐骑带动移动
+        if (WKServerConfig.shouldDingShenLockPosition()) {
+            entity.stopRiding();
+        }
+
         Level level = entity.level();
         double x = entity.getX();
         double y = entity.getY();

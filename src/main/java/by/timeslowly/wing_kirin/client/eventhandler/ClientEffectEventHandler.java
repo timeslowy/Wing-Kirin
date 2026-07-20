@@ -31,6 +31,82 @@ public class ClientEffectEventHandler {
     private static int cachedHotbarY;
     private static int cachedOffhandX;
 
+    // 定身效果金色遮罩常量
+    private static final int DINGSHEN_VIGNETTE_RGB = 0xFBDC92;
+    private static final int DINGSHEN_VIGNETTE_MAX_ALPHA = 0xBB;
+    private static final int DINGSHEN_VIGNETTE_MAX_STEPS = 24;
+
+    // 遮罩尺寸缓存，仅在窗口大小变化时重新计算
+    private static int vignetteCachedScreenWidth = -1;
+    private static int vignetteCachedScreenHeight = -1;
+    private static int vignetteCachedEdgeWidth;
+    private static int vignetteCachedFillOpaque;
+    private static int vignetteCachedFillTransparent;
+
+    // 定身金色遮罩渲染
+    @SubscribeEvent
+    public static void onRenderDingShenVignette(RenderGuiLayerEvent.@NotNull Post event) {
+        if (!event.getName().equals(VanillaGuiLayers.CAMERA_OVERLAYS)) return;
+
+        Player player = Minecraft.getInstance().player;
+        if (player == null) return;
+        if (Minecraft.getInstance().options.hideGui) return;
+        if (!player.hasEffect(WKEffects.DING_SHEN)) return;
+
+        GuiGraphics g = event.getGuiGraphics();
+        int w = Minecraft.getInstance().getWindow().getGuiScaledWidth();
+        int h = Minecraft.getInstance().getWindow().getGuiScaledHeight();
+
+        if (w != vignetteCachedScreenWidth || h != vignetteCachedScreenHeight) {
+            vignetteCachedScreenWidth = w;
+            vignetteCachedScreenHeight = h;
+            vignetteCachedEdgeWidth = Math.max(w, h) / 20;
+            vignetteCachedFillOpaque = (DINGSHEN_VIGNETTE_MAX_ALPHA << 24) | DINGSHEN_VIGNETTE_RGB;
+            vignetteCachedFillTransparent = DINGSHEN_VIGNETTE_RGB;
+        }
+
+        int edge = vignetteCachedEdgeWidth;
+        if (edge <= 0) return;
+
+        drawTopEdge(g, w, edge);
+        drawBottomEdge(g, w, h, edge);
+        drawLeftEdge(g, h, edge);
+        drawRightEdge(g, w, h, edge);
+    }
+
+    private static void drawTopEdge(@NotNull GuiGraphics g, int screenW, int edge) {
+        g.fillGradient(0, 0, screenW, edge, 0, vignetteCachedFillOpaque, vignetteCachedFillTransparent);
+    }
+
+    private static void drawBottomEdge(@NotNull GuiGraphics g, int screenW, int screenH, int edge) {
+        g.fillGradient(0, screenH - edge, screenW, screenH, 0,
+                vignetteCachedFillTransparent, vignetteCachedFillOpaque);
+    }
+
+    private static void drawLeftEdge(GuiGraphics g, int screenH, int edge) {
+        int steps = Math.min(DINGSHEN_VIGNETTE_MAX_STEPS, edge);
+        int last = Math.max(steps - 1, 1);
+        for (int i = 0; i < steps; i++) {
+            int alpha = DINGSHEN_VIGNETTE_MAX_ALPHA * (steps - 1 - i) / last;
+            int color = (alpha << 24) | DINGSHEN_VIGNETTE_RGB;
+            int x1 = i * edge / steps;
+            int x2 = (i + 1) * edge / steps;
+            if (x2 > x1) g.fill(x1, 0, x2, screenH, color);
+        }
+    }
+
+    private static void drawRightEdge(GuiGraphics g, int screenW, int screenH, int edge) {
+        int steps = Math.min(DINGSHEN_VIGNETTE_MAX_STEPS, edge);
+        int last = Math.max(steps - 1, 1);
+        for (int i = 0; i < steps; i++) {
+            int alpha = DINGSHEN_VIGNETTE_MAX_ALPHA * i / last;
+            int color = (alpha << 24) | DINGSHEN_VIGNETTE_RGB;
+            int x1 = screenW - (steps - i) * edge / steps;
+            int x2 = screenW - (steps - 1 - i) * edge / steps;
+            if (x2 > x1) g.fill(x1, 0, x2, screenH, color);
+        }
+    }
+
     // 禁用交互
     @SubscribeEvent
     public static void onPlayerInteract(InputEvent.@NotNull InteractionKeyMappingTriggered event) {

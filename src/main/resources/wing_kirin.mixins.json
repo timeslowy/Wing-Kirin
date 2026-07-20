@@ -6,7 +6,9 @@
     "LivingEntityEffectMixin",
     "LivingEntityHurtMixin",
     "ManaHandlerMixin",
-    "DragonAbilityInstanceMixin"
+    "DragonAbilityInstanceMixin",
+    "EntityMoveLockMixin",
+    "ServerPlayerMoveLockMixin"
   ],
   "client": [
     "EntityGlowColorMixin",
