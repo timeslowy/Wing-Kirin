@@ -6,7 +6,6 @@ data modify entity @s NoAI set value false
 
 # 清除效果
 effect clear @s dragonsurvival:broken_wings
-effect clear @s dragonsurvival:magic_disabled
 effect clear @s wing_kirin:ding_shen
 
 # 移除所用标签

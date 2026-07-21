@@ -39,7 +39,7 @@
         },
         "notification": {
             "usage_blocked": {
-                "translate": "dragon_ability.dragonsurvival.thunderous_shout.activation.notification.usage_blocked"
+                "translate": "dragon_ability.wing_kirin.thunderous_shout.activation.notification.usage_blocked"
             }
         },
         "animations": {

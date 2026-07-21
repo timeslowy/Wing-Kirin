@@ -65,7 +65,7 @@
     "initial_mana_cost": 15.0,
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.dragonsurvival.signal_arrow.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.signal_arrow.activation.notification.usage_blocked"
       }
     },
     "sound": {

@@ -165,7 +165,7 @@
         },
         "notification": {
             "usage_blocked": {
-                "translate": "dragon_ability.dragonsurvival.invincible_benevolence.activation.notification.usage_blocked"
+                "translate": "dragon_ability.wing_kirin.invincible_benevolence.activation.notification.usage_blocked"
             }
         }
     },

@@ -1,10 +1,13 @@
 ## 执行者: 被定身的生物
 # 执行位置：当前实体
 
+# 玩家由 Java 侧处理（原版 /ride 指令不支持实体骑乘玩家）
+execute if entity @s[type=player] run return fail
+
 # 检查当前实体是否正在被展示实体乘骑
 execute if function wing_kirin:dragon_ability/stasia_hex/display/ding_display_check run return fail
 
-# 生成展示物品实体显示“定”字（将原版物品替换贴图的文件导入）
+# 生成展示物品实体显示"定"字（将原版物品替换贴图的文件导入）
 summon item_display ~ ~ ~ { \
     Tags:["item_display.being_frozen","new_item_display"], \
     item:{id:firework_star,components:{"custom_model_data":12020000},count:1,}, \

@@ -175,7 +175,7 @@
     },
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.dragonsurvival.instant_invisibility.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.instant_invisibility.activation.notification.usage_blocked"
       }
     }
   },

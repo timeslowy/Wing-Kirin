@@ -261,6 +261,7 @@
 ---
 
 **⚠：Possible Destructive Update!**
+
 1. Reset growth stage to different from default;
 2. New innate ability 「Reverse Aging」;
 3. New item 「Empyrean Essence」;
@@ -290,4 +291,18 @@
 4. Added commands related to statistics usage;
 5. Added server configuration to adjust the behavior of some abilities;
 6. Optimized the performance of a large number of datapacks.
+
+# 3.1.0 
+
+> **乾坤未定，潮有回头。**
+
+1. 为「定身」效果增加些配置项和视觉效果；
+2. 适配龙之生存与Neoforge新版本；
+3. 更改「身形如意」的作用效果
+
+---
+
+1. Added some configs and visual effect for 「Stasis Hex」;
+2. Adapted new version of Dragon Survival and Neoforge;
+3. Changed works of 「Scale Down」
 

@@ -2,24 +2,36 @@ package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.mixins.DisplayAccessor;
+import by.timeslowly.wing_kirin.mixins.ItemDisplayAccessor;
+import com.mojang.math.Transformation;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Brightness;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.Display;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CustomModelData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import java.util.Objects;
@@ -74,6 +86,17 @@ public class DingShenEffect extends MobEffect {
             }
         }
 
+        // 将玩家的"定"字展示实体传送到头顶
+        if (entity instanceof Player && entity.level() instanceof ServerLevel serverLevel) {
+            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+            if (displayId != 0) {
+                Entity display = serverLevel.getEntity(displayId);
+                if (display != null) {
+                    display.setPos(entity.getX(), entity.getY() + entity.getBbHeight() * 0.9, entity.getZ());
+                }
+            }
+        }
+
         return super.applyEffectTick(entity, amplifier);
     }
 
@@ -108,6 +131,11 @@ public class DingShenEffect extends MobEffect {
         if (level instanceof ServerLevel serverLevel) {
             spawnParticles(serverLevel, entity);
         }
+
+        // 为玩家手动生成"定"字展示实体（原版 /ride 指令不支持实体骑乘玩家）
+        if (entity instanceof Player && level instanceof ServerLevel serverLevel) {
+            spawnDingShenDisplay(entity, serverLevel);
+        }
     }
 
     // 带效果生物被杀死时
@@ -126,6 +154,18 @@ public class DingShenEffect extends MobEffect {
 
     private static void handleExpireOrRemoval(LivingEntity entity) {
         restoreAi(entity);
+
+        // 清理玩家身上的"定"字展示实体
+        if (entity instanceof Player && entity.level() instanceof ServerLevel serverLevel) {
+            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+            if (displayId != 0) {
+                Entity display = serverLevel.getEntity(displayId);
+                if (display != null) {
+                    display.discard();
+                }
+                entity.getPersistentData().remove(DISPLAY_ID_KEY);
+            }
+        }
 
         Level level = entity.level();
         double x = entity.getX();
@@ -150,6 +190,47 @@ public class DingShenEffect extends MobEffect {
         }
     }
 
+    private static final String DISPLAY_ID_KEY = "DingShenDisplayId";
+
+    // 为玩家生成"定"字展示实体（不采用骑乘，改由 applyEffectTick 每 tick 传送到玩家头顶）
+    private static void spawnDingShenDisplay(@NotNull LivingEntity entity, ServerLevel level) {
+        // 已有展示实体则不再生成
+        int existingId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+        if (existingId != 0 && level.getEntity(existingId) != null) {
+            return;
+        }
+
+        Display.ItemDisplay display = new Display.ItemDisplay(EntityType.ITEM_DISPLAY, level);
+        display.setPos(entity.getX(), entity.getY() + entity.getBbHeight() * 0.75, entity.getZ());
+
+        // 物品：烟火之星 + 自定义模型数据 12020000 → "定"字贴图
+        ItemStack itemStack = new ItemStack(Items.FIREWORK_STAR);
+        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(12020000));
+        ((ItemDisplayAccessor) display).invokeSetItemStack(itemStack);
+        ((ItemDisplayAccessor) display).invokeSetItemTransform(ItemDisplayContext.HEAD);
+
+        // 变换：缩放 1.2,1.2,0.5 / 旋转默认 / 平移默认
+        Transformation transformation = new Transformation(
+                new Vector3f(0, 0, 0),
+                new Quaternionf(0, 0, 0, 1),
+                new Vector3f(1.2f, 1.2f, 0.5f),
+                new Quaternionf(0, 0, 0, 1)
+        );
+        ((DisplayAccessor) display).invokeSetTransformation(transformation);
+        // 垂直告示牌模式
+        ((DisplayAccessor) display).invokeSetBillboardConstraints(Display.BillboardConstraints.VERTICAL);
+        // 满亮度
+        ((DisplayAccessor) display).invokeSetBrightnessOverride(Brightness.FULL_BRIGHT);
+        // 发光 + 自定义发光颜色
+        display.setGlowingTag(true);
+        ((DisplayAccessor) display).invokeSetGlowColorOverride(16769841);
+
+        level.addFreshEntity(display);
+
+        // 存储 ID 以便后续传送和清理
+        entity.getPersistentData().putInt(DISPLAY_ID_KEY, display.getId());
+    }
+
     // 声音参数
     private static void playSound(@NotNull Level level, double x, double y, double z, SoundEvent sound) {
         if (level.isClientSide()) {
@@ -167,10 +248,7 @@ public class DingShenEffect extends MobEffect {
                 new DustParticleOptions(color, scale),
                 entity.getX(),
                 entity.getY() + entity.getBbHeight() / 2.0F,
-                entity.getZ(),
-                200,
-                1.0, 1.0, 1.0,
-                0.0
+                entity.getZ(), 200, 1.0, 1.0, 1.0, 0.0
         );
     }
 }

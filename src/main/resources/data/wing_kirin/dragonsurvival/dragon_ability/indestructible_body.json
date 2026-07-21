@@ -169,7 +169,7 @@
     },
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.dragonsurvival.indestructible_body.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.indestructible_body.activation.notification.usage_blocked"
       }
     }
   },

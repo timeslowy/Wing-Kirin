@@ -4,7 +4,6 @@
 
 # 给予各种效果
 $effect give @s dragonsurvival:broken_wings $(duration) 0
-$effect give @s dragonsurvival:magic_disabled $(duration)
 $effect give @s wing_kirin:ding_shen $(duration) 0
 $effect give @s minecraft:glowing $(duration)
 
