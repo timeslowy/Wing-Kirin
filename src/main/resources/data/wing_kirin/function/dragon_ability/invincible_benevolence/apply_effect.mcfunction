@@ -7,7 +7,7 @@ execute if entity @s[advancements={wing_kirin:wing_kirin/invincible_benevolence=
         advancement grant @s only wing_kirin:wing_kirin/invincible_benevolence
 
 # 显示惠及数 
-title @s actionbar [{"translate": "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount"},\
+title @s actionbar [{"translate": "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount"}, \
     {"score": {"name": "@s","objective": "wk.invincible_benevolence.beneficiary_amount"},"color":"green"}]
 
 # 重置计分板

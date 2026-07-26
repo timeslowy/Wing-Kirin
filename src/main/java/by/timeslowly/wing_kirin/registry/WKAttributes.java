@@ -22,7 +22,7 @@ public class WKAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES =
             DeferredRegister.create(Registries.ATTRIBUTE, Wing_kirin.MOD_ID);
 
-    // 重锤下落猛击倍率属性，默认1.0，范围0~1024
+    // 重锤下落猛击倍率属性，默认1.0，范围 0~1024
     public static final DeferredHolder<Attribute, Attribute> MACE_SMASH_DAMAGE_MULTIPLIER =
             ATTRIBUTES.register("mace_smash_damage_multiplier",
                     () -> new RangedAttribute("attribute.name.wing_kirin.mace_smash_damage_multiplier",
@@ -43,7 +43,7 @@ public class WKAttributes {
     /**
      * 修改定身效果药水时长的逻辑见： {@link by.timeslowly.wing_kirin.mixins.LivingEntityEffectMixin}
      */
-    // 定身药水效果抗性属性，默认0.0，范围0~1
+    // 定身药水效果抗性属性，默认0.0，范围 0~1
     public static final DeferredHolder<Attribute, Attribute> DINGSHEN_EFFECT_RESISTANCE =
             ATTRIBUTES.register("dingshen_effect_resistance",
                     () -> new PercentageAttribute("attribute.name.wing_kirin.dingshen_effect_resistance",

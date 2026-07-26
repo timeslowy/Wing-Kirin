@@ -41,12 +41,12 @@
                                     "modifiers": [
                                         {
                                             "attribute": "generic.attack_damage",
-                                            "amount": 0.5,
+                                            "amount": 1.0,
                                             "operation": "add_multiplied_total"
                                         },
                                         {
                                             "attribute": "dragonsurvival:dragon_ability_damage",
-                                            "amount": 0.5,
+                                            "amount": 1.0,
                                             "operation": "add_value"
                                         },
                                         {
@@ -71,13 +71,13 @@
                                         },
                                         {
                                             "attribute": "generic.armor",
-                                            "amount": 18,
-                                            "operation": "add_value"
+                                            "amount": 1.0,
+                                            "operation": "add_multiplied_total"
                                         },
                                         {
                                             "attribute": "generic.armor_toughness",
-                                            "amount": 18,
-                                            "operation": "add_value"
+                                            "amount": 1.0,
+                                            "operation": "add_multiplied_total"
                                         },
                                         {
                                             "attribute": "minecraft:player.block_break_speed",
@@ -88,6 +88,11 @@
                                             "attribute": "minecraft:player.mining_efficiency",
                                             "amount": 0.3,
                                             "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "minecraft:player.entity_interaction_range",
+                                            "amount": 3,
+                                            "operation": "add_value"
                                         },
                                         {
                                             "attribute": "dragonsurvival:mana_regeneration",

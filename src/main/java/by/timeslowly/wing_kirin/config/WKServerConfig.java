@@ -41,6 +41,9 @@ public class WKServerConfig {
     /** 金钟是否会随音爆伤害每个实体而快速消耗耐久 */
     public static final ModConfigSpec.BooleanValue FAST_DURABILITY_HURT;
 
+    /** 魔法禁用效果是否不可治愈 */
+    public static final ModConfigSpec.BooleanValue MAGIC_DISABLED_INCURABLE;
+
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
@@ -130,6 +133,19 @@ public class WKServerConfig {
                 .translation("wing_kirin.config.thunderous_shout.fastDurabilityHurt")
                 .define("fastDurabilityHurt",false);
 
+        builder.pop();
+
+        // 魔法禁用效果设置（来自龙之生存）
+        builder.comment("Magic Disabled Effect Settings (from DragonSurvival)")
+               .translation("wing_kirin.config.magic_disabled")
+               .push("magic_disabled");
+
+        // 1.魔法禁用效果是否不可治愈
+        MAGIC_DISABLED_INCURABLE = builder
+                .comment("Whether the Magic Disabled effect is incurable (cannot be removed by milk, honey bottles, or other curative items).")
+                .translation("wing_kirin.config.magic_disabled.incurable")
+                .define("incurable", true);
+
         SPEC = builder.build();
     }
 
@@ -181,5 +197,10 @@ public class WKServerConfig {
     /** 便捷方法：获取是否要快速消耗金钟耐久 */
     public static boolean shouldFastDurabilityHurt() {
         return FAST_DURABILITY_HURT.get();
+    }
+
+    /** 便捷方法：获取魔法禁用效果是否不可治愈 */
+    public static boolean shouldMagicDisabledBeIncurable() {
+        return MAGIC_DISABLED_INCURABLE.get();
     }
 }

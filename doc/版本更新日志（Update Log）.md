@@ -298,11 +298,13 @@
 
 1. 为「定身」效果增加些配置项和视觉效果；
 2. 适配龙之生存与Neoforge新版本；
-3. 更改「身形如意」的作用效果
+3. 更改「身形如意」的作用效果；
+4. 新增先天技能「壮士断腕」
 
 ---
 
 1. Added some configs and visual effect for 「Stasis Hex」;
 2. Adapted new version of Dragon Survival and Neoforge;
-3. Changed works of 「Scale Down」
+3. Changed works of 「Scale Down」;
+4. Added new innate ability: 「Spell Binder」
 

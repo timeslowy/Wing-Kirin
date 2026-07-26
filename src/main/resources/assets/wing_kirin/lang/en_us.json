@@ -41,6 +41,10 @@
   "dragon_ability.wing_kirin.reverse_aging": "Reverse Aging",
   "dragon_ability.wing_kirin.reverse_aging.desc": "§7■ Reverse aging seems impossible, but in games, it is not bound by objective physical laws. The secret of this ability lies in guiding the dissipation of internal energy to §areverse age§7 and achieve \"rejuvenation\".\n\n§7■ §lCasting Time§r§7 increases with §askill level (growth stage)§7; each successful use has a chance to §again experience rewards§r.\n\n§7■ Can only be used when growth stage is §ngreater than 40 and less than 250§r§7; if not within this range, it is §lpowerless§r§7.\n\n§6§o\"Divine womb differentiated, misty sacred body, light and healthy rejuvenation.\"",
   "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "This is too late.",
+  "dragon_ability.wing_kirin.spell_binder": "Spell Binder",
+  "dragon_ability.wing_kirin.spell_binder.desc": "§7■ With a single thought in mind, abandon your magical arts, return to simplicity, and achieve \"sainthood\" through physical means.\nAfter use, §4all mana will be emptied, all effects removed, and no spells can be cast§7, §linstead fully transforming into \"martial arts\".§r§4During this period, you will also be unable to use the Dragon Soul to switch species.§r\n\n§7■§nAttribute bonuses§r§7 and §nduration§r§7 both increase with §aability level (experience level)§7.\n\n§6§o\"Not to defeat enemies, only to overcome oneself.\"",
+
+  
   "dragon_ability.wing_kirin.born_above_empyrean": "Born Above Empyrean",
   "dragon_ability.wing_kirin.born_above_empyrean.desc": "§7■ When high above the clouds, bathed in the celestial winds, the§6 Wing Kirin§r§7 feels as if returned to its \"spring,\" granting itself several excellent§a beneficial effects§r.\n\n§6§o\"Infinite scenery lies on the perilous peak, calm amidst the chaotic flying clouds.\"§r",
   "dragon_ability.wing_kirin.empyrean_magic": "Empyrean Magic",
@@ -67,6 +71,7 @@
   "dragon_ability.wing_kirin.sonic_boom_immunity.desc": "■ The§6 Wing Kirin§r§7, having been exposed to§a celestial music§r§7 in the heavenly courts since childhood, is thus impervious to demonic sounds; sound waves cannot harm it in the slightest.\n\n§6§o\"Grating and discordant, hard on the ears'§6? Doesn'§6t exist!\"§r",
   "dragon_ability.wing_kirin.empyrean_favor": "Empyrean Favor",
   "dragon_ability.wing_kirin.empyrean_favor.desc": "§7■ As the saying goes: \"Three parts are destined by heaven.\" Born above the Nine Heavens, the§6 Winged Kirin§r§7 is naturally§a deeply favored by Heaven§r.§7 In§n loot scenarios§r§7 like fishing, it can find items of§a superior quality§r§7.\n\n§6§o\"But after all, '§6seven parts depend on striving!' §6Only those who strive succeed.\"§r",
+
   "dragon_penalty.wing_kirin.evil_entangle": "Evil Entangle",
   "dragon_penalty.wing_kirin.evil_entangle.desc": "§7■ The Wing Kirin was born above the Nine Heavens of the Overworld and has never been exposed to the§c evil inversions§r§7 of other dimensions. When stepping into other dimensions, the lingering§5 Evil Qi§r§7 will erode the§6 Zheng Qi§r§7 within the body. If not distanced from the trouble in time, the Zheng Qi will be§c completely eroded§r§7, and the primordial spirit within will be drained, making you emaciated and vulnerable.\n\n■ By consuming items that containing§6「Empyrean Wine」§r§7 or obtaining the§6「Great Zhengqi」§r§7 effect from the Dragon Beacon, you can stabilize the§6 Zheng Qi§r§7 within, temporarily§a keeping the Evil Qi at bay§r.",
 
@@ -369,6 +374,8 @@
   "dragonsurvival.advancement.wing_kirin/indestructible_body.desc": "Counter Shock more than 10 times in single casting 「Indestructible Body」, making their attacking invalid.",
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed": "Unstoppable Speed",
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "Attacks over 100 times during 「Unstoppable Speed」activing, leading them can not define direction.",
+  "dragonsurvival.advancement.wing_kirin/spell_binder": "Spell Binder",
+  "dragonsurvival.advancement.wing_kirin/spell_binder.desc": "Abandon your magical arts and go all in, trading mana for extreme physical damage — a risky gambit when magic is at a disadvantage.",
   "dragonsurvival.advancement.wing_kirin/stinger": "Unfinished",
   "dragonsurvival.advancement.wing_kirin/stinger.desc": "The song is not yet finished, the east is dawning.",
 
@@ -405,6 +412,7 @@
   "item.wing_kirin.wing_kirin_icon": "Wing Kirin Icon",
   "item.wing_kirin.great_zhengqi_icon": "Great Zhengqi Icon",
   "item.wing_kirin.unstoppable_speed_icon": "Unstoppable Speed Icon",
+  "item.wing_kirin.spell_binder_icon": "Spell Binder Icon",
 
   "painting.wing_kirin.mountain_water.author": "Timeslowly",
   "painting.wing_kirin.mountain_water.title": "Mountain and Water",
@@ -447,6 +455,7 @@
   "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "FAILED LOCATING POSITION!",
   "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount": "Beneficiary Amount:",
   "actionbar.wing_kirin.instant_invisibility.distance_notice": "REMAINING EFFECTIVE DISTANCE:",
+  "actionbar.wing_kirin.ability.spell_binder.notice": "Is this burning the boats, or spinning a cocoon around oneself?",
 
   "enchantment.wing_kirin.unencumbered": "Unencumbered",
   "enchantment.wing_kirin.dingshen_resistance": "Dingshen Resistance",
@@ -522,5 +531,10 @@
   "wing_kirin.config.thunderous_shout_settings.tooltip": "Configuration for the Thunderous Shout (Golden Bell) behavior.",
   "wing_kirin.config.thunderous_shout_settings.button": "Configure",
   "wing_kirin.config.thunderous_shout.fastDurabilityHurt": "Golden Bell Quick Durability Consumption",
-  "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "Whether the Golden Bell quickly consumes durability with each sonic boom damage instance"
+  "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "Whether the Golden Bell quickly consumes durability with each sonic boom damage instance",
+  "wing_kirin.config.magic_disabled": "Magic Disabled Effect Settings",
+  "wing_kirin.config.magic_disabled.tooltip": "Configuration for the Magic Disabled (from DragonSurvival) effect behavior.",
+  "wing_kirin.config.magic_disabled.button": "Configure",
+  "wing_kirin.config.magic_disabled.incurable": "Incurable",
+  "wing_kirin.config.magic_disabled.incurable.tooltip": "Whether the Magic Disabled effect is incurable (cannot be removed by milk, honey bottles, or other curative items)."
 }

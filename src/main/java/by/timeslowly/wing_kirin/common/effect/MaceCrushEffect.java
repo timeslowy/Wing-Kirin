@@ -26,7 +26,7 @@ public class MaceCrushEffect extends MobEffect {
         );
         // 主要属性：下落猛击倍率
         this.addAttributeModifier(WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 0.5,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 0.8,
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
     }

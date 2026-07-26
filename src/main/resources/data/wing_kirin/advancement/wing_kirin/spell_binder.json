@@ -1,0 +1,28 @@
+{
+    "parent": "wing_kirin:wing_kirin/overoveroverkill",
+    "criteria": {
+        "casted_spell_binder": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/spell_binder"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/spell_binder.desc"
+        },
+        "icon": {
+            "id": "wing_kirin:spell_binder_icon",
+            "count": 1
+        }
+    },
+    "requirements": [
+        [
+            "casted_spell_binder"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    }
+}

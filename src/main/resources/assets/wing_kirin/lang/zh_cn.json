@@ -42,6 +42,8 @@
   "dragon_ability.wing_kirin.reverse_aging": "返老还童",
   "dragon_ability.wing_kirin.reverse_aging.desc": "§7■逆龄生长看似绝无可能，但在游戏里可不受客观物理法则的限制。此技能的奥妙，便在于通过引导体内气息之逸散，从而§a逆转年龄§7实现“返老还童”。\n\n§7■§l施法时长§r§7随§a技能等级（成长阶度）§7提升；每次生效时有概率§a获得经验奖励§r。\n\n§7■只能在成长阶度§n大于40小于250§r§7时使用，不再范围之内也§l无能为力§r§7。\n\n§6§o“神胎剖判，氤氲圣体，轻健还童。”",
   "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "为时已晚，木已成舟。",
+  "dragon_ability.wing_kirin.spell_binder": "壮士断腕",
+  "dragon_ability.wing_kirin.spell_binder.desc": "§7■心中一念，自废法功，返璞归真，物理“成圣”。\n使用后，将§4清空所有法力，消去一切效果，且无法施展任何神通§7，§l而全数化为“武功”。§r§4期间还将无法使用龙魂切换物种。§r\n\n§7■§n属性增益§r§7与§n持续时长§r§7均随§a技能等级（经验等级）§7提升。\n\n§6§o“不杀敌，只克已。”",
 
   "dragon_ability.wing_kirin.born_above_empyrean": "生于九天",
   "dragon_ability.wing_kirin.born_above_empyrean.desc": "§7■当身处云巅之上，沐浴在天风之中，§6翼麒麟§r§7如同回到了“泉水”，予自身数项极好的§a增益效果§r。\n\n§6§o“无限风光在险峰，乱云飞渡仍从容。”§r",
@@ -52,7 +54,7 @@
   "dragon_ability.wing_kirin.fly_higher": "平步青云",
   "dragon_ability.wing_kirin.fly_higher.desc": "§7■当九天之上的罡风划过羽翼，§6翼麒麟§r§7可汲取其中无穷无尽的能量，极大§a提升飞行速度§r§7，亦能乘风而行§a减少飞行消耗§r§7。在群山不能所及之巅再上的碧空，如同光一样掠过长空。\n\n■「飞行速度增益」与「飞行消耗减少」随§a技能等级（经验消耗）§r§7提升。\n\n§6§o“海阔凭鱼跃，天高任龙飞”",
   "dragon_ability.wing_kirin.last_stand": "回光返照",
-  "dragon_ability.wing_kirin.last_stand.desc": "§7■此技能称号不太中听，但名副其实。其作用似于§n另类的不死图腾§r§7，在命悬一线之际可以暂时“力挽狂澜”，并§e短暂提高身体各项机能，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股能量散尽（对应属性调整效果消失），自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r\n\n§6§o“阎王要你三更死，它能留你到五更”",
+  "dragon_ability.wing_kirin.last_stand.desc": "§7■此技能称号不太中听，但名副其实。其作用似于§n另类的不死图腾§r§7，在命悬一线之际可以暂时“力挽狂澜”，并§e短暂提高身体各项机能，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股能量散尽（对应属性调整效果消失），自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r\n\n§6§o“以我残躯化烈火”",
   "dragon_ability.wing_kirin.transposition": "移形换位",
   "dragon_ability.wing_kirin.transposition.desc": "§7■无论对方是气势汹汹向你奔来，还是毫无察觉地背对着，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■冷却时间随§a技能等级（经验消耗）§r§7提升；\n\n§8■适用距离较短；被§l“定身”§r§8时§l无法使用！§r\n\n§6§o“去影忽不见，飘然若流星。”",
 
@@ -391,6 +393,8 @@
   "dragonsurvival.advancement.wing_kirin/indestructible_body.desc": "在一次施法中反震敌人超过10次，将他们的一切无功徒劳付之东流。",
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed": "唯快不破",
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "在打通“任督二脉”的短暂时机发动超过100次攻击，把对手揍得七荤八素、晕头转向。",
+  "dragonsurvival.advancement.wing_kirin/spell_binder": "壮士断腕",
+  "dragonsurvival.advancement.wing_kirin/spell_binder.desc": "自废法功，放手一搏，以法力换取极致的物伤加成，在法术被克之境地下亦不失为一步险棋。",
   "dragonsurvival.advancement.wing_kirin/stinger": "未竟",
   "dragonsurvival.advancement.wing_kirin/stinger.desc": "歌未竟，东方白。",
 
@@ -474,6 +478,7 @@
   "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "将施放§6「范围定身」",
   "actionbar.wing_kirin.ability.stasis_hex.disable_ability": "§e定身使你施法不得",
   "actionbar.wing_kirin.ability.stasis_hex.disable_interaction": "§e定身使你动弹不得",
+  "actionbar.wing_kirin.ability.spell_binder.notice": "是破釜沉舟，还是作茧自缚？",
 
   "title.wing_kirin.last_stand": "回光返照",
   "subtitle.wing_kirin.last_stand": "请留意属性修饰效果的持续时间！",
@@ -566,5 +571,10 @@
   "wing_kirin.config.thunderous_shout_settings.tooltip": "「龙吼功」相关行为配置",
   "wing_kirin.config.thunderous_shout_settings.button": "编辑",
   "wing_kirin.config.thunderous_shout.fastDurabilityHurt": "金钟是否快速消耗耐久",
-  "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "金钟是否会随音爆伤害每个实体而快速消耗耐久"
+  "wing_kirin.config.thunderous_shout.fastDurabilityHurt.tooltip": "金钟是否会随音爆伤害每个实体而快速消耗耐久",
+  "wing_kirin.config.magic_disabled": "「禁用魔法」",
+  "wing_kirin.config.magic_disabled.tooltip": "魔法封禁（Magic Disabled，来自龙之生存）药水效果的行为配置。",
+  "wing_kirin.config.magic_disabled.button": "编辑",
+  "wing_kirin.config.magic_disabled.incurable": "不可治愈",
+  "wing_kirin.config.magic_disabled.incurable.tooltip": "是否使魔法封禁效果不可被治愈（无法通过牛奶、蜂蜜瓶或其他治愈物品移除）。"
 }
