@@ -98,16 +98,9 @@
               "spread": 0.0
             },
             {
-              "effect_type": "dragonsurvival:potion",
-              "potion": {
-                "effects": "hunger",
-                "duration": 20,
-                "amplifier": {
-                  "type": "linear",
-                  "base": 4,
-                  "per_level_above_first": 4
-                }
-              }
+              "effect_type": "dragonsurvival:hunger",
+              "hunger_gain": -0.1,
+              "saturation_gain":  -0.1
             }
           ],
           "targeting_mode": "all"
@@ -115,7 +108,7 @@
         "target_type": "dragonsurvival:self"
       },
       "trigger_point": "default",
-      "trigger_rate": 1.0
+      "trigger_rate": 2.0
     },
     {
       "target_selection": {

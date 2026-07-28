@@ -43,7 +43,6 @@ public class WKItems {
     // 「唯快不破」进度图标（空物品）
     public static final DeferredItem<Item> UnstoppableSpeedIcon = ITEMS.register("unstoppable_speed_icon",
             () -> new Item(new Item.Properties()));
-
     // 「壮士断腕」进度图标（空物品）
     public static final DeferredItem<Item> SpellBinderIcon = ITEMS.register("spell_binder_icon",
             () -> new Item(new Item.Properties()));
