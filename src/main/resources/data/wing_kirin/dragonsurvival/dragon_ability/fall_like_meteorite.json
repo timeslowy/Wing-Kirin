@@ -11,7 +11,7 @@
                   "base": {
                     "id": "wing_kirin:mace_crush",
                     "custom_icon": "wing_kirin:textures/ability_effect/mace_crush.png",
-                    "should_remove_automatically":false,
+                    "should_remove_automatically": false,
                     "is_hidden": false,
                     "early_removal_condition": {
                       "condition": "minecraft:inverted",
@@ -95,6 +95,29 @@
         },
         "target_type": "dragonsurvival:self"
       }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:glow",
+              "glows": [
+                {
+                  "base": {
+                    "id": "wing_kirin:last_stand_glowing",
+                    "duration": 20,
+                    "is_hidden": true
+                  },
+                  "color": "#fbdc92"
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
     }
   ],
   "activation": {
@@ -124,7 +147,7 @@
     },
     "initial_mana_cost": 6.0,
     "sound": {
-      "charging":"block.conduit.ambient" ,
+      "charging": "block.conduit.ambient",
       "end": "minecraft:block.bell.resonate"
     }
   },
@@ -162,21 +185,21 @@
     }
   },
   "usage_blocked": {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "entity_properties",
-          "entity": "this",
-          "predicate": {
-            "slots": {
-              "weapon.mainhand": {
-                "items": "mace"
-              }
-            },
-            "type_specific": {
-              "type": "dragonsurvival:dragon_predicate",
-              "dragon_species": "dragonsurvival:wing_kirin"
-            }
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.mainhand": {
+            "items": "mace"
           }
+        },
+        "type_specific": {
+          "type": "dragonsurvival:dragon_predicate",
+          "dragon_species": "dragonsurvival:wing_kirin"
         }
+      }
     }
+  }
 }

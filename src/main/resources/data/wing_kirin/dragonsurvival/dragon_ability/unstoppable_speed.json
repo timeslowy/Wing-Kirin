@@ -20,6 +20,19 @@
                                 "duration": 300,
                                 "effect_particles": true
                             }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:last_stand_glowing",
+                                        "duration": 20,
+                                        "is_hidden": true
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
                         }
                     ],
                     "targeting_mode": "allies_and_self"
@@ -109,33 +122,33 @@
         ]
     },
     "usage_blocked": {
-    "condition": "minecraft:any_of",
-    "terms": [
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "type_specific": {
-            "type": "dragonsurvival:custom_predicates",
-            "health_percentage": {
-              "max": 0.1
+        "condition": "minecraft:any_of",
+        "terms": [
+            {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "type_specific": {
+                        "type": "dragonsurvival:custom_predicates",
+                        "health_percentage": {
+                            "max": 0.1
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "inverted",
+                "term": {
+                    "condition": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      {
-        "condition": "inverted",
-        "term": {
-          "condition": "entity_properties",
-          "entity": "this",
-          "predicate": {
-            "type_specific":{
-              "type": "dragonsurvival:dragon_predicate",
-              "dragon_species": "dragonsurvival:wing_kirin"
-            }
-          }
-        }
-      }
-    ]
-  }
+        ]
+    }
 }

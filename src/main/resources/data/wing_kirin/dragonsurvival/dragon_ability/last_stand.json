@@ -136,6 +136,19 @@
                         {
                             "effect_type": "dragonsurvival:run_function",
                             "function": "wing_kirin:dragon_ability/last_stand/main"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:last_stand_glowing",
+                                        "duration": 20,
+                                        "is_hidden": true
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
                         }
                     ],
                     "targeting_mode": "allies_and_self"

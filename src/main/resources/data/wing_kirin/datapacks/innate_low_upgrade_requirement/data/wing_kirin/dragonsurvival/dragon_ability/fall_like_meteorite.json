@@ -95,6 +95,29 @@
         },
         "target_type": "dragonsurvival:self"
       }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:glow",
+              "glows": [
+                {
+                  "base": {
+                    "id": "wing_kirin:last_stand_glowing",
+                    "duration": 20,
+                    "is_hidden": true
+                  },
+                  "color": "#fbdc92"
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
     }
   ],
   "activation": {

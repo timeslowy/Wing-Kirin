@@ -23,7 +23,7 @@ public class UnstoppableSpeedEffect extends MobEffect {
         super(category, color);
         // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_1"), 0.5,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_1"), 0.8,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
