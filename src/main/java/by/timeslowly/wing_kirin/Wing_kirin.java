@@ -32,6 +32,7 @@ public class Wing_kirin {
         WKEnchantments.register(modEventBus);
         WKItems.register(modEventBus);
         WKParticles.register(modEventBus);
+        WKPotions.register(modEventBus);
         WKSounds.register(modEventBus);
         WKStats.register(modEventBus);
 

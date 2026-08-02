@@ -147,6 +147,26 @@
       },
       "trigger_point": "charging",
       "trigger_rate": 1.0
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "effects": "wing_kirin:amnesia",
+                "amplifier": 0,
+                "duration": 60,
+                "effect_particles": true
+              }
+            }
+          ],
+          "targeting_mode": "enemies"
+        },
+        "target_type": "dragonsurvival:area",
+        "radius": 25
+      }
     }
   ],
   "activation": {

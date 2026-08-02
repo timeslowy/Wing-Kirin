@@ -36,6 +36,9 @@ public class WKEffects {
     public static final Holder<MobEffect> UNSTOPPABLE_SPEED = MOB_EFFECTS.register("unstoppable_speed",
             () -> new UnstoppableSpeedEffect(MobEffectCategory.BENEFICIAL, 3190479));
 
+    public static final Holder<MobEffect> AMNESIA = MOB_EFFECTS.register("amnesia",
+            () -> new AmnesiaEffect(MobEffectCategory.HARMFUL, 0x9FB3C8));
+
 
     // 药水效果移除行为
     @SubscribeEvent
