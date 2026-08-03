@@ -29,6 +29,9 @@ public class WKServerConfig {
     /** 定身效果是否完全锁定实体位置（禁止任何移动、传送与维度切换） */
     public static final ModConfigSpec.BooleanValue DING_SHEN_LOCK_POSITION;
 
+    /** 粉碎定身时是否为非翼麒麟龙玩家提供「不破不立」增益（生命恢复Ⅱ10秒）；关闭时仅翼麒麟可获得 */
+    public static final ModConfigSpec.BooleanValue SHATTER_BUFF_FOR_NON_WING_KIRIN;
+
     /** 浩然正气是否使翼麒麟无视法力消耗 */
     public static final ModConfigSpec.BooleanValue GREAT_ZHENGQI_IGNORE_MANA_COST;
 
@@ -87,6 +90,12 @@ public class WKServerConfig {
                 .comment("Whether the Ding Shen effect completely locks the entity's position, preventing ALL forms of movement, teleportation, and dimension changes. Off by default. Use with caution.")
                 .translation("wing_kirin.config.ding_shen.lockPosition")
                 .define("lockPosition", false);
+
+        // 8.粉碎定身时是否为非翼麒麟龙玩家提供「不破不立」增益
+        SHATTER_BUFF_FOR_NON_WING_KIRIN = builder
+                .comment("Whether non-Wing Kirin dragon players also receive the 'Break to Build' shatter buff when they shatter a frozen entity. When disabled, only Wing Kirin dragon players receive it.")
+                .translation("wing_kirin.config.ding_shen.shatterBuffForNonWingKirin")
+                .define("shatterBuffForNonWingKirin", false);
 
         builder.pop();
 
@@ -177,6 +186,11 @@ public class WKServerConfig {
     /** 便捷方法：获取定身是否完全锁定实体位置 */
     public static boolean shouldDingShenLockPosition() {
         return DING_SHEN_LOCK_POSITION.get();
+    }
+
+    /** 便捷方法：获取粉碎定身时是否为非翼麒麟龙玩家提供「不破不立」增益 */
+    public static boolean shouldProvideShatterBuffToNonWingKirinDragons() {
+        return SHATTER_BUFF_FOR_NON_WING_KIRIN.get();
     }
 
     /** 便捷方法：获取浩然正气是否使翼麒麟无视法力消耗 */
