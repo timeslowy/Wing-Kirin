@@ -21,13 +21,13 @@
         ],
         "entity_hit_effects": [
             {
-                "entity_effect": "dragonsurvival:run_function",
-                "function":"wing_kirin:dragon_ability/stasia_hex/arrow_hit/main"
-            },
-            {
                 "entity_effect": "dragonsurvival:damage",
                 "damage_type": "wing_kirin:trace_ding",
                 "amount": 0.1
+            },
+            {
+                "entity_effect": "dragonsurvival:run_function",
+                "function":"wing_kirin:dragon_ability/stasia_hex/arrow_hit/main"
             }
         ],
         "common_hit_effects": []

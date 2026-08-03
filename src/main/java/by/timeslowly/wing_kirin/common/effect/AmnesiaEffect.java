@@ -32,10 +32,10 @@ public class AmnesiaEffect extends MobEffect {
     public AmnesiaEffect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(Attributes.ATTACK_DAMAGE,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_1"), -0.1,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_1"), -0.2,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_2"), -0.05,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_2"), -0.1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 

@@ -9,11 +9,11 @@
                             "potion": {
                                 "effects": "wing_kirin:amnesia",
                                 "amplifier": 0,
-                                "duration": 20,
+                                "duration": 60,
                                 "probability": {
                                     "type": "linear",
-                                    "base": 0.1,
-                                    "per_level_above_first": 0.1
+                                    "base": 0.15,
+                                    "per_level_above_first": 0.15
                                 },
                                 "effect_particles": true
                             }
@@ -32,7 +32,7 @@
             "amount": 1
         },
         "trigger": {
-            "trigger_type": "dragonsurvival:on_target_hit"
+            "trigger_type": "dragonsurvival:constant"
         }
     },
     "can_be_manually_disabled": true,
@@ -40,19 +40,19 @@
         "texture_entries": [
             {
                 "from_level": 0,
-                "texture_resource": "wing_kirin:abilities/abenst_minded/absent_minded_0"
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_0"
             },
             {
                 "from_level": 1,
-                "texture_resource": "wing_kirin:abilities/abenst_minded/absent_minded_1"
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_1"
             },
             {
                 "from_level": 2,
-                "texture_resource": "wing_kirin:abilities/abenst_minded/absent_minded_2"
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_2"
             },
             {
                 "from_level": 3,
-                "texture_resource": "wing_kirin:abilities/abenst_minded/absent_minded_3"
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_3"
             }
         ]
     },

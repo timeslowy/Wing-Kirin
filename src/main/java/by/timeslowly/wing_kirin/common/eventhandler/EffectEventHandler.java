@@ -26,9 +26,6 @@ import org.jetbrains.annotations.Nullable;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class EffectEventHandler {
-    /** 定身粉碎阈值：单次受到的伤害超过最大血量的该比例时，定身效果被"粉碎" */
-    private static final double DING_SHEN_SHATTER_RATIO = 0.3;
-
     /** 定身被粉碎时需重置的 mcfunction（恢复AI、清效果、移除标签、重置计分板、杀死骑乘展示实体） */
     private static final ResourceLocation DING_SHEN_REMOVE_EFFECTS_FUNCTION =
             ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");
@@ -54,9 +51,9 @@ public class EffectEventHandler {
             event.setAmount(originalDamage * multiplier);
         }
 
-        // 粉碎机制：单次受到的伤害超过最大血量 30% 时，定身效果被"粉碎"
+        // 粉碎机制：单次受到的伤害超过最大血量（服务端配置比例，默认 30%）时，定身效果被"粉碎"
         if (victim.hasEffect(WKEffects.DING_SHEN)
-                && event.getAmount() > victim.getMaxHealth() * DING_SHEN_SHATTER_RATIO) {
+                && event.getAmount() > victim.getMaxHealth() * WKServerConfig.getDingShenShatterRatio()) {
             shatterDingShen(victim);
             // 不破不立：攻击粉碎的龙玩家获得增益
             grantShatterBuff(event.getSource().getEntity());

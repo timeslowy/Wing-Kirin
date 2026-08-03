@@ -32,6 +32,9 @@ public class WKServerConfig {
     /** 粉碎定身时是否为非翼麒麟龙玩家提供「不破不立」增益（生命恢复Ⅱ10秒）；关闭时仅翼麒麟可获得 */
     public static final ModConfigSpec.BooleanValue SHATTER_BUFF_FOR_NON_WING_KIRIN;
 
+    /** 定身粉碎阈值：单次受到的伤害超过最大血量的该比例时，定身效果被"粉碎"（0-1，默认0.3） */
+    public static final ModConfigSpec.DoubleValue DING_SHEN_SHATTER_RATIO;
+
     /** 浩然正气是否使翼麒麟无视法力消耗 */
     public static final ModConfigSpec.BooleanValue GREAT_ZHENGQI_IGNORE_MANA_COST;
 
@@ -96,6 +99,12 @@ public class WKServerConfig {
                 .comment("Whether non-Wing Kirin dragon players also receive the 'Break to Build' shatter buff when they shatter a frozen entity. When disabled, only Wing Kirin dragon players receive it.")
                 .translation("wing_kirin.config.ding_shen.shatterBuffForNonWingKirin")
                 .define("shatterBuffForNonWingKirin", false);
+
+        // 9.粉碎伤害阈值（单次伤害占最大血量的比例，0-1）
+        DING_SHEN_SHATTER_RATIO = builder
+                .comment("The ratio of max health a single damage hit must exceed for the Ding Shen effect to be shattered (0.0 - 1.0, e.g. 0.3 = 30%). 0.0 means any damage shatters it.")
+                .translation("wing_kirin.config.ding_shen.shatterThreshold")
+                .defineInRange("shatterThreshold", 0.3, 0.0, 1.0);
 
         builder.pop();
 
@@ -191,6 +200,11 @@ public class WKServerConfig {
     /** 便捷方法：获取粉碎定身时是否为非翼麒麟龙玩家提供「不破不立」增益 */
     public static boolean shouldProvideShatterBuffToNonWingKirinDragons() {
         return SHATTER_BUFF_FOR_NON_WING_KIRIN.get();
+    }
+
+    /** 便捷方法：获取定身粉碎的伤害阈值（占最大血量的比例，0-1） */
+    public static double getDingShenShatterRatio() {
+        return DING_SHEN_SHATTER_RATIO.get();
     }
 
     /** 便捷方法：获取浩然正气是否使翼麒麟无视法力消耗 */
