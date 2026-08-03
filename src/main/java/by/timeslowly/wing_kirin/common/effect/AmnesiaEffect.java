@@ -1,11 +1,15 @@
 package by.timeslowly.wing_kirin.common.effect;
 
+import by.timeslowly.wing_kirin.Wing_kirin;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.ai.Brain;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,6 +31,12 @@ import org.jetbrains.annotations.NotNull;
 public class AmnesiaEffect extends MobEffect {
     public AmnesiaEffect(MobEffectCategory category, int color) {
         super(category, color);
+        this.addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_1"), -0.1,
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        this.addAttributeModifier(Attributes.ATTACK_SPEED,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_2"), -0.05,
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
     // 效果初应用/刷新时：立即清除当前仇恨目标

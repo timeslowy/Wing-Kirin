@@ -42,7 +42,7 @@
   "dragon_ability.wing_kirin.reverse_aging": "返老还童",
   "dragon_ability.wing_kirin.reverse_aging.desc": "§7■逆龄生长看似绝无可能，但在游戏里可不受客观物理法则的限制。此技能的奥妙，便在于通过引导体内气息之逸散，从而§a逆转年龄§7实现“返老还童”。\n\n§7■§l施法时长§r§7随§a技能等级（成长阶度）§7提升；每次生效时有概率§a获得经验奖励§r。\n\n§7■只能在成长阶度§n大于40小于250§r§7时使用，不再范围之内也§l无能为力§r§7。\n\n§6§o“神胎剖判，氤氲圣体，轻健还童。”",
   "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "为时已晚，木已成舟。",
-  "dragon_ability.wing_kirin.spell_binder": "壮士断腕",
+  "dragon_ability.wing_kirin.spell_binder": "孤注一掷",
   "dragon_ability.wing_kirin.spell_binder.desc": "§7■心中一念，自废法功，返璞归真，物理“成圣”。\n使用后，将§4清空所有法力，消去一切效果，且无法施展任何神通§7，§l而全数化为“武功”。§r§4期间还将无法使用龙魂切换物种。§r\n\n§7■§n属性增益§r§7与§n持续时长§r§7均随§a技能等级（经验等级）§7提升。\n\n§6§o“不杀敌，只克已。”",
 
   "dragon_ability.wing_kirin.born_above_empyrean": "生于九天",
@@ -57,6 +57,8 @@
   "dragon_ability.wing_kirin.last_stand.desc": "§7■此技能称号不太中听，但名副其实。其作用似于§n另类的不死图腾§r§7，在命悬一线之际可以暂时“力挽狂澜”，并§e短暂提高身体各项机能，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股能量散尽（对应属性调整效果消失），自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r\n\n§6§o“以我残躯化烈火”",
   "dragon_ability.wing_kirin.transposition": "移形换位",
   "dragon_ability.wing_kirin.transposition.desc": "§7■无论对方是气势汹汹向你奔来，还是毫无察觉地背对着，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■冷却时间随§a技能等级（经验消耗）§r§7提升；\n\n§8■适用距离较短；被§l“定身”§r§8时§l无法使用！§r\n\n§6§o“去影忽不见，飘然若流星。”",
+  "dragon_ability.wing_kirin.absent_minded": "神失魄散",
+  "dragon_ability.wing_kirin.absent_minded.desc": "§7■§l攻击§r§7有几率§e打散对方心神§7，使其§e神失魄散§7。对于生物而言，使其§e无法自主攻击§7；对于玩家而言，则令其§e攻击疲软无力，欲发不得§7。\n\n■§n概率§r§7随§a技能等级§7提升。\n\n§6§o“除你神魄！”",
 
   "dragon_ability.wing_kirin.kirin_wing": "麒麟之翼",
   "dragon_ability.wing_kirin.kirin_wing.desc": "§7■不类其他龙种，§6翼麒麟§r§7诞于九天之上，生来自会翱翔万里长空。\n\n§6§o“其翼若垂天之云”§r",
@@ -405,10 +407,11 @@
   "effect.wing_kirin.instant_invisibility": "聚形散气",
   "effect.wing_kirin.mace_crush": "从天而降",
   "effect.wing_kirin.unstoppable_speed": "唯快不破",
-  "effect.wing_kirin.amnesia": "失忆",
-  "item.minecraft.potion.effect.amnesia": "失忆药水",
-  "item.minecraft.splash_potion.effect.amnesia": "喷溅型失忆药水",
-  "item.minecraft.lingering_potion.effect.amnesia": "滞留型失忆药水",
+  "effect.wing_kirin.amnesia": "失神",
+  
+  "item.minecraft.potion.effect.amnesia": "失神药水",
+  "item.minecraft.splash_potion.effect.amnesia": "喷溅型失神药水",
+  "item.minecraft.lingering_potion.effect.amnesia": "滞留型失神药水",
   "item.minecraft.tipped_arrow.effect.amnesia": "失忆之箭",
   "item.wing_kirin.wing_kirin_treat": "翼麒麟的佳肴",
   "item.wing_kirin.wing_kirin_treat.description_0": "§7■将金凤玉露与龙尘相混合之后，虽然伤害吸收之效果因中和而遗失，但却能给翼麒麟赋予无限的法力。",
