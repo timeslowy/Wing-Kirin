@@ -6,6 +6,7 @@ import by.dragonsurvivalteam.dragonsurvival.registry.DSEffects;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.DragonSpecies;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.registry.WKAttachments;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.Holder;
@@ -21,6 +22,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityTravelToDimensionEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,6 +31,29 @@ public class EffectEventHandler {
     /** 定身被粉碎时需重置的 mcfunction（恢复AI、清效果、移除标签、重置计分板、杀死骑乘展示实体） */
     private static final ResourceLocation DING_SHEN_REMOVE_EFFECTS_FUNCTION =
             ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");
+
+    /** 肌肉松弛触发阈值：被施加的定身效果总时长超过该刻数（50 秒）时生效，直至本次效果结束 */
+    private static final int DING_SHEN_MUSCLE_RELAX_THRESHOLD = 50 * 20;
+
+    /**
+     * 肌肉松弛判定：被施加超过 50 秒的定身效果时打上标记，
+     * 此后直至效果结束（到期/移除/死亡）全程承受额外 50% 伤害。
+     * 定身的叠加刷新（mcfunction 每次 give 累加后的总时长）同样会触发本判定。
+     */
+    @SubscribeEvent
+    public static void onEffectAdded(MobEffectEvent.@NotNull Added event) {
+        if (event.getEntity().level().isClientSide) {
+            return;
+        }
+        MobEffectInstance instance = event.getEffectInstance();
+        if (instance == null || !instance.is(WKEffects.DING_SHEN)) {
+            return;
+        }
+        int duration = instance.getDuration();
+        if (duration == -1 || duration > DING_SHEN_MUSCLE_RELAX_THRESHOLD) {
+            event.getEntity().setData(WKAttachments.DING_SHEN_MUSCLE_RELAXED, true);
+        }
+    }
 
     /**
      * 检查受害者的定身状态效果
@@ -39,12 +64,9 @@ public class EffectEventHandler {
         LivingEntity victim = event.getEntity();
         float originalDamage = event.getAmount();
         float multiplier = 1.0f;
-        var DingShen = victim.getEffect(WKEffects.DING_SHEN);
-        if (DingShen != null) {
-            int duration = DingShen.getDuration();
-            if (duration == -1 || duration > 1000 ) {
-                multiplier *= 1.5f;
-            }
+        // 肌肉松弛：被施加超过 50 秒定身的实体，全程承受额外 50% 伤害（直至本次效果结束）
+        if (victim.getData(WKAttachments.DING_SHEN_MUSCLE_RELAXED)) {
+            multiplier *= 1.5f;
         }
 
         if (multiplier != 1.0f) {

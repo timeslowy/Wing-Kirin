@@ -26,6 +26,7 @@ public class Wing_kirin {
         // 注册模组加载的通用内容设置
 
         WKAttributes.register(modEventBus);
+        WKAttachments.register(modEventBus);
         WKCreativeTabs.register(modEventBus);
         WKDamageTypes.register(modEventBus);
         WKEffects.register(modEventBus);

@@ -3,6 +3,7 @@ package by.timeslowly.wing_kirin.common.effect;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.mixins.DisplayAccessor;
+import by.timeslowly.wing_kirin.registry.WKAttachments;
 import by.timeslowly.wing_kirin.mixins.ItemDisplayAccessor;
 import com.mojang.math.Transformation;
 import net.minecraft.core.BlockPos;
@@ -152,7 +153,10 @@ public class DingShenEffect extends MobEffect {
 
     // ---------- 以下为提取的辅助方法 ----------
 
-    private static void handleExpireOrRemoval(LivingEntity entity) {
+    private static void handleExpireOrRemoval(@NotNull LivingEntity entity) {
+        // 效果结束（到期/移除/死亡）：清除「肌肉松弛」标记
+        entity.removeData(WKAttachments.DING_SHEN_MUSCLE_RELAXED);
+
         restoreAi(entity);
 
         // 清理玩家身上的"定"字展示实体
