@@ -61,8 +61,8 @@
                                             "attribute": "generic.attack_damage",
                                             "amount": {
                                                 "type": "linear",
-                                                "base": 0.4,
-                                                "per_level_above_first": 0.4
+                                                "base": 0.5,
+                                                "per_level_above_first": 0.5
                                             },
                                             "operation": "add_multiplied_total"
                                         },
@@ -78,15 +78,6 @@
                                         {
                                             "attribute": "minecraft:generic.movement_speed",
                                             "amount": 1.0,
-                                            "operation": "add_multiplied_total"
-                                        },
-                                        {
-                                            "attribute": "dragonsurvival:flight_speed",
-                                            "amount": {
-                                                "type": "linear",
-                                                "base": 0.1,
-                                                "per_level_above_first": 0.1
-                                            },
                                             "operation": "add_multiplied_total"
                                         },
                                         {

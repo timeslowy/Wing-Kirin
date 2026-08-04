@@ -299,12 +299,14 @@
 1. 为「定身」效果增加些配置项和视觉效果；
 2. 适配龙之生存与Neoforge新版本；
 3. 更改「身形如意」的作用效果；
-4. 新增先天技能「孤注一掷」和「神失魄散」
+4. 新增先天技能「孤注一掷」和「神失魄散」;
+5. 调整部分技能
 
 ---
 
 1. Added some configs and visual effect for 「Stasis Hex」;
 2. Adapted new version of Dragon Survival and Neoforge;
 3. Changed works of 「Scale Down」;
-4. Added new innate ability: 「Spell Binder」and 「Absent Mineded」
+4. Added new innate ability: 「Spell Binder」and 「Absent Mineded」;
+5. Adjusted some abilities
 
