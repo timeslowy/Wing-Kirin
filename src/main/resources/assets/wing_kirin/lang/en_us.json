@@ -44,6 +44,9 @@
   "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "This is too late.",
   "dragon_ability.wing_kirin.spell_binder": "Spell Binder",
   "dragon_ability.wing_kirin.spell_binder.desc": "§7■ With a single thought in mind, abandon your magical arts, return to simplicity, and achieve \"sainthood\" through physical means.\nAfter use, §4all mana will be emptied, all effects removed, and no spells can be cast§7, §linstead fully transforming into \"martial arts\".§r§4During this period, you will also be unable to use the Dragon Soul to switch species.§r\n\n§7■§nAttribute bonuses§r§7 and §nduration§r§7 both increase with §aability level (experience level)§7.\n\n§6§o\"Not to defeat enemies, only to overcome oneself.\"",
+  "dragon_ability.wing_kirin.blindness_reverse": "Blindness Reverse",
+  "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■ To see through darkness, one must first be engulfed by it — stirring the heart and tempering the will, so as to strengthen that which one cannot yet do.\n\n§8■Only can use in dark place.§7\n\n■§n Blindness duration§r§7 is §lshortened§r§7 with§a ability level (experience cost)§7.\n\n§6§o“Dark adaptation is the process in which, when entering a dark place from bright light or when the light suddenly ceases, visual photosensitivity gradually increases, allowing one to discern the surrounding objects. During this process, the synthesis of rhodopsin in the rod cells increases and its concentration gradually rises, thereby improving the efficiency of phototransduction.”",
+  "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked": "Need to dark adaptation!",
 
   
   "dragon_ability.wing_kirin.born_above_empyrean": "Born Above Empyrean",

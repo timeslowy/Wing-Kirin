@@ -44,6 +44,9 @@
   "dragon_ability.wing_kirin.reverse_aging.activation.notification.usage_blocked": "为时已晚，木已成舟。",
   "dragon_ability.wing_kirin.spell_binder": "孤注一掷",
   "dragon_ability.wing_kirin.spell_binder.desc": "§7■心中一念，自废法功，返璞归真，物理“成圣”。\n使用后，将§4清空所有法力，消去一切效果，且无法施展任何神通§7，§l而全数化为“武功”。§r§4期间还将无法使用龙魂切换物种。§r\n\n§7■§n属性增益§r§7与§n持续时长§r§7均随§a技能等级（经验等级）§7提升。\n\n§6§o“不杀敌，只克已。”",
+  "dragon_ability.wing_kirin.blindness_reverse": "目极必反",
+  "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■欲要看破黑暗，必先陷于黑暗，所以动心忍性，增益其所不能。\n\n■§n失明时长§r§7随§a技能等级（经验消耗）§7而§l缩短§r§7。\n\n§8■仅可在黑暗（低光照）处使用。\n\n§6§o“暗适应是指从强光下进入暗处或照明忽然停止时，视觉光敏度逐渐增强，得以分辨周围物体的过程。此过程中，视杆细胞中的暗紫红质合成增加，浓度逐渐上升，从而提升感光换能的效率。”",
+  "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked": "需要暗处适应！",
 
   "dragon_ability.wing_kirin.born_above_empyrean": "生于九天",
   "dragon_ability.wing_kirin.born_above_empyrean.desc": "§7■当身处云巅之上，沐浴在天风之中，§6翼麒麟§r§7如同回到了“泉水”，予自身数项极好的§a增益效果§r。\n\n§6§o“无限风光在险峰，乱云飞渡仍从容。”§r",
