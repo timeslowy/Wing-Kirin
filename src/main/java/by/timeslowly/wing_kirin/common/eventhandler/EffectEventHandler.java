@@ -12,6 +12,8 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.ServerFunctionManager;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -51,7 +53,13 @@ public class EffectEventHandler {
         }
         int duration = instance.getDuration();
         if (duration == -1 || duration > DING_SHEN_MUSCLE_RELAX_THRESHOLD) {
-            event.getEntity().setData(WKAttachments.DING_SHEN_MUSCLE_RELAXED, true);
+            LivingEntity entity = event.getEntity();
+            // 仅在首次进入肌肉松弛时播放骨块破坏声（叠加刷新不重复播放）
+            if (!entity.getData(WKAttachments.DING_SHEN_MUSCLE_RELAXED)) {
+                entity.level().playSound(null, entity.getX(), entity.getY(), entity.getZ(),
+                        SoundEvents.BONE_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
+                entity.setData(WKAttachments.DING_SHEN_MUSCLE_RELAXED, true);
+            }
         }
     }
 

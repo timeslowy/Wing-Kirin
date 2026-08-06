@@ -17,7 +17,9 @@
     "MagicHUDMixin",
     "OutlineColorDataAccessor",
     "ClientCastingHandlerMixin",
-    "MouseHandlerMixin"
+    "MouseHandlerMixin",
+    "LivingEntityAfterimageMixin",
+    "GeoEntityRendererAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

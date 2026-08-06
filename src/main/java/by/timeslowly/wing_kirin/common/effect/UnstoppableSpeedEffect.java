@@ -27,7 +27,7 @@ public class UnstoppableSpeedEffect extends MobEffect {
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_2"), 0.5,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_2"), 0.8,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
     // 效果结束导致虚弱与缓慢，根据效果等级应用

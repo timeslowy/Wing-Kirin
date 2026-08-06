@@ -13,6 +13,9 @@ execute if score @s wk.stasis_hex.freezeTimer matches 1.. run return run functio
 # 初始击中，增加正常初始时长
 function wing_kirin:dragon_ability/stasia_hex/arrow_hit/initial_hit
 
+# 满定身限制提示
+execute if score @s wk.stasis_hex.freezeTimer-max_count matches 10.. run return run function wing_kirin:dragon_ability/stasia_hex/display/max_district_notice
+
 
 
 

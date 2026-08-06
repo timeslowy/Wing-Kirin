@@ -2,15 +2,19 @@ package by.timeslowly.wing_kirin.network;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.registry.WKEffects;
+import net.minecraft.core.Holder;
 import net.minecraft.network.protocol.game.ClientboundRemoveMobEffectPacket;
 import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class EffectSyncHandler {
@@ -36,12 +40,18 @@ public class EffectSyncHandler {
     }
 
     /**
+     * 需要手动广播的效果（除原版同步外再广播一次，确保所有追踪客户端及时收到）。
+     * 定身：效果可能施加于未完整追踪的实体；唯快不破：残影渲染依赖观察者客户端上的效果实例。
+     */
+    private static final Set<Holder<MobEffect>> SYNCED_EFFECTS = Set.of(WKEffects.DING_SHEN, WKEffects.UNSTOPPABLE_SPEED);
+
+    /**
      * 核心同步逻辑
      * @param isAdded true 代表添加/更新，false 代表移除/过期
      */
     private static void syncEffectChange(@NotNull LivingEntity entity, MobEffectInstance instance, boolean isAdded) {
-        // 仅在服务端且是定身效果时执行
-        if (!entity.level().isClientSide() && instance.getEffect().value() == WKEffects.DING_SHEN.value()) {
+        // 仅在服务端且是需要手动同步的效果时执行
+        if (!entity.level().isClientSide() && SYNCED_EFFECTS.contains(instance.getEffect())) {
             if (entity.level() instanceof ServerLevel serverLevel) {
 
                 if (isAdded) {
@@ -50,7 +60,7 @@ public class EffectSyncHandler {
                     serverLevel.getChunkSource().broadcast(entity, packet);
                 } else {
                     // 发送移除包，参数为 实体ID 和 效果类型
-                    ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), WKEffects.DING_SHEN);
+                    ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), instance.getEffect());
                     serverLevel.getChunkSource().broadcast(entity, packet);
                 }
             }

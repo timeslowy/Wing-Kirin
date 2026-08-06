@@ -44,3 +44,6 @@ node_modules/.bin/cdl
 /mcmodsrepo/
 runs/
 *.tmp
+
+# Source Code
+dependencies sorucecode

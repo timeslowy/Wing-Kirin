@@ -23,4 +23,7 @@ tag @s add being_frozen
 # 应用效果
 function wing_kirin:dragon_ability/stasia_hex/apply/set_duration
 
+# 满定身限制提示
+execute if score @s wk.stasis_hex.freezeTimer matches 1200.. run function wing_kirin:dragon_ability/stasia_hex/display/max_district_notice
+
 
