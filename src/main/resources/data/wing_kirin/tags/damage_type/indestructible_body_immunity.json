@@ -1,0 +1,8 @@
+{
+    "values": [
+        "#minecraft:no_knockback",
+        "#minecraft:is_explosion",
+        "#minecraft:panic_causes",
+        "#minecraft:bypasses_armor"
+    ]
+}

@@ -5,6 +5,39 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:awareness_glow",
+                                        "duration": {
+                                            "type": "minecraft:linear",
+                                            "base": 700,
+                                            "per_level_above_first": -200
+                                        },
+                                        "is_hidden": true
+                                    },
+                                    "color": "#ef845d"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "all_except_self"
+                },
+                "target_type": "dragonsurvival:area",
+                "radius": {
+                    "type": "minecraft:linear",
+                    "base": 5,
+                    "per_level_above_first": 5
+                }
+            },
+            "trigger_point": "charging"
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
                             "effect_type": "dragonsurvival:potion",
                             "potion": {
                                 "effects": "minecraft:blindness",

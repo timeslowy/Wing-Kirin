@@ -40,8 +40,7 @@
               "potion": {
                 "effects": "minecraft:resistance",
                 "amplifier": 4,
-                "duration": 20,
-                "show_icon": true
+                "duration": 20
               }
             },
             {

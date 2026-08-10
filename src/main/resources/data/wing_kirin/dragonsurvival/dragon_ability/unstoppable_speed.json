@@ -5,6 +5,30 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:unstoppable_speed_glowing",
+                                        "duration": 20,
+                                        "is_hidden": true
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_point": "charging"
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
                             "effect_type": "dragonsurvival:run_function",
                             "function": "wing_kirin:dragon_ability/unstoppable_speed/reset_count"
                         },
@@ -20,19 +44,6 @@
                                 "duration": 300,
                                 "effect_particles": true
                             }
-                        },
-                        {
-                            "effect_type": "dragonsurvival:glow",
-                            "glows": [
-                                {
-                                    "base": {
-                                        "id": "wing_kirin:last_stand_glowing",
-                                        "duration": 20,
-                                        "is_hidden": true
-                                    },
-                                    "color": "#fbdc92"
-                                }
-                            ]
                         }
                     ],
                     "targeting_mode": "allies_and_self"

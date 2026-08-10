@@ -35,7 +35,7 @@
   "dragon_ability.wing_kirin.indestructible_body.desc": "§7■ Concentrate and gather qi，making§6 Zheng Qi§r§7 descended on body surface,then glowing golden light after a moment,instantly the body §6is hard likes to metal§r§7,can§a defend almost all damages§r§7 and generating quantitative§e counter shock damege§r§7 to enemies,so shriving for§n a breathing space§r§7.\n\n■ §nmax casting duration§r§7 increasing with§a ability level（experience cost）§r§7.§r§4\n\n■ Attention!you can and only keep casting on ground. §r\n\n§6§o\"Steel rings on stone with spent force,Unflinching before spear'§6s thrust or sword'§6s course.\"",
   "dragon_ability.wing_kirin.indestructible_body.activation.notification.usage_blocked": "You are not on ground now!",
   "dragon_ability.wing_kirin.invincible_benevolence": "Invincible Benevolence",
-  "dragon_ability.wing_kirin.invincible_benevolence.desc": "■As the kin of Kirin, §6Wing Kirin §7also has the ability of §6ward of evil and midfortune§7. Dispatching the Zhengqi around, enables alies §agetting treatment and debuff removal §7with a certainly radiu.\n\nThen, Giving yourself §6「Resistance V」§7§nwith alies who benefited§r§7, as \"Invincible Benevolence\".\n\n■§nHeal percentage §r§7and §nResistance duration §r§7increases with §aability level(xp level)§7, but without radiu improve.\n\n§8■Can only be used in the §nOverworld§r§8(Except having §r「Great Zhengqi」§8 effect).§r\n\n§6§o“Benevolence is invincible.——《Mengzi·Lianghui Wang》",
+  "dragon_ability.wing_kirin.invincible_benevolence.desc": "■As the kin of Kirin, §6Wing Kirin §7also has the ability of §6ward of evil and midfortune§7. Dispatching the Zhengqi around, enables alies（Golden Glowing） §agetting treatment and debuff removal §7with a certainly radiu.\n\nThen, Giving yourself §6「Resistance V」§7§nwith alies who benefited§r§7, as \"Invincible Benevolence\".\n\n■§nHeal percentage §r§7and §nResistance duration §r§7increases with §aability level(xp level)§7, but without radiu improve.\n\n§8■Can only be used in the §nOverworld§r§8(Except having §r「Great Zhengqi」§8 effect).§r\n\n§6§o“Benevolence is invincible.——《Mengzi·Lianghui Wang》",
   "dragon_ability.wing_kirin.invincible_benevolence.activation.notification.usage_blocked": "§cEvil entangle, casting can not.",
   "dragon_ability.wing_kirin.unstoppable_speed": "Unstoppable Speed",
   "dragon_ability.wing_kirin.unstoppable_speed.desc": "§7■ Slow down slightly，cassting to make you to enter temporary§6 flow status §7，instantly \"Open the Ren and Du meridians\"，§e improving your attack speed signfifcantly and ignore PHDI!§7\n\n§4■ But due to the overuse of strength you will become§n weakness§r§4 after effect removal. When§n severely injured§r§4 you can not to cast.\n\n§6§o\"In the world of Kungfu, speed defines the winner.\"",
@@ -45,7 +45,7 @@
   "dragon_ability.wing_kirin.spell_binder": "Spell Binder",
   "dragon_ability.wing_kirin.spell_binder.desc": "§7■ With a single thought in mind, abandon your magical arts, return to simplicity, and achieve \"sainthood\" through physical means.\nAfter use, §4all mana will be emptied, all effects removed, and no spells can be cast§7, §linstead fully transforming into \"martial arts\".§r§4During this period, you will also be unable to use the Dragon Soul to switch species.§r\n\n§7■§nAttribute bonuses§r§7 and §nduration§r§7 both increase with §aability level (experience level)§7.\n\n§6§o\"Not to defeat enemies, only to overcome oneself.\"",
   "dragon_ability.wing_kirin.blindness_reverse": "Blindness Reverse",
-  "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■ To see through darkness, one must first be engulfed by it — stirring the heart and tempering the will, so as to strengthen that which one cannot yet do.\n\n§8■Only can use in dark place.§7\n\n■§n Blindness duration§r§7 is §lshortened§r§7 with§a ability level (experience cost)§7.\n\n§6§o“Dark adaptation is the process in which, when entering a dark place from bright light or when the light suddenly ceases, visual photosensitivity gradually increases, allowing one to discern the surrounding objects. During this process, the synthesis of rhodopsin in the rod cells increases and its concentration gradually rises, thereby improving the efficiency of phototransduction.”",
+  "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■ To see through darkness, one must first be engulfed by it — stirring the heart and tempering the will, so as to strengthen that which one cannot yet do.§nCan sense entity around with a short time during adaptation.§r§7\n\n§8■Only can use in dark place.§7\n\n■§n Blindness duration§r§7 is §lshortened§r§7 with§a ability level (experience cost)§7.\n\n§6§o“Dark adaptation is the process in which, when entering a dark place from bright light or when the light suddenly ceases, visual photosensitivity gradually increases, allowing one to discern the surrounding objects. During this process, the synthesis of rhodopsin in the rod cells increases and its concentration gradually rises, thereby improving the efficiency of phototransduction.”",
   "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked": "Need to dark adaptation!",
 
   
@@ -393,6 +393,7 @@
   "effect.wing_kirin.mace_crush": "Fall Like Meteorite",
   "effect.wing_kirin.unstoppable_speed": "Unstoppable Speed",
   "effect.wing_kirin.amnesia": "Amnesia",
+
   "item.minecraft.potion.effect.amnesia": "Potion of Amnesia",
   "item.minecraft.splash_potion.effect.amnesia": "Splash Potion of Amnesia",
   "item.minecraft.lingering_potion.effect.amnesia": "Lingering Potion of Amnesia",
@@ -432,10 +433,13 @@
   "painting.wing_kirin.wing_kirin_flag_colorful.author": "Timeslowly",
   "painting.wing_kirin.wing_kirin_flag_simplified.title": "Wing Kirin Dragon Banner - Simplified",
   "painting.wing_kirin.wing_kirin_flag_simplified.author": "Timeslowly",
+
   "item_group.wing_kirin.wing_kirin": "Wing Kirin",
+
   "tag.block.wing_kirin.magic_range_display": "Most Solid Blocks",
   "tag.dragonsurvival.dragon_ability.wing_kirin.last_stand_cooldown_recovery": "Could be reduced of ability by 「Last Stand」",
-  "tag.damage_type.wing_kirin.instant_invisibility_immunity": "The damege that「Instant Invisibility」 immune",
+  "tag.damage_type.wing_kirin.instant_invisibility_immunity": "The damege that「Instant Invisibility」 immuned",
+  "tag.damage_type.wing_kirin.indestructible_body_immunity": "the damage that「Indestructible Body」 immuned",
 
   "actionbar.wing_kirin.empyrean_wine.cast_describiton_0": "Attempted connection times:",
   "actionbar.wing_kirin.empyrean_wine.cast_describiton_1": "seconds",

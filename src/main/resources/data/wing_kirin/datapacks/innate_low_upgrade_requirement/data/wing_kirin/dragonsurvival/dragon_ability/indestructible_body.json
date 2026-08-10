@@ -41,8 +41,22 @@
                 "effects": "minecraft:resistance",
                 "amplifier": 4,
                 "duration": 20,
-                "show_icon": true
+                "show_icon": false
               }
+            },
+            {
+              "effect_type": "dragonsurvival:damage_modification",
+              "modifications": [
+                {
+                  "base": {
+                    "id": "wing_kirin:casting_damage_resistance",
+                    "duration": 20,
+                    "custom_icon": "wing_kirin:textures/ability_effect/indestructible_body.png"
+                  },
+                  "damage_types": "#wing_kirin:indestructible_body_immunity",
+                  "multiplier": 0
+                }
+              ] 
             },
             {
               "effect_type": "dragonsurvival:modifier",
@@ -169,7 +183,7 @@
     },
     "notification": {
       "usage_blocked": {
-        "translate": "dragon_ability.dragonsurvival.indestructible_body.activation.notification.usage_blocked"
+        "translate": "dragon_ability.wing_kirin.indestructible_body.activation.notification.usage_blocked"
       }
     }
   },

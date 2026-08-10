@@ -18,9 +18,10 @@
                             ]
                         }
                     ],
-                    "targeting_mode": "all"
+                    "targeting_mode": "allies_and_self"
                 },
-                "target_type": "dragonsurvival:self"
+                "target_type": "dragonsurvival:area",
+                "radius": 9
             },
             "trigger_point": "charging"
         },

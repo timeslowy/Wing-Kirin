@@ -108,6 +108,7 @@ sourceSets {
             include 'pack.mcmeta'
             // 包含 Mixin 配置文件
             include '*.json'
+            exclude 'spyglass.json'
         }
     }
 }
