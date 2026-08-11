@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.common.eventhandler.DingshenEffectEventHandler;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.mixins.DisplayAccessor;
 import by.timeslowly.wing_kirin.registry.WKAttachments;
@@ -69,7 +70,7 @@ public class DingShenEffect extends MobEffect {
     }
 
     /**
-     * 修改原版交互和视觉效果的逻辑见： {@link by.timeslowly.wing_kirin.common.eventhandler.EffectEventHandler}
+     * 修改原版交互和视觉效果的逻辑见： {@link DingshenEffectEventHandler}
      */
     @Override
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {

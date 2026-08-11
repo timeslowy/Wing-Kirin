@@ -16,7 +16,7 @@ import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID, value = Dist.CLIENT)
-public class ClientEffectEventHandler {
+public class DingshenEffectEventHandler {
 
     // 快捷栏蒙版尺寸常量
     private static final int HOTBAR_WIDTH = 182;

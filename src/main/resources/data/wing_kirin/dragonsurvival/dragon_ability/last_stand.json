@@ -17,11 +17,7 @@
                     "entity_effect": [
                         {
                             "effect_type": "dragonsurvival:heal",
-                            "percentage": {
-                                "type": "minecraft:linear",
-                                "base": 0.1,
-                                "per_level_above_first": 0.1
-                            }
+                            "percentage": 1.0
                         },
                         {
                             "effect_type": "dragonsurvival:modifier",
@@ -53,6 +49,11 @@
                                             "attribute": "dragonsurvival:dragon_breath_range",
                                             "amount": 0.5,
                                             "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "dragonsurvival:mana_regeneration",
+                                            "amount": 0.2,
+                                            "operation": "add_value"
                                         },
                                         {
                                             "attribute": "minecraft:generic.attack_speed",
@@ -92,11 +93,6 @@
                                         {
                                             "attribute": "minecraft:player.entity_interaction_range",
                                             "amount": 3,
-                                            "operation": "add_value"
-                                        },
-                                        {
-                                            "attribute": "dragonsurvival:mana_regeneration",
-                                            "amount": 0.2,
                                             "operation": "add_value"
                                         }
                                     ]
@@ -143,7 +139,7 @@
                                 {
                                     "base": {
                                         "id": "wing_kirin:last_stand_glowing",
-                                        "duration": 20,
+                                        "duration": 100,
                                         "is_hidden": true
                                     },
                                     "color": "#fbdc92"

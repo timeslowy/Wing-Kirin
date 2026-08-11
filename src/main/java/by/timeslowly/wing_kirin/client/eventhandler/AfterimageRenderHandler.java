@@ -6,7 +6,7 @@ import by.dragonsurvivalteam.dragonsurvival.common.capability.DragonStateProvide
 import by.dragonsurvivalteam.dragonsurvival.common.entity.DragonEntity;
 import by.dragonsurvivalteam.dragonsurvival.registry.attachments.MovementData;
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.config.WKClientConfig;
 import by.timeslowly.wing_kirin.mixins.GeoEntityRendererAccessor;
 import by.timeslowly.wing_kirin.mixins.LivingEntityAfterimageMixin;
 import by.timeslowly.wing_kirin.registry.WKEffects;
@@ -69,8 +69,8 @@ import java.util.UUID;
  *       渲染器内部 this.animatable 字段（由 render() 设置、doPostRenderCleanup() 清空），
  *       结束后复位。</li>
  * </ul>
- * 第一人称视角下本地玩家自己的残影由服务端配置
- * {@link WKServerConfig#shouldShowAfterimagesInFirstPerson()} 控制：关闭时不渲染；
+ * 第一人称视角下本地玩家自己的残影由客户端配置
+ * {@link WKClientConfig#shouldShowAfterimagesInFirstPerson()} 控制：关闭时不渲染；
  * 开启时残影起始点向后移动（跳过离玩家最近的新残影），因为龙模型头部组件在第一人称下
  * 被隐藏、相机位于头部位置，最近的残影会遮挡视线。
  */
@@ -281,9 +281,9 @@ public class AfterimageRenderHandler {
         // 残影渲染距离 = 当前渲染距离（区块）× 16 格，与实体模型渲染距离一致
         double renderDistance = mc.options.getEffectiveRenderDistance() * 16.0;
         double renderDistanceSqr = renderDistance * renderDistance;
-        // 第一人称下本地玩家的残影：由服务端配置控制（配置关闭则完全不渲染）
+        // 第一人称下本地玩家的残影：由客户端配置控制（配置关闭则完全不渲染）
         boolean firstPersonLocal = mc.options.getCameraType().isFirstPerson();
-        boolean showFirstPerson = WKServerConfig.shouldShowAfterimagesInFirstPerson();
+        boolean showFirstPerson = WKClientConfig.shouldShowAfterimagesInFirstPerson();
 
         for (Map.Entry<UUID, AfterimageTrail> entry : TRAILS.entrySet()) {
             Player player = mc.level.getPlayerByUUID(entry.getKey());

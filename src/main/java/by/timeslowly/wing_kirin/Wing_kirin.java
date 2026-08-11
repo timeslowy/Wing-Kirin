@@ -1,6 +1,6 @@
 package by.timeslowly.wing_kirin;
 
-import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.config.*;
 import by.timeslowly.wing_kirin.registry.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -20,11 +20,10 @@ public class Wing_kirin {
     public Wing_kirin(@NotNull IEventBus modEventBus, @NotNull ModContainer container) {
         // 注册服务端配置
         container.registerConfig(ModConfig.Type.SERVER, WKServerConfig.SPEC);
+        // 注册客户端配置
+        container.registerConfig(ModConfig.Type.CLIENT, WKClientConfig.SPEC);
 
-        // 注册模组配置界面已移至 ClientSetup（客户端专用事件处理器），以避免服务端加载客户端类
-
-        // 注册模组加载的通用内容设置
-
+        // 注册模组加载的通用内容设置（部分需要顺序）
         WKAttributes.register(modEventBus);
         WKAttachments.register(modEventBus);
         WKCreativeTabs.register(modEventBus);

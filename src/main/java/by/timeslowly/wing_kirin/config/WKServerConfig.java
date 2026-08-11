@@ -44,9 +44,6 @@ public class WKServerConfig {
     /** 唯快不破是否穿透护甲（默认关） */
     public static final ModConfigSpec.BooleanValue UNSTOPPABLE_SPEED_BYPASS_ARMOR;
 
-    /** 唯快不破第一人称视角下是否渲染残影（默认开，残影起始点后移以避免遮挡视线） */
-    public static final ModConfigSpec.BooleanValue UNSTOPPABLE_SPEED_FIRST_PERSON_AFTERIMAGES;
-
     /** 金钟是否会随音爆伤害每个实体而快速消耗耐久 */
     public static final ModConfigSpec.BooleanValue FAST_DURABILITY_HURT;
 
@@ -141,12 +138,6 @@ public class WKServerConfig {
                 .translation("wing_kirin.config.unstoppable_speed.bypassArmor")
                 .define("bypassArmor", false);
 
-        // 3. 第一人称视角下是否渲染残影（开启时残影起始点向后移动，避免遮挡视线）
-        UNSTOPPABLE_SPEED_FIRST_PERSON_AFTERIMAGES = builder
-                .comment("Whether afterimages from the Unstoppable Speed effect are visible in first person view. If enabled, the afterimage trail starts slightly behind the player so it does not block the view.")
-                .translation("wing_kirin.config.unstoppable_speed.firstPersonAfterimages")
-                .define("firstPersonAfterimages", true);
-
         builder.pop();
 
         // 龙吼功 效果设置
@@ -229,11 +220,6 @@ public class WKServerConfig {
     /** 便捷方法：获取唯快不破是否穿透护甲 */
     public static boolean shouldUnstoppableSpeedBypassArmor() {
         return UNSTOPPABLE_SPEED_BYPASS_ARMOR.get();
-    }
-
-    /** 便捷方法：获取唯快不破第一人称视角下是否渲染残影 */
-    public static boolean shouldShowAfterimagesInFirstPerson() {
-        return UNSTOPPABLE_SPEED_FIRST_PERSON_AFTERIMAGES.get();
     }
 
     /** 便捷方法：获取是否要快速消耗金钟耐久 */

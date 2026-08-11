@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
-public class EffectEventHandler {
+public class DingshenEffectEventHandler {
     /** 定身被粉碎时需重置的 mcfunction（恢复AI、清效果、移除标签、重置计分板、杀死骑乘展示实体） */
     private static final ResourceLocation DING_SHEN_REMOVE_EFFECTS_FUNCTION =
             ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");

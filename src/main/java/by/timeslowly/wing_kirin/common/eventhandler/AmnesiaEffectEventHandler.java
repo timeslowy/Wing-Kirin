@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * 只要生物处于失忆状态，就将待设置目标改写为 null（相当于取消本次目标变更）。
  */
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
-public class AmnesiaEventHandler {
+public class AmnesiaEffectEventHandler {
 
     @SubscribeEvent
     public static void onChangeTarget(@NotNull LivingChangeTargetEvent event) {

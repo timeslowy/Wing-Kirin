@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.common.eventhandler.AmnesiaEffectEventHandler;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * 实现原理：
  * <ol>
- *   <li>{@link by.timeslowly.wing_kirin.common.eventhandler.AmnesiaEventHandler} 监听
+ *   <li>{@link AmnesiaEffectEventHandler} 监听
  *       {@link net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent}，将失忆生物的
  *       待设置目标改写为 null —— 同时拦截 {@link Mob#setTarget}（MOB_TARGET，路径型生物的目标目标 AI）
  *       与脑记忆行为 StartAttacking（BEHAVIOR_TARGET，猪灵等基于 Brain 的生物）两条仇恨产生路径。</li>
