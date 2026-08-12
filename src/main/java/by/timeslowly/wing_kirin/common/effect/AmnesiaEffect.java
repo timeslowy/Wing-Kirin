@@ -1,7 +1,7 @@
 package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.common.eventhandler.AmnesiaEffectEventHandler;
+import by.timeslowly.wing_kirin.common.eventhandler.effects.AmnesiaEffectEventHandler;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

@@ -1,10 +1,11 @@
-package by.timeslowly.wing_kirin.common.eventhandler;
+package by.timeslowly.wing_kirin.common.eventhandler.effects;
 
 import by.dragonsurvivalteam.dragonsurvival.DragonSurvival;
 import by.dragonsurvivalteam.dragonsurvival.common.capability.DragonStateProvider;
 import by.dragonsurvivalteam.dragonsurvival.registry.DSEffects;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.DragonSpecies;
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.common.effect.DingShenEffect;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKAttachments;
 import by.timeslowly.wing_kirin.registry.WKEffects;
@@ -25,6 +26,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityTravelToDimensionEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -140,14 +142,34 @@ public class DingshenEffectEventHandler {
     }
 
     /**
+     * 玩家退出服务器时清理"定"字展示实体。
+     * <p>
+     * 原版 PlayerList.remove 以 UNLOADED_WITH_PLAYER 原因移除玩家，而 LivingEntity.remove
+     * 仅对 KILLED/DISCARDED 触发效果清理（onMobRemoved），因此退出服务器时须在此事件中手动清理，
+     * 否则展示实体将残留在世界中。
+     */
+    @SubscribeEvent
+    public static void onPlayerLoggedOut(PlayerEvent.@NotNull PlayerLoggedOutEvent event) {
+        DingShenEffect.cleanupPlayerDisplay(event.getEntity());
+    }
+
+    /**
      * 定身锁位模式下禁止任何维度穿越（下界门、末地门、mod 传送门等）。
+     * 未开启锁位时，玩家穿越维度前清理旧维度中的"定"字展示实体
+     * （生物骑乘的展示实体会被 tick 函数中的孤立检测兜底清理）。
      */
     @SubscribeEvent
     public static void onEntityTravelToDimension(@NotNull EntityTravelToDimensionEvent event) {
-        if (!WKServerConfig.shouldDingShenLockPosition()) return;
-        Entity entity = event.getEntity();
-        if (entity instanceof LivingEntity living && living.hasEffect(WKEffects.DING_SHEN)) {
-            event.setCanceled(true);
+        if (WKServerConfig.shouldDingShenLockPosition()) {
+            Entity entity = event.getEntity();
+            if (entity instanceof LivingEntity living && living.hasEffect(WKEffects.DING_SHEN)) {
+                event.setCanceled(true);
+            }
+            return;
+        }
+        // 未锁位：穿越前清理旧维度的展示实体
+        if (event.getEntity() instanceof LivingEntity living) {
+            DingShenEffect.cleanupPlayerDisplay(living);
         }
     }
 }

@@ -1,7 +1,7 @@
 package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.common.eventhandler.DingshenEffectEventHandler;
+import by.timeslowly.wing_kirin.common.eventhandler.effects.DingshenEffectEventHandler;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.mixins.DisplayAccessor;
 import by.timeslowly.wing_kirin.registry.WKAttachments;
@@ -161,16 +161,7 @@ public class DingShenEffect extends MobEffect {
         restoreAi(entity);
 
         // 清理玩家身上的"定"字展示实体
-        if (entity instanceof Player && entity.level() instanceof ServerLevel serverLevel) {
-            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
-            if (displayId != 0) {
-                Entity display = serverLevel.getEntity(displayId);
-                if (display != null) {
-                    display.discard();
-                }
-                entity.getPersistentData().remove(DISPLAY_ID_KEY);
-            }
-        }
+        cleanupPlayerDisplay(entity);
 
         Level level = entity.level();
         double x = entity.getX();
@@ -192,6 +183,28 @@ public class DingShenEffect extends MobEffect {
     private static void restoreAi(LivingEntity entity) {
         if (entity instanceof Mob mob) {
             mob.setNoAi(false);
+        }
+    }
+
+    /**
+     * 清理玩家身上的"定"字展示实体。
+     * <p>
+     * 效果结束/死亡/粉碎（handleExpireOrRemoval）、退出服务器（PlayerLoggedOutEvent）、
+     * 维度穿越（EntityTravelToDimensionEvent）时均需调用，幂等可重复执行。
+     */
+    public static void cleanupPlayerDisplay(LivingEntity entity) {
+        if (!(entity instanceof Player)) {
+            return;
+        }
+        if (entity.level() instanceof ServerLevel serverLevel) {
+            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+            if (displayId != 0) {
+                Entity display = serverLevel.getEntity(displayId);
+                if (display != null) {
+                    display.discard();
+                }
+                entity.getPersistentData().remove(DISPLAY_ID_KEY);
+            }
         }
     }
 

@@ -1,7 +1,6 @@
-package by.timeslowly.wing_kirin.client.eventhandler;
+package by.timeslowly.wing_kirin.client.particles;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.client.particles.ThunderousShoutParticles;
 import by.timeslowly.wing_kirin.registry.WKParticles;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;

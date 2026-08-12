@@ -1,4 +1,4 @@
-package by.timeslowly.wing_kirin.common.eventhandler;
+package by.timeslowly.wing_kirin.common.eventhandler.effects;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.registry.WKEffects;

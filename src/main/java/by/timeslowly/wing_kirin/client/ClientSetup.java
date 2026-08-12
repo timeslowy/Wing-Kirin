@@ -1,6 +1,5 @@
-package by.timeslowly.wing_kirin.client.eventhandler;
+package by.timeslowly.wing_kirin.client;
 
-import by.timeslowly.wing_kirin.client.ClientHelper;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.client.gui.screens.Screen;
 import net.neoforged.api.distmarker.Dist;

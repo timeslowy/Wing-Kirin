@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.client.particles.ClientParticleProviders;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
@@ -11,7 +12,7 @@ import java.util.function.Supplier;
 
 /**
  * 粒子类型注册（通用端）。
- * 粒子工厂注册已移至 {@link by.timeslowly.wing_kirin.client.eventhandler.ClientParticleProviders}（客户端专用）。
+ * 粒子工厂注册已移至 {@link ClientParticleProviders}（客户端专用）。
  */
 public class WKParticles {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES =

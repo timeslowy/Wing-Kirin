@@ -48,8 +48,8 @@
 
 ## 🔗 友情链接
 
-| 项目 | 链接 |
-|------|------|
+|         项目       |                           链接                               |
+|        ------      |                          ------                             |
 | 📦 CurseForge 页面 | [https://www.curseforge.com/minecraft/mc-mods/wing-kirin]() |
 |   🐉 MC百科 页面   |        [https://www.mcmod.cn/class/22694.html]()            |
 |     🎥 作者空间    |       [https://space.bilibili.com/313312604]()              |
