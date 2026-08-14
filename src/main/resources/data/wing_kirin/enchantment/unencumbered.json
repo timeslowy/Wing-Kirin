@@ -22,7 +22,7 @@
         "attributes": [
             {
                 "id": "wing_kirin:unencumbered_movement_recovery",
-                "attribute": "generic.movement_speed",
+                "attribute": "minecraft:movement_speed",
                 "amount": {
                     "type": "linear",
                     "base": 0.375,
@@ -42,7 +42,7 @@
             },
             {
                 "id": "wing_kirin:unencumbered_gravity_recovery",
-                "attribute": "generic.gravity",
+                "attribute": "minecraft:gravity",
                 "amount": {
                     "type": "linear",
                     "base": -0.08,

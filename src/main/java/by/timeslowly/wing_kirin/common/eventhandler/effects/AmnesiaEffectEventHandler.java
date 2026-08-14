@@ -20,7 +20,7 @@ public class AmnesiaEffectEventHandler {
     @SubscribeEvent
     public static void onChangeTarget(@NotNull LivingChangeTargetEvent event) {
         LivingEntity entity = event.getEntity();
-        if (entity.level().isClientSide) {
+        if (entity.level().isClientSide()) {
             return;
         }
         if (entity.hasEffect(WKEffects.AMNESIA)) {

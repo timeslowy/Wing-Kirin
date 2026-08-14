@@ -15,7 +15,7 @@
                   },
                   "modifiers": [
                     {
-                      "attribute": "generic.knockback_resistance",
+                      "attribute": "minecraft:knockback_resistance",
                       "amount": 1.0,
                       "operation": "add_value"
                     }
@@ -69,7 +69,7 @@
                   },
                   "modifiers": [
                     {
-                      "attribute": "generic.knockback_resistance",
+                      "attribute": "minecraft:knockback_resistance",
                       "amount": 1.0,
                       "operation": "add_value"
                     }

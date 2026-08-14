@@ -3,8 +3,10 @@ package by.timeslowly.wing_kirin.common.eventhandler;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -29,6 +31,11 @@ public class AbilityEventHandler {
      *
      * @param event 实体受伤事件的后置事件对象，包含伤害来源、伤害值等信息
      */
+    /** 26.1 起 LivingEntity.getSlotForHand 被移除，手动映射使用手 → 装备槽 */
+    private static EquipmentSlot handSlot(LivingEntity entity) {
+        return entity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
+    }
+
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent.@NotNull Post event) {
         DamageSource damageSource = event.getSource();
@@ -38,13 +45,13 @@ public class AbilityEventHandler {
                 if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBellItem) {
                     if (WKServerConfig.shouldFastDurabilityHurt()) {
                     // 快速消耗模式：每次事件都扣除耐久
-                    mainHand.hurtAndBreak(2, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+                    mainHand.hurtAndBreak(2, attacker, handSlot(attacker));
                 } else {
                     // 默认模式：同一游戏刻内仅扣除一次耐久，避免事件重复触发导致过度损耗
                     int currentTick = Math.toIntExact(attacker.level().getGameTime());
                     Integer lastTick = LAST_DAMAGE_TICK.get(attacker);
                     if (lastTick == null || lastTick != currentTick) {
-                        mainHand.hurtAndBreak(2, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+                        mainHand.hurtAndBreak(2, attacker, handSlot(attacker));
                         LAST_DAMAGE_TICK.put(attacker, currentTick);
                     }
                 }

@@ -36,7 +36,7 @@
                                     },
                                     "modifiers": [
                                         {
-                                            "attribute": "minecraft:generic.attack_knockback",
+                                            "attribute": "minecraft:attack_knockback",
                                             "amount": {
                                                 "type": "minecraft:linear",
                                                 "base": 0.1,

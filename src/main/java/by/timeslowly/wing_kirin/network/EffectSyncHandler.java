@@ -57,11 +57,12 @@ public class EffectSyncHandler {
                 if (isAdded) {
                     // 发送更新/添加包
                     ClientboundUpdateMobEffectPacket packet = new ClientboundUpdateMobEffectPacket(entity.getId(), instance, true);
-                    serverLevel.getChunkSource().broadcast(entity, packet);
+                    // 26.1 起 ServerChunkCache.broadcast 被移除，改用 sendToTrackingPlayers
+                    serverLevel.getChunkSource().sendToTrackingPlayers(entity, packet);
                 } else {
                     // 发送移除包，参数为 实体ID 和 效果类型
                     ClientboundRemoveMobEffectPacket packet = new ClientboundRemoveMobEffectPacket(entity.getId(), instance.getEffect());
-                    serverLevel.getChunkSource().broadcast(entity, packet);
+                    serverLevel.getChunkSource().sendToTrackingPlayers(entity, packet);
                 }
             }
         }

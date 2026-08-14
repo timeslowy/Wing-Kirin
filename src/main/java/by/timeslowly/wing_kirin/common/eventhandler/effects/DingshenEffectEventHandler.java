@@ -11,8 +11,9 @@ import by.timeslowly.wing_kirin.registry.WKAttachments;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.ServerFunctionManager;
+import net.minecraft.server.permissions.PermissionSet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
@@ -33,8 +34,8 @@ import org.jetbrains.annotations.Nullable;
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
 public class DingshenEffectEventHandler {
     /** 定身被粉碎时需重置的 mcfunction（恢复AI、清效果、移除标签、重置计分板、杀死骑乘展示实体） */
-    private static final ResourceLocation DING_SHEN_REMOVE_EFFECTS_FUNCTION =
-            ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");
+    private static final Identifier DING_SHEN_REMOVE_EFFECTS_FUNCTION =
+            Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");
 
     /** 肌肉松弛触发阈值：被施加的定身效果总时长超过该刻数（50 秒）时生效，直至本次效果结束 */
     private static final int DING_SHEN_MUSCLE_RELAX_THRESHOLD = 50 * 20;
@@ -46,7 +47,7 @@ public class DingshenEffectEventHandler {
      */
     @SubscribeEvent
     public static void onEffectAdded(MobEffectEvent.@NotNull Added event) {
-        if (event.getEntity().level().isClientSide) {
+        if (event.getEntity().level().isClientSide()) {
             return;
         }
         MobEffectInstance instance = event.getEffectInstance();
@@ -105,9 +106,13 @@ public class DingshenEffectEventHandler {
 
         if (victim.level() instanceof ServerLevel serverLevel) {
             ServerFunctionManager functions = serverLevel.getServer().getFunctions();
-            // 实体命令源的权限为 0，而函数内命令（effect/tag/data/scoreboard/kill）均为权限 2 命令，
-            // 直接执行会因权限不足被全部静默跳过；须与游戏循环（getGameLoopSender）一致提升到权限 2
-            CommandSourceStack source = victim.createCommandSourceStack().withPermission(2).withSuppressedOutput();
+            // 26.1 起 LivingEntity.createCommandSourceStack 被移除：
+            // 玩家用 ServerPlayer.createCommandSourceStack，非玩家用名称解析工厂；
+            // 权限体系改为 PermissionSet，函数内命令（effect/tag/data/scoreboard/kill）须全权限放行
+            CommandSourceStack source = (victim instanceof ServerPlayer sp
+                    ? sp.createCommandSourceStack()
+                    : victim.createCommandSourceStackForNameResolution(serverLevel))
+                    .withPermission(PermissionSet.ALL_PERMISSIONS).withSuppressedOutput();
             functions.get(DING_SHEN_REMOVE_EFFECTS_FUNCTION)
                     .ifPresent(function -> functions.execute(function, source));
         }

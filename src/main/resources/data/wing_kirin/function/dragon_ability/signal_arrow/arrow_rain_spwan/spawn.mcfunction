@@ -4,9 +4,11 @@
 # uuid:{UUID:[I;0,0,0,0]}必须是这样子，否则可能初始化失败
 # 将龙生自定义弹射物的json结构照搬过来
 # 采用了龙生提供的自定义谓词接口里的has_uuid做归属者判断来避免友伤
+# 26.1.2 版本必须补上 projectile_level
 
 execute anchored eyes run summon dragonsurvival:generic_arrow_entity ^ ^ ^ { \
     Tags:["signal_arrow","new_arrow"], \
+    projectile_level:1, \
     pickup:0b, \
     PierceLevel:0, \
     Motion:[0d,-10d,0d], \

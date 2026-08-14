@@ -23,20 +23,21 @@ public class WKItems {
     // 天仙玉露
     public static final  DeferredItem<Item> EmpyreanEssence = ITEMS.register("empyrean_essence", EmpyreanEssenceItem::new);
 
+    // 26.1 起图标类空物品直接用官方 registerSimpleItem（自动设置注册 id）
     // 远古翼麒麟头像（空物品）
-    public static final DeferredItem<Item> WingKirinFullIconItem = ITEMS.register("wing_kirin_full_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> WingKirinFullIconItem = ITEMS.registerSimpleItem("wing_kirin_full_icon");
     // 新生翼麒麟头像（空物品）
-    public static final DeferredItem<Item> WingKirinIconItem = ITEMS.register("wing_kirin_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> WingKirinIconItem = ITEMS.registerSimpleItem("wing_kirin_icon");
     // 浩然正气效果图标（空物品）
-    public static final DeferredItem<Item> GreatZhengqiIconItem = ITEMS.register("great_zhengqi_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GreatZhengqiIconItem = ITEMS.registerSimpleItem("great_zhengqi_icon");
     // 麒麟之翼图标（空物品）
-    public static final DeferredItem<Item> FlyHigherIconItem = ITEMS.register("fly_higher_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FlyHigherIconItem = ITEMS.registerSimpleItem("fly_higher_icon");
     // 定身药水效果图标（空物品）
-    public static final DeferredItem<Item> DingshenIconItem = ITEMS.register("dingshen_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> DingshenIconItem = ITEMS.registerSimpleItem("dingshen_icon");
     // 「唯快不破」进度图标（空物品）
-    public static final DeferredItem<Item> UnstoppableSpeedIcon = ITEMS.register("unstoppable_speed_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> UnstoppableSpeedIcon = ITEMS.registerSimpleItem("unstoppable_speed_icon");
     // 「壮士断腕」进度图标（空物品）
-    public static final DeferredItem<Item> SpellBinderIcon = ITEMS.register("spell_binder_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SpellBinderIcon = ITEMS.registerSimpleItem("spell_binder_icon");
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

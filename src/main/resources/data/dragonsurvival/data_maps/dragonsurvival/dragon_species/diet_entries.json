@@ -7,83 +7,72 @@
         },
         {
           "items": "wing_kirin:empyrean_wine",
+          "consumable": {
+            "consume_seconds": 0.5
+          },
           "properties": {
-            "eat_seconds":0.5,
             "nutrition": 8,
-            "saturation":16,
-            "can_always_eat": true,
-            "using_converts_to": {
-              "id": "minecraft:glass_bottle"
-            },
-            "effects": [
-              {
-                "effect": {
-                  "id": "minecraft:absorption",
-                  "amplifier": 1,
-                  "duration": 400,
-                  "show_icon": true
-                }
-              }
-            ]
+            "saturation": 16,
+            "can_always_eat": true
+          },
+          "use_remainder": {
+            "id": "minecraft:glass_bottle"
           },
           "retain_effects": true
         },
         {
           "items": "wing_kirin:empyrean_milkwine",
+          "consumable": {
+            "consume_seconds": 0.5
+          },
           "properties": {
-            "eat_seconds":0.5,
             "nutrition": 8,
-            "saturation":16,
-            "can_always_eat": true,
-            "using_converts_to": {
-              "id": "glass_bottle"
-            }
+            "saturation": 16,
+            "can_always_eat": true
+          },
+          "use_remainder": {
+            "id": "minecraft:glass_bottle"
           },
           "retain_effects": true
         },
         {
           "items": "wing_kirin:wing_kirin_treat",
+          "consumable": {
+            "consume_seconds": 1.5
+          },
           "properties": {
             "nutrition": 10,
             "saturation": 16,
-            "eat_seconds": 1.5,
-            "can_always_eat": true,
-            "using_converts_to": {
-              "id": "minecraft:glass_bottle"
-            },
-            "effects": [
-              {
-                "effect": {
-                  "id": "dragonsurvival:source_of_magic",
-                  "amplifier": 2,
-                  "duration": 1200,
-                  "show_icon": true
-                }
-              }
-            ]
+            "can_always_eat": true
+          },
+          "use_remainder": {
+            "id": "minecraft:glass_bottle"
           },
           "retain_effects": true
         },
         {
           "items": "wing_kirin:empyrean_essence",
           "retain_effects": true
-          
         },
         {
           "items": "wing_kirin:wing_kirin_upgrade",
+          "consumable": {
+            "consume_seconds": 0.1
+          },
           "properties": {
             "nutrition": 0,
             "saturation": 0,
-            "eat_seconds": 0.1,
             "can_always_eat": true
           }
         },
         {
           "items": "minecraft:glistering_melon_slice",
+          "consumable": {
+            "consume_seconds": 0.5
+          },
           "properties": {
             "nutrition": 8,
-            "saturation": 12.0,
-            "eat_seconds": 0.5
+            "saturation": 12.0
           }
         },
         {
@@ -106,4 +95,4 @@
         }
       ]
     }
-  }
+}

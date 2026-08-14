@@ -54,12 +54,12 @@
                                     },
                                     "modifiers": [
                                         {
-                                            "attribute": "minecraft:generic.scale",
+                                            "attribute": "minecraft:scale",
                                             "amount": -0.7,
                                             "operation": "add_multiplied_total"
                                         },
                                         {
-                                            "attribute": "minecraft:generic.attack_damage",
+                                            "attribute": "minecraft:attack_damage",
                                             "amount": -0.5,
                                             "operation": "add_multiplied_total"
                                         }

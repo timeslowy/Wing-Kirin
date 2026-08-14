@@ -50,7 +50,7 @@
                                     },
                                     "modifiers": [
                                         {
-                                            "attribute": "minecraft:generic.scale",
+                                            "attribute": "minecraft:scale",
                                             "amount": {
                                                 "type": "linear",
                                                 "base": -0.2,
@@ -59,7 +59,7 @@
                                             "operation": "add_multiplied_total"
                                         },
                                         {
-                                            "attribute": "minecraft:generic.attack_damage",
+                                            "attribute": "minecraft:attack_damage",
                                             "amount": {
                                                 "type": "linear",
                                                 "base": -0.125,

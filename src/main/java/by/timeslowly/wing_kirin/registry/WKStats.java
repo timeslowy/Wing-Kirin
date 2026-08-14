@@ -2,7 +2,7 @@ package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 import net.neoforged.bus.api.IEventBus;
@@ -18,59 +18,59 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public class WKStats {
-    public static final DeferredRegister<ResourceLocation> CUSTOM_STATS =
+    public static final DeferredRegister<Identifier> CUSTOM_STATS =
             DeferredRegister.create(Registries.CUSTOM_STAT, Wing_kirin.MOD_ID);
 
     // 自定义统计信息项
     // 定身数项
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> CastedStasisHexCTimes =
+    public static final DeferredHolder<Identifier, Identifier> CastedStasisHexCTimes =
             CUSTOM_STATS.register("casted_stasis_hex_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_stasis_hex_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_stasis_hex_times"));
 
     // 触发回光返照次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggerLastStandTimes =
+    public static final DeferredHolder<Identifier, Identifier> TriggerLastStandTimes =
             CUSTOM_STATS.register("triggered_last_stand_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_last_stand_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_last_stand_times"));
 
     // 施法金风玉露总时长
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> CastedEmpyreanWineSeconds =
+    public static final DeferredHolder<Identifier, Identifier> CastedEmpyreanWineSeconds =
             CUSTOM_STATS.register("casted_empyrean_wine_seconds", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_empyrean_wine_seconds"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_empyrean_wine_seconds"));
 
     // 施法 云销雨霁 次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> CastedWeatherClearTimes =
+    public static final DeferredHolder<Identifier, Identifier> CastedWeatherClearTimes =
             CUSTOM_STATS.register("casted_weather_clear_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_weather_clear_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "casted_weather_clear_times"));
 
     // 射出 穿云箭 次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> ShootSignalArrowCount =
+    public static final DeferredHolder<Identifier, Identifier> ShootSignalArrowCount =
             CUSTOM_STATS.register("shoot_signal_arrow_count", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "shoot_signal_arrow_count"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "shoot_signal_arrow_count"));
 
     // 不坏金身 反震次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> IndestructibleBodyCountershockTimes =
+    public static final DeferredHolder<Identifier, Identifier> IndestructibleBodyCountershockTimes =
             CUSTOM_STATS.register("indestructible_body_countershock_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "indestructible_body_countershock_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "indestructible_body_countershock_times"));
 
     // 触发 天降正义 次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredHeavenlyJusticeTimes =
+    public static final DeferredHolder<Identifier, Identifier> TriggeredHeavenlyJusticeTimes =
             CUSTOM_STATS.register("triggered_heavenly_justice_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_heavenly_justice_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_heavenly_justice_times"));
 
     // 破隐一击次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> BrokenInstantInvisibilityTimes =
+    public static final DeferredHolder<Identifier, Identifier> BrokenInstantInvisibilityTimes =
             CUSTOM_STATS.register("broken_instant_invisibility_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "broken_instant_invisibility_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "broken_instant_invisibility_times"));
 
     // 触发 返老还童 次数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TriggeredReverseAgingTimes =
+    public static final DeferredHolder<Identifier, Identifier> TriggeredReverseAgingTimes =
             CUSTOM_STATS.register("triggered_reverse_aging_times", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_reverse_aging_times"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "triggered_reverse_aging_times"));
 
     // 仁者无敌 治愈友方总数
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> CuredAliesCount =
+    public static final DeferredHolder<Identifier, Identifier> CuredAliesCount =
             CUSTOM_STATS.register("cured_alies_count", () ->
-                    ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "cured_alies_count"));
+                    Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "cured_alies_count"));
 
     /**
      * 秒数格式化器：将整数值作为秒数显示，自动转换为合适的单位（s/m/h/d）
@@ -85,12 +85,12 @@ public class WKStats {
     /**
      * 统计项 ID → DeferredHolder 的 O(1) 查找缓存，在 FMLCommonSetupEvent 阶段构建
      */
-    private static Map<ResourceLocation, DeferredHolder<ResourceLocation, ? extends ResourceLocation>> holderCache;
+    private static Map<Identifier, DeferredHolder<Identifier, ? extends Identifier>> holderCache;
 
     /**
-     * 获取所有已注册统计项的注册名（ResourceLocation key）流
+     * 获取所有已注册统计项的注册名（Identifier key）流
      */
-    public static Stream<ResourceLocation> getStatEntries() {
+    public static Stream<Identifier> getStatEntries() {
         return CUSTOM_STATS.getEntries().stream()
                 .map(DeferredHolder::getId);
     }
@@ -99,15 +99,15 @@ public class WKStats {
      * 获取所有已注册统计项的名称字符串流（用于命令自动补全）
      */
     public static Stream<String> getStatNames() {
-        return getStatEntries().map(ResourceLocation::toString);
+        return getStatEntries().map(Identifier::toString);
     }
 
     /**
      * 根据注册名查找对应的 DeferredHolder（O(1) HashMap 查找）
-     * @param id 注册名 ResourceLocation
+     * @param id 注册名 Identifier
      * @return 对应的 DeferredHolder，若不存在则返回 Optional.empty()
      */
-    public static @NotNull Optional<DeferredHolder<ResourceLocation, ? extends ResourceLocation>> getHolder(ResourceLocation id) {
+    public static @NotNull Optional<DeferredHolder<Identifier, ? extends Identifier>> getHolder(Identifier id) {
         if (holderCache == null) {
             return Optional.empty();
         }

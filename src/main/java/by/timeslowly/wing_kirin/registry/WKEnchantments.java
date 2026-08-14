@@ -4,7 +4,7 @@ import by.timeslowly.wing_kirin.Wing_kirin;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -37,7 +37,7 @@ public class WKEnchantments {
                             0,                                  // anvilCost
                             EquipmentSlotGroup.ARMOR            // slots
                     )
-            ).build(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dingshen_resistance")));
+            ).build(Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dingshen_resistance")));
 
     public static final DeferredHolder<Enchantment, Enchantment> UNENCUMBERED =
             ENCHANTMENTS.register("unencumbered", () -> Enchantment.enchantment(
@@ -50,7 +50,7 @@ public class WKEnchantments {
                             0,
                             EquipmentSlotGroup.ARMOR
                     )
-            ).build(ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "unencumbered")));
+            ).build(Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "unencumbered")));
 
     
     

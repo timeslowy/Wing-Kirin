@@ -1,7 +1,8 @@
 package by.timeslowly.wing_kirin.client;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
-import net.minecraft.client.gui.screens.Screen;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -20,8 +21,8 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
-        // 初始化 Shift 键状态检查（客户端实现）
-        ClientHelper.SHIFT_DOWN = Screen::hasShiftDown;
+        // 初始化 Shift 键状态检查（客户端实现；26.1 起 Screen.hasShiftDown 被移除）
+        ClientHelper.SHIFT_DOWN = () -> InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), InputConstants.KEY_LSHIFT);
 
         // 注册模组配置界面（单人游戏内可实时修改，多人游戏只读）
         event.enqueueWork(() -> ModList.get().getModContainerById(Wing_kirin.MOD_ID).ifPresent(container ->

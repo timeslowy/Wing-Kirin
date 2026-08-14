@@ -11,10 +11,11 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.arguments.ResourceLocationArgument;
+import net.minecraft.commands.arguments.IdentifierArgument;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.permissions.Permissions;
 import net.minecraft.stats.ServerStatsCounter;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
@@ -26,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.Objects;
 import java.util.Optional;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
@@ -48,7 +48,7 @@ public class WKStatsCommand {
      */
     private static ArgumentBuilder<CommandSourceStack, ?> statsValueArg(com.mojang.brigadier.Command<CommandSourceStack> executor) {
         return Commands.argument("targets", EntityArgument.players())
-                .then(Commands.argument("stat", ResourceLocationArgument.id())
+                .then(Commands.argument("stat", IdentifierArgument.id())
                         .suggests(STAT_SUGGESTIONS)
                         .then(Commands.argument("value", IntegerArgumentType.integer(0, 999999999))
                                 .executes(executor)
@@ -61,7 +61,8 @@ public class WKStatsCommand {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
         dispatcher.register(
                 Commands.literal("wk-stats")
-                        .requires(source -> source.hasPermission(2))
+                        // 26.1 起权限改为 PermissionSet 体系：等级 2 对应 COMMANDS_GAMEMASTER
+                        .requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER))
                         .then(Commands.literal("set")
                                 .then(statsValueArg(ctx -> executeSet(ctx,
                                         EntityArgument.getPlayers(ctx, "targets"),
@@ -74,16 +75,16 @@ public class WKStatsCommand {
     }
 
     /**
-     * 根据命令参数中的 ResourceLocation 查找对应的自定义统计 Stat 对象
+     * 根据命令参数中的 Identifier 查找对应的自定义统计 Stat 对象
      * @return 对应的 Stat 对象，若无效则返回 null
      */
-    private static @Nullable Stat<ResourceLocation> resolveStat(CommandContext<CommandSourceStack> ctx) {
-        ResourceLocation statId = ResourceLocationArgument.getId(ctx, "stat");
-        Optional<DeferredHolder<ResourceLocation, ? extends ResourceLocation>> holderOpt = WKStats.getHolder(statId);
+    private static @Nullable Stat<Identifier> resolveStat(CommandContext<CommandSourceStack> ctx) {
+        Identifier statId = IdentifierArgument.getId(ctx, "stat");
+        Optional<DeferredHolder<Identifier, ? extends Identifier>> holderOpt = WKStats.getHolder(statId);
         if (holderOpt.isEmpty()) {
             return null;
         }
-        ResourceLocation statValue = holderOpt.get().get();
+        Identifier statValue = holderOpt.get().get();
         return Stats.CUSTOM.get(statValue);
     }
 
@@ -91,7 +92,7 @@ public class WKStatsCommand {
      * 向命令执行者发送统计项未找到的错误消息。
      * 根据 namespace 区分：wing_kirin → 可能是拼写错误；其他 → 非本模组统计项
      */
-    private static void sendStatNotFoundError(CommandSourceStack source, @NotNull ResourceLocation statId) {
+    private static void sendStatNotFoundError(CommandSourceStack source, @NotNull Identifier statId) {
         if (Wing_kirin.MOD_ID.equals(statId.getNamespace())) {
             source.sendFailure(Component.translatable("command.wing_kirin.wk_stats.unknown_stat", statId.toString()));
         } else {
@@ -105,16 +106,16 @@ public class WKStatsCommand {
      */
     private static int executeSet(@NotNull CommandContext<CommandSourceStack> ctx, Collection<ServerPlayer> targets, int value) {
         CommandSourceStack source = ctx.getSource();
-        ResourceLocation statId = ResourceLocationArgument.getId(ctx, "stat");
+        Identifier statId = IdentifierArgument.getId(ctx, "stat");
 
-        Stat<ResourceLocation> stat = resolveStat(ctx);
+        Stat<Identifier> stat = resolveStat(ctx);
         if (stat == null) {
             sendStatNotFoundError(source, statId);
             return 0;
         }
 
         for (ServerPlayer player : targets) {
-            ServerStatsCounter statsCounter = Objects.requireNonNull(player.getServer()).getPlayerList().getPlayerStats(player);
+            ServerStatsCounter statsCounter = player.level().getServer().getPlayerList().getPlayerStats(player);
             statsCounter.setValue(player, stat, value);
         }
 
@@ -147,9 +148,9 @@ public class WKStatsCommand {
      */
     private static int executeAdd(@NotNull CommandContext<CommandSourceStack> ctx, Collection<ServerPlayer> targets, int value) {
         CommandSourceStack source = ctx.getSource();
-        ResourceLocation statId = ResourceLocationArgument.getId(ctx, "stat");
+        Identifier statId = IdentifierArgument.getId(ctx, "stat");
 
-        Stat<ResourceLocation> stat = resolveStat(ctx);
+        Stat<Identifier> stat = resolveStat(ctx);
         if (stat == null) {
             sendStatNotFoundError(source, statId);
             return 0;
@@ -157,7 +158,7 @@ public class WKStatsCommand {
 
         int lastNewValue = 0;
         for (ServerPlayer player : targets) {
-            ServerStatsCounter statsCounter = Objects.requireNonNull(player.getServer()).getPlayerList().getPlayerStats(player);
+            ServerStatsCounter statsCounter = player.level().getServer().getPlayerList().getPlayerStats(player);
             int oldValue = statsCounter.getValue(stat);
             try {
                 lastNewValue = Math.addExact(oldValue, value);

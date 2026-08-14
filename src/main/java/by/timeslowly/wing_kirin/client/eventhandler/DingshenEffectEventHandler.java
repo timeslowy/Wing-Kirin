@@ -4,7 +4,7 @@ import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
@@ -53,7 +53,7 @@ public class DingshenEffectEventHandler {
         if (Minecraft.getInstance().options.hideGui) return;
         if (!player.hasEffect(WKEffects.DING_SHEN)) return;
 
-        GuiGraphics g = event.getGuiGraphics();
+        GuiGraphicsExtractor g = event.getGuiGraphics();
         int w = Minecraft.getInstance().getWindow().getGuiScaledWidth();
         int h = Minecraft.getInstance().getWindow().getGuiScaledHeight();
 
@@ -74,16 +74,16 @@ public class DingshenEffectEventHandler {
         drawRightEdge(g, w, h, edge);
     }
 
-    private static void drawTopEdge(@NotNull GuiGraphics g, int screenW, int edge) {
-        g.fillGradient(0, 0, screenW, edge, 0, vignetteCachedFillOpaque, vignetteCachedFillTransparent);
+    private static void drawTopEdge(@NotNull GuiGraphicsExtractor g, int screenW, int edge) {
+        g.fillGradient(0, 0, screenW, edge, vignetteCachedFillOpaque, vignetteCachedFillTransparent);
     }
 
-    private static void drawBottomEdge(@NotNull GuiGraphics g, int screenW, int screenH, int edge) {
-        g.fillGradient(0, screenH - edge, screenW, screenH, 0,
+    private static void drawBottomEdge(@NotNull GuiGraphicsExtractor g, int screenW, int screenH, int edge) {
+        g.fillGradient(0, screenH - edge, screenW, screenH,
                 vignetteCachedFillTransparent, vignetteCachedFillOpaque);
     }
 
-    private static void drawLeftEdge(GuiGraphics g, int screenH, int edge) {
+    private static void drawLeftEdge(GuiGraphicsExtractor g, int screenH, int edge) {
         int steps = Math.min(DINGSHEN_VIGNETTE_MAX_STEPS, edge);
         int last = Math.max(steps - 1, 1);
         for (int i = 0; i < steps; i++) {
@@ -95,7 +95,7 @@ public class DingshenEffectEventHandler {
         }
     }
 
-    private static void drawRightEdge(GuiGraphics g, int screenW, int screenH, int edge) {
+    private static void drawRightEdge(GuiGraphicsExtractor g, int screenW, int screenH, int edge) {
         int steps = Math.min(DINGSHEN_VIGNETTE_MAX_STEPS, edge);
         int last = Math.max(steps - 1, 1);
         for (int i = 0; i < steps; i++) {
@@ -119,7 +119,7 @@ public class DingshenEffectEventHandler {
         // 3. 判断是否拥有效果且配置启用禁用交互
         if (WKServerConfig.shouldDingShenDisableInteraction() && player.hasEffect(WKEffects.DING_SHEN)) {
             // 提示
-            player.displayClientMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_interaction"), true);
+            player.sendOverlayMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_interaction"));
             event.setCanceled(true);
         }
     }
@@ -137,7 +137,7 @@ public class DingshenEffectEventHandler {
             }
             // 检查玩家是否拥有"定身"效果且配置启用禁用交互
             if (WKServerConfig.shouldDingShenDisableInteraction() && player.hasEffect(WKEffects.DING_SHEN)) {
-                GuiGraphics guiGraphics = event.getGuiGraphics();
+                GuiGraphicsExtractor guiGraphics = event.getGuiGraphics();
 
                 int screenWidth = Minecraft.getInstance().getWindow().getGuiScaledWidth();
                 int screenHeight = Minecraft.getInstance().getWindow().getGuiScaledHeight();

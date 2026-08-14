@@ -1,7 +1,12 @@
 ## 生成制导
 # 执行位置：标志实体
+# 26.1.2起必填必填 projectile_level、lingering_ticks、lifespan、bounces
 summon dragonsurvival:generic_ball_entity ~ ~1 ~ { \
   Tags:[new_summon], \
+  projectile_level:1, \
+  lingering_ticks:0, \
+  lifespan:0, \
+  bounces:0, \
   "general_data": { \
     "block_hit_effects": [], \
     "common_hit_effects": [], \

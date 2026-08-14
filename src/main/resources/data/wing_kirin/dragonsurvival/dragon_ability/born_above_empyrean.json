@@ -39,7 +39,7 @@
                   },
                   "modifiers": [
                     {
-                      "attribute": "generic.movement_speed",
+                      "attribute": "minecraft:movement_speed",
                       "amount": {
                         "type": "linear",
                         "base": 0.1,
@@ -48,7 +48,7 @@
                       "operation": "add_multiplied_total"
                     },
                     {
-                      "attribute": "generic.max_health",
+                      "attribute": "minecraft:max_health",
                       "amount": {
                         "type": "linear",
                         "base": 0.1,
@@ -57,7 +57,7 @@
                       "operation": "add_multiplied_total"
                     },
                     {
-                      "attribute": "generic.attack_damage",
+                      "attribute": "minecraft:attack_damage",
                       "amount": {
                         "type": "linear",
                         "base": 0.1,

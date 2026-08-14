@@ -33,7 +33,7 @@ public abstract class ClientCastingHandlerMixin {
             Keybind castKey = ClientConfig.alternateCastMode ? wingKirin$getSlotKeybind(selectedSlot) : Keybind.USE_ABILITY;
             // 匹配，拦截施法蓄力条出现
             if (castKey.matches(input)) {
-                player.displayClientMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_ability"), true);
+                player.sendOverlayMessage(Component.translatable("actionbar.wing_kirin.ability.stasis_hex.disable_ability"));
                 ci.cancel();
             }
         }

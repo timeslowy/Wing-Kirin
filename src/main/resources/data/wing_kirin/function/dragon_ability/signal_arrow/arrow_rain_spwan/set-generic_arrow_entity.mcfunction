@@ -6,6 +6,9 @@ tag @s remove new_arrow
 # 传入来源 来自标志实体
 data modify entity @s Owner set from entity @n[type=marker,tag=signal_arrow] data.Owner
 
+# 传入技能等级（26.1.2 起 DS 弹射物 NBT 必填 projectile_level，否则实体加载直接抛异常）
+data modify entity @s projectile_level set from entity @n[type=marker,tag=signal_arrow] data.projectile_level
+
 # 传入伤害
 data modify entity @s general_data.common_hit_effects[0].general_data.effects[0].effect.amount set from entity @n[type=marker,tag=signal_arrow] data.damage
 

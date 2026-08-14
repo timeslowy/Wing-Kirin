@@ -22,7 +22,8 @@ public abstract class LivingEntityHurtMixin {
      * INVOKE 目标产生冲突——@WrapOperation 允许共存。
      */
     @WrapOperation(
-            method = "hurt",
+            // 26.1 起 LivingEntity.hurt 更名为 hurtServer（新增 ServerLevel 首参）
+            method = "hurtServer",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z"

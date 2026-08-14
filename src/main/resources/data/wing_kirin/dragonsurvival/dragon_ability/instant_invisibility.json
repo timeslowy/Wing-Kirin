@@ -68,7 +68,7 @@
                   },
                   "modifiers": [
                     {
-                      "attribute": "minecraft:generic.attack_damage",
+                      "attribute": "minecraft:attack_damage",
                       "amount": 0.5,
                       "operation": "add_multiplied_total"
                     }

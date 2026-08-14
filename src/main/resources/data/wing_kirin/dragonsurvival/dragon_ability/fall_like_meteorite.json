@@ -31,7 +31,7 @@
                   },
                   "modifiers": [
                     {
-                      "attribute": "minecraft:generic.attack_damage",
+                      "attribute": "minecraft:attack_damage",
                       "amount": {
                         "type": "minecraft:linear",
                         "base": 2.0,
@@ -40,7 +40,7 @@
                       "operation": "add_multiplied_total"
                     },
                     {
-                      "attribute": "generic.attack_speed",
+                      "attribute": "minecraft:attack_speed",
                       "amount": 0.5,
                       "operation": "add_multiplied_total"
                     }

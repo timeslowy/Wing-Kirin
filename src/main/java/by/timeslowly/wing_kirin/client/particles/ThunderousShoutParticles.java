@@ -3,6 +3,7 @@ package by.timeslowly.wing_kirin.client.particles;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +56,8 @@ public class ThunderousShoutParticles extends SimpleAnimatedParticle {
 
         @Override
         public @Nullable Particle createParticle(@NotNull SimpleParticleType simpleParticleType, @NotNull ClientLevel clientLevel,
-                                                 double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
+                                                 double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed,
+                                                 @NotNull RandomSource randomSource) {
             return new ThunderousShoutParticles(clientLevel, pX, pY ,pZ, pXSpeed ,pYSpeed, pZSpeed ,this.spriteSet);
         }
 

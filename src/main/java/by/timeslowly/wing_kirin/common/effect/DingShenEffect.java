@@ -10,10 +10,10 @@ import com.mojang.math.Transformation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Brightness;
 import net.minecraft.world.effect.MobEffect;
@@ -36,7 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
-import java.util.Objects;
+import java.util.List;
 
 // 定身药水效果
 public class DingShenEffect extends MobEffect {
@@ -48,19 +48,19 @@ public class DingShenEffect extends MobEffect {
         // 属性修改
         // 攻击速度
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_1"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 移动速度
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), -1,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_2"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 重力
         this.addAttributeModifier(Attributes.GRAVITY,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), -1,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_3"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // 挖掘速度
         this.addAttributeModifier(Attributes.MINING_EFFICIENCY,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_4"), -1,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.ding_shen_4"), -1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
@@ -73,7 +73,7 @@ public class DingShenEffect extends MobEffect {
      * 修改原版交互和视觉效果的逻辑见： {@link DingshenEffectEventHandler}
      */
     @Override
-    public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(@NotNull ServerLevel serverLevel, @NotNull LivingEntity entity, int amplifier) {
         // 阻止移动
         entity.setDeltaMovement(Vec3.ZERO);
 
@@ -89,8 +89,8 @@ public class DingShenEffect extends MobEffect {
         }
 
         // 将玩家的"定"字展示实体传送到头顶
-        if (entity instanceof Player && entity.level() instanceof ServerLevel serverLevel) {
-            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+        if (entity instanceof Player) {
+            int displayId = entity.getPersistentData().getIntOr(DISPLAY_ID_KEY, 0);
             if (displayId != 0) {
                 Entity display = serverLevel.getEntity(displayId);
                 if (display != null) {
@@ -99,7 +99,7 @@ public class DingShenEffect extends MobEffect {
             }
         }
 
-        return super.applyEffectTick(entity, amplifier);
+        return super.applyEffectTick(serverLevel, entity, amplifier);
     }
 
     /**
@@ -125,9 +125,7 @@ public class DingShenEffect extends MobEffect {
         double z = entity.getZ();
 
         // 播放声音（烈焰人受伤）
-        SoundEvent sound = Objects.requireNonNull(
-                BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt")));
-                playSound(level, x, y, z, sound);
+        playSound(level, x, y, z, SoundEvents.BLAZE_HURT);
 
         // 生成粒子
         if (level instanceof ServerLevel serverLevel) {
@@ -142,8 +140,8 @@ public class DingShenEffect extends MobEffect {
 
     // 带效果生物被杀死时
     @Override
-    public void onMobRemoved(@NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
-        super.onMobRemoved(entity, amplifier, reason);
+    public void onMobRemoved(@NotNull ServerLevel serverLevel, @NotNull LivingEntity entity, int amplifier, Entity.@NotNull RemovalReason reason) {
+        super.onMobRemoved(serverLevel, entity, amplifier, reason);
         handleExpireOrRemoval(entity);
     }
 
@@ -169,9 +167,7 @@ public class DingShenEffect extends MobEffect {
         double z = entity.getZ();
 
         // 播放声音（重生锚消耗）
-        SoundEvent sound = Objects.requireNonNull(
-                BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.respawn_anchor.deplete")));
-        playSound(level, x, y, z, sound);
+        playSound(level, x, y, z, SoundEvents.RESPAWN_ANCHOR_DEPLETE.value());
 
         // 生成粒子
         if (level instanceof ServerLevel serverLevel) {
@@ -197,7 +193,7 @@ public class DingShenEffect extends MobEffect {
             return;
         }
         if (entity.level() instanceof ServerLevel serverLevel) {
-            int displayId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+            int displayId = entity.getPersistentData().getIntOr(DISPLAY_ID_KEY, 0);
             if (displayId != 0) {
                 Entity display = serverLevel.getEntity(displayId);
                 if (display != null) {
@@ -213,7 +209,7 @@ public class DingShenEffect extends MobEffect {
     // 为玩家生成"定"字展示实体（不采用骑乘，改由 applyEffectTick 每 tick 传送到玩家头顶）
     private static void spawnDingShenDisplay(@NotNull LivingEntity entity, ServerLevel level) {
         // 已有展示实体则不再生成
-        int existingId = entity.getPersistentData().getInt(DISPLAY_ID_KEY);
+        int existingId = entity.getPersistentData().getIntOr(DISPLAY_ID_KEY, 0);
         if (existingId != 0 && level.getEntity(existingId) != null) {
             return;
         }
@@ -223,7 +219,8 @@ public class DingShenEffect extends MobEffect {
 
         // 物品：烟火之星 + 自定义模型数据 12020000 → "定"字贴图
         ItemStack itemStack = new ItemStack(Items.FIREWORK_STAR);
-        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(12020000));
+        // 26.1 起 CustomModelData 为四列表结构；物品模型的 custom_model_data 分派读取 floats 列表
+        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(12020000.0F), List.of(), List.of(), List.of()));
         ((ItemDisplayAccessor) display).invokeSetItemStack(itemStack);
         ((ItemDisplayAccessor) display).invokeSetItemTransform(ItemDisplayContext.HEAD);
 
@@ -260,10 +257,10 @@ public class DingShenEffect extends MobEffect {
 
     // 粒子参数
     private static void spawnParticles(@NotNull ServerLevel level, @NotNull LivingEntity entity) {
-        Vector3f color = new Vector3f(0.98F, 0.86F, 0.57F);
         float scale = 1.0F;
+        // 26.1 起 DustParticleOptions 使用打包 int 颜色 (0.98, 0.86, 0.57 → 0xF9DB91)
         level.sendParticles(
-                new DustParticleOptions(color, scale),
+                new DustParticleOptions(0xF9DB91, scale),
                 entity.getX(),
                 entity.getY() + entity.getBbHeight() / 2.0F,
                 entity.getZ(), 200, 1.0, 1.0, 1.0, 0.0

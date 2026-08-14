@@ -1,9 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
-import by.dragonsurvivalteam.dragonsurvival.registry.DSEffects;
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.effect.*;
-import by.timeslowly.wing_kirin.config.WKServerConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -45,13 +43,8 @@ public class WKEffects {
     public static void onEffectRemoved(MobEffectEvent.@NotNull Remove event) {
         MobEffectInstance effectInstance = event.getEffectInstance();
         if (effectInstance != null) {
-            // 当配置启用时，阻止 magic_disabled 效果被治愈（允许自然到期）
-            if (effectInstance.is(DSEffects.MAGIC_DISABLED)
-                    && WKServerConfig.shouldMagicDisabledBeIncurable()
-                    && event.getCure() != null) {
-                event.setCanceled(true);
-                return;
-            }
+            // 26.1 起效果治愈（EffectCure）机制被整体移除，getCure 不存在；
+            // magic_disabled 不可治愈配置（shouldMagicDisabledBeIncurable）随之失效
             expireEffects(event.getEntity(), effectInstance);
         }
     }

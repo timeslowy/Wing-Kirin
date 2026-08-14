@@ -10,7 +10,7 @@ execute if function wing_kirin:dragon_ability/stasia_hex/display/ding_display_ch
 # 生成展示物品实体显示"定"字（将原版物品替换贴图的文件导入）
 summon item_display ~ ~ ~ { \
     Tags:["item_display.being_frozen","new_item_display"], \
-    item:{id:firework_star,components:{"custom_model_data":12020000},count:1,}, \
+    item:{id:"minecraft:firework_star",components:{"minecraft:custom_model_data":{floats:[12020000.0]}},count:1}, \
     transformation:{ \
         scale:[1.2d,1.2d,0.5d], \
         left_rotation:[0d,0d,0d,1d], \

@@ -1,35 +1,44 @@
 package by.timeslowly.wing_kirin.common.item;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class EmpyreanEssenceItem extends Item {
-    public EmpyreanEssenceItem() {
+    public EmpyreanEssenceItem(Identifier id) {
+        // 26.1 起 Item.Properties 必须携带注册 id；食用需要显式的 Consumable 组件
+        // （0.8 秒快速饮用 = 原 fast() 标记），玻璃瓶转换回到 Item.Properties 上；
+        // 食用效果改用 26.1 原生的 ConsumeEffect（ApplyStatusEffectsConsumeEffect）声明式注册
         super(new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, id))
                 .stacksTo(16)
                 .rarity(Rarity.EPIC)
                 .food(new FoodProperties.Builder()
                         .nutrition(16)
                         .saturationModifier(2f)
-                        .effect(() -> new MobEffectInstance
-                                (MobEffects.REGENERATION, 400, 5,
-                                        false, false), 1.0f)
-                        .fast()
                         .alwaysEdible()
-                        .usingConvertsTo(Items.GLASS_BOTTLE)
-                        .build()));
-    }
-
-    // 使用饮用动画
-    @Override
-    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
-        return UseAnim.DRINK;
+                        .build(),
+                        Consumable.builder()
+                                .consumeSeconds(0.8F)
+                                .animation(ItemUseAnimation.DRINK)
+                                .sound(SoundEvents.GENERIC_DRINK)
+                                .onConsume(new ApplyStatusEffectsConsumeEffect(
+                                        List.of(new MobEffectInstance(MobEffects.REGENERATION, 400, 5, false, false)), 1.0F))
+                                .build())
+                .usingConvertsTo(Items.GLASS_BOTTLE));
     }
 
     // 使其附魔发光
@@ -39,9 +48,9 @@ public class EmpyreanEssenceItem extends Item {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-        tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_essence.description_0"));
-        tooltipComponents.add(Component.translatable("item.wing_kirin.empyrean_essence.description_1"));
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull TooltipDisplay tooltipDisplay, @NotNull Consumer<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipDisplay, tooltipComponents, tooltipFlag);
+        tooltipComponents.accept(Component.translatable("item.wing_kirin.empyrean_essence.description_0"));
+        tooltipComponents.accept(Component.translatable("item.wing_kirin.empyrean_essence.description_1"));
     }
 }

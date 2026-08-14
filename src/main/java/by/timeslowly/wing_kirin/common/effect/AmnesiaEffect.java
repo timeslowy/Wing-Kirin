@@ -2,7 +2,8 @@ package by.timeslowly.wing_kirin.common.effect;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.eventhandler.effects.AmnesiaEffectEventHandler;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,17 +34,17 @@ public class AmnesiaEffect extends MobEffect {
     public AmnesiaEffect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(Attributes.ATTACK_DAMAGE,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_1"), -0.2,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_1"), -0.2,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(Attributes.ATTACK_SPEED,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_2"), -0.1,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.amnesia_2"), -0.1,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
     // 效果初应用/刷新时：立即清除当前仇恨目标
     @Override
     public void onEffectStarted(@NotNull LivingEntity entity, int amplifier) {
-        if (!entity.level().isClientSide) {
+        if (!entity.level().isClientSide()) {
             forgetTargets(entity);
         }
     }
@@ -55,8 +56,8 @@ public class AmnesiaEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
-        if (!entity.level().isClientSide) {
+    public boolean applyEffectTick(@NotNull ServerLevel level, @NotNull LivingEntity entity, int amplifier) {
+        if (!entity.level().isClientSide()) {
             forgetTargets(entity);
         }
         return true;
@@ -83,7 +84,8 @@ public class AmnesiaEffect extends MobEffect {
 
             // 重置中立生物（猪灵、狼、铁傀儡、末影人等）的持续愤怒计时，避免效果结束后立即重新记仇
             if (mob instanceof NeutralMob neutral) {
-                neutral.setRemainingPersistentAngerTime(0);
+                // 26.1 起 setRemainingPersistentAngerTime 更名为 setPersistentAngerEndTime
+                neutral.setPersistentAngerEndTime(0);
                 neutral.setPersistentAngerTarget(null);
             }
         }
