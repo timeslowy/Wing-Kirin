@@ -30,8 +30,7 @@ build
 /other
 eclipse
 run
-# 版本隔离的运行目录（26.1.2 分支专用）
-run-*/
+run-*
 /server/
 
 # Files from Forge MDK
