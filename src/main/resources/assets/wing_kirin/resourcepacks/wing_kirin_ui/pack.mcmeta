@@ -1,9 +1,9 @@
 {
   "pack": {
-    "pack_format": 15,
+    "pack_format": 101,
     "supported_formats": {
-      "min_inclusive": 1,
-      "max_inclusive": 60
+      "min_inclusive": 70,
+      "max_inclusive": 101
 	  },
       "description": {
         "translate": "resourcepack.wing_kirin.wing_kirin_ui.desc"

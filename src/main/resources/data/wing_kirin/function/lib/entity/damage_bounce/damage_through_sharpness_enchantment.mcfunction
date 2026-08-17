@@ -6,7 +6,7 @@
 
 # 如果龙玩家的剑槽中不存在锋利附魔的武器则直接结束
 execute unless data entity @s \
-    "neoforge:attachments"."dragonsurvival:claw_inventory_data".SWORD.components.minecraft:enchantments.levels."minecraft:sharpness" \
+    "neoforge:attachments"."dragonsurvival:claw_inventory_data".SWORD.components."minecraft:enchantments".minecraft:sharpness \
     run return fail
 
 
@@ -20,7 +20,7 @@ execute unless data entity @s \
 
 # 计算 sharpness_level * 10 + 5
 execute store result score result wk.math run data get entity @s \
-    "neoforge:attachments"."dragonsurvival:claw_inventory_data".SWORD.components.minecraft:enchantments.levels."minecraft:sharpness" 10
+    "neoforge:attachments"."dragonsurvival:claw_inventory_data".SWORD.components."minecraft:enchantments".minecraft:sharpness 10
 scoreboard players add result wk.math 5
 
 # 运算 [( sharpness_level * 5 + 5) / 10] + damage * 10

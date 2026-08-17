@@ -7,9 +7,7 @@
     "a a"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:gold_ingot"
-    }
+    "a": "gold_ingot"
   },
   "result": {
     "id": "wing_kirin:golden_bell",

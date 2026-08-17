@@ -4,7 +4,7 @@
 # 结果: wing_kirin:ram math.result
 
 # 直接获取药水效果modifier值
-execute store result score val_0 wk.math run attribute @s minecraft:generic.attack_damage modifier value get minecraft:effect.strength 50
+execute store result score val_0 wk.math run attribute @s minecraft:attack_damage modifier value get minecraft:effect.strength 50
 
 # 如果玩家没有获得力量效果则直接结束
 execute if score val_0 wk.math matches 0 run return fail

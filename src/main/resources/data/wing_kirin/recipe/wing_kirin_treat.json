@@ -7,12 +7,8 @@
     "aaa"
   ],
   "key": {
-    "a": {
-      "item": "dragonsurvival:elder_dragon_dust"
-    },
-    "b":{
-      "item": "wing_kirin:empyrean_wine"
-    }
+    "a": "dragonsurvival:elder_dragon_dust",
+    "b": "wing_kirin:empyrean_wine"
   },
   "result": {
     "id": "wing_kirin:wing_kirin_treat",
