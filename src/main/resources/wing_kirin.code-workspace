@@ -19,6 +19,12 @@
 		{
 			"name": "java",
 			"path": "../java"
+		},
+		{
+			"path": "../../../mcdoc"
+		},
+		{
+			"path": "../../../spyglass"
 		}
 	],
 	"settings": {}
