@@ -31,6 +31,8 @@ build
 eclipse
 run
 run-*
+mcdoc
+spyglass
 /server/
 
 # Files from Forge MDK
