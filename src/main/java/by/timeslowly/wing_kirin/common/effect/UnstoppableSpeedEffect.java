@@ -27,6 +27,7 @@ public class UnstoppableSpeedEffect extends MobEffect {
                 Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_2"), 0.8,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
+    // TODO:疑似此处或「奶露之合」或`LivingEntityEffect`的逻辑与原版冲突导致原版牛奶饮用时崩溃
     // 效果结束导致虚弱与缓慢，根据效果等级应用
     public static void onEffectExpired(@NotNull LivingEntity entity, int amplifier) {
         entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, amplifier, false, true, true));
@@ -34,5 +35,6 @@ public class UnstoppableSpeedEffect extends MobEffect {
         entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 300, amplifier, false, true, true));
     }
 
+    // TODO：需要新的治愈免疫机制
     // 26.1 起效果治愈（EffectCure）机制被整体移除，无需覆写治愈方式。
 }

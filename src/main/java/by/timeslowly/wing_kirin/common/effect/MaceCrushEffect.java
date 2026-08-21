@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 
 // 从天而降药水效果
 public class MaceCrushEffect extends MobEffect {
@@ -16,13 +17,17 @@ public class MaceCrushEffect extends MobEffect {
     public MaceCrushEffect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(DSAttributes.ARMOR_IGNORE_CHANCE,
-                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.2,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.1,
                 AttributeModifier.Operation.ADD_VALUE
         );
         // 主要属性：下落猛击倍率
         this.addAttributeModifier(WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER,
-                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 0.8,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 1.0,
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        );
+        this.addAttributeModifier(Attributes.GRAVITY,
+                Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_3"), 0.03,
+                AttributeModifier.Operation.ADD_VALUE
         );
     }
 

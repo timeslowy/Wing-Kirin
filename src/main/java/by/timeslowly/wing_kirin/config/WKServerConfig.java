@@ -158,6 +158,7 @@ public class WKServerConfig {
                .translation("wing_kirin.config.magic_disabled")
                .push("magic_disabled");
 
+        // TODO：需要恢复此服务端配置效果
         // 1.魔法禁用效果是否不可治愈
         MAGIC_DISABLED_INCURABLE = builder
                 .comment("Whether the Magic Disabled effect is incurable (cannot be removed by milk, honey bottles, or other curative items).")
