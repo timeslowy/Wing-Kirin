@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.neoforged.neoforge.common.EffectCure;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,13 +22,17 @@ public class MaceCrushEffect extends MobEffect {
     public MaceCrushEffect(MobEffectCategory category, int color) {
         super(category, color);
         this.addAttributeModifier(DSAttributes.ARMOR_IGNORE_CHANCE,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.2,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_1"), 0.1,
                 AttributeModifier.Operation.ADD_VALUE
         );
         // 主要属性：下落猛击倍率
         this.addAttributeModifier(WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER,
-                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 0.8,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 1.0,
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        );
+        this.addAttributeModifier(Attributes.GRAVITY,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.mace_crush_2"), 0.03,
+                AttributeModifier.Operation.ADD_VALUE
         );
     }
 
