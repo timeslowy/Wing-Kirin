@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
+import by.timeslowly.wing_kirin.common.ability.DamageReflections;
 import com.mojang.serialization.Codec;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
@@ -19,6 +20,11 @@ public class WKAttachments {
             "ding_shen_muscle_relaxed",
             // 26.1 起 AttachmentType.Builder.serialize 需要 MapCodec
             () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL.fieldOf("ding_shen_muscle_relaxed")).build());
+
+    /** 伤害反弹数据：由 wing_kirin:damage_reflection 实体效果写入、DamageReflectionEventHandler 读取（被动技能周期刷新，无需序列化） */
+    public static final Supplier<AttachmentType<DamageReflections>> DAMAGE_REFLECTION = ATTACHMENTS.register(
+            "damage_reflection",
+            () -> AttachmentType.builder(DamageReflections::new).build());
 
     public static void register(IEventBus eventBus) {
         ATTACHMENTS.register(eventBus);

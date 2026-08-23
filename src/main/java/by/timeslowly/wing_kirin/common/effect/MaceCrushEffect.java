@@ -31,6 +31,8 @@ public class MaceCrushEffect extends MobEffect {
         );
     }
 
-    // 26.1 起效果治愈（EffectCure）机制被整体移除，无需覆写治愈方式。
+    // 「不可被常规手段治愈」：旧版通过 NeoForge EffectCure（fillEffectCures 清空）实现，
+    // 26.1 该机制被整体移除后改由治愈物品的 ConsumeEffect Mixin 拦截实现，
+    // 判定逻辑见 {@link by.timeslowly.wing_kirin.registry.WKEffects#isCureImmune}。
 }
 

@@ -9,6 +9,8 @@
     "DragonAbilityInstanceMixin",
     "EntityMoveLockMixin",
     "ServerPlayerMoveLockMixin",
+    "ClearAllStatusEffectsConsumeEffectMixin",
+    "RemoveStatusEffectsConsumeEffectMixin",
     "DisplayAccessor",
     "ItemDisplayAccessor"
   ],

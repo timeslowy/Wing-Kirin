@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin;
 
 import by.timeslowly.wing_kirin.config.*;
 import by.timeslowly.wing_kirin.registry.*;
+import by.timeslowly.wing_kirin.registry.dragon.ability.WKAbilityEntityEffects;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -35,6 +36,9 @@ public class Wing_kirin {
         WKPotions.register(modEventBus);
         WKSounds.register(modEventBus);
         WKStats.register(modEventBus);
+
+        // 注册龙之技能自定义实体效果类型（DragonSurvival ability_entity_effect 注册表）
+        WKAbilityEntityEffects.register(modEventBus);
 
         // 注册模组通用设置事件，用于注入自定义统计格式化器等
         modEventBus.addListener(WKStats::onCommonSetup);

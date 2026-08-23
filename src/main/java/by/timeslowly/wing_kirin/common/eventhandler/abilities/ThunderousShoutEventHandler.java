@@ -1,4 +1,4 @@
-package by.timeslowly.wing_kirin.common.eventhandler;
+package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.timeslowly.wing_kirin.Wing_kirin;
 import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 @EventBusSubscriber(modid = Wing_kirin.MOD_ID)
-public class AbilityEventHandler {
+public class ThunderousShoutEventHandler {
     // 记录每个攻击者上次扣除金钟耐久的世界刻
     private static final Map<LivingEntity, Integer> LAST_DAMAGE_TICK = new WeakHashMap<>();
     /**

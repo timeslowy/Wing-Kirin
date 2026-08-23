@@ -27,14 +27,16 @@ public class UnstoppableSpeedEffect extends MobEffect {
                 Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "effect.unstoppable_speed_2"), 0.8,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
-    // TODO:疑似此处或「奶露之合」或`LivingEntityEffect`的逻辑与原版冲突导致原版牛奶饮用时崩溃
-    // 效果结束导致虚弱与缓慢，根据效果等级应用
+    // 效果结束导致虚弱与缓慢，根据效果等级应用。
+    // 注意：26.1 起不可在 MobEffectEvent.Remove/Expired 回调内同步调用（会修改正在迭代的
+    // 活跃效果表导致 ConcurrentModificationException），由 WKEffects 延迟到 tick 末尾统一调用。
     public static void onEffectExpired(@NotNull LivingEntity entity, int amplifier) {
         entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, amplifier, false, true, true));
         // 26.1 起 MOVEMENT_SLOWDOWN 更名为 SLOWNESS
         entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 300, amplifier, false, true, true));
     }
 
-    // TODO：需要新的治愈免疫机制
-    // 26.1 起效果治愈（EffectCure）机制被整体移除，无需覆写治愈方式。
+    // 「不可被常规手段治愈」：旧版通过 NeoForge EffectCure（fillEffectCures 清空）实现，
+    // 26.1 该机制被整体移除后改由治愈物品的 ConsumeEffect Mixin 拦截实现，
+    // 判定逻辑见 {@link by.timeslowly.wing_kirin.registry.WKEffects#isCureImmune}。
 }
