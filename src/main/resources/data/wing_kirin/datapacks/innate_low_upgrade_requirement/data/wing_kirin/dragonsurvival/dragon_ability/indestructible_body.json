@@ -45,20 +45,6 @@
               }
             },
             {
-              "effect_type": "dragonsurvival:damage_modification",
-              "modifications": [
-                {
-                  "base": {
-                    "id": "wing_kirin:casting_damage_resistance",
-                    "duration": 20,
-                    "custom_icon": "wing_kirin:textures/ability_effect/indestructible_body.png"
-                  },
-                  "damage_types": "#wing_kirin:indestructible_body_immunity",
-                  "multiplier": 0
-                }
-              ] 
-            },
-            {
               "effect_type": "dragonsurvival:modifier",
               "modifiers": [
                 {
@@ -106,35 +92,24 @@
         "applied_effects": {
           "entity_effect": [
             {
-              "effect_type": "dragonsurvival:damage",
-              "amount": 4.0,
-              "damage_type": "wing_kirin:counter_shock"
-            }
-          ],
-          "targeting_mode": "all_except_self",
-          "target_conditions": {
-            "condition": "killed_by_player"
-          }
-        },
-        "target_type": "dragonsurvival:self"
-      }
-    },
-    {
-      "target_selection": {
-        "applied_effects": {
-          "entity_effect": [
-            {
-              "effect_type": "dragonsurvival:effect_removal",
-              "categories": [
-                "BENEFICIAL"
-              ]
+              "effect_type": "wing_kirin:damage_reflection",
+              "reflection_percentage": {
+                "type": "minecraft:linear",
+                "base": 0.1,
+                "per_level_above_first": 0.1
+              },
+              "reflection_range": {
+                "type": "minecraft:linear",
+                "base": 3.0,
+                "per_level_above_first": 2.0
+              },
+              "use_same_damage_type": false
             }
           ],
           "targeting_mode": "allies_and_self"
         },
         "target_type": "dragonsurvival:self"
-      },
-      "trigger_point": "channel_completion"
+      }
     }
   ],
   "activation": {

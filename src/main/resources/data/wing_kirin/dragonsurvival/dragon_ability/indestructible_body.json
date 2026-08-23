@@ -40,7 +40,8 @@
               "potion": {
                 "effects": "minecraft:resistance",
                 "amplifier": 4,
-                "duration": 20
+                "duration": 20,
+                "show_icon": false
               }
             },
             {
@@ -66,7 +67,7 @@
               "effect_type": "dragonsurvival:glow",
               "glows": [
                 {
-                  "base":{
+                  "base": {
                     "id": "wing_kirin:resistance_glow",
                     "duration": 20,
                     "is_hidden": true
@@ -91,35 +92,24 @@
         "applied_effects": {
           "entity_effect": [
             {
-              "effect_type": "dragonsurvival:damage",
-              "amount": 4.0,
-              "damage_type": "wing_kirin:counter_shock"
-            }
-          ],
-          "targeting_mode": "all_except_self",
-          "target_conditions": {
-            "condition": "killed_by_player"
-          }
-        },
-        "target_type": "dragonsurvival:self"
-      }
-    },
-    {
-      "target_selection": {
-        "applied_effects": {
-          "entity_effect": [
-            {
-              "effect_type": "dragonsurvival:effect_removal",
-              "categories": [
-                "BENEFICIAL"
-              ]
+              "effect_type": "wing_kirin:damage_reflection",
+              "reflection_percentage": {
+                "type": "minecraft:linear",
+                "base": 0.1,
+                "per_level_above_first": 0.1
+              },
+              "reflection_range": {
+                "type": "minecraft:linear",
+                "base": 3.0,
+                "per_level_above_first": 2.0
+              },
+              "use_same_damage_type": false
             }
           ],
           "targeting_mode": "allies_and_self"
         },
         "target_type": "dragonsurvival:self"
-      },
-      "trigger_point": "channel_completion"
+      }
     }
   ],
   "activation": {
@@ -135,7 +125,7 @@
     "animations": {
       "start_and_charging": {
         "animation_key": "cast_mass_buff",
-        "layer":  "BASE",
+        "layer": "BASE",
         "locks_neck": false,
         "locks_tail": false
       },

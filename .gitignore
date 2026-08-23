@@ -33,6 +33,7 @@ run
 run-*
 mcdoc
 spyglass
+.workbuddy
 /server/
 
 # Files from Forge MDK

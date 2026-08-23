@@ -11,7 +11,7 @@ public class WKDamageTypes {
     public static final DeferredRegister<DamageType> DAMAGE_TYPES =
             DeferredRegister.create(Registries.DAMAGE_TYPE, Wing_kirin.MOD_ID);
 
-    // 伤害类型注册名,已在数据包内注册，未来可调用
+    // 伤害类型注册名,已在数据包内注册，未来可调用（哎！没那么简单）
     public static final DeferredHolder<DamageType, DamageType> BREATH_DISAPPEAR =
             DAMAGE_TYPES.register("breath_disappear", () -> new DamageType("wing_kirin.breath_disappear", 0.1F));
 

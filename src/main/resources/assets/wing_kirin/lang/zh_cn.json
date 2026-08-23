@@ -600,5 +600,7 @@
   "wing_kirin.config.magic_disabled.tooltip": "魔法封禁（Magic Disabled，来自龙之生存）药水效果的行为配置。",
   "wing_kirin.config.magic_disabled.button": "编辑",
   "wing_kirin.config.magic_disabled.incurable": "不可治愈",
-  "wing_kirin.config.magic_disabled.incurable.tooltip": "是否使魔法封禁效果不可被治愈（无法通过牛奶、蜂蜜瓶或其他治愈物品移除）。"
+  "wing_kirin.config.magic_disabled.incurable.tooltip": "是否使魔法封禁效果不可被治愈（无法通过牛奶、蜂蜜瓶或其他治愈物品移除）。",
+
+  "wing_kirin.ability.damage_reflection.description": "将所受伤害的 %s 反弹给 %s 格内的敌对实体"
 }
