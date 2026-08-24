@@ -71,16 +71,6 @@
 							},
 							"dimension": "minecraft:overworld",
 							"can_see_sky": true
-						},
-						"slots": {
-							"weapon.mainhand": {
-								"items": [
-									"minecraft:netherite_block"
-								],
-								"count": {
-									"min": 2
-								}
-							}
 						}
 					}
 				},

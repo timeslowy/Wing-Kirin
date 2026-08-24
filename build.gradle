@@ -125,7 +125,7 @@ repositories {
 
 dependencies {
     // 龙之生存
-    implementation "curse.maven:dragons-survival-420799:8668427"
+    implementation "curse.maven:dragons-survival-420799:8713690"
     // 壁虎库
     implementation "curse.maven:geckolib-388172:8350073"
     // Example mod dependency with JEI

@@ -91,7 +91,7 @@
   "death.attack.wing_kirin.counter_shock": "%1$s was been counter shock to death.",
   "death.attack.wing_kirin.breath_disappear": "%1$s had no more time.",
 
-  "dragon_species.dragonsurvival.wing_kirin.locked": "§7■ After mastering§n all passive ability§r§7 of the official three dragons , reaching the§n Ancient stage§r§7 with all of them, and completing the dietary challenges for all three dragon types, Heaven will verify your cultivation near the limit of constcuction in the Overworld:\n\n1. Whether experience has reached§a Level 68§r§7; 2. Whether carrying§6 2 or more Netherite Blocks§r§7 (not consumed).\n\nIf all the above conditions are met, when the§n weather is clear§r§7, you can transform into the Auspicious Beast — the§6 Wing Kirin.§r\n\n§7■ If you enabled the datapack §a「Low Unlock Condition - Wing Kirin」§r§7,there will only requires §nposition and weather.§r",
+  "dragon_species.dragonsurvival.wing_kirin.locked": "§7■ After mastering§n all passive ability§r§7 of the official three dragons , reaching the§n Ancient stage§r§7 with all of them, and completing the dietary challenges for all three dragon types, Heaven will verify your cultivation near the limit of constcuction in the Overworld:\n\n Whether experience has reached§a Level 68§r§7.\n\nIf all the above conditions are met, when the§n weather is clear§r§7, you can transform into the Auspicious Beast — the§6 Wing Kirin.§r\n\n§7■ If you enabled the datapack §a「Low Unlock Condition - Wing Kirin」§r§7,there will only requires §nposition and weather.§r",
 
   "skin_part.dragonsurvival.wing_kirin.none": "",
   "skin_part.dragonsurvival.wing_kirin.all_extra_1": "Crown",
