@@ -91,7 +91,7 @@ public class DamageReflectionEventHandler {
         }
 
         List<Entity> targets = player.level().getEntities(player, player.getBoundingBox().inflate(entry.range()),
-                entity -> entity instanceof LivingEntity && TargetingMode.ENEMIES.isEntityRelevant(player, entity));
+                entity -> entity instanceof LivingEntity && TargetingMode.ENEMIES.isEntityRelevant(player, entity, true));
         if (targets.isEmpty()) {
             return;
         }

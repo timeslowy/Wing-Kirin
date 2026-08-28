@@ -4,13 +4,10 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 // 注意：仅客户端
-@OnlyIn(Dist.CLIENT)
 public class ThunderousShoutParticles extends SimpleAnimatedParticle {
     protected ThunderousShoutParticles(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet spriteSet) {
         super(level, x, y, z, spriteSet, 0.0F);
@@ -46,7 +43,6 @@ public class ThunderousShoutParticles extends SimpleAnimatedParticle {
     }
 
     // 提供纹理图集
-    @OnlyIn(Dist.CLIENT)
     public static class Provider implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet spriteSet;
 

@@ -3,16 +3,13 @@ package by.timeslowly.wing_kirin.mixins;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// 仅在客户端生效（颜色渲染是客户端逻辑）
-@OnlyIn(Dist.CLIENT)
+// 仅在客户端生效（颜色渲染是客户端逻辑，已配置在 mixins.json 的 client 段）
 // 混入到 Entity 类，修改其队伍/发光颜色方法
 @Mixin(Entity.class)
 public abstract class EntityGlowColorMixin {
