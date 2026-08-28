@@ -50,7 +50,7 @@ public class DingshenEffectEventHandler {
             return;
         }
         MobEffectInstance instance = event.getEffectInstance();
-        if (instance == null || !instance.is(WKEffects.DING_SHEN)) {
+        if (!instance.is(WKEffects.DING_SHEN)) {
             return;
         }
         int duration = instance.getDuration();
@@ -136,9 +136,9 @@ public class DingshenEffectEventHandler {
                 && !WKServerConfig.shouldProvideShatterBuffToNonWingKirinDragons()) {
             return;
         }
-        // 不破不立：生命恢复Ⅱ+魔源涌动Ⅱ，5 秒
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 5 * 20, 1));
-        player.addEffect(new MobEffectInstance(DSEffects.SOURCE_OF_MAGIC, 5 * 20, 1));
+        // 不破不立：生命恢复Ⅲ+魔源涌动Ⅱ
+        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120, 2));
+        player.addEffect(new MobEffectInstance(DSEffects.SOURCE_OF_MAGIC, 100, 1));
     }
 
     /**
