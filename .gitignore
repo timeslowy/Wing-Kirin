@@ -1,0 +1,53 @@
+# eclipse
+bin
+bin/generated
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# VSCode
+.vscode/
+/src/main/resources/spyglass.json
+/src/main/resources/wing_kirin-1.20.1.code-workspace
+
+# zip
+*.zip
+
+# other
+/other
+eclipse
+run
+run-*
+mcdoc
+spyglass
+.workbuddy
+/server/
+
+# Files from Forge MDK
+forge*changelog.txt
+run2
+logs
+gradle/crowdin.properties
+*.sh
+package-lock.json
+node_modules/.bin/cdl
+/node_modules/
+/mcmodsrepo/
+runs/
+*.tmp
+
+# Source Code
+dependencies sorucecode
