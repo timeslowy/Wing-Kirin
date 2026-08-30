@@ -602,5 +602,9 @@
   "wing_kirin.config.magic_disabled.incurable": "不可治愈",
   "wing_kirin.config.magic_disabled.incurable.tooltip": "是否使魔法封禁效果不可被治愈（无法通过牛奶、蜂蜜瓶或其他治愈物品移除）。",
 
-  "wing_kirin.ability.damage_reflection.description": "将所受伤害的 %s 反震回 %s 格内的敌对实体"
+  "wing_kirin.ability.damage_reflection.description": "将所受伤害的 %s 反震回 %s 格内的敌对实体",
+
+  "wing_kirin.ability.percentaged_damage.description": "以目标%2$s为基数，造成%1$s的伤害",
+  "wing_kirin.ability.percentaged_damage.type.max_health": "最大生命值",
+  "wing_kirin.ability.percentaged_damage.type.current_health": "当前生命值"
 }

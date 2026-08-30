@@ -2,7 +2,7 @@ package by.timeslowly.wing_kirin.registry.dragon.ability;
 
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.entity_effects.AbilityEntityEffect;
 import by.timeslowly.wing_kirin.Wing_kirin;
-import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.DamageReflectionEffect;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.*;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -20,9 +20,14 @@ public class WKAbilityEntityEffects {
     }
 
     private static void registerEntries(final @NotNull RegisterEvent event) {
-        // 伤害反弹：wing_kirin:damage_reflection
+        // 伤害反震：wing_kirin:damage_reflection
         event.register(AbilityEntityEffect.REGISTRY_KEY,
                 ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "damage_reflection"),
                 () -> DamageReflectionEffect.CODEC);
+
+        // 百分比伤害：wing_kirin:percentaged_damage
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "percentaged_damage"),
+                () -> PercentagedDamageEffect.CODEC);
     }
 }

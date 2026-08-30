@@ -560,5 +560,9 @@
   "wing_kirin.config.magic_disabled.incurable": "Incurable",
   "wing_kirin.config.magic_disabled.incurable.tooltip": "Whether the Magic Disabled effect is incurable (cannot be removed by milk, honey bottles, or other curative items).",
 
-  "wing_kirin.ability.damage_reflection.description": "Reflects %s of damage taken back to enemies within %s blocks"
+  "wing_kirin.ability.damage_reflection.description": "Reflects %s of damage taken back to enemies within %s blocks",
+
+  "wing_kirin.ability.percentaged_damage.description": "Based on the target's %2$s, deals %1$s as damage",
+  "wing_kirin.ability.percentaged_damage.type.max_health": "maximum health",
+  "wing_kirin.ability.percentaged_damage.type.current_health": "current health"
 }

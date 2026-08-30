@@ -302,7 +302,8 @@
 4. 新增先天技能「孤注一掷」、「目极必反」和「神失魄散」;
 5. 调整部分技能；
 6. 「唯快不破」新的视觉效果；
-7. 「不坏金身」的新实体效果
+7. 「不坏金身」的新效果；
+8. 实验性的自定义实体效果
 
 ---
 
@@ -312,5 +313,6 @@
 4. Added new innate ability: 「Spell Binder」，「Blindness Reverse」and 「Absent Mineded」;
 5. Adjusted some abilities;
 6. New visual effect of 「Unstoppable Speed」;
-7. New Entity Effect of 「Indestructible Body」
+7. New Effect of 「Indestructible Body」;
+8. Experimental custom Entity Effect
 
