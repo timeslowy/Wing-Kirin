@@ -27,6 +27,7 @@ build
 *.zip
 
 # other
+libs
 /other
 eclipse
 run
