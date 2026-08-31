@@ -100,7 +100,10 @@
   
   "dragon_species.dragonsurvival.wing_kirin.locked": "§7■升官方三种龙的§n全部被动§r§7至 满级 ，且都长至§n远古阶段§r§7、并达成三种龙的饮食挑战之后（以上对应九个成就），在主世界近群山之巅处（接近原版建筑限高），“上天”会核验你的修为：\n\n经验是否达到§a68级§r§7；。\n\n若全部满足上述条件，在§n天气晴好§r§7之时，即可化为瑞兽————§6翼麒麟。§r\n\n§7■若启用§a「Low Unlock Condition -  Wing Kirin」§r§7数据包，则只对§n解锁位置和天气§r§7有所要求",
   
-  
+  "dragon_body.wing_kirin.center.desc": "§6■中正型\n§7■翼麒麟，翼麒麟，长了一对鹤翼的麒麟是也。宽大的双翼，令其飞技得心应爪。",
+  "dragon_body.wing_kirin.east.desc": "§6■原型\n§7■（基本）正本清源的麒麟之身，无翼，飞行能力稍弱，然“塞翁失马，焉知非福？”，在“更高、更快、更强”的同时，法力储备也略胜一筹。",
+  "dragon_body.wing_kirin.east.wings.desc": "开/关小翼显示",
+
   "skin_part.dragonsurvival.wing_kirin.none": "",
   "skin_part.dragonsurvival.wing_kirin.all_extra_1": "海冠",
   "skin_part.dragonsurvival.wing_kirin.all_extra_10": "幽匿爪",
@@ -523,6 +526,8 @@
   "datapack.wing_kirin.acquired_low_upgrade_requirement.desc": "将翼麒麟§n后天技能§r的升级要求大大降低，使得后天技能不再那么后天。",
   "resourcepack.wing_kirin.wing_kirin_ui": "典雅简约金蓝条",
   "resourcepack.wing_kirin.wing_kirin_ui.desc": "为§6翼麒麟§r龙种特制的§6金色UI§r，简约而不失典雅。",
+  "resourcepack.wing_kirin.original_fly_animation": "旧版飞行动画",
+  "resourcepack.wing_kirin.original_fly_animation.desc": "使得部分飞行动作回退原版以调整观感。",
   "fml.menu.mods.info.description.wing_kirin": "这是一个《龙之生存》模组的附属，添加了脱胎于中华传统文化并经改造的全新物种————来自九天之上的翼麒麟。",
 
 

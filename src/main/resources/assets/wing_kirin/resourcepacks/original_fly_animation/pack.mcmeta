@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "min_format": [101, 1],
+    "max_format": [101, 1],
+    "description": {
+      "translate": "resourcepack.wing_kirin.original_fly_animation.desc"
+    }
+  }
+}
