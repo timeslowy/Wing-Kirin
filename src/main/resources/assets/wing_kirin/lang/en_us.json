@@ -93,6 +93,10 @@
 
   "dragon_species.dragonsurvival.wing_kirin.locked": "§7■ After mastering§n all passive ability§r§7 of the official three dragons , reaching the§n Ancient stage§r§7 with all of them, and completing the dietary challenges for all three dragon types, Heaven will verify your cultivation near the limit of constcuction in the Overworld:\n\n Whether experience has reached§a Level 68§r§7.\n\nIf all the above conditions are met, when the§n weather is clear§r§7, you can transform into the Auspicious Beast — the§6 Wing Kirin.§r\n\n§7■ If you enabled the datapack §a「Low Unlock Condition - Wing Kirin」§r§7,there will only requires §nposition and weather.§r",
 
+  "dragon_body.wing_kirin.center.desc": "§6■Center\n§7■Default Wing Kirin's body. Huge wings makes it flighting easier.",
+  "dragon_body.wing_kirin.east.desc": "§6■East\n§7■No wings, closer to original Kirin. Altouugh does not be well in flight rather relative to Center, but has more mana and attributes bonus. ",
+  "dragon_body.wing_kirin.east.wings.desc": "Open/close smalls wings display",
+
   "skin_part.dragonsurvival.wing_kirin.none": "",
   "skin_part.dragonsurvival.wing_kirin.all_extra_1": "Crown",
   "skin_part.dragonsurvival.wing_kirin.all_extra_10": "Warden Paws",
@@ -486,6 +490,8 @@
   "datapack.wing_kirin.acquired_low_upgrade_requirement.desc": "Reducing the reqirements of upgrade§n acquired abilities§r of Wing kirin signfifcantly.",
   "resourcepack.wing_kirin.wing_kirin_ui": "Wing Kirin UI",
   "resourcepack.wing_kirin.wing_kirin_ui.desc": "Special §6GOLD UI§r designed for §6Wing Kirin§r.",
+  "resourcepack.wing_kirin.original_fly_animation": "Rollback Flight Animations",
+  "resourcepack.wing_kirin.original_fly_animation.desc": "Rollbacked some flight animations to gain well feeling",
   "fml.menu.mods.info.description.wing_kirin": "An addon for Dragon Survival,adding an new species————Wing Kirin,a kind of Chinese auspicious beasts from Nine-Layered Heaven.",
 
   "attribute.name.wing_kirin.mace_smash_damage_multiplier": "Mace Smash Damage Multipilier",

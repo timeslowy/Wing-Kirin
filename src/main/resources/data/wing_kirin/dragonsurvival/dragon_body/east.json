@@ -1,0 +1,83 @@
+{
+  "animation": "dragonsurvival:dragon_east",
+  "backpack_offset": {
+    "position_offset": [
+      0.0,
+      0.0,
+      0.1
+    ],
+    "rotation_offset": [
+      180.0,
+      0.0,
+      180.0
+    ],
+    "scale": [
+      0.9,
+      0.9,
+      0.9
+    ]
+  },
+  "bettercombat_weapon_offset": -3.0,
+  "crouch_height_ratio": 0.83333333,
+  "default_icon": "dragonsurvival:textures/gui/custom/body/east/default.png",
+  "emotes": "dragonsurvival:default_emotes",
+  "is_default": false,
+  "modifiers": [
+    {
+      "amount": 2.0,
+      "attribute": "minecraft:generic.armor",
+      "operation": "add_value"
+    },
+    {
+      "amount": 1.0,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "add_value"
+    },
+    {
+      "amount": 0.1,
+      "attribute": "minecraft:generic.gravity",
+      "operation": "add_multiplied_total"
+    },
+    {
+      "amount": 0.3,
+      "attribute": "minecraft:generic.jump_strength",
+      "operation": "add_value"
+    },
+    {
+      "amount": 0.2,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "add_multiplied_total"
+    },
+    {
+      "amount": 0.5,
+      "attribute": "neoforge:swim_speed",
+      "operation": "add_value"
+    },
+    {
+      "amount": 4.0,
+      "attribute": "dragonsurvival:mana",
+      "operation": "add_value"
+    },
+    {
+      "amount": 1.0,
+      "attribute": "dragonsurvival:mana_regeneration",
+      "operation": "add_value"
+    },
+    {
+      "amount": -0.2,
+      "attribute": "dragonsurvival:flight_speed",
+      "operation": "add_value"
+    },
+    {
+      "amount": -0.2,
+      "attribute": "dragonsurvival:flight_stamina",
+      "operation": "add_multiplied_total"
+    }
+  ],
+  "scaling_proportions": {
+    "ceiling_climbing_offset_multiplier": 0.25,
+    "eye_height": 1.8,
+    "height": 2.0,
+    "width": 0.6
+  }
+}

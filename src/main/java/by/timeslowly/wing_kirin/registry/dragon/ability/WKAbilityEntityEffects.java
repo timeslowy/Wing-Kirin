@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * 向 DragonSurvival 的 ability_entity_effect 静态注册表注册本模组的自定义实体效果类型。
  * <p>
  * 注册后即可在 dragon_ability JSON 中通过
- * {@code "effect_type": "wing_kirin:damage_reflection"} 使用。
+ * {@code "effect_type": "wing_kirin:<效果id>"} 使用。
  */
 public class WKAbilityEntityEffects {
     public static void register(final @NotNull IEventBus modEventBus) {

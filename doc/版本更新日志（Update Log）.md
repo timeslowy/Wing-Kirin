@@ -304,6 +304,8 @@
 6. 「唯快不破」新的视觉效果；
 7. 「不坏金身」的新效果；
 8. 实验性的自定义实体效果
+9. **启用自定义身体类型**
+10. 新的资源包覆盖成旧版的飞行动画
 
 ---
 
@@ -314,5 +316,6 @@
 5. Adjusted some abilities;
 6. New visual effect of 「Unstoppable Speed」;
 7. New Effect of 「Indestructible Body」;
-8. Experimental custom Entity Effect
-
+8. Experimental custom Entity Effect; 
+9. **Changed to custom Dragon Body**;
+10. New resourcepack to changed to old flight animation

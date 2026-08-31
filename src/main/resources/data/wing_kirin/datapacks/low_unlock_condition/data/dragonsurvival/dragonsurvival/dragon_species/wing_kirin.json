@@ -31,8 +31,8 @@
 		"claw_texture_slot": "sword"
 	},
 	"bodies":[
-		"dragonsurvival:center",
-		"dragonsurvival:east"
+		"wing_kirin:center",
+		"wing_kirin:east"
 	],
 	"custom_stage_progression": [
 		"wing_kirin:newborn",

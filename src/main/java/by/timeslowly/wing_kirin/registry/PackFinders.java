@@ -56,5 +56,13 @@ public class PackFinders {
                 false,
                 Pack.Position.TOP
         );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "assets/wing_kirin/resourcepacks/original_fly_animation"),
+                PackType.CLIENT_RESOURCES,
+                Component.translatable("resourcepack.wing_kirin.original_fly_animation"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
     }
 }
