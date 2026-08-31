@@ -5,13 +5,14 @@
         "applied_effects": {
           "entity_effect": [
             {
-              "amount": {
+              "percentage": {
                 "type": "minecraft:linear",
-                "base": 0.8,
-                "per_level_above_first": 0.8
+                "base": 0.0025,
+                "per_level_above_first": 0.0025
               },
+              "calculate_type": "max_health",
               "damage_type": "wing_kirin:wind_devastate",
-              "effect_type": "dragonsurvival:damage"
+              "effect_type": "wing_kirin:percentaged_damage"
             },
             {
               "effect_type": "dragonsurvival:potion",

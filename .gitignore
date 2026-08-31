@@ -21,7 +21,7 @@ build
 # VSCode
 .vscode/
 /src/main/resources/spyglass.json
-/src/main/resources/wing_kirin.code-workspace
+/src/main/resources/wing_kirin-26.1.2.code-workspace
 
 # zip
 *.zip
@@ -34,6 +34,7 @@ run-*
 mcdoc
 spyglass
 .workbuddy
+lib
 /server/
 
 # Files from Forge MDK
