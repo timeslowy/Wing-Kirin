@@ -20,7 +20,7 @@ public class WingKirinHeartItem extends Item {
         super(new Item.Properties()
                 .setId(ResourceKey.create(Registries.ITEM, id))
                 .rarity(Rarity.EPIC)
-                .useCooldown(20F)
+                .useCooldown(2F)
         );
     }
     // 附魔发光

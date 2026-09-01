@@ -1,5 +1,11 @@
 {
   "asset_id": "wing_kirin:mountain_water",
   "height": 2,
-  "width": 2
+  "width": 2,
+  "author": {
+    "translate": "painting.wing_kirin.mountain_water.author"
+  },
+  "title": {
+    "translate": "painting.wing_kirin.mountain_water.title"
+  }
 }

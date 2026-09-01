@@ -1,5 +1,11 @@
 {
   "asset_id": "wing_kirin:wing_kirin_flag_simplified",
   "height": 9,
-  "width": 3
+  "width": 3,
+  "author": {
+    "translate": "painting.wing_kirin.wing_kirin_flag_simplified.author"
+  },
+  "title": {
+    "translate": "painting.wing_kirin.wing_kirin_flag_simplified.title"
+  }
 }

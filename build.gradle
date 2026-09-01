@@ -131,7 +131,7 @@ repositories {
 
 dependencies {
     // 龙之生存（本地 jar，cursemaven 不可达）
-    implementation files('lib/DragonSurvival-26.1.2-v2.1.4-beta.jar')
+    implementation files('lib/DragonSurvival-26.1.2-v2.1.5-beta.jar')
     // 壁虎库（本地 jar）
     implementation files('lib/geckolib-neoforge-26.1.2-5.5.2.jar')
     // Example mod dependency with JEI
