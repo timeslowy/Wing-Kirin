@@ -1,0 +1,156 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:awareness_glow",
+                                        "duration": {
+                                            "type": "minecraft:linear",
+                                            "base": 700,
+                                            "per_level_above_first": -200
+                                        },
+                                        "is_hidden": true
+                                    },
+                                    "color": "#ef845d"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "all_except_self"
+                },
+                "target_type": "dragonsurvival:area",
+                "radius": {
+                    "type": "minecraft:linear",
+                    "base": 5,
+                    "per_level_above_first": 5
+                }
+            },
+            "trigger_point": "charging"
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "minecraft:blindness",
+                                "amplifier": 0,
+                                "duration": {
+                                    "type": "minecraft:linear",
+                                    "base": 800,
+                                    "per_level_above_first": -200
+                                }
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "minecraft:night_vision",
+                                "amplifier": 0,
+                                "duration": 6000
+                            }
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:simple",
+        "can_move_while_casting": false,
+        "cast_time": 20,
+        "initial_mana_cost": 4,
+        "cooldown": 8000,
+        "sound": {
+            "charging": "block.beacon.activate",
+            "end": "dragonsurvival:activate_beacon"
+        },
+        "notification": {
+            "usage_blocked": {
+                "translate": "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked"
+            }
+        },
+        "animations": {
+            "end": {
+                "animation_key": "cast_self_buff",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true,
+                "transition_length": 1
+            },
+            "start_and_charging": {
+                "animation_key": "self_buff",
+                "layer": "BASE",
+                "locks_neck": true,
+                "locks_tail": true,
+                "transition_length": 2
+            }
+        }
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:abilities/blindness_reverse/blindness_reverse_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "wing_kirin:abilities/blindness_reverse/blindness_reverse_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "wing_kirin:abilities/blindness_reverse/blindness_reverse_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "wing_kirin:abilities/blindness_reverse/blindness_reverse_3"
+            },
+            {
+                "from_level": 4,
+                "texture_resource": "wing_kirin:abilities/blindness_reverse/blindness_reverse_4"
+            }
+        ]
+    },
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_points",
+        "maximum_level": 4,
+        "experience_cost": 100
+    },
+    "usage_blocked": {
+        "condition": "any_of",
+        "terms": [
+            {
+                "condition": "inverted",
+                "term": {
+                    "condition": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific": {
+                            "type": "dragonsurvival:dragon_predicate",
+                            "dragon_species": "dragonsurvival:wing_kirin"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "location_check",
+                "predicate": {
+                    "light": {
+                        "light": {
+                            "min": 7
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
