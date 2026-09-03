@@ -12,6 +12,12 @@
 			"empty": "wing_kirin:textures/gui/custom/growth_crystal/point_main.png",
 			"full": "wing_kirin:textures/gui/custom/growth_crystal/point_hover.png"
 		},
+		"mana_sprites": {
+			"empty": "wing_kirin:textures/gui/custom/mana_icons/empty.png",
+			"full": "wing_kirin:textures/gui/custom/mana_icons/full.png",
+			"recovery": "wing_kirin:textures/gui/custom/mana_icons/recovery.png",
+			"reserved": "wing_kirin:textures/gui/custom/mana_icons/reserved.png"
+		},
 		"primary_color": "#fbdc92",
 		"secondary_color": "#30aecf",
 		"claw_texture_slot": "sword"

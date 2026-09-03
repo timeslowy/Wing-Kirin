@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "wing_kirin:item/wing_kirin_soul"
+    }
+}

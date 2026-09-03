@@ -1,0 +1,8 @@
+{
+  "key": "wing_kirin_eye_1",
+  "texture": "dragonsurvival:textures/dragon/custom/parts/eyes/wing_kirin_eye_1.png",
+  "average_hue": 0.0,
+  "applicable_species": [
+    "dragonsurvival:wing_kirin"
+  ]
+}

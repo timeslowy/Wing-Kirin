@@ -1,0 +1,8 @@
+{
+  "key": "wing_kirin_horn_1",
+  "texture": "dragonsurvival:textures/dragon/custom/parts/horns/wing_kirin_horn_1.png",
+  "average_hue": 0.0,
+  "applicable_species": [
+    "dragonsurvival:wing_kirin"
+  ]
+}
