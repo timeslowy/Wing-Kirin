@@ -160,6 +160,18 @@ dependencies {
     implementation fg.deobf("dragonsurvival:dragonsurvival-1.20.1:2.0.66")
     // 壁虎库（GeckoLib 4.8.4，本地 libs/geckolib-forge-1.20.1-4.8.4.jar）
     implementation fg.deobf("geckolib:geckolib-forge-1.20.1:4.8.4")
+    // 以下为开发时辅助模组，仅运行时加载（本地 libs/）。
+    // 必须走 fg.deobf：发布版 jar 是按 srg 名编译的，直接丢进 run/mods 会因
+    // 找不到 srg 符号而崩溃（mixin 走 InvalidMixinException，普通引用走 NoSuchFieldError）。
+    // JEI（本地 libs/jei-1.20.1-15.56.0.205.jar）
+    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1:15.56.0.205")
+    // 苹果皮（本地 libs/appleskin-forge-mc1.20.1-2.5.1.jar）
+    runtimeOnly fg.deobf("squeek:appleskin-forge-mc1.20.1:2.5.1")
+    // Jade（本地 libs/jade-1.20.1-11.13.3.jar，带 mixin，deobf 会重写其 refmap）
+    runtimeOnly fg.deobf("snownee:jade-1.20.1:11.13.3")
+    // Embeddium（本地 libs/embeddium-1.20.1-0.3.31.jar）
+    // Sodium 系大量 mixin 渲染核心，deobf 后在开发环境仍可能不稳定；若启动异常优先移除本行。
+    runtimeOnly fg.deobf("org.embedded:embeddium-1.20.1:0.3.31")
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
     // The "userdev" classifier will be requested and setup by ForgeGradle.

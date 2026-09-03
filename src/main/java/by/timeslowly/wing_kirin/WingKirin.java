@@ -19,6 +19,8 @@ public class WingKirin {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    // TODO：至少属性、药水效果、物品、创造物品栏、声音、粒子、寻包、附件替代、配置
+
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
