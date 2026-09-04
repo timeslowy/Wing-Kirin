@@ -1,0 +1,25 @@
+{
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "equipment": {
+                    "mainhand": {
+                        "items": [
+                            "wing_kirin:empyrean_wine"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+                "wk.death_check": 1
+            }
+        }
+    ]
+}

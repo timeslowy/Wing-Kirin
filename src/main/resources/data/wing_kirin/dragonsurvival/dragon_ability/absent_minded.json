@@ -1,0 +1,81 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:on_attack",
+                            "potion": {
+                                "effects": "wing_kirin:amnesia",
+                                "amplifier": 0,
+                                "duration": 60,
+                                "probability": {
+                                    "type": "minecraft:linear",
+                                    "base": 0.15,
+                                    "per_level_above_first": 0.15
+                                },
+                                "effect_particles": true
+                            }
+                        }
+                    ],
+                    "targeting_mode": "non_allies"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:passive",
+        "continuous_mana_cost": {
+            "type": "reserved",
+            "amount": 1
+        },
+        "trigger": {
+            "trigger_type": "dragonsurvival:constant"
+        }
+    },
+    "can_be_manually_disabled": true,
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "wing_kirin:abilities/absent_minded/absent_minded_3"
+            }
+        ]
+    },
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_points",
+        "maximum_level": 3,
+        "experience_cost": {
+            "type": "minecraft:linear",
+            "base": 100,
+            "per_level_above_first": 100
+        }
+    },
+    "usage_blocked": {
+        "condition": "inverted",
+        "term": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type_specific": {
+                    "type": "dragonsurvival:dragon_predicate",
+                    "dragon_species": "dragonsurvival:wing_kirin"
+                }
+            }
+        }
+    }
+}
