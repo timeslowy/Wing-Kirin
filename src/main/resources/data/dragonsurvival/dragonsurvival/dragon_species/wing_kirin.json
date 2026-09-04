@@ -23,8 +23,8 @@
 		"claw_texture_slot": "sword"
 	},
 	"bodies":[
-		"dragonsurvival:center",
-		"dragonsurvival:east"
+		"wing_kirin:center",
+		"wing_kirin:east"
 	],
 	"penalties": "#dragonsurvival:wing_kirin"
 }

@@ -156,8 +156,8 @@ repositories {
 }
 
 dependencies {
-    // 龙生（DragonSurvival 2.0.66，本地 libs/dragonsurvival-1.20.1-2.0.66.jar）
-    implementation fg.deobf("dragonsurvival:dragonsurvival-1.20.1:2.0.66")
+    // 龙生（DragonSurvival 2.0.67，本地 libs/dragonsurvival-1.20.1-2.0.67.jar）
+    implementation fg.deobf("dragonsurvival:dragonsurvival-1.20.1:2.0.67")
     // 壁虎库（GeckoLib 4.8.4，本地 libs/geckolib-forge-1.20.1-4.8.4.jar）
     implementation fg.deobf("geckolib:geckolib-forge-1.20.1:4.8.4")
     // 以下为开发时辅助模组，仅运行时加载（本地 libs/）。

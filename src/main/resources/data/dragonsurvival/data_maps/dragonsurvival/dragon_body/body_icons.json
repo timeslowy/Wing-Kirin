@@ -1,0 +1,10 @@
+{
+	"values": {
+		"wing_kirin:center": {
+			"dragonsurvival:wing_kirin": "wing_kirin:textures/gui/custom/body/center/wing_kirin.png"
+		},
+		"wing_kirin:east": {
+			"dragonsurvival:wing_kirin": "wing_kirin:textures/gui/custom/body/east/wing_kirin.png"
+		}
+	}
+}

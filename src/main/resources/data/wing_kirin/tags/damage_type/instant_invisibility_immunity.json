@@ -1,0 +1,16 @@
+{
+    "values": [
+        "player_attack",
+        "player_explosion",
+        "minecraft:mob_attack",
+        "#minecraft:is_projectile",
+        "cramming",
+        "sting",
+        "drown",
+        "thorns",
+        "sweet_berry_bush",
+        "falling_anvil",
+        "falling_block",
+        "falling_stalactite"
+    ]
+}
