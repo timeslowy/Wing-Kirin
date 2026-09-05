@@ -4,6 +4,7 @@ import by.timeslowly.wing_kirin.WingKirin;
 import by.timeslowly.wing_kirin.common.item.EmpyreanEssenceItem;
 import by.timeslowly.wing_kirin.common.item.EmpyreanMilkwineItem;
 import by.timeslowly.wing_kirin.common.item.EmpyreanWineItem;
+import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
 import by.timeslowly.wing_kirin.common.item.WingKirinHeartItem;
 import by.timeslowly.wing_kirin.common.item.WingKirinTreatItem;
 import net.minecraft.world.item.Item;
@@ -14,13 +15,14 @@ import net.minecraftforge.registries.RegistryObject;
 
 /**
  * 注册物品（自 1.21.1 NeoForge 分支移植）。
- * TODO:注：金钟（golden_bell/GoldenBellItem）按用户要求未随本次移植。
  * 1.20.1 Forge 无 DeferredRegister.createItems，改用 DeferredRegister.create(ForgeRegistries.ITEMS, ...)。
  */
 public class WKItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WingKirin.MODID);
     // 金风玉露
     public static final RegistryObject<Item> EmpyreanWine = ITEMS.register("empyrean_wine", EmpyreanWineItem::new);
+    // 金钟
+    public static final RegistryObject<Item> GoldenBell = ITEMS.register("golden_bell", GoldenBellItem::new);
     // 奶露之合
     public static final RegistryObject<Item> EmpyreanMilkwine = ITEMS.register("empyrean_milkwine", EmpyreanMilkwineItem::new);
     // 翼麒麟的佳肴

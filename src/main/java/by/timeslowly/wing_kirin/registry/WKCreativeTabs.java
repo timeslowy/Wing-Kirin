@@ -11,7 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 /**
  * 创造模式物品栏（自 1.21.1 NeoForge 分支移植）。
- * TODO：金钟（GoldenBell）未随本次移植，displayItems 中已同步剔除；
  * 1.20.1 Forge 的 Output 无 accept(Supplier) 重载，改用 .get() 传入。
  */
 public class WKCreativeTabs {
@@ -25,6 +24,7 @@ public class WKCreativeTabs {
                     .displayItems(((itemDisplayParameters, output) -> {
                         output.accept(WKItems.EmpyreanWine.get());
                         output.accept(WKItems.EmpyreanMilkwine.get());
+                        output.accept(WKItems.GoldenBell.get());
                         output.accept(WKItems.WingKirinHeart.get());
                         output.accept(WKItems.WingKirinTreat.get());
                         output.accept(WKItems.EmpyreanEssence.get());

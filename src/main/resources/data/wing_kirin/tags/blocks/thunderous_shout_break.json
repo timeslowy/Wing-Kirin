@@ -1,0 +1,25 @@
+{
+    "replace": true,
+    "values": [
+        "#forge:glass",
+        "#minecraft:dirt",
+        "#minecraft:leaves",
+        "#minecraft:wool",
+        "#minecraft:wool_carpets",
+        "#minecraft:sword_efficient",
+        "#minecraft:sword_efficient",
+        "#minecraft:climbable",
+        "#minecraft:mineable/shovel",
+        "#minecraft:rails",
+        "#minecraft:candles",
+        "#minecraft:banners",
+        "#minecraft:signs",
+        "#minecraft:ice",
+        "#minecraft:wooden_doors",
+        "#minecraft:wooden_buttons",
+        "#minecraft:pressure_plates",
+        "minecraft:redstone_wire",
+        "#minecraft:sand",
+        "#forge:gravel"
+    ]
+}

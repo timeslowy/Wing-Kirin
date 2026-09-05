@@ -25,15 +25,18 @@ public class WingKirin {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    // TODO：至少属性、药水效果、物品、创造物品栏、声音、粒子、寻包、附件替代、配置
+    // TODO：至少药水效果、物品、创造物品栏、寻包、附件替代、配置
 
     // Forge 47.4.23 的 @Mod 构造器注入仅支持 FMLJavaModLoadingContext（不支持 IEventBus）
     public WingKirin(@NotNull FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         // 注册（自 1.21.1 分支移植，顺序同 1.21.1 主类）
+        WKAttributes.register(modEventBus);
         WKCreativeTabs.register(modEventBus);
         WKEffects.register(modEventBus);
         WKItems.register(modEventBus);
+        WKParticles.register(modEventBus);
+        WKSounds.register(modEventBus);
     }
 
 
