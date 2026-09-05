@@ -79,6 +79,16 @@
                                             "attribute": "minecraft:generic.armor_toughness",
                                             "amount": 1.0,
                                             "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "attribute": "forge:entity_reach",
+                                            "amount": 3.0,
+                                            "operation": "add_value"
+                                        },
+                                        {
+                                            "attribute": "forge:block_reach",
+                                            "amount": 3.0,
+                                            "operation": "add_value"
                                         }
                                     ]
                                 }

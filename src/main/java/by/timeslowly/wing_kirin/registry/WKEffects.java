@@ -15,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
  * 注册时机：主类构造器中调用 {@link #register(IEventBus)}。
  * 注：1.21.1 版本中的 MobEffectEvent.Remove/Expired 订阅（定身、唯快不破的到期行为）
  * 属于其他效果，未随本次移植；届时补 @Mod.EventBusSubscriber(MOD) 注解即可。
+ * TODO:还剩至少两个
  */
 public class WKEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(

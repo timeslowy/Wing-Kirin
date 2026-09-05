@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -27,7 +28,7 @@ public class WingKirin {
     // TODO：至少属性、药水效果、物品、创造物品栏、声音、粒子、寻包、附件替代、配置
 
     // Forge 47.4.23 的 @Mod 构造器注入仅支持 FMLJavaModLoadingContext（不支持 IEventBus）
-    public WingKirin(FMLJavaModLoadingContext context) {
+    public WingKirin(@NotNull FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         // 注册（自 1.21.1 分支移植，顺序同 1.21.1 主类）
         WKCreativeTabs.register(modEventBus);

@@ -8,6 +8,7 @@ import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 「失忆」期间的"无法产生新仇恨"拦截器（自 1.21.1 NeoForge 分支移植）：
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AmnesiaEffectEventHandler {
 
     @SubscribeEvent
-    public static void onChangeTarget(LivingChangeTargetEvent event) {
+    public static void onChangeTarget(@NotNull LivingChangeTargetEvent event) {
         LivingEntity entity = event.getEntity();
         if (entity.level().isClientSide) {
             return;
@@ -34,7 +35,7 @@ public class AmnesiaEffectEventHandler {
 
     // 1.21.1 MobEffect#onEffectStarted 的 1.20.1 等价实现：效果初应用时立即清仇恨
     @SubscribeEvent
-    public static void onEffectAdded(MobEffectEvent.Added event) {
+    public static void onEffectAdded(MobEffectEvent.@NotNull Added event) {
         LivingEntity entity = event.getEntity();
         if (entity.level().isClientSide) {
             return;

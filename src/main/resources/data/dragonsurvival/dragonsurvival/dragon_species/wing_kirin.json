@@ -26,5 +26,11 @@
 		"wing_kirin:center",
 		"wing_kirin:east"
 	],
+	"custom_stage_progression": [
+		"wing_kirin:newborn",
+		"wing_kirin:young",
+		"wing_kirin:adult",
+		"wing_kirin:ancient"
+	],
 	"penalties": "#dragonsurvival:wing_kirin"
 }

@@ -14,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 /**
  * 注册物品（自 1.21.1 NeoForge 分支移植）。
- * 注：金钟（golden_bell/GoldenBellItem）按用户要求未随本次移植。
+ * TODO:注：金钟（golden_bell/GoldenBellItem）按用户要求未随本次移植。
  * 1.20.1 Forge 无 DeferredRegister.createItems，改用 DeferredRegister.create(ForgeRegistries.ITEMS, ...)。
  */
 public class WKItems {

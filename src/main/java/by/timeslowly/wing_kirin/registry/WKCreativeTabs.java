@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 /**
  * 创造模式物品栏（自 1.21.1 NeoForge 分支移植）。
- * 金钟（GoldenBell）未随本次移植，displayItems 中已同步剔除；
+ * TODO：金钟（GoldenBell）未随本次移植，displayItems 中已同步剔除；
  * 1.20.1 Forge 的 Output 无 accept(Supplier) 重载，改用 .get() 传入。
  */
 public class WKCreativeTabs {
