@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import by.timeslowly.wing_kirin.client.ClientHelper;
 import by.timeslowly.wing_kirin.registry.WKCreativeTabs;
 import by.timeslowly.wing_kirin.registry.*;
+import by.timeslowly.wing_kirin.registry.dragon.ability.WKAbilityEntityEffects;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,9 +35,13 @@ public class WingKirin {
         WKAttributes.register(modEventBus);
         WKCreativeTabs.register(modEventBus);
         WKEffects.register(modEventBus);
+        WKEnchantments.register(modEventBus);
         WKItems.register(modEventBus);
         WKParticles.register(modEventBus);
         WKSounds.register(modEventBus);
+
+        // 注册龙之技能自定义实体效果类型（DragonSurvival ability_entity_effect 注册表）
+        WKAbilityEntityEffects.register(modEventBus);
     }
 
 

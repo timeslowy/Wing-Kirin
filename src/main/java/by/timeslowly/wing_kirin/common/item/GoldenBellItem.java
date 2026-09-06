@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.common.item;
 
 import by.dragonsurvivalteam.dragonsurvival.registry.DSAttributes;
 import by.timeslowly.wing_kirin.registry.WKAttributes;
+import by.timeslowly.wing_kirin.registry.WKEnchantments;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.network.chat.Component;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ForgeMod;
@@ -31,6 +33,11 @@ public class GoldenBellItem extends Item {
     private static final UUID FLIGHT_SPEED_MODIFIER_ID = uuidOf("wing_kirin:effect.golden_bell_3");
     private static final UUID MOVEMENT_SPEED_MODIFIER_ID = uuidOf("wing_kirin:effect.golden_bell_4");
     private static final UUID GRAVITY_MODIFIER_ID = uuidOf("wing_kirin:effect.golden_bell_5");
+
+    // 「轻钟上阵」附魔的属性修饰符 ID，沿用 1.21.1 数据包定义（同上确定性生成 UUID）
+    private static final UUID UNENCUMBERED_MOVEMENT_ID = uuidOf("wing_kirin:unencumbered_movement_recovery");
+    private static final UUID UNENCUMBERED_FLIGHT_ID = uuidOf("wing_kirin:unencumbered_flight_recovery");
+    private static final UUID UNENCUMBERED_GRAVITY_ID = uuidOf("wing_kirin:unencumbered_gravity_recovery");
 
     // 主手属性修饰符表。Forge 1.20.1 的自定义属性（forge:attribute）注册事件在物品之后触发，
     // 不能在物品构造器中解析 RegistryObject，故首次取用时惰性构建
@@ -87,6 +94,33 @@ public class GoldenBellItem extends Item {
                 .put(ForgeMod.ENTITY_GRAVITY.get(), new AttributeModifier(GRAVITY_MODIFIER_ID,
                         "Golden bell gravity", 0.4, AttributeModifier.Operation.MULTIPLY_TOTAL))
                 .build();
+    }
+
+    // 「轻钟上阵」附魔的属性效果。1.21 为数据包 attributes 效果（附魔在主手时自动应用），
+    // 1.20.1 的 Enchantment 无 getAttributeModifiers 钩子，改由本物品按附魔等级提供；
+    // 引擎在装备变更时按本表自动增删临时修饰符，数值沿用 1.21 数据包的 linear 公式 base + per_level_above_first × (level - 1)
+    @Override
+    public @NotNull Multimap<Attribute, AttributeModifier> getAttributeModifiers(@NotNull EquipmentSlot slot, @NotNull ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
+        if (slot != EquipmentSlot.MAINHAND) {
+            return modifiers;
+        }
+        int level = EnchantmentHelper.getItemEnchantmentLevel(WKEnchantments.UNENCUMBERED.get(), stack);
+        if (level <= 0) {
+            return modifiers;
+        }
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.putAll(modifiers);
+        // 移速恢复：每级 +37.5%（抵消金钟 -60% 移速）
+        builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UNENCUMBERED_MOVEMENT_ID,
+                "unencumbered_movement_recovery", 0.375D * level, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        // 龙飞行速度恢复：+3.0，之后每级 +2.0（抵消金钟 -90% 龙飞行速度）
+        builder.put(DSAttributes.FLIGHT_SPEED.get(), new AttributeModifier(UNENCUMBERED_FLIGHT_ID,
+                "unencumbered_flight_recovery", 3.0D + 2.0D * (level - 1), AttributeModifier.Operation.MULTIPLY_TOTAL));
+        // 重力恢复：-8%，之后每级 -7%（抵消金钟 +40% 重力）
+        builder.put(ForgeMod.ENTITY_GRAVITY.get(), new AttributeModifier(UNENCUMBERED_GRAVITY_ID,
+                "unencumbered_gravity_recovery", -(0.08D + 0.07D * (level - 1)), AttributeModifier.Operation.MULTIPLY_TOTAL));
+        return builder.build();
     }
 
     @Override

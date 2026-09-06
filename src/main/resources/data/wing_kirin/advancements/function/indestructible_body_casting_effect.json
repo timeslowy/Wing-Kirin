@@ -1,0 +1,34 @@
+{
+    "criteria": {
+        "wing_kirin:indestructible_body_casting_effect": {
+            "trigger": "entity_hurt_player",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:dragon_predicate",
+                                "dragon_species": "dragonsurvival:wing_kirin"
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:custom_predicates",
+                                "has_duration_effect": "wing_kirin:casting_knockback_resistance"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "wing_kirin:dragon_ability/indestructible_body/main"
+    }
+}

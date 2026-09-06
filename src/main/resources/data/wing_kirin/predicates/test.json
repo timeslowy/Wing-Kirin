@@ -20,6 +20,13 @@
             "scores": {
                 "wk.death_check": 1
             }
+        },
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "stepping_on": {}
+            }
         }
     ]
 }

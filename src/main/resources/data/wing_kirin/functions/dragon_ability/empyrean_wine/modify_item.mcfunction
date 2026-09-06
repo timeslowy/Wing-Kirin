@@ -13,7 +13,7 @@ give @s wing_kirin:empyrean_wine 1
 # 播放转换成功声音
 playsound block.beacon.activate player @s
 
-# TODO:转换成功粒子（1.20.1无法执行？）
+# 转换成功粒子（1.20.1，为 红、绿、蓝、尺寸，再为原版参数）
 particle dragonsurvival:treasure 1 1 0 1 ~ ~ ~ 1 1 1 1 30
 particle dragonsurvival:treasure 1 0.4 1 1 ~ ~ ~ 1 1 1 1 30
 
