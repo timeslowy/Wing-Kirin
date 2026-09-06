@@ -7,6 +7,8 @@ import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.Beneficia
 import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.DamageReflectionEffect;
 import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.InstantInvisibilityTrackerEffect;
 import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.PercentagedDamageEffect;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.TranspositionMarkEffect;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.TranspositionSwapEffect;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -58,5 +60,15 @@ public class WKAbilityEntityEffects {
         event.register(AbilityEntityEffect.REGISTRY_KEY,
                 new ResourceLocation(WingKirin.MODID, "invisibility_tracker"),
                 () -> InstantInvisibilityTrackerEffect.CODEC);
+
+        // 换位·就绪标记：wing_kirin:transposition_mark（记录施法者换位起点）
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                new ResourceLocation(WingKirin.MODID, "transposition_mark"),
+                () -> TranspositionMarkEffect.CODEC);
+
+        // 换位·位置交换：wing_kirin:transposition_swap（替代宏 tp_target 与 @n 配对）
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                new ResourceLocation(WingKirin.MODID, "transposition_swap"),
+                () -> TranspositionSwapEffect.CODEC);
     }
 }

@@ -507,9 +507,7 @@
   "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "已成功定位坐标！",
   "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "坐标定位失败！",
   "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount": "惠及友方数：",
-  "wing_kirin.ability.invincible_benevolence.reward.description": "每惠及一名友方，为自身提供 %1$s 秒的抗性提升 %2$s（至多统计 %3$s 名受惠者）",
   "actionbar.wing_kirin.instant_invisibility.distance_notice": "剩余生效距离：",
-  "wing_kirin.ability.instant_invisibility.tracker.description": "隐身以施法位置为圆心、%1$s 格为限，「破隐一击」攻击伤害增幅为 %2$s，发起攻击即现身",
 
 
   "enchantment.wing_kirin.unencumbered": "轻钟上阵",
@@ -613,5 +611,9 @@
 
   "wing_kirin.ability.percentaged_damage.description": "以目标%2$s为基数，造成%1$s的伤害",
   "wing_kirin.ability.percentaged_damage.type.max_health": "最大生命值",
-  "wing_kirin.ability.percentaged_damage.type.current_health": "当前生命值"
+  "wing_kirin.ability.percentaged_damage.type.current_health": "当前生命值",
+  
+  "wing_kirin.ability.invincible_benevolence.reward.description": "每惠及一名友方，为自身提供 %1$s 秒的抗性提升 %2$s（至多统计 %3$s 名受惠者）",
+  
+  "wing_kirin.ability.instant_invisibility.tracker.description": "隐身以施法位置为圆心、%1$s 格为限，「破隐一击」攻击伤害增幅为 %2$s，发起攻击即现身"
 }

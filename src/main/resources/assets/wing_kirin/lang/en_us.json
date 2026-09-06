@@ -471,12 +471,11 @@
   "actionbar.wing_kirin.ability.stasis_hex.disable_interaction": "§eYou can not interact with world with DING SHEN effect",
   "title.wing_kirin.last_stand": "The Last Stand",
   "subtitle.wing_kirin.last_stand": "Attribute Moddifier Effect Duration Attention!",
+
   "actionbar.wing_kirin.ability.heavenly_justice.successful_launched.notification": "GUIDED MISSLE HAS LUANCHED!",
   "actionbar.wing_kirin.ability.heavenly_justice.failed_launched.notification": "FAILED LOCATING POSITION!",
   "actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount": "Beneficiary Amount:",
-  "wing_kirin.ability.invincible_benevolence.reward.description": "Grants Self Resistance %2$s for %1$s seconds per beneficiary (up to %3$s allies healed)",
   "actionbar.wing_kirin.instant_invisibility.distance_notice": "REMAINING EFFECTIVE DISTANCE:",
-  "wing_kirin.ability.instant_invisibility.tracker.description": "The invisibility is anchored to the casting position and effective within %1$s blocks; leaving breaks it instantly. While hidden, attack damage is increased by %2$s — attacking triggers a「Breaking-Invisibility Strike」, instantly revealing you",
   "actionbar.wing_kirin.ability.spell_binder.notice": "Is this burning the boats, or spinning a cocoon around oneself?",
 
   "enchantment.wing_kirin.unencumbered": "Unencumbered",
@@ -572,5 +571,9 @@
 
   "wing_kirin.ability.percentaged_damage.description": "Based on the target's %2$s, deals %1$s as damage",
   "wing_kirin.ability.percentaged_damage.type.max_health": "maximum health",
-  "wing_kirin.ability.percentaged_damage.type.current_health": "current health"
+  "wing_kirin.ability.percentaged_damage.type.current_health": "current health",
+  
+  "wing_kirin.ability.invincible_benevolence.reward.description": "Grants Self Resistance %2$s for %1$s seconds per beneficiary (up to %3$s allies healed)",
+  "wing_kirin.ability.instant_invisibility.tracker.description": "The invisibility is anchored to the casting position and effective within %1$s blocks; leaving breaks it instantly. While hidden, attack damage is increased by %2$s — attacking triggers a「Breaking-Invisibility Strike」, instantly revealing you"
+
 }

@@ -175,6 +175,7 @@ public class InstantInvisibilityEventHandler {
                 SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 
+    // TODO:提示可以动态调整
     /** actionbar 距离提示：按与施法位置的距离分三档颜色（红档逐格精确倒计时），复刻 distance_notice 函数链 */
     private static void sendDistanceNotice(final @NotNull ServerPlayer owner, final @NotNull Vec3 castPos) {
         double distance = owner.position().distanceTo(castPos);

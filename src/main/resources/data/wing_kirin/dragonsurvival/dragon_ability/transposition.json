@@ -1,0 +1,100 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "resistance",
+                                "amplifier": 4,
+                                "duration": 20
+                            }
+                        },
+                        {
+                            "effect_type": "wing_kirin:transposition_mark"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "wing_kirin:transposition_swap"
+                        }
+                    ],
+                    "targeting_mode": "all_except_self"
+                },
+                "range": 10,
+                "target_type": "dragonsurvival:looking_at"
+            }
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:passive",
+        "continuous_mana_cost": {
+            "amount": 1,
+            "type": "reserved"
+        },
+        "trigger": {
+            "trigger_type": "dragonsurvival:on_key_pressed",
+            "keys": [
+                "key.keyboard.left.alt"
+            ]
+        },
+        "cooldown": {
+            "type": "minecraft:linear",
+            "base": 120,
+            "per_level_above_first": -40
+        }
+    },
+    "can_be_manually_disabled": true,
+    "upgrade": {
+        "upgrade_type": "dragonsurvival:experience_points",
+        "maximum_level": 3,
+        "experience_cost": {
+            "type": "minecraft:linear",
+            "base": 100,
+            "per_level_above_first": 100
+        }
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "wing_kirin:abilities/transposition/transposition_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "wing_kirin:abilities/transposition/transposition_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "wing_kirin:abilities/transposition/transposition_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "wing_kirin:abilities/transposition/transposition_3"
+            }
+        ]
+    },
+    "usage_blocked": {
+        "condition": "inverted",
+        "term": {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type_specific": {
+                    "type": "dragonsurvival:dragon_predicate",
+                    "dragon_species": "dragonsurvival:wing_kirin"
+                }
+            }
+        }
+    }
+}
