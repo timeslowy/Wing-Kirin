@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin;
 
 import com.mojang.logging.LogUtils;
 import by.timeslowly.wing_kirin.client.ClientHelper;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKCreativeTabs;
 import by.timeslowly.wing_kirin.registry.*;
 import by.timeslowly.wing_kirin.registry.dragon.ability.WKAbilityEntityEffects;
@@ -10,7 +11,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -31,6 +34,9 @@ public class WingKirin {
     // Forge 47.4.23 的 @Mod 构造器注入仅支持 FMLJavaModLoadingContext（不支持 IEventBus）
     public WingKirin(@NotNull FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+        // 注册服务端配置（1.21.1 经构造器注入的 ModContainer 注册；1.20.1 Forge 用 ModLoadingContext 静态获取）
+        // TODO:客户端配置（WKClientConfig）暂未随本次移植
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, WKServerConfig.SPEC);
         // 注册（自 1.21.1 分支移植，顺序同 1.21.1 主类）
         WKAttributes.register(modEventBus);
         WKCreativeTabs.register(modEventBus);

@@ -170,8 +170,9 @@ dependencies {
     // Jade（本地 libs/jade-1.20.1-11.13.3.jar，带 mixin，deobf 会重写其 refmap）
     runtimeOnly fg.deobf("snownee:jade-1.20.1:11.13.3")
     // Embeddium（本地 libs/embeddium-1.20.1-0.3.31.jar）
-    // Sodium 系大量 mixin 渲染核心，deobf 后在开发环境仍可能不稳定；若启动异常优先移除本行。
     runtimeOnly fg.deobf("org.embedded:embeddium-1.20.1:0.3.31")
+    // Configured（Forge 原生无配置界面，用其提供模组配置的图形界面；本地 libs/configured-forge-1.20.1-2.2.3.jar）
+    runtimeOnly fg.deobf("mrcrayfish:configured-forge-1.20.1:2.2.3")
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
     // The "userdev" classifier will be requested and setup by ForgeGradle.

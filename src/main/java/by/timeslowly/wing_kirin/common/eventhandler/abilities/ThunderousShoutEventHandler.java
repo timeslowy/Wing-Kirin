@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.timeslowly.wing_kirin.WingKirin;
 import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
+import by.timeslowly.wing_kirin.config.WKServerConfig;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -24,11 +25,6 @@ public class ThunderousShoutEventHandler {
     // 记录每个攻击者上次扣除金钟耐久的世界刻
     private static final Map<LivingEntity, Integer> LAST_DAMAGE_TICK = new WeakHashMap<>();
 
-    // TODO:配置未随本次移植：1.21.1 中此处由 WKServerConfig.shouldFastDurabilityHurt()
-    //  （fastDurabilityHurt，默认 false，即默认不按实体快速消耗耐久）控制，当前硬编码为默认值 false。
-    //  待服务端配置移植后，将本常量替换回 WKServerConfig.shouldFastDurabilityHurt() 即可恢复快速消耗开关。
-    private static final boolean FAST_DURABILITY_HURT = false;
-
     /**
      * 监听实体受伤事件，处理使用「龙吼功」时金钟的双倍耐久损耗。
      * <p>
@@ -46,7 +42,7 @@ public class ThunderousShoutEventHandler {
             if (damageSource.getDirectEntity() instanceof LivingEntity attacker) {
                 ItemStack mainHand = attacker.getMainHandItem();
                 if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBellItem) {
-                    if (FAST_DURABILITY_HURT) {
+                    if (WKServerConfig.shouldFastDurabilityHurt()) {
                         // 快速消耗模式：每次事件都扣除耐久
                         mainHand.hurtAndBreak(2, attacker, p -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
                     } else {

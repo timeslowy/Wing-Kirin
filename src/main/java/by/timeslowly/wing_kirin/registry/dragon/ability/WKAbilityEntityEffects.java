@@ -2,7 +2,10 @@ package by.timeslowly.wing_kirin.registry.dragon.ability;
 
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.entity_effects.AbilityEntityEffect;
 import by.timeslowly.wing_kirin.WingKirin;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.BeneficiaryMarkEffect;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.BeneficiaryRewardEffect;
 import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.DamageReflectionEffect;
+import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.InstantInvisibilityTrackerEffect;
 import by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.PercentagedDamageEffect;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,5 +43,20 @@ public class WKAbilityEntityEffects {
         event.register(AbilityEntityEffect.REGISTRY_KEY,
                 new ResourceLocation(WingKirin.MODID, "percentaged_damage"),
                 () -> PercentagedDamageEffect.CODEC);
+
+        // 仁者无敌·受惠标记：wing_kirin:beneficiary_mark（宏函数方案B：计数改由 Java 承载）
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                new ResourceLocation(WingKirin.MODID, "beneficiary_mark"),
+                () -> BeneficiaryMarkEffect.CODEC);
+
+        // 仁者无敌·受惠结算：wing_kirin:beneficiary_reward（替代宏授予与递归搜索函数链）
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                new ResourceLocation(WingKirin.MODID, "beneficiary_reward"),
+                () -> BeneficiaryRewardEffect.CODEC);
+
+        // 聚形散气·效果追踪：wing_kirin:invisibility_tracker（替代 marker 实体 + UUID 宏函数链）
+        event.register(AbilityEntityEffect.REGISTRY_KEY,
+                new ResourceLocation(WingKirin.MODID, "invisibility_tracker"),
+                () -> InstantInvisibilityTrackerEffect.CODEC);
     }
 }

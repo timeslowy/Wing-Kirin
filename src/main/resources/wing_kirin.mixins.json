@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "wing_kirin.refmap.json",
   "mixins": [
+    "ManaHandlerMixin"
   ],
   "client": [
   ],
