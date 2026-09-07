@@ -41,6 +41,8 @@ scoreboard objectives add wk.invincible_benevolence.beneficiary_amount dummy
 
 # 天降正义 倒计时
 scoreboard objectives add wk.heavenly_justice.countdown dummy
+# 天降正义 施法者与标志实体的配对 id（1.20.1 无法按 UUID 选玩家，改用计分板配对寻址）
+scoreboard objectives add wk.heavenly_justice.cast_id dummy
 
 # 唯快不破 单次攻击计数
 scoreboard objectives add wk.unstoppable_speed.attack_count dummy

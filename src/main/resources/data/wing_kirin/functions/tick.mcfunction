@@ -21,9 +21,9 @@ execute as @a if score @s wk.last_stand.death_countdown matches 0.. run function
 # execute as @e[type=marker,tag=signal_arrow_generic] at @s run function wing_kirin:dragon_ability/signal_arrow/tick
 
 # 为 天降正义 标志实体 执行（已通过 marker tag 过滤，无需额外守卫）
-# execute as @e[type=marker,tag=heavenly_justice_marker] run function wing_kirin:dragon_ability/heavenly_justice/tick
+execute as @e[type=marker,tag=heavenly_justice_marker] run function wing_kirin:dragon_ability/heavenly_justice/tick
 # 为 天降正义 发射者 执行（守卫：countdown 存在且 ≥0，即定位中或待输出失败消息）
-# execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.heavenly_justice.countdown matches 0.. run function wing_kirin:dragon_ability/heavenly_justice/ability_data/tick
+execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.heavenly_justice.countdown matches 0.. run function wing_kirin:dragon_ability/heavenly_justice/ability_data/tick
 
 # 玩家死亡执行（已通过 death_check 计分板过滤，无需额外守卫）
 # execute as @a if score @s wk.death_check matches 1.. run function wing_kirin:player_death/main
