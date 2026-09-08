@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.registry;
 
 import by.timeslowly.wing_kirin.WingKirin;
+import by.timeslowly.wing_kirin.common.enchantment.DingshenResistanceEnchantment;
 import by.timeslowly.wing_kirin.common.enchantment.UnencumberedEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,8 +24,9 @@ public class WKEnchantments {
     // 轻钟上阵：减轻金钟重量，逐级恢复移速/龙飞行速度/重力（属性效果实现于 GoldenBellItem）
     public static final RegistryObject<Enchantment> UNENCUMBERED = ENCHANTMENTS.register("unencumbered", UnencumberedEnchantment::new);
 
-    // TODO:定身抗性（dingshen_resistance）未随本次移植：1.21.1 中其注册代码为占位定义（supportedItems 为钻石剑占位，无数据包 JSON），
-    //  实际效果依赖尚未移植的定身（DING_SHEN）药水效果，待定身效果移植时一并补上。
+    // 定身抗性：削弱定身药水效果的持续时间（每级 +0.2 定身抗性属性，
+    // 属性施加实现于 DingshenEffectEventHandler 的装备变化事件；时长减免见 LivingEntityEffectMixin）
+    public static final RegistryObject<Enchantment> DINGSHEN_RESISTANCE = ENCHANTMENTS.register("dingshen_resistance", DingshenResistanceEnchantment::new);
 
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);

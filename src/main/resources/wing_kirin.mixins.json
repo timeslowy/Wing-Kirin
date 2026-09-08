@@ -5,9 +5,22 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "wing_kirin.refmap.json",
   "mixins": [
-    "ManaHandlerMixin"
+    "ManaHandlerMixin",
+    "LivingEntityHurtMixin",
+    "DisplayAccessor",
+    "ItemDisplayAccessor",
+    "EntityMoveLockMixin",
+    "ServerPlayerMoveLockMixin",
+    "LivingEntityEffectMixin",
+    "DragonAbilityInstanceMixin"
   ],
   "client": [
+    "LivingEntityAfterimageMixin",
+    "EntityGlowColorMixin",
+    "MouseHandlerMixin",
+    "ClientCastingHandlerMixin",
+    "MagicHUDMixin",
+    "OutlineColorDataAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -37,15 +37,26 @@ public class WKAttributes {
                             1024.0)
                             .setSyncable(true));//客户端是否自动同步
 
-    // TODO:定身药水效果抗性（dingshen_effect_resistance，默认0.0，范围0~1）按用户要求暂不移植。
-    //  1.21.1 中该属性使用 NeoForge 专有的 PercentageAttribute（1.20.1 Forge 无此类，需用 RangedAttribute 手动实现百分比），
-    //  其应用逻辑位于 1.21.1 的 LivingEntityEffectMixin（按抗性比例减少定身效果时长），
-    //  且依赖尚未移植的定身（DING_SHEN）药水效果，待定身效果移植时一并补上。
+    /**
+     * 定身药水效果抗性属性，默认0.0，范围 0~1。
+     * 1.21.1 使用 NeoForge 专有的 PercentageAttribute（1.20.1 Forge 无此类），改用 RangedAttribute
+     * 手动限幅（显示为数值而非百分比，仅展示差异，语义一致）。
+     * 应用逻辑见 {@link by.timeslowly.wing_kirin.mixin.LivingEntityEffectMixin}（按抗性比例减少定身效果时长），
+     * 附魔等级 → 属性的施加见 {@link by.timeslowly.wing_kirin.common.eventhandler.effects.DingshenEffectEventHandler}。
+     */
+    public static final RegistryObject<Attribute> DINGSHEN_EFFECT_RESISTANCE =
+            ATTRIBUTES.register("dingshen_effect_resistance",
+                    () -> new RangedAttribute("attribute.name.wing_kirin.dingshen_effect_resistance",
+                            0.0,
+                            0.0,
+                            1.0)
+                            .setSyncable(true));
 
     // 注册属性（给玩家实体挂载）
     @SubscribeEvent
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {
         event.add(EntityType.PLAYER, WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER.get());
+        event.add(EntityType.PLAYER, WKAttributes.DINGSHEN_EFFECT_RESISTANCE.get());
     }
 
     public static void register(IEventBus eventBus) {

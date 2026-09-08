@@ -13,7 +13,8 @@
                             }
                         },
                         {
-                            "effect_type": "wing_kirin:transposition_mark"
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/transposition/ready"
                         }
                     ],
                     "targeting_mode": "allies_and_self"
@@ -26,7 +27,8 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
-                            "effect_type": "wing_kirin:transposition_swap"
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/transposition/main"
                         }
                     ],
                     "targeting_mode": "all_except_self"

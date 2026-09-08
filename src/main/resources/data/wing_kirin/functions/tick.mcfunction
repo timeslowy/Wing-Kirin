@@ -2,8 +2,10 @@
 ## 初始执行者：服务器（server）
 ## （已为每条指令添加前置守卫，空闲时跳过无效遍历）
 
-# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen），此处因为里函数检查“定”字展示实体的骑乘状态，因此不能用实体选择器限定否则会失效。
-# function wing_kirin:dragon_ability/stasia_hex/tick
+# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen；@e 全实体扫描不可避免，无匹配时仅有扫描开销、无分发开销）
+execute as @e[predicate=wing_kirin:is_living_entity,tag=being_frozen] run function wing_kirin:dragon_ability/stasia_hex/main-tick
+# 定身术 孤儿“定”字展示实体清理（宿主死亡后 being_frozen 随之消失，故须独立于上方扫描：无载具的展示实体即孤儿）
+kill @e[type=item_display,tag=item_display.being_frozen,predicate=wing_kirin:no_vehicle]
 
 # 给 金风玉露 执行刻函数（守卫：working_symbol 在 0..25 之间，即技能激活或待重置）
 execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.empyrean_wine.working_symbol matches 0.. run function wing_kirin:dragon_ability/empyrean_wine/tick

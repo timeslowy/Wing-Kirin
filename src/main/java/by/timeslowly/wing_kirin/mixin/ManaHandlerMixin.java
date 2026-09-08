@@ -3,7 +3,7 @@ package by.timeslowly.wing_kirin.mixin;
 import by.dragonsurvivalteam.dragonsurvival.DragonSurvival;
 import by.dragonsurvivalteam.dragonsurvival.common.capability.DragonStateProvider;
 import by.dragonsurvivalteam.dragonsurvival.common.handlers.magic.ManaHandler;
-import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.network.ConfigSyncHandler;
 import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * 包名按 1.20.1 工作空间的惯例为单数 mixin。
  * <p>
  * 效果：翼麒麟龙玩家持有「浩然正气」效果且配置开启（默认开）时，
- * 施法不检查也不消耗法力（见 {@link WKServerConfig} great_zhengqi.ignoreManaCost）。
+ * 施法不检查也不消耗法力（SERVER 配置项 great_zhengqi.ignoreManaCost；
+ * 客户端经 by.timeslowly.wing_kirin.network.ConfigSyncHandler 读取服务端下发的快照）。
  */
 @Mixin(value = ManaHandler.class, remap = false)
 public abstract class ManaHandlerMixin {
@@ -45,7 +46,7 @@ public abstract class ManaHandlerMixin {
     @Unique
     private static boolean shouldIgnoreManaCost$wingkirin(Player player) {
         // 是否启用浩然正气无视法力消耗配置
-        if (!WKServerConfig.shouldGreatZhengqiIgnoreManaCost()) {
+        if (!ConfigSyncHandler.greatZhengqiIgnoreManaCost()) {
             return false;
         }
         // 是否为龙玩家

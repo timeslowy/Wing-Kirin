@@ -1,0 +1,16 @@
+## 初始击中（统一计时器 freezeTimer）
+# 1.20.1 移植：@n → @e[limit=1,sort=nearest]
+
+# 获取自定义弹射物的弹射物等级（与技能对应，该数据来源于龙生），并存入定身计时栏当中
+execute store result score @s wk.stasis_hex.freezeTimer run data get entity @e[type=dragonsurvival:generic_arrow_entity,tag=stasia_hex-ding,limit=1,sort=nearest] projectile_level
+
+# 匹配等级设置时长（⚠警告：如果想要设置的持续时长与预先存入的（弹射物等级）有重合，请另外新建计分板！否则会match成功直接运行错误的时长！）
+execute if score @s wk.stasis_hex.freezeTimer matches 1 run scoreboard players add @s wk.stasis_hex.freezeTimer 200
+execute if score @s wk.stasis_hex.freezeTimer matches 2 run scoreboard players add @s wk.stasis_hex.freezeTimer 300
+execute if score @s wk.stasis_hex.freezeTimer matches 3 run scoreboard players add @s wk.stasis_hex.freezeTimer 400
+
+# 给被击中实体增加"定身"标签
+tag @s add being_frozen
+
+# 应用效果
+function wing_kirin:dragon_ability/stasia_hex/apply/set_duration

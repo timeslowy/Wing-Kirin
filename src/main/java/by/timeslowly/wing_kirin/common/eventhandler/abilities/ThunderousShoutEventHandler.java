@@ -2,7 +2,7 @@ package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.timeslowly.wing_kirin.WingKirin;
 import by.timeslowly.wing_kirin.common.item.GoldenBellItem;
-import by.timeslowly.wing_kirin.config.WKServerConfig;
+import by.timeslowly.wing_kirin.network.ConfigSyncHandler;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -42,7 +42,7 @@ public class ThunderousShoutEventHandler {
             if (damageSource.getDirectEntity() instanceof LivingEntity attacker) {
                 ItemStack mainHand = attacker.getMainHandItem();
                 if (!mainHand.isEmpty() && mainHand.getItem() instanceof GoldenBellItem) {
-                    if (WKServerConfig.shouldFastDurabilityHurt()) {
+                    if (ConfigSyncHandler.fastDurabilityHurt()) {
                         // 快速消耗模式：每次事件都扣除耐久
                         mainHand.hurtAndBreak(2, attacker, p -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
                     } else {

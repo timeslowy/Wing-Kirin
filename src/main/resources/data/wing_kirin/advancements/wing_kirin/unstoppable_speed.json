@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "Attacks_over_100_Times_Once":{
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "icon": {
+            "item": "wing_kirin:unstoppable_speed_icon"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/unstoppable_speed"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc"
+        },
+        "frame": "challenge"
+    },
+    "requirements": [
+        [
+            "Attacks_over_100_Times_Once"
+        ]
+    ],
+    "rewards": {
+        "experience": 300
+    }
+}

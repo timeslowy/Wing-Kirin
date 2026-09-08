@@ -1,0 +1,10 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+        "passenger": {
+            "type": "minecraft:item_display",
+            "nbt": "{Tags:[\"item_display.being_frozen\"]}"
+        }
+    }
+}

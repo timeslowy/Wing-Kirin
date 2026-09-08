@@ -160,6 +160,13 @@ dependencies {
     implementation fg.deobf("dragonsurvival:dragonsurvival-1.20.1:2.0.67")
     // 壁虎库（GeckoLib 4.8.4，本地 libs/geckolib-forge-1.20.1-4.8.4.jar）
     implementation fg.deobf("geckolib:geckolib-forge-1.20.1:4.8.4")
+    // MixinExtras（本地 libs/，供 LivingEntityHurtMixin 的 @WrapOperation 使用；1.20.1 Forge 不捆绑）。
+    // forge 版为 FML 库 mod 且 jinjar 内嵌 MixinExtras-0.3.5（运行时用）；
+    // common 版提供编译期注解类，且必须兼任 annotationProcessor（否则 @WrapOperation 的
+    // method/target 不会写入 refmap，生产环境 SRG 下将找不到注入目标）
+    implementation("io.github.llamalad7:mixinextras-forge:0.3.5")
+    compileOnly("io.github.llamalad7:mixinextras-common:0.3.5")
+    annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.5")
     // 以下为开发时辅助模组，仅运行时加载（本地 libs/）。
     // 必须走 fg.deobf：发布版 jar 是按 srg 名编译的，直接丢进 run/mods 会因
     // 找不到 srg 符号而崩溃（mixin 走 InvalidMixinException，普通引用走 NoSuchFieldError）。
