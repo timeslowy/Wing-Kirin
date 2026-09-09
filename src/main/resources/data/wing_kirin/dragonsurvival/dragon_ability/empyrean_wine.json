@@ -5,11 +5,11 @@
     "level_requirement": {
       "type": "minecraft:lookup",
       "values": [
-        65,
-        70,
-        75,
-        80,
-        85
+        10,
+        20,
+        30,
+        40,
+        50
       ],
       "fallback": 15
     }

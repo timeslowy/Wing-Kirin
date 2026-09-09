@@ -36,9 +36,9 @@
                 "per_level_above_first": 15.0
             },
             "values": [
-                60.0,
-                80.0,
-                100.0
+                10,
+                25,
+                40
             ]
         },
         "maximum_level": 3,
@@ -167,6 +167,20 @@
             },
             "trigger_point": "charging",
             "trigger_rate": 0.5
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/stat"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
         },
         {
             "target_selection": {

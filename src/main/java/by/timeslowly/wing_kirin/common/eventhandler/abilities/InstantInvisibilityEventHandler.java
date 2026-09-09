@@ -1,6 +1,7 @@
 package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.timeslowly.wing_kirin.WingKirin;
+import by.timeslowly.wing_kirin.registry.WKStats;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -155,8 +156,8 @@ public class InstantInvisibilityEventHandler {
             TRACKERS.remove(owner.getUUID());
             breakInvisibility(owner);
             resetRemoveCheck(owner.server, owner.getScoreboardName());
-            // TODO:「破隐一击次数」统计数据（1.21.1 为 wk-stats add @s wing_kirin:broken_instant_invisibility_times，
-
+            // 「破隐一击次数」统计（等价 1.21.1 attack_remove.mcfunction 的 wk-stats add）
+            owner.awardStat(WKStats.BrokenInstantInvisibilityTimes.get());
         }
     }
 

@@ -32,5 +32,36 @@
 		"wing_kirin:adult",
 		"wing_kirin:ancient"
 	],
+	"unlockable_behavior": {
+		"unlock_condition": {
+			"condition": "minecraft:all_of",
+			"terms": [
+				{
+					"condition": "minecraft:weather_check",
+					"thundering": false
+				},
+				{
+					"condition": "minecraft:weather_check",
+					"raining": false
+				},
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"location": {
+							"position": {
+								"y": {
+									"min": 310
+								}
+							},
+							"dimension": "minecraft:overworld",
+							"can_see_sky": true
+						}
+					}
+				}
+			]
+		},
+		"visibility": "visible_if_locked"
+	},
 	"penalties": "#dragonsurvival:wing_kirin"
 }

@@ -13,12 +13,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -30,7 +28,8 @@ public class WingKirin {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "wing_kirin";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    // 与 1.21.1 分支一致改为 public，供 WKStatsCommand 等类记录日志
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     // TODO：至少药水效果、物品、创造物品栏、寻包、附件替代、配置
 
@@ -49,17 +48,17 @@ public class WingKirin {
         WKItems.register(modEventBus);
         WKParticles.register(modEventBus);
         WKSounds.register(modEventBus);
+        WKStats.register(modEventBus);
 
         // 注册龙之技能自定义实体效果类型（DragonSurvival ability_entity_effect 注册表）
         WKAbilityEntityEffects.register(modEventBus);
 
+        // 注册模组通用设置事件，用于注入自定义统计格式化器等（自 1.21.1 分支平移）
+        modEventBus.addListener(WKStats::onCommonSetup);
+
         // 服务端配置 → 客户端同步通道（退出世界崩溃修复：客户端不再直接读 SERVER 配置）
         ConfigSyncHandler.init();
         MinecraftForge.EVENT_BUS.addListener(ConfigSyncHandler::onPlayerLogin);
-    }
-
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
 

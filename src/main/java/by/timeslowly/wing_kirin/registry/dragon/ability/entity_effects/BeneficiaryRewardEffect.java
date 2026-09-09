@@ -4,6 +4,7 @@ import by.dragonsurvivalteam.dragonsurvival.common.codecs.LevelBasedValue;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.entity_effects.AbilityEntityEffect;
 import by.dragonsurvivalteam.dragonsurvival.util.DSColors;
+import by.timeslowly.wing_kirin.registry.WKStats;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -81,7 +82,9 @@ public record BeneficiaryRewardEffect(LevelBasedValue perBeneficiaryDuration, in
             dragon.getAdvancements().award(advancement, ADVANCEMENT_CRITERION);
         }
 
-        // TODO:「仁者无敌惠及友方总数」统计数据（1.21.1 为 wk-stats add @s wing_kirin:cured_alies_count，统计数据系统未移植）
+        // 「仁者无敌惠及友方总数」统计（等价 1.21.1 search_beneficiary.mcfunction 的 wk-stats add；
+        // 用截断后的受惠数一次累加，与 1.21.1 搜索循环上限 88 的统计语义一致）
+        dragon.awardStat(WKStats.CuredAliesCount.get(), count);
     }
 
     // 技能侧边栏描述（self 目标：渲染为「#HEADER# + 本描述」）。数值高亮沿用 DSColors.dynamicValue，

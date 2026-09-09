@@ -11,4 +11,4 @@ scoreboard players reset @s wk.heavenly_justice.countdown
 execute at @s run playsound entity.arrow.hit_player player @s
 
 # 增加“触发天降正义”统计数据值
-# TODO wk-stats add @s wing_kirin:triggered_heavenly_justice_times 1（统计命令随后续批次移植）
+wk-stats add @s wing_kirin:triggered_heavenly_justice_times 1
