@@ -36,7 +36,7 @@ import java.util.UUID;
  * 替代 1.21.1 的 marker 标志实体 + UUID 转十六进制计分板持有者 + 宏函数链：
  * <ul>
  *   <li>每刻：倒计时（归零重置 remove_check）、超距破除（清隐身 + 粒子音效）、死亡/离线清理、
- *       actionbar 距离提示（三档颜色，仅移动时显示）；</li>
+ *       actionbar 距离提示（剩余距离整数格，按半径比例三档颜色，仅移动时显示）；</li>
  *   <li>「破隐一击」：{@link LivingHurtEvent} 检测受惠玩家对实体造成伤害——
  *       替代 1.21.1 的 player_hurt_entity 进度（其 player 条件列表为 1.21 格式，1.20.1 无法直接表达，
  *       且两个 DS 自定义 type_specific 无法并入单个 EntityPredicate）。</li>
@@ -143,7 +143,7 @@ public class InstantInvisibilityEventHandler {
 
             // 距离提示（仅移动时显示，等价 is_moving 谓词的 speed ≥ 0.1 阈值）
             if (owner.position().subtract(tracker.lastPos).horizontalDistance() > 0.05D) {
-                sendDistanceNotice(owner, tracker.castPos);
+                sendDistanceNotice(owner, tracker.castPos, tracker.radius);
             }
             tracker.lastPos = owner.position();
         }
@@ -176,26 +176,35 @@ public class InstantInvisibilityEventHandler {
                 SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 
-    // TODO:提示可以动态调整
-    /** actionbar 距离提示：按与施法位置的距离分三档颜色（红档逐格精确倒计时），复刻 distance_notice 函数链 */
-    private static void sendDistanceNotice(final @NotNull ServerPlayer owner, final @NotNull Vec3 castPos) {
+    /** 距离提示三档颜色：按「已移动距离 / 半径」的比例划分（绿 <50%，黄 50%~80%，红 ≥80%） */
+    private static final String COLOR_GREEN = "#35e035";
+    private static final String COLOR_YELLOW = "#e9f00e";
+    private static final String COLOR_RED = "#e61717";
+    private static final double GREEN_MAX_RATIO = 0.5D;
+    private static final double YELLOW_MAX_RATIO = 0.8D;
+
+    /**
+     * actionbar 距离提示：显示剩余生效距离（整数格），颜色随比例动态切换。
+     * 档位与半径（技能等级）绑定，取代原先为半径 25 硬编码的分段文本。
+     */
+    private static void sendDistanceNotice(final @NotNull ServerPlayer owner, final @NotNull Vec3 castPos, int radius) {
         double distance = owner.position().distanceTo(castPos);
-        String text;
+        // 剩余距离向上取整：仍在半径内时恒 ≥1，显示 0 时下一刻即超距破除
+        int remaining = Math.max(0, (int) Math.ceil(radius - distance));
+        double ratio = radius > 0 ? distance / (double) radius : 1.0D;
         String color;
-        if (distance < 11.0D) {
-            color = "#35e035";
-            text = distance < 4.0D ? ">21" : distance < 7.0D ? ">18" : ">15";
-        } else if (distance < 20.0D) {
-            color = "#e9f00e";
-            text = distance < 14.0D ? ">11" : distance < 17.0D ? ">8" : "6";
+        if (ratio < GREEN_MAX_RATIO) {
+            color = COLOR_GREEN;
+        } else if (ratio < YELLOW_MAX_RATIO) {
+            color = COLOR_YELLOW;
         } else {
-            color = "#e61717";
-            text = distance < 21.0D ? "5" : distance < 22.0D ? "4" : distance < 23.0D ? "3" : distance < 24.0D ? "2" : "1";
+            color = COLOR_RED;
         }
 
         owner.displayClientMessage(
                 Component.translatable("actionbar.wing_kirin.instant_invisibility.distance_notice")
-                        .append(Component.literal(text).withStyle(style -> style.withColor(net.minecraft.network.chat.TextColor.parseColor(color)))),
+                        .append(Component.literal(String.valueOf(remaining))
+                                .withStyle(style -> style.withColor(TextColor.parseColor(color)))),
                 true);
     }
 

@@ -26,6 +26,7 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import com.mojang.logging.LogUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -72,6 +73,7 @@ import java.util.function.Function;
  */
 @Mod.EventBusSubscriber(modid = WingKirin.MODID)
 public class SignalArrowRainHandler {
+    private static final org.slf4j.Logger LOGGER = LogUtils.getLogger();
 
     /** 标志实体标签（spawn.mcfunction 写入，与 1.21.1 一致） */
     private static final String MARKER_TAG = "signal_arrow_generic";
@@ -270,6 +272,10 @@ public class SignalArrowRainHandler {
         tag.putFloat("FallDistance", 0.0F);
         tag.putShort("life", (short) 1180);     // 原版落地寿命上限 1200，留 20 刻自动消散，防实体堆积
         tag.put("Motion", doubleList(0.0D, -10.0D, 0.0D));
+        // 根级 Owner：击杀归因的生命线——DS ProjectileDamageEffect 以 projectile.getOwner() 作为
+        // DamageSource 的归因实体（源码 m_19749_ 实证）；缺它则击杀不归属施法者。
+        // 原版 Projectile.readAdditionalSaveData 走 hasUUID("Owner")（int 数组），loadEntityRecursive 时即生效。
+        tag.put("Owner", NbtUtils.createUUID(owner));
         tag.put("general_data", buildGeneralData(owner, damage));
         tag.put("type_data", buildTypeData());
         return tag;
@@ -296,14 +302,21 @@ public class SignalArrowRainHandler {
         return generalData;
     }
 
-    /** ticking_effects 条目：point 目标的尘埃粒子世界效果 */
+    /** ticking_effects 条目：point 目标的尘埃粒子世界效果（effects 列表元素须为 {effect:{...}} 包裹，缺失会被 DS 整条丢弃） */
     private static @NotNull CompoundTag tickingEntry() {
         CompoundTag entry = new CompoundTag();
         CompoundTag wrapper = new CompoundTag();
-        wrapper.put("effects", single(particleWorldEffect(10, "dust", goldDust())));
+        wrapper.put("effects", single(wrapInEffect(particleWorldEffect(10, "dust", goldDust()))));
         entry.put("general_data", wrapper);
         entry.putString("target_type", "dragonsurvival:point");
         return entry;
+    }
+
+    /** 通用效果列表元素包裹键：{effect: <effect>[, condition: <condition>]} */
+    private static @NotNull CompoundTag wrapInEffect(@NotNull CompoundTag effect) {
+        CompoundTag tag = new CompoundTag();
+        tag.put("effect", effect);
+        return tag;
     }
 
     /** common_hit_effects 条目：area 2.0 的 rainstorm_arrow 伤害，免伤发射者 */

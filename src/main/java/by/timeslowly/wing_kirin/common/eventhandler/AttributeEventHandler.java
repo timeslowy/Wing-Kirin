@@ -37,7 +37,7 @@ public class AttributeEventHandler {
         float multiplier = 1.0f;
         /*
           检查攻击者的各类伤害加成属性
-          包括音波伤害倍率和重锤猛击倍率
+          包括音波伤害倍率
          */
         DamageSource source = event.getSource();
         Entity attackerEntity = source.getEntity();
@@ -48,19 +48,6 @@ public class AttributeEventHandler {
                     multiplier *= (float) sonicAttr.getValue();
                 }
             }
-
-            // TODO:重锤猛击倍率逻辑暂缓：1.20.1 原版没有重锤（MaceItem 与 LivingEntity#getWeaponItem 均为 1.20.5+/1.21 才有），
-            //  且 1.21.1 中该属性的另外两处引用（MaceCrushEffect 药水效果、GoldenBellItem 金钟物品）也尚未移植。
-            //  待加入重锤类物品后，仿照 1.21.1 分支补全：
-            //  ItemStack weapon = attacker.getMainHandItem();
-            //  if (weapon.getItem() instanceof MaceItem) {
-            //      if (attacker.fallDistance > 1.5f && !attacker.isFallFlying()) {
-            //          AttributeInstance smashAttr = attacker.getAttribute(WKAttributes.MACE_SMASH_DAMAGE_MULTIPLIER.get());
-            //          if (smashAttr != null) {
-            //              multiplier *= (float) smashAttr.getValue();
-            //          }
-            //      }
-            //  }
         }
 
         if (multiplier != 1.0f) {

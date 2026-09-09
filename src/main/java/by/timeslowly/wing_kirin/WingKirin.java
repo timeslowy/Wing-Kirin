@@ -31,8 +31,6 @@ public class WingKirin {
     // 与 1.21.1 分支一致改为 public，供 WKStatsCommand 等类记录日志
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // TODO：至少药水效果、物品、创造物品栏、寻包、附件替代、配置
-
     // Forge 47.4.23 的 @Mod 构造器注入仅支持 FMLJavaModLoadingContext（不支持 IEventBus）
     public WingKirin(@NotNull FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();

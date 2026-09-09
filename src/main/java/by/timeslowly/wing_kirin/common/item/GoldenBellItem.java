@@ -82,8 +82,6 @@ public class GoldenBellItem extends Item {
                 // 音爆伤害倍率
                 .put(WKAttributes.SONIC_BOOM_DAMAGE_MULTIPLIER.get(), new AttributeModifier(SONIC_BOOM_MODIFIER_ID,
                         "Golden bell sonic boom multiplier", 1.0, AttributeModifier.Operation.MULTIPLY_BASE))
-                // TODO:重锤猛击伤害倍率（合理的，因为其重；1.21.1 中为副手 +0.5 ADD_MULTIPLIED_BASE）未随本次移植：
-                //  1.20.1 原版没有重锤，MACE_SMASH_DAMAGE_MULTIPLIER 属性已按用户要求移除
                 // 龙飞行速度（DragonSurvival 属性）
                 .put(DSAttributes.FLIGHT_SPEED.get(), new AttributeModifier(FLIGHT_SPEED_MODIFIER_ID,
                         "Golden bell flight speed", -0.9, AttributeModifier.Operation.MULTIPLY_TOTAL))
