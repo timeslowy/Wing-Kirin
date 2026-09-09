@@ -1,0 +1,27 @@
+{
+    "parent": "wing_kirin:wing_kirin/ding_shen_shu",
+    "criteria": {
+        "casted_spell_binder": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/spell_binder"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/spell_binder.desc"
+        },
+        "icon": {
+            "item": "wing_kirin:spell_binder_icon"
+        }
+    },
+    "requirements": [
+        [
+            "casted_spell_binder"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    }
+}

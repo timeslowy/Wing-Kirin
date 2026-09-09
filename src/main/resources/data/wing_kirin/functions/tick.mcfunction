@@ -14,12 +14,12 @@ execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.empyrean_wine.work
 execute as @a if score @s wk.last_stand.death_countdown matches 0.. run function wing_kirin:dragon_ability/last_stand/tick
 
 # 给 不坏金身 执行刻函数（守卫：working_symbol 在 ..26 之间，即激活中或待重置）
-# execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.indestructible_body.working_symbol matches ..26 run function wing_kirin:dragon_ability/indestructible_body/tick
+execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.indestructible_body.working_symbol matches ..26 run function wing_kirin:dragon_ability/indestructible_body/tick
 
-# 为 聚形散气 标志实体执行（已通过 marker tag 过滤，无需额外守卫）
+# 为 聚形散气 标志实体执行（已通过 marker tag 过滤，无需额外守卫）（已经全Java化！）
 # execute as @e[type=marker,tag=instant_invisibility] at @s run function wing_kirin:dragon_ability/instant_invisibility/tick with entity @s data
 
-# 给 一支穿云箭 标志实体每刻执行主函数（已通过 marker tag 过滤，无需额外守卫）
+# 给 一支穿云箭 标志实体每刻执行主函数（已通过 marker tag 过滤，无需额外守卫）（已Java化！）
 # execute as @e[type=marker,tag=signal_arrow_generic] at @s run function wing_kirin:dragon_ability/signal_arrow/tick
 
 # 为 天降正义 标志实体 执行（已通过 marker tag 过滤，无需额外守卫）
@@ -28,5 +28,5 @@ execute as @e[type=marker,tag=heavenly_justice_marker] run function wing_kirin:d
 execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.heavenly_justice.countdown matches 0.. run function wing_kirin:dragon_ability/heavenly_justice/ability_data/tick
 
 # 玩家死亡执行（已通过 death_check 计分板过滤，无需额外守卫）
-# execute as @a if score @s wk.death_check matches 1.. run function wing_kirin:player_death/main
+execute as @a if score @s wk.death_check matches 1.. run function wing_kirin:player_death/main
 

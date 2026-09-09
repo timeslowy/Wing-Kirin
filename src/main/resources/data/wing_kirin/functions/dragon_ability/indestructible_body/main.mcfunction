@@ -19,8 +19,8 @@ particle wing_kirin:thunderous_shout ~ ~ ~ 0.0 0.0 0.0 0 1
 # 反震次数计分板+1
 scoreboard players add @s wk.indestructible_body.counter_shock_count 1
 
-# TODO:单次反震超过10次授予「金身不坏」进度
-# execute if entity @s[advancements={wing_kirin:wing_kirin/indestructible_body=false}] if score @s wk.indestructible_body.counter_shock_count matches 10.. run advancement grant @s only wing_kirin:wing_kirin/indestructible_body
+# 单次反震超过10次授予「金身不坏」进度
+execute if entity @s[advancements={wing_kirin:wing_kirin/indestructible_body=false}] if score @s wk.indestructible_body.counter_shock_count matches 10.. run advancement grant @s only wing_kirin:wing_kirin/indestructible_body
 
 # TODO:增加“不坏金身反震次数”统计数据值
 # wk-stats add @s wing_kirin:indestructible_body_countershock_times 1

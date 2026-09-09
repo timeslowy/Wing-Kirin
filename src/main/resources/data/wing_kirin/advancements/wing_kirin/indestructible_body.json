@@ -1,0 +1,27 @@
+{
+    "parent": "wing_kirin:wing_kirin/falling_arrow_like_rainstorm",
+    "criteria": {
+        "Counter_Shock_over_10_Times_Once":{
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "display": {
+        "icon": {
+            "item": "wing_kirin:golden_bell"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/indestructible_body"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/indestructible_body.desc"
+        }
+    },
+    "requirements": [
+        [
+            "Counter_Shock_over_10_Times_Once"
+        ]
+    ],
+    "rewards": {
+        "experience": 200
+    }
+}

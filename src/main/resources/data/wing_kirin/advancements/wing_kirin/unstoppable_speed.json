@@ -1,4 +1,5 @@
 {
+    "parent": "wing_kirin:wing_kirin/delay_death",
     "criteria": {
         "Attacks_over_100_Times_Once":{
             "trigger": "impossible"

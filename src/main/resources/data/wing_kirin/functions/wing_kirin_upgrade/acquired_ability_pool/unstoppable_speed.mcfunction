@@ -1,7 +1,7 @@
 ## 执行者：玩家
 # 1.20.1 移植版：无 /return run（1.20.2+）——补偿/授予两条路径改为 if / unless 反转互斥
 # （has_ability 分数在补偿前已存好，补偿函数不会改写它，顺序安全）；
-# 返回值语义舍弃（当前无调用方消费）。insurance/main 属通仙心批次尚未移植，运行到该分支时会报未知函数。
+# 返回值语义舍弃（当前无调用方消费）。
 
 # 判断是否已拥有此技能（1=已拥有）
 execute store success score @s wk.ability_add.has_ability run dragon-ability query @s wing_kirin:unstoppable_speed level

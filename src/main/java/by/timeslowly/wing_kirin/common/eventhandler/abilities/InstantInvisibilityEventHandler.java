@@ -156,7 +156,7 @@ public class InstantInvisibilityEventHandler {
             breakInvisibility(owner);
             resetRemoveCheck(owner.server, owner.getScoreboardName());
             // TODO:「破隐一击次数」统计数据（1.21.1 为 wk-stats add @s wing_kirin:broken_instant_invisibility_times，
-            //  以及剥夺进度 wing_kirin:function/instant_invisibility_check——进度树未随本次移植，故一并省略）
+
         }
     }
 

@@ -1,0 +1,55 @@
+{
+    "parent": "wing_kirin:wing_kirin/persistent_attempt",
+    "criteria": {
+        "every_advancements": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "advancements": {
+                            "wing_kirin:wing_kirin/be_old": true,
+                            "wing_kirin:wing_kirin/be_wing_kirin": true,
+                            "wing_kirin:wing_kirin/breaking_invisibility_strike": true,
+                            "wing_kirin:wing_kirin/delay_death": true,
+                            "wing_kirin:wing_kirin/ding_shen_shu": true,
+                            "wing_kirin:wing_kirin/falling_arrow_like_rainstorm": true,
+                            "wing_kirin:wing_kirin/fly_higher": true,
+                            "wing_kirin:wing_kirin/great_zhengqi": true,
+                            "wing_kirin:wing_kirin/heaven_dish": true,
+                            "wing_kirin:wing_kirin/indestructible_body": true,
+                            "wing_kirin:wing_kirin/invincible_benevolence": true,
+                            "wing_kirin:wing_kirin/master_all_passives": true,
+                            "wing_kirin:wing_kirin/persistent_attempt": true,
+                            "wing_kirin:wing_kirin/the_wine_from_empyrean": true,
+                            "wing_kirin:wing_kirin/unstoppable_speed": true,
+                            "wing_kirin:wing_kirin/weather_clear": true,
+                            "wing_kirin:wing_kirin/spell_binder": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "display": {
+        "hidden": true,
+        "frame": "challenge",
+        "icon": {
+            "item": "wing_kirin:empyrean_essence"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/stinger"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/stinger.desc"
+        }
+    },
+    "requirements": [
+        [
+            "every_advancements"
+        ]
+    ],
+    "rewards": {
+        "function": "wing_kirin:advancements/stinger"
+    }
+}

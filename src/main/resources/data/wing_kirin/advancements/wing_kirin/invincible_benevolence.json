@@ -1,0 +1,28 @@
+{
+    "parent": "wing_kirin:wing_kirin/indestructible_body",
+    "criteria": {
+        "Heal_at_least_3_Alies":{
+            "trigger": "impossible"
+        }
+    },
+    "requirements": [
+        [
+            "Heal_at_least_3_Alies"
+        ]
+    ],
+    "display": {
+        "icon": {
+            "item": "glistering_melon_slice"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/invincible_benevolence"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/invincible_benevolence.desc"
+        }
+    },
+    "rewards": {
+        "function": "dragonsurvival:test"
+    },
+    "sends_telemetry_event": false
+}

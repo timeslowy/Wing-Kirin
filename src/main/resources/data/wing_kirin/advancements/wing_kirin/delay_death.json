@@ -1,0 +1,27 @@
+{
+    "parent": "wing_kirin:wing_kirin/invincible_benevolence",
+    "criteria": {
+        "delay_death":{
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/delay_death.desc"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/delay_death"
+        },
+        "icon": {
+            "item": "clock"
+        }
+    },
+    "requirements": [
+        [
+            "delay_death"
+        ]
+    ],
+    "rewards": {
+        "experience": 30
+    }
+}

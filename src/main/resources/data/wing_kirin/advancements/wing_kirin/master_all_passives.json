@@ -1,0 +1,62 @@
+{
+    "parent": "wing_kirin:wing_kirin/be_wing_kirin",
+    "criteria": {
+        "master_fly_higher": {
+            "conditions": {
+                "ability": "wing_kirin:fly_higher",
+                "level": 8
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_good_overcome_evil": {
+            "conditions": {
+                "ability": "wing_kirin:good_overcome_evil",
+                "level": 8
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_empyrean_magic": {
+            "conditions": {
+                "ability": "wing_kirin:empyrean_magic",
+                "level": 10
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        },
+        "master_born_above_empyrean": {
+            "conditions": {
+                "ability": "wing_kirin:born_above_empyrean",
+                "level": 2
+            },
+            "trigger": "dragonsurvival:upgrade_ability"
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/master_all_passives.desc"
+        },
+        "icon": {
+            "item": "dragonsurvival:dragon_soul"
+        },
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/master_all_passives"
+        }
+    },
+    "requirements": [
+        [
+            "master_fly_higher"
+        ],
+        [
+            "master_good_overcome_evil"
+        ],
+        [
+            "master_empyrean_magic"
+        ],
+        [
+            "master_born_above_empyrean"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": true
+}

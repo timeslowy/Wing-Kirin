@@ -24,9 +24,10 @@ scoreboard objectives add wk.signal_arrow.life dummy
 scoreboard objectives add wk.signal_arrow_spawn_count dummy
 
 
-# 通仙心 1.技能获取所用随机数 2.判断技能是否存在
+# 通仙心 1.技能获取所用随机数 2.判断技能是否存在 3.保险补偿 30% 判定结果
 scoreboard objectives add wk.ability_add.random_value dummy
 scoreboard objectives add wk.ability_add.has_ability dummy
+scoreboard objectives add wk.ability_add.insurance_roll dummy
 
 # 不坏金身 1.运行标志计分板；2.反震次数计分板
 scoreboard objectives add wk.indestructible_body.working_symbol dummy
@@ -63,6 +64,8 @@ scoreboard players set #20 wk.math 20
 scoreboard players set #15 wk.math 15
 scoreboard players set #01 wk.math 01
 scoreboard players set #19 wk.math 19
+# 通仙心随机数取模用（1.20.1 无 /random value，改用 UUID %= 100）
+scoreboard players set #100 wk.math 100
 
 # 测试用，无实际意义
 scoreboard objectives add wk.test dummy
