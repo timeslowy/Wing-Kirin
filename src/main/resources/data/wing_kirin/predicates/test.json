@@ -27,6 +27,28 @@
             "predicate": {
                 "stepping_on": {}
             }
+        },
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "location": {
+                    "position": {
+                        "y": {
+                            "min": 310
+                        }
+                    },
+                    "dimension": "minecraft:overworld"
+                }
+            }
+        },
+        {
+            "condition": "weather_check",
+            "raining": false
+        },
+        {
+            "condition": "weather_check",
+            "thundering": false
         }
     ]
 }

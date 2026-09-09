@@ -16,6 +16,8 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.server.ServerLifecycleHooks;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -177,7 +179,8 @@ public class ConfigSyncHandler {
             boolean magicDisabledIncurable
     ) {
         /** 从服务端当前配置取值（仅在 SERVER 配置已加载的逻辑侧调用） */
-        static Snapshot fromServer() {
+        @Contract(" -> new")
+        static @NotNull Snapshot fromServer() {
             return new Snapshot(
                     WKServerConfig.shouldDingShenDisableAbilities(),
                     WKServerConfig.shouldDingShenDisablePassiveAbilities(),
@@ -195,7 +198,7 @@ public class ConfigSyncHandler {
             );
         }
 
-        void encode(FriendlyByteBuf buf) {
+        void encode(@NotNull FriendlyByteBuf buf) {
             buf.writeBoolean(disableAbilities);
             buf.writeBoolean(disablePassiveAbilities);
             buf.writeBoolean(disableInteraction);
@@ -211,7 +214,8 @@ public class ConfigSyncHandler {
             buf.writeBoolean(magicDisabledIncurable);
         }
 
-        static Snapshot decode(FriendlyByteBuf buf) {
+        @Contract("_ -> new")
+        static @NotNull Snapshot decode(@NotNull FriendlyByteBuf buf) {
             return new Snapshot(
                     buf.readBoolean(),
                     buf.readBoolean(),
@@ -229,7 +233,7 @@ public class ConfigSyncHandler {
             );
         }
 
-        void handle(Supplier<NetworkEvent.Context> contextSupplier) {
+        void handle(@NotNull Supplier<NetworkEvent.Context> contextSupplier) {
             NetworkEvent.Context context = contextSupplier.get();
             context.enqueueWork(() -> ConfigSyncHandler.clientSnapshot = this);
             context.setPacketHandled(true);

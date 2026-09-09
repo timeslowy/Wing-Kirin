@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forgespi.language.IModFileInfo;
 import net.minecraftforge.resource.PathPackResources;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
 import java.nio.file.Files;
@@ -72,7 +73,7 @@ public class PackFinders {
         event.addRepositorySource(packConsumer -> packConsumer.accept(pack));
     }
 
-    private static Path findPackPath(String resourcePath) {
+    private static @Nullable Path findPackPath(String resourcePath) {
         IModFileInfo fileInfo = ModList.get().getModFileById(WingKirin.MODID);
         if (fileInfo == null) return null;
         Path path = fileInfo.getFile().findResource(resourcePath.split("/"));

@@ -55,7 +55,7 @@ public record InstantInvisibilityTrackerEffect(LevelBasedValue perLevelDuration,
     ).apply(instance, InstantInvisibilityTrackerEffect::new));
 
     @Override
-    public void apply(final ServerPlayer dragon, final DragonAbilityInstance ability, final Entity target) {
+    public void apply(final ServerPlayer dragon, final @NotNull DragonAbilityInstance ability, final Entity target) {
         // 结算只关心施法者本人（本效果应位于 self 目标选择中），target 参数忽略
         int ticks = (int) perLevelDuration.calculate(ability.level());
         float attackBonus = attackDamageBonus.calculate(ability.level());

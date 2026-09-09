@@ -449,7 +449,7 @@ public class SignalArrowRainHandler {
         return list;
     }
 
-    private static @NotNull ListTag doubleList(double... values) {
+    private static @NotNull ListTag doubleList(double @NotNull ... values) {
         ListTag list = new ListTag();
         for (double value : values) {
             list.add(DoubleTag.valueOf(value));
@@ -457,7 +457,7 @@ public class SignalArrowRainHandler {
         return list;
     }
 
-    private static @NotNull ListTag floatList(float... values) {
+    private static @NotNull ListTag floatList(float @NotNull ... values) {
         ListTag list = new ListTag();
         for (float value : values) {
             list.add(FloatTag.valueOf(value));
