@@ -17,12 +17,13 @@
     ],
     "supported_items": "wing_kirin:golden_bell",
     "primary_items": "wing_kirin:golden_bell",
+    "exclusive_set": "#wing_kirin:exclusive_set/golden_bell",
     "anvil_cost": 8,
     "effects": {
         "attributes": [
             {
                 "id": "wing_kirin:unencumbered_movement_recovery",
-                "attribute": "minecraft:movement_speed",
+                "attribute": "movement_speed",
                 "amount": {
                     "type": "linear",
                     "base": 0.375,
@@ -42,7 +43,7 @@
             },
             {
                 "id": "wing_kirin:unencumbered_gravity_recovery",
-                "attribute": "minecraft:gravity",
+                "attribute": "gravity",
                 "amount": {
                     "type": "linear",
                     "base": -0.08,

@@ -1,0 +1,46 @@
+{
+    "description": {
+        "translate": "enchantment.wing_kirin.restrictor"
+    },
+    "max_level": 5,
+    "max_cost": {
+        "base": 10,
+        "per_level_above_first": 5
+    },
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 5
+    },
+    "weight": 10,
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "wing_kirin:golden_bell",
+    "primary_items": "wing_kirin:golden_bell",
+    "exclusive_set": "#wing_kirin:exclusive_set/golden_bell",
+    "anvil_cost": 8,
+    "effects": {
+        "attributes": [
+            {
+                "id": "wing_kirin:restrictor_damage_bouns",
+                "attribute": "wing_kirin:sonic_boom_damage_multiplier",
+                "amount": {
+                    "type": "linear",
+                    "base": 0.2,
+                    "per_level_above_first": 0.2
+                },
+                "operation": "add_multiplied_total"
+            },
+            {
+                "id": "wing_kirin:restrictor_range_rescrtction",
+                "attribute": "dragonsurvival:dragon_breath_range",
+                "amount": {
+                    "type": "linear",
+                    "base": -0.1,
+                    "per_level_above_first": -0.1
+                },
+                "operation": "add_multiplied_total"
+            }
+        ]
+    }
+}
