@@ -25,7 +25,7 @@
         "master_born_above_empyrean": {
             "conditions": {
                 "ability": "wing_kirin:born_above_empyrean",
-                "level": 2
+                "level": 5
             },
             "trigger": "dragonsurvival:upgrade_ability"
         }

@@ -64,5 +64,13 @@ public class PackFinders {
                 false,
                 Pack.Position.TOP
         );
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(Wing_kirin.MOD_ID, "assets/wing_kirin/resourcepacks/simple_description"),
+                PackType.CLIENT_RESOURCES,
+                Component.literal("精简描述"),
+                PackSource.FEATURE,
+                false,
+                Pack.Position.TOP
+        );
     }
 }

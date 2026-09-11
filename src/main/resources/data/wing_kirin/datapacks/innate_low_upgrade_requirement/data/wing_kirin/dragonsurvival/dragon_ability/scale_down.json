@@ -120,22 +120,9 @@
         ]
     },
     "upgrade": {
-        "upgrade_type": "dragonsurvival:experience_levels",
+        "upgrade_type": "dragonsurvival:experience_points",
         "maximum_level": 4,
-        "level_requirement": {
-            "type": "minecraft:lookup",
-            "fallback": {
-                "type": "minecraft:linear",
-                "base": 5,
-                "per_level_above_first": 5
-            },
-            "values": [
-                0,
-                10,
-                20,
-                30
-            ]
-        }
+        "experience_cost": 1
     },
     "usage_blocked": {
         "condition": "minecraft:any_of",

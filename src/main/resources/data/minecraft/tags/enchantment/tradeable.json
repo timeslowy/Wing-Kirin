@@ -2,6 +2,7 @@
     "replace": false,
     "values": [
         "wing_kirin:unencumbered",
-        "wing_kirin:dingshen_resistance"
+        "wing_kirin:dingshen_resistance",
+        "wing_kirin:restrictor"
     ]
 }
