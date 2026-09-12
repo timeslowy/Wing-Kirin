@@ -2,30 +2,6 @@
     "actions": [
         {
             "target_selection": {
-                "applied_effects": {
-                    "entity_effect": [
-                        {
-                            "effect_type": "dragonsurvival:glow",
-                            "glows": [
-                                {
-                                    "base": {
-                                        "id": "wing_kirin:midas_touch_glow",
-                                        "is_hidden": true,
-                                        "duration": 20
-                                    },
-                                    "color": "#fbdc92"
-                                }
-                            ]
-                        }
-                    ],
-                    "targeting_mode": "allies_and_self"
-                },
-                "target_type": "dragonsurvival:self"
-            },
-            "trigger_point": "charging"
-        },
-        {
-            "target_selection": {
                 "target_type": "dragonsurvival:disc",
                 "applied_effects": {
                     "entity_effect": [
@@ -262,30 +238,40 @@
         {
             "target_selection": {
                 "applied_effects": {
-                    "block_effect": [
+                    "entity_effect": [
                         {
-                            "effect_type": "dragonsurvival:area_cloud",
-                            "duration": 20,
-                            "potion": {
-                                "effects": "infested",
-                                "amplifier": 0,
-                                "duration": 10
-                            },
-                            "radius": 2,
-                            "delay": 2,
-                            "probability": 0.1,
-                            "particle": {
-                                "type": "ash"
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:midas_touch_glowmark",
+                                        "is_hidden": false,
+                                        "duration": 20
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "items",
+                    "target_conditions": {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "slots": {
+                                "contents": {
+                                    "items": "#wing_kirin:midas_touch"
+                                }
                             }
                         }
-                    ]
+                    }
                 },
                 "target_type": "dragonsurvival:disc",
                 "radius": 10,
                 "height": 3,
-                "height_starts_below": true
+                "height_starts_below": false
             },
-            "trigger_rate": 60
+            "trigger_rate": 20
         },
         {
             "target_selection": {
@@ -349,6 +335,42 @@
             {
                 "from_level": 0,
                 "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_0"
+            },
+            {
+                "from_level": 1,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_1"
+            },
+            {
+                "from_level": 2,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_2"
+            },
+            {
+                "from_level": 3,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_3"
+            },
+            {
+                "from_level": 4,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_4"
+            },
+            {
+                "from_level": 5,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_5"
+            },
+            {
+                "from_level": 6,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_6"
+            },
+            {
+                "from_level": 7,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_7"
+            },
+            {
+                "from_level": 8,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_8"
+            },
+            {
+                "from_level": 9,
+                "texture_resource": "wing_kirin:abilities/midas_touch/midas_touch_9"
             }
         ]
     },
