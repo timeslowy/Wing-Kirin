@@ -1,0 +1,17 @@
+{
+    "values": [
+        "stone",
+        "cobblestone",
+        "basalt",
+        "netherrack",
+        "diorite",
+        "granite",
+        "andesite",
+        "calcite",
+        "copper_ingot",
+        "lapis_lazuli",
+        "emerald",
+        "coal",
+        "charcoal"
+    ]
+}
