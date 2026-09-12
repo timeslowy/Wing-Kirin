@@ -102,6 +102,8 @@ minecraft {
     }
 
     server {
+        // 独立的服务端工作目录：与 run/（客户端）隔离，避免两侧争抢 logs/ 与 config/
+        workingDirectory project.file('run-server')
         args '--nogui'
     }
 
