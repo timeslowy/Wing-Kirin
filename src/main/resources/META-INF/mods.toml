@@ -53,13 +53,10 @@ versionRange = "[4.8,)"
 ordering = "AFTER"
 side = "CLIENT"
 
-# MixinExtras 依赖（LivingEntityHurtMixin 的 @WrapOperation 必需）
-# 1.20.1 的 Forge 与 NeoForge 均不捆绑该库，缺库时会在 mixin 应用阶段抛
-# InvalidMixinException / NoClassDefFoundError，故此处声明为强制依赖以便提前失败并给出明确提示。
-# 来源可以是 mods 目录里的 mixinextras-forge，也可以是其它模组经 JarJar 内嵌的同款库（如龙之生存/GeckoLib 已带 0.3.6）。
-[[dependencies."${mod_id}"]]
-modId = "mixinextras"
-mandatory = true
-versionRange = "[0.3.5,)"
-ordering = "AFTER"
-side = "BOTH"
+# ⚠️ 不要为 MixinExtras 声明依赖（2026-09-12 实证，勿再添加）
+# 1.20.1 生态里 MixinExtras 是以「JarJar 内嵌库」形式提供的：龙之生存 2.0.68 内嵌
+# META-INF/jarjar/mixinextras-forge-0.3.6、Xenon 内嵌 0.3.5、KubeJS 内嵌 0.2.0-rc.2。
+# Forge 47.4.x 的 FML 只把这类库挂到 classpath、**不注册为 mod**，因此任何 mandatory 依赖声明
+# 都会得到 "Actual version: '[MISSING]'" 并让整个模组拒绝加载（曾于 19:02 实测复现）。
+# 又因 dragonsurvival 是本模组的强制依赖、而它必然内嵌 MixinExtras，
+# @WrapOperation 在任何合法安装里都能拿到库，故此处不声明依赖——与 DS 自身的做法一致。
