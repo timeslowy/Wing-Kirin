@@ -1,0 +1,28 @@
+{
+    "parent": "wing_kirin:wing_kirin/spell_binder",
+    "criteria": {
+        "Casted_Midas_Touch":{
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "dragonsurvival.advancement.wing_kirin/midas_touch"
+        },
+        "description": {
+            "translate": "dragonsurvival.advancement.wing_kirin/midas_touch.desc"
+        },
+        "icon": {
+            "item": "gold_ingot"
+        }
+    },
+    "requirements": [
+        [
+            "Casted_Midas_Touch"
+        ]
+    ],
+    "rewards": {
+        "experience": 100
+    },
+    "sends_telemetry_event": false
+}

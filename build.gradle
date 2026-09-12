@@ -149,15 +149,20 @@ sourceSets {
 
 repositories {
     mavenLocal()
-    // 依赖 mod 全部用本地 libs/ 目录（flatDir），避免网络下载失败
     flatDir {
         dir 'libs'
+    }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 }
 
 dependencies {
-    // 龙生（DragonSurvival 2.0.67，本地 libs/dragonsurvival-1.20.1-2.0.67.jar）
-    implementation fg.deobf("dragonsurvival:dragonsurvival-1.20.1:2.0.67")
+    // 龙生（DragonSurvival 2.0.67，本地 libs/dragonsurvival-1.20.1-2.0.68.jar）
+    implementation fg.deobf("curse.maven:dragons-survival-420799:8860751")
     // 壁虎库（GeckoLib 4.8.4，本地 libs/geckolib-forge-1.20.1-4.8.4.jar）
     implementation fg.deobf("geckolib:geckolib-forge-1.20.1:4.8.4")
     // MixinExtras（本地 libs/，供 LivingEntityHurtMixin 的 @WrapOperation 使用；1.20.1 Forge 不捆绑）。

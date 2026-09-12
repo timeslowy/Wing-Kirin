@@ -5,7 +5,7 @@
 # execute unless items entity @s weapon.mainhand glass_bottle run return fail
 
 # 移除一次玩家的物品
-item modify entity @s weapon.mainhand wing_kirin:empyrean_wine
+item modify entity @s weapon.mainhand wing_kirin:remove_1item
 
 # 给予玩家 金风玉露
 give @s wing_kirin:empyrean_wine 1

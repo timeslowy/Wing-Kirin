@@ -2,6 +2,7 @@ package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.dragonsurvivalteam.dragonsurvival.common.handlers.magic.ClawToolHandler;
 import by.timeslowly.wing_kirin.WingKirin;
+import by.timeslowly.wing_kirin.registry.WKEffects;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.DoubleTag;
@@ -54,8 +55,9 @@ import java.util.function.Function;
  *       ServerTickEvent(END) 阶段延迟注册——marker 的 data 参数由 summon 之后的 set-marker 函数写入，
  *       join 时刻尚未就绪；注册成功后按 marker UUID 去重（世界重载后 marker 重入时自动重新注册）；</li>
  *   <li>伤害计算：爆点时刻按发射者当前状态一口价结算（与 1.21.1 caculate_damage 语义一致）——
- *       基础 15×技能等级 + 力量效果（+15×(amplifier+1)）+ 爪剑锋利（+等级+0.5）；
- *       密度附魔加成舍弃（1.20.1 无重锤/致密），浩然正气加成待浩然正气到期行为移植后补；</li>
+ *       基础 15×技能等级 + 力量效果（+15×(amplifier+1)）+ 爪剑锋利（+等级+0.5）
+ *       + 浩然正气（持有该效果时总伤害 ×1.2）；
+ *       密度附魔加成舍弃（1.20.1 无重锤/致密）；</li>
  *   <li>箭雨循环：持续 life 刻，每刻生成 tick_spawn_count 支梨花针（generic_arrow_entity + 内联
  *       general_data NBT，与 1.21.1 spawn.mcfunction 完全一致），随机散点 X/Z ∈ [-radius, radius]
  *       （整数均匀，等价 random value）、抬升爆点+64 刻度、Motion -10 落下；</li>
@@ -195,8 +197,9 @@ public class SignalArrowRainHandler {
      *   <li>力量：1.21.1 读 modifier minecraft:effect.strength（3×等级）×scale50 → ×0.1，净乘 ≡ +15×(amplifier+1)；</li>
      *   <li>锋利：爪剑锋利等级 level×10+5 → ×0.1，≡ +level+0.5（1.21.1 经 neoforge:attachments 附件路径读取，
      *       1.20.1 改用 DS ClawToolHandler.getDragonSword 直接取物品栈）；</li>
-     *   <li>致密：1.20.1 无重锤与致密附魔，舍弃；</li>
-     *   <li>TODO:浩然正气：待浩然正气到期行为（Amnesia/GreatZhengqi 批次后续）移植后补。</li>
+     *   <li>浩然正气：持有该效果时对上述累计值再 ×1.2（1.21.1 lib/entity/damage_bounce/
+     *       damage_through_great_zhengqi_effect.mcfunction 的 20% 加成）；</li>
+     *   <li>致密：1.20.1 无重锤与致密附魔，舍弃。</li>
      * </ul>
      */
     private static float computeDamage(@Nullable ServerPlayer owner, int abilityLevel) {
@@ -212,6 +215,11 @@ public class SignalArrowRainHandler {
                 if (sharpness > 0) {
                     damage += sharpness + 0.5F;
                 }
+            }
+            // 浩然正气加成作用于已累计的总伤害（力量/锋利加完之后），与 1.21.1 的调用顺序一致；
+            // 1.21.1 中该函数以施法者为执行者，玩家离线时加成不生效，故此处同样限定 owner 在线。
+            if (owner.hasEffect(WKEffects.GREAT_ZHENGQI.get())) {
+                damage *= 1.2F;
             }
         }
         return damage;

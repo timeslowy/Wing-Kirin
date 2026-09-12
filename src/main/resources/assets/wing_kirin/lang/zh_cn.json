@@ -47,11 +47,11 @@
   "dragon_ability.wing_kirin.blindness_reverse": "目极必反",
   "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■欲要看破黑暗，必先陷于黑暗，所以动心忍性，增益其所不能。\n\n■§n失明时长§r§7随§a技能等级（经验消耗）§7而§l缩短§r§7。在适应过程中，可一定程度§n感应到周遭生物§r§7。\n\n§8■仅可在黑暗（低光照）处使用。\n\n§6§o“暗适应是指从强光下进入暗处或照明忽然停止时，视觉光敏度逐渐增强，得以分辨周围物体的过程。此过程中，视杆细胞中的暗紫红质合成增加，浓度逐渐上升，从而提升感光换能的效率。”",
   "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked": "需要暗处适应！",
-  "dragon_ability.wing_kirin.midas_touch": "化腐朽为神奇",
-  "dragon_ability.wing_kirin.midas_touch.desc": "§7■点石成金，变废为宝。消耗§6「金风玉露」§7，可转化身旁部分材料，使其§a升值§7。\n\n§6§o此法术没有作弊外任何获取途径，也无英文释义。如果看见此段文字，恭喜你发现了作者的小心思······",
+  "dragon_ability.wing_kirin.midas_touch": "化朽为奇",
+  "dragon_ability.wing_kirin.midas_touch.desc": "§7■点石成金，“变废为宝”。消耗§6「金风玉露」§7，使其浸润与身旁§n发光之物§r§7内，可转化构造， 之而§a升值§7。\n\n■技能等级随§a经验等级§7提升，§l等级越高，概率越大。§r§7\n\n§6§o“炼金术打开了现代化学的大门。”",
   "dragon_ability.wing_kirin.midas_touch.activation.notification.usage_blocked": "§l你有「金风玉露」吗你就用？",
 
-
+  
   "dragon_ability.wing_kirin.born_above_empyrean": "生于九天",
   "dragon_ability.wing_kirin.born_above_empyrean.desc": "§7■当身处长空之上，沐浴在天风之中，§6翼麒麟§r§7如同回到了“泉水”，予自身数项极好的§a增益效果§r。\n\n§6§o“无限风光在险峰，乱云飞渡仍从容。”§r",
   "dragon_ability.wing_kirin.empyrean_magic": "九天之法",
@@ -409,6 +409,8 @@
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "在打通“任督二脉”的短暂时机发动超过100次攻击，将对方揍得毫无还手之力。",
   "dragonsurvival.advancement.wing_kirin/spell_binder": "壮士断腕",
   "dragonsurvival.advancement.wing_kirin/spell_binder.desc": "自废法功，放手一搏，以法力换取极致的物伤加成，在法术被克之境地下亦不失为一步险棋。",
+  "dragonsurvival.advancement.wing_kirin/midas_touch":"化朽为奇",
+  "dragonsurvival.advancement.wing_kirin/midas_touch.desc": "催动「金风玉露」浸润身旁物品，使其转变结构，“点石成金”，过足神仙的瘾呢！",
   "dragonsurvival.advancement.wing_kirin/stinger": "未竟",
   "dragonsurvival.advancement.wing_kirin/stinger.desc": "歌未竟，东方白。",
 

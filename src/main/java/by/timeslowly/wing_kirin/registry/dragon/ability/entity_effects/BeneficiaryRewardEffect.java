@@ -4,6 +4,7 @@ import by.dragonsurvivalteam.dragonsurvival.common.codecs.LevelBasedValue;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.entity_effects.AbilityEntityEffect;
 import by.dragonsurvivalteam.dragonsurvival.util.DSColors;
+import by.timeslowly.wing_kirin.registry.WKEffects;
 import by.timeslowly.wing_kirin.registry.WKStats;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -28,6 +29,8 @@ import java.util.List;
  * <p>
  * 加在技能的 self 目标选择中（受惠标记完成之后执行），按受惠实体数给予施法者抗性提升Ⅴ：
  * 总时长（秒）= min(受惠数, max_beneficiaries) × per_beneficiary_duration（按技能等级计算）。
+ * 若施法者持有「浩然正气」效果，受惠数先 ×1.2（向下取整）再参与结算，与 1.21.1
+ * {@code caculate/great_zhengqi_bonus.mcfunction} 一致。
  * 同时在 actionbar 显示惠及数；单次 3 名以上盟友受惠则授予「仁者无敌」进度。
  * <p>
  * 移植说明：替代 1.21.1 的 {@code run_function -> search_beneficiary.mcfunction} 递归搜索链
@@ -61,11 +64,12 @@ public record BeneficiaryRewardEffect(LevelBasedValue perBeneficiaryDuration, in
         // 结算只关心施法者本人（本效果应位于 self 目标选择中），target 参数忽略
         int count = Math.min(BeneficiaryMarkEffect.takeCount(dragon), maxBeneficiaries);
 
-        // TODO:「浩然正气」加成（1.21.1 中持有浩然正气时受惠数 ×1.2，见 caculate/great_zhengqi_bonus.mcfunction）。
-        //  注意须在 max_beneficiaries 截断之后相乘（与 1.21.1 顺序一致）；实现时建议用谓词文件（effects 条件）判定，
-        //  勿用 if data entity —— 1.20.1 的效果 NBT 键为 ActiveEffects 且效果 ID 为整数（与 1.20.5+ 的 active_effects 不同）。
+        // 「浩然正气」加成：持有该效果时受惠数 ×1.2，整数向下取整（等价 1.21.1
+        // great_zhengqi_bonus.mcfunction 的「先 ×12 再 ÷10」计分板整数运算）。
+        // 1.21.1 在授时之前完成加成，时长、actionbar 显示与 3 人进度判定均使用加成后数量。
+        int effectiveCount = dragon.hasEffect(WKEffects.GREAT_ZHENGQI.get()) ? count * 12 / 10 : count;
 
-        int totalSeconds = (int) (count * perBeneficiaryDuration.calculate(ability.level()));
+        int totalSeconds = (int) (effectiveCount * perBeneficiaryDuration.calculate(ability.level()));
         if (totalSeconds > 0) {
             dragon.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, totalSeconds * 20, amplifier));
         }
@@ -73,17 +77,18 @@ public record BeneficiaryRewardEffect(LevelBasedValue perBeneficiaryDuration, in
         // actionbar 显示惠及数（1.21.1 为 title actionbar：翻译键 + 绿色数字）
         dragon.displayClientMessage(
                 Component.translatable("actionbar.wing_kirin.ability.invincible_benevolence.beneficiary_amount")
-                        .append(Component.literal(String.valueOf(count)).withStyle(ChatFormatting.GREEN)),
+                        .append(Component.literal(String.valueOf(effectiveCount)).withStyle(ChatFormatting.GREEN)),
                 true);
 
         // 单次使 3 名以上盟友受惠则授予「仁者无敌」进度
         Advancement advancement = dragon.server.getAdvancements().getAdvancement(INVINCIBLE_BENEVOLENCE_ADVANCEMENT);
-        if (count >= 3 && advancement != null) {
+        if (effectiveCount >= 3 && advancement != null) {
             dragon.getAdvancements().award(advancement, ADVANCEMENT_CRITERION);
         }
 
         // 「仁者无敌惠及友方总数」统计（等价 1.21.1 search_beneficiary.mcfunction 的 wk-stats add；
-        // 用截断后的受惠数一次累加，与 1.21.1 搜索循环上限 88 的统计语义一致）
+        // 该计数在 1.21.1 由搜索循环按实体逐个累加，不受浩然正气加成影响，故用未加成的原始受惠数；
+        // 上限沿用 max_beneficiaries 截断，与 1.21.1 搜索循环上限 88 的统计语义一致）
         dragon.awardStat(WKStats.CuredAliesCount.get(), count);
     }
 

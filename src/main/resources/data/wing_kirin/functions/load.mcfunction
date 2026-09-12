@@ -51,6 +51,9 @@ scoreboard objectives add wk.unstoppable_speed.attack_count dummy
 # 玩家死亡发生
 scoreboard objectives add wk.death_check deathCount
 
+# 化朽为奇 掉落物队伍（1.20.1无法检测标签真操蛋）
+team add midas_touch
+
 
 # @Dragon_Linfeng 的UUID转换库使用
 # 用于数学运算

@@ -47,6 +47,9 @@
   "dragon_ability.wing_kirin.blindness_reverse": "Blindness Reverse",
   "dragon_ability.wing_kirin.blindness_reverse.desc": "§7■ To see through darkness, one must first be engulfed by it — stirring the heart and tempering the will, so as to strengthen that which one cannot yet do.§nCan sense entity around with a short time during adaptation.§r§7\n\n§8■Only can use in dark place.§7\n\n■§n Blindness duration§r§7 is §lshortened§r§7 with§a ability level (experience cost)§7.\n\n§6§o“Dark adaptation is the process in which, when entering a dark place from bright light or when the light suddenly ceases, visual photosensitivity gradually increases, allowing one to discern the surrounding objects. During this process, the synthesis of rhodopsin in the rod cells increases and its concentration gradually rises, thereby improving the efficiency of phototransduction.”",
   "dragon_ability.wing_kirin.blindness_reverse.activation.notification.usage_blocked": "Need to dark adaptation!",
+  "dragon_ability.wing_kirin.midas_touch": "Midas Touch",
+  "dragon_ability.wing_kirin.midas_touch.desc": "§7■ Yes, it just like alchemy。Consumed §6「Empyrean Wine」§7，could transform some items（glowing） around to§a valuabled things§7。■ Probability increases with§a ability level(experience level)§.7\n\n§6§o“Who do not like Alchemy?”",
+  "dragon_ability.wing_kirin.midas_touch.activation.notification.usage_blocked": "§lHave「Empyrean Wine」in mainhand？",
 
   
   "dragon_ability.wing_kirin.born_above_empyrean": "Born Above Empyrean",
@@ -387,6 +390,8 @@
   "dragonsurvival.advancement.wing_kirin/unstoppable_speed.desc": "Attacks over 100 times during 「Unstoppable Speed」activing, leading them can not define direction.",
   "dragonsurvival.advancement.wing_kirin/spell_binder": "Spell Binder",
   "dragonsurvival.advancement.wing_kirin/spell_binder.desc": "Abandon your magical arts and go all in, trading mana for extreme physical damage — a risky gambit when magic is at a disadvantage.",
+  "dragonsurvival.advancement.wing_kirin/midas_touch":"Midas Touch",
+  "dragonsurvival.advancement.wing_kirin/midas_touch.desc": "Consumed「Empyrean Wine」to transform item around you, “Trun stone into gold”, then have an enjoyful feeling of god!",
   "dragonsurvival.advancement.wing_kirin/stinger": "Unfinished",
   "dragonsurvival.advancement.wing_kirin/stinger.desc": "The song is not yet finished, the east is dawning.",
 

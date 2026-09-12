@@ -52,3 +52,14 @@ mandatory = true
 versionRange = "[4.8,)"
 ordering = "AFTER"
 side = "CLIENT"
+
+# MixinExtras 依赖（LivingEntityHurtMixin 的 @WrapOperation 必需）
+# 1.20.1 的 Forge 与 NeoForge 均不捆绑该库，缺库时会在 mixin 应用阶段抛
+# InvalidMixinException / NoClassDefFoundError，故此处声明为强制依赖以便提前失败并给出明确提示。
+# 来源可以是 mods 目录里的 mixinextras-forge，也可以是其它模组经 JarJar 内嵌的同款库（如龙之生存/GeckoLib 已带 0.3.6）。
+[[dependencies."${mod_id}"]]
+modId = "mixinextras"
+mandatory = true
+versionRange = "[0.3.5,)"
+ordering = "AFTER"
+side = "BOTH"
