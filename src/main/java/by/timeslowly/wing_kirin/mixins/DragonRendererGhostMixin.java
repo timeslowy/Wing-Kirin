@@ -3,7 +3,6 @@ package by.timeslowly.wing_kirin.mixins;
 import by.dragonsurvivalteam.dragonsurvival.client.render.entity.dragon.DragonRenderer;
 import by.dragonsurvivalteam.dragonsurvival.common.entity.DragonEntity;
 import by.timeslowly.wing_kirin.client.eventhandler.AfterimageRenderHandler;
-import com.geckolib.animation.state.BoneSnapshot;
 import com.geckolib.cache.model.GeoBone;
 import com.geckolib.model.GeoModel;
 import com.geckolib.renderer.GeoEntityRenderer;
@@ -14,6 +13,7 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.resources.Identifier;
+import org.jspecify.annotations.NullMarked;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -35,6 +35,7 @@ import java.util.Map;
  * 注意：不能覆写 preRenderPass / getRenderType——mixin 中的 super 指向 GeoEntityRenderer，
  * 会顶掉 DS 原方法（第一人称藏颈/藏翼/呼吸骨监听/猎人透明分支）。
  */
+@NullMarked
 @Mixin(value = DragonRenderer.class, remap = false)
 public abstract class DragonRendererGhostMixin<R extends LivingEntityRenderState & com.geckolib.renderer.base.GeoRenderState>
         extends GeoEntityRenderer<DragonEntity, R> {
@@ -43,7 +44,7 @@ public abstract class DragonRendererGhostMixin<R extends LivingEntityRenderState
         super(context, model);
     }
 
-    @Inject(method = "getRenderType", at = @At("RETURN"), cancellable = true, remap = false)
+    @Inject(method = "getRenderType*", at = @At("RETURN"), cancellable = true, remap = false)
     private void wingKirin$ghostRenderType(LivingEntityRenderState renderState, Identifier texture, CallbackInfoReturnable<RenderType> cir) {
         if (AfterimageRenderHandler.ghostAlpha >= 0) {
             cir.setReturnValue(RenderTypes.itemTranslucent(texture));
@@ -77,8 +78,7 @@ public abstract class DragonRendererGhostMixin<R extends LivingEntityRenderState
             // BoneSnapshots 无批量接口，按 DS 同款模式经 boneLookup 枚举骨骼名
             long cacheId = renderData.renderCacheId();
             renderPassInfo.addBoneUpdater((info, snapshots) -> {
-                @SuppressWarnings("unchecked")
-                Map<String, GeoBone> bones = (Map<String, GeoBone>) (Map) info.model().boneLookup().get();
+                Map<String, GeoBone> bones = (Map<String, GeoBone>) info.model().boneLookup().get();
                 Map<String, AfterimageRenderHandler.GhostBonePose> poses = new HashMap<>(bones.size());
                 bones.keySet().forEach(name ->
                         snapshots.get(name).ifPresent(snapshot ->

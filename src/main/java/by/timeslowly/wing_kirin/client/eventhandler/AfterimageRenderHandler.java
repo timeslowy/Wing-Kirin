@@ -18,7 +18,6 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.player.AvatarRenderer;
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.LightCoordsUtil;
@@ -377,7 +376,7 @@ public class AfterimageRenderHandler {
         geoState.addGeckolibData(DataTickets.RENDER_COLOR, 0xFFFFFF | (Math.round(alpha * 255.0F) << 24));
         // 光照按残影所在位置打包
         BlockPos ghostPos = BlockPos.containing(snapshot.x(), snapshot.y(), snapshot.z());
-        ((LivingEntityRenderState) state).lightCoords = LightCoordsUtil.pack(
+        state.lightCoords = LightCoordsUtil.pack(
                 player.level().getBrightness(LightLayer.BLOCK, ghostPos),
                 player.level().getBrightness(LightLayer.SKY, ghostPos));
 
