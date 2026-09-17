@@ -1,0 +1,56 @@
+{
+    "actions": [
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "dragonsurvival:test_glow",
+                                        "duration": 40
+                                    },
+                                    "color": "#fbdc92"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:area",
+                "radius": 5
+            }
+        }
+    ],
+    "activation": {
+        "activation_type": "dragonsurvival:simple",
+        "cast_time": 60,
+        "initial_mana_cost": 1,
+        "animations": {
+            "start_and_charging": {
+                "animation_key": "cast_mass_buff",
+                "layer": "BASE",
+                "locks_neck": false,
+                "locks_tail": false,
+                "transition_length": 5
+            },
+            "end": {
+                "animation_key": "mass_buff",
+                "layer": "BASE",
+                "locks_tail": false,
+                "locks_neck": false,
+                "transition_length": 5
+            }
+        }
+    },
+    "icon": {
+        "texture_entries": [
+            {
+                "from_level": 0,
+                "texture_resource": "dragonsurvival:test"
+            }
+        ]
+    }
+}

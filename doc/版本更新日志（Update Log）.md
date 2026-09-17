@@ -319,3 +319,24 @@
 8. Experimental custom Entity Effect; 
 9. **Changed to custom Dragon Body**;
 10. New resourcepack to changed to old flight animation
+
+# 3.3.0
+
+> **花好月圆，风清桂浓**
+
+1. 更新「从天而降」技能效果；
+2. 略微降低解锁难度； 
+3. 新增金钟附魔「束音器」；
+4. 「仁者无敌」现在不再有施法维度要求；
+5. 添加中文简化描述资源包；
+6. 修复了自选数据包因注册方法导致服客双端不同步的问题；
+7. 微调了部分技能
+
+---
+
+1. Updated 「Fall Like Meteorite」;
+2. Reduced unlock difficulty slightly;
+3. Added new enchantment: 「Restrictor」for Gold Bell;
+4. Now「Invincible Benevolence」doesnot has dimession requirement;
+5. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
+6. Adjusted some abilities;

@@ -74,8 +74,37 @@
                 "type": "minecraft:matching_block_tag",
                 "tag": "wing_kirin:thunderous_shout_break"
               }
+            },
+            {
+              "effect_type": "dragonsurvival:particle",
+              "particle_count": 2,
+              "particle_data": {
+                "particle": {
+                  "type": "dust_plume"
+                },
+                "horizontal_position": {
+                  "type": "in_bounding_box"
+                },
+                "vertical_position": {
+                  "type": "in_bounding_box"
+                },
+                "horizontal_velocity": {
+                  "base": 1
+                },
+                "vertical_velocity": {
+                  "base": 1
+                },
+                "speed": 0
+              }
             }
-          ]
+          ],
+          "target_conditions": {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "block_state_property",
+              "block": "air"
+            }
+          }
         },
         "range_multiplier": 1.0,
         "target_type": "dragonsurvival:dragon_breath"
