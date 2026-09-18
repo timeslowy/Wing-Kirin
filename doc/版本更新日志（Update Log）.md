@@ -39,6 +39,7 @@
 6. 新增金钟附魔「束音器」；
 7. 「仁者无敌」现在不再有施法维度要求；
 8. 添加中文简化描述资源包；
+9. 修复了自选数据包因注册方法导致服客双端不同步的问题；
 
 ---
 
@@ -49,3 +50,4 @@
 5. New Effect of 「Indestructible Body」;
 6. Added new enchantment: 「Restrictor」for Gold Bell;
 7. Now「Invincible Benevolence」doesnot has dimession requirement;
+8. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
