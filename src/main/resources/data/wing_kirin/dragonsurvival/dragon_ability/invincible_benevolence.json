@@ -142,7 +142,11 @@
         "activation_type": "dragonsurvival:simple",
         "can_move_while_casting": false,
         "cast_time": 60,
-        "cooldown": 1200,
+        "cooldown": {
+            "type": "minecraft:linear",
+            "base": 200,
+            "per_level_above_first": 200
+        },
         "initial_mana_cost": 8,
         "animations": {
             "start_and_charging": {
