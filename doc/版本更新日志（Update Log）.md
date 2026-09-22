@@ -330,7 +330,8 @@
 4. 「仁者无敌」现在不再有施法维度要求；
 5. 添加中文简化描述资源包；
 6. 修复了自选数据包因注册方法导致服客双端不同步的问题；
-7. 微调了部分技能
+7. 微调了部分技能；
+8. 更新了食物图标
 
 ---
 
@@ -340,3 +341,4 @@
 4. Now「Invincible Benevolence」doesnot has dimession requirement;
 5. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
 6. Adjusted some abilities;
+7. Updated food icons
