@@ -71,7 +71,7 @@
         },
         "target_type": "dragonsurvival:self"
       },
-      "trigger_rate": 1.0
+      "trigger_rate": 2.0
     }
   ],
   "activation": {
