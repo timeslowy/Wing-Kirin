@@ -24,19 +24,14 @@ import org.slf4j.Logger;
 @Mod(WingKirin.MODID)
 public class WingKirin {
 
-    // Define mod id in a common place for everything to reference
+    // 声明模组ID
     public static final String MODID = "wing_kirin";
-    // Directly reference a slf4j logger
     // 与 1.21.1 分支一致改为 public，供 WKStatsCommand 等类记录日志
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // 1.20.1 双端兼容（Forge 47.x 与 NeoForge 47.1.x，2026-09-12 字节码实证）：
-    //   Forge 47.4.23 的 FMLModContainer 先试 (FMLJavaModLoadingContext)，失败才回落无参构造器；
-    //   NeoForge 1.20.1（fancymodloader 47.2.2）先试无参，失败才按需注入 {IEventBus, ModContainer, FMLModContainer}。
-    //   两套协议的**唯一交集是无参构造器** —— 带参构造器必然在其中一侧抛
-    //   "Could not find mod constructor"，因此主类必须无参，事件总线改从静态入口获取。
+    //   1.20.1 双端兼容（Forge 47.x 与 NeoForge 47.1.x：
+    //   两套协议的**唯一交集是无参构造器**主类必须无参，事件总线改从静态入口获取。
     //   FMLJavaModLoadingContext.get() 两端实现均为 ModLoadingContext.get().extension()，
-    //   且 FML 在 CONSTRUCT 之前已设置 active container（现有 registerConfig 亦依赖同一机制）。
     public WingKirin() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // 注册服务端配置（1.21.1 经构造器注入的 ModContainer 注册；1.20.1 Forge 用 ModLoadingContext 静态获取）
@@ -59,7 +54,7 @@ public class WingKirin {
         // 注册模组通用设置事件，用于注入自定义统计格式化器等（自 1.21.1 分支平移）
         modEventBus.addListener(WKStats::onCommonSetup);
 
-        // 服务端配置 → 客户端同步通道（退出世界崩溃修复：客户端不再直接读 SERVER 配置）
+        // 服务端配置 → 客户端同步通道（退出世界崩溃修复：客户端不再直接读 SERVER 配置（**高版本Neoforge就没这毛病！**））
         ConfigSyncHandler.init();
         MinecraftForge.EVENT_BUS.addListener(ConfigSyncHandler::onPlayerLogin);
     }

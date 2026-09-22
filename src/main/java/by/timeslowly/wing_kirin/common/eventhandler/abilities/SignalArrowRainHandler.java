@@ -211,7 +211,7 @@ public class SignalArrowRainHandler {
             }
             ItemStack sword = ClawToolHandler.getDragonSword(owner);
             if (sword != null && !sword.isEmpty()) {
-                int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, sword);
+                int sharpness = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SHARPNESS, sword);
                 if (sharpness > 0) {
                     damage += sharpness + 0.5F;
                 }
@@ -292,19 +292,14 @@ public class SignalArrowRainHandler {
     private static @NotNull CompoundTag buildGeneralData(@NotNull UUID owner, float damage) {
         CompoundTag generalData = new CompoundTag();
         generalData.putString("name", "wing_kirin:pear_blossom_needles");
-
         // ticking_effects：飞行途中金粉色尘埃粒子（每刻 10 颗，复刻内联 NBT）
         generalData.put("ticking_effects", single(tickingEntry()));
-
         // common_hit_effects：范围 2.0 伤害，inverted has_uuid 免伤发射者
         generalData.put("common_hit_effects", single(areaDamageEntry(owner, damage)));
-
         // block_hit_effects：落地暴击粒子
         generalData.put("block_hit_effects", single(blockCritEntry()));
-
         // entity_hit_effects：空（伤害走范围结算，与 1.21.1 一致）
         generalData.put("entity_hit_effects", new ListTag());
-
         // entity_hit_condition：仅对 living_entity 感知命中
         generalData.put("entity_hit_condition", livingEntityCondition());
         return generalData;
@@ -314,7 +309,7 @@ public class SignalArrowRainHandler {
     private static @NotNull CompoundTag tickingEntry() {
         CompoundTag entry = new CompoundTag();
         CompoundTag wrapper = new CompoundTag();
-        wrapper.put("effects", single(wrapInEffect(particleWorldEffect(10, "dust", goldDust()))));
+        wrapper.put("effects", single(wrapInEffect(particleWorldEffect(goldDust()))));
         entry.put("general_data", wrapper);
         entry.putString("target_type", "dragonsurvival:point");
         return entry;
@@ -356,17 +351,17 @@ public class SignalArrowRainHandler {
         CompoundTag predicate = new CompoundTag();
         predicate.put("type_specific", typeSpecific);
 
-        CompoundTag term = entityProperties("this", predicate);
+        CompoundTag term = entityProperties(predicate);
         CompoundTag condition = new CompoundTag();
         condition.putString("condition", "minecraft:inverted");
         condition.put("term", term);
         return condition;
     }
 
-    private static @NotNull CompoundTag entityProperties(@NotNull String entity, @NotNull CompoundTag predicate) {
+    private static @NotNull CompoundTag entityProperties(@NotNull CompoundTag predicate) {
         CompoundTag tag = new CompoundTag();
         tag.putString("condition", "minecraft:entity_properties");
-        tag.putString("entity", entity);
+        tag.putString("entity", "this");
         tag.put("predicate", predicate);
         return tag;
     }
@@ -397,7 +392,7 @@ public class SignalArrowRainHandler {
 
         CompoundTag predicate = new CompoundTag();
         predicate.put("type_specific", typeSpecific);
-        return entityProperties("this", predicate);
+        return entityProperties(predicate);
     }
 
     /** 金粉色尘埃粒子选项（与 pear_blossom_needles.json 一致） */
@@ -410,7 +405,7 @@ public class SignalArrowRainHandler {
     }
 
     /** world_effect: dragonsurvival:particle 包装（count + 粒子数据） */
-    private static @NotNull CompoundTag particleWorldEffect(int count, @NotNull String type, @NotNull CompoundTag particleOptions) {
+    private static @NotNull CompoundTag particleWorldEffect(@NotNull CompoundTag particleOptions) {
         CompoundTag particleData = new CompoundTag();
         particleData.put("particle", particleOptions);
         particleData.put("horizontal_position", inBoundingBox());
@@ -420,7 +415,7 @@ public class SignalArrowRainHandler {
 
         CompoundTag effect = new CompoundTag();
         effect.putString("world_effect", "dragonsurvival:particle");
-        effect.putInt("particle_count", count);
+        effect.putInt("particle_count", 10);
         effect.put("particle_data", particleData);
         return effect;
     }

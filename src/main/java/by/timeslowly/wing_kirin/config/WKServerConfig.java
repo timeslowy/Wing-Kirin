@@ -9,9 +9,6 @@ import net.minecraftforge.common.ForgeConfigSpec;
  * 移植说明：NeoForge 的 ModConfigSpec 与 Forge 1.20.1 的 ForgeConfigSpec 的 Builder API 一致，
  * 仅类名不同；1.20.1 主类经 ModLoadingContext.get().registerConfig 注册（1.21.1 为 ModContainer 注入）。
  * <p>
- * 注：magic_disabled.incurable 的应用逻辑已实现（WKEffects 的 MobEffectEvent.Added 订阅 +
- * 效果实例 curative items 清空）；unstoppable_speed 段已随「唯快不破」移植（消费方：
- * mixin.LivingEntityHurtMixin）；ding_shen 段已随「定身术」移植。
  */
 public class WKServerConfig {
 

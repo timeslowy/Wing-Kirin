@@ -2,15 +2,6 @@ package by.timeslowly.wing_kirin.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-/**
- * 客户端配置 - 渲染/视觉相关设置（自 1.21.1 NeoForge 分支移植）。
- * <p>
- * CLIENT 类型配置：仅影响本地客户端的渲染表现，不参与服务端同步。
- * <p>
- * 注：唯快不破残影渲染（1.21.1 的 client.eventhandler.AfterimageRenderHandler 及其两个渲染
- * mixin）尚未随本次移植（GeckoLib 4.8.4 渲染管线与 1.21.1 差异较大，需单独批次处理），
- * 本配置项先行就位，待残影移植时接入。
- */
 public class WKClientConfig {
 
     public static final ForgeConfigSpec SPEC;

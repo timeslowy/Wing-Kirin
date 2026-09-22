@@ -30,6 +30,7 @@ public class PackFinders {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    // 此处插入包路径
     @SubscribeEvent
     public static void addPackFinders(@NotNull AddPackFindersEvent event) {
         if (event.getPackType() == PackType.SERVER_DATA) {

@@ -11,6 +11,7 @@ import by.timeslowly.wing_kirin.registry.WKEffects;
 import by.timeslowly.wing_kirin.registry.WKEnchantments;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.ServerFunctionManager;
 import net.minecraft.sounds.SoundEvents;
@@ -197,7 +198,7 @@ public class DingshenEffectEventHandler {
         }
         // 翼麒麟始终可获得；非翼麒麟需配置开启
         // （1.20.1 稳妥起见用 unwrapKey 取 RL 比较，不依赖 Holder.is(ResourceLocation)）
-        ResourceLocation speciesId = species.unwrapKey().map(key -> key.location()).orElse(null);
+        ResourceLocation speciesId = species.unwrapKey().map(ResourceKey::location).orElse(null);
         if (!new ResourceLocation("dragonsurvival", "wing_kirin").equals(speciesId)
                 && !ConfigSyncHandler.shatterBuffForNonWingKirin()) {
             return;
@@ -291,7 +292,7 @@ public class DingshenEffectEventHandler {
         int totalLevel = 0;
         for (EquipmentSlot slot : new EquipmentSlot[]{
                 EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
-            totalLevel += EnchantmentHelper.getItemEnchantmentLevel(
+            totalLevel += EnchantmentHelper.getTagEnchantmentLevel(
                     WKEnchantments.DINGSHEN_RESISTANCE.get(), entity.getItemBySlot(slot));
         }
         attr.removeModifier(DINGSHEN_RESISTANCE_MODIFIER_UUID);

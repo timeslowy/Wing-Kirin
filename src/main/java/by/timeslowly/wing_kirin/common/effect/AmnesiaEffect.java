@@ -1,8 +1,6 @@
 package by.timeslowly.wing_kirin.common.effect;
 
-import by.timeslowly.wing_kirin.WingKirin;
 import by.timeslowly.wing_kirin.common.eventhandler.effects.AmnesiaEffectEventHandler;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,6 +10,7 @@ import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 失忆药水效果：令（敌对）生物在效果生效时立即失去当前仇恨目标，
@@ -54,7 +53,7 @@ public class AmnesiaEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
+    public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide) {
             forgetTargets(entity);
         }

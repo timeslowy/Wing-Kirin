@@ -103,7 +103,7 @@ public class GoldenBellItem extends Item {
         if (slot != EquipmentSlot.MAINHAND) {
             return modifiers;
         }
-        int level = EnchantmentHelper.getItemEnchantmentLevel(WKEnchantments.UNENCUMBERED.get(), stack);
+        int level = EnchantmentHelper.getTagEnchantmentLevel(WKEnchantments.UNENCUMBERED.get(), stack);
         if (level <= 0) {
             return modifiers;
         }

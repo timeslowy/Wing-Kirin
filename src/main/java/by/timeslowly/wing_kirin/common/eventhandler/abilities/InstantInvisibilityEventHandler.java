@@ -2,7 +2,6 @@ package by.timeslowly.wing_kirin.common.eventhandler.abilities;
 
 import by.timeslowly.wing_kirin.WingKirin;
 import by.timeslowly.wing_kirin.registry.WKStats;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
@@ -11,7 +10,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -76,7 +74,7 @@ public class InstantInvisibilityEventHandler {
 
     /** 由 {@link by.timeslowly.wing_kirin.registry.dragon.ability.entity_effects.InstantInvisibilityTrackerEffect} 调用 */
     public static void startTracking(final @NotNull ServerPlayer owner, int ticksLeft, int radius, float attackBonus) {
-        setRemoveCheck(owner.server, owner.getScoreboardName(), 1);
+        setRemoveCheck(owner.server, owner.getScoreboardName());
         applyAttackBonus(owner, attackBonus);
         TRACKERS.put(owner.getUUID(), new Tracker(owner.getScoreboardName(), owner.position(), radius, ticksLeft, owner.position()));
     }
@@ -208,10 +206,10 @@ public class InstantInvisibilityEventHandler {
                 true);
     }
 
-    private static void setRemoveCheck(final @NotNull MinecraftServer server, final @NotNull String ownerName, int value) {
+    private static void setRemoveCheck(final @NotNull MinecraftServer server, final @NotNull String ownerName) {
         Objective objective = server.getScoreboard().getObjective(REMOVE_CHECK_OBJECTIVE);
         if (objective != null) {
-            server.getScoreboard().getOrCreatePlayerScore(ownerName, objective).setScore(value);
+            server.getScoreboard().getOrCreatePlayerScore(ownerName, objective).setScore(1);
         }
     }
 
