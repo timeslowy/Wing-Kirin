@@ -8,6 +8,7 @@
 			"nutrition_icon": "\\uEA01",
 			"saturation_icon": "\\uEA02"
 		},
+		"food_sprites": "wing_kirin:textures/gui/custom/food_icons/wing_kirin_food_icons.png",
 		"growth_crystal": {
 			"empty": "wing_kirin:textures/gui/custom/growth_crystal/point_main.png",
 			"full": "wing_kirin:textures/gui/custom/growth_crystal/point_hover.png"
@@ -40,6 +41,11 @@
 		"wing_kirin:adult",
 		"wing_kirin:ancient"
 	],
+	"mana_handling":{
+		"mana_per_level": 0.2,
+		"max_mana_from_levels": 12,
+		"mana_xp_conversion": 20
+	},
 	"unlockable_behavior": {
 		"unlock_condition": {
 			"condition": "minecraft:all_of",
