@@ -5,12 +5,119 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
+                            "effect_type": "dragonsurvival:heal",
+                            "percentage": 0.2
+                        },
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": "minecraft:resistance",
+                                "amplifier": 4,
+                                "duration": 40
+                            }
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:damage",
+                            "amount": 5,
+                            "damage_type": "dragonsurvival:burn"
+                        },
+                        {
+                            "effect_type": "dragonsurvival:push",
+                            "push_force": 0.5,
+                            "target_direction": {
+                                "direction": "towards_entity"
+                            }
+                        }
+                    ],
+                    "targeting_mode": "non_allies",
+                    "target_conditions": {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:entity_check_predicate",
+                                "check_for": "living_entity"
+                            }
+                        }
+                    }
+                },
+                "target_type": "dragonsurvival:disc",
+                "radius": 10,
+                "height": 10,
+                "height_starts_below": true
+            }
+        },
+        {
+            "target_selection": {
+                "target_type": "dragonsurvival:disc",
+                "applied_effects": {
+                    "block_effect": [
+                        {
+                            "effect_type": "dragonsurvival:fire",
+                            "ignite_probability": 1.0
+                        }
+                    ]
+                },
+                "radius": 10,
+                "height": 10,
+                "height_starts_below": true
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": [
+                                    "minecraft:regeneration",
+                                    "minecraft:fire_resistance",
+                                    "dragonsurvival:source_of_magic",
+                                    "strength"
+                                ],
+                                "amplifier": 2,
+                                "duration": 60
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:effect_removal",
+                            "max_amount": 5,
+                            "categories": [
+                                "HARMFUL"
+                            ]
+                        },
+                        {
+                            "effect_type": "dragonsurvival:damage_modification",
+                            "modifications": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:test",
+                                        "duration": 60
+                                    },
+                                    "damage_types": "#wing_kirin:instant_invisibility_immunity",
+                                    "multiplier": 0.7
+                                }
+                            ]
+                        },
+                        {
                             "effect_type": "dragonsurvival:glow",
                             "glows": [
                                 {
                                     "base": {
-                                        "id": "dragonsurvival:test_glow",
-                                        "duration": 40
+                                        "id": "wing_kirin:test-1",
+                                        "duration": 60,
+                                        "is_hidden": true
                                     },
                                     "color": "#fbdc92"
                                 }
@@ -19,8 +126,100 @@
                     ],
                     "targeting_mode": "allies_and_self"
                 },
-                "target_type": "dragonsurvival:area",
-                "radius": 5
+                "target_type": "dragonsurvival:disc",
+                "radius": 10,
+                "height": 10,
+                "height_starts_below": true
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:ignite",
+                            "ignite_ticks": 60
+                        },
+                        {
+                            "effect_type": "dragonsurvival:potion",
+                            "potion": {
+                                "effects": [
+                                    "minecraft:slowness",
+                                    "weakness"
+                                ],
+                                "amplifier": 1,
+                                "duration": 60
+                            }
+                        },
+                        {
+                            "effect_type": "dragonsurvival:effect_removal",
+                            "categories": [
+                                "BENEFICIAL"
+                            ]
+                        },
+                        {
+                            "effect_type": "dragonsurvival:glow",
+                            "glows": [
+                                {
+                                    "base": {
+                                        "id": "wing_kirin:test-2",
+                                        "duration": 60,
+                                        "is_hidden": true
+                                    },
+                                    "color": "#e81313"
+                                }
+                            ]
+                        }
+                    ],
+                    "targeting_mode": "non_allies",
+                    "target_conditions": {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "dragonsurvival:entity_check_predicate",
+                                "check_for": "living_entity"
+                            }
+                        }
+                    }
+                },
+                "target_type": "dragonsurvival:disc",
+                "radius": 10,
+                "height": 10,
+                "height_starts_below": true
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "block_effect": [
+                        {
+                            "effect_type": "dragonsurvival:particle",
+                            "particle_count": 5,
+                            "particle_data": {
+                                "particle": {
+                                    "type": "instant_effect"
+                                },
+                                "horizontal_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "vertical_position": {
+                                    "type": "in_bounding_box"
+                                },
+                                "horizontal_velocity": {
+                                    "base": 1
+                                },
+                                "vertical_velocity": {
+                                    "base": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "target_type": "dragonsurvival:disc",
+                "radius": 10,
+                "height": 10,
+                "height_starts_below": true
             }
         }
     ],
