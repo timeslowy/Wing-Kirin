@@ -3,10 +3,10 @@
 scoreboard players set @s wk.instant_invisibility.remove_check 1
 
 # 将玩家的UUID传入命令存储后进行计算
-data modify storage wing_kirin:ram math.UUID set from entity @s UUID
+data modify storage wing_kirin:uuid main.in set from entity @s UUID
 
 # 十进制UUID转换为十六进制（提高查找速度）
-function wing_kirin:lib/math/uuid-dec_to_hex/main
+function wing_kirin:lib/uuid/dec_to_hex
 
 # 将玩家的技能等级存入命令存储
 execute store result storage wing_kirin:ram instant_invisibility.level int 1 run dragon-ability query @s wing_kirin:instant_invisibility level

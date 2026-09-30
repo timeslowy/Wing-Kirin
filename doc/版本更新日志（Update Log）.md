@@ -35,12 +35,11 @@
 2. 更新「从天而降」技能效果；
 3. 略微降低解锁难度； 
 4. 新的资源包覆盖部分新版飞行动画；
-5. 革新「不坏金身」的逻辑效果；
-6. 新增金钟附魔「束音器」；
-7. 「仁者无敌」现在不再有施法维度要求；
-8. 添加中文简化描述资源包；
-9. 修复了自选数据包因注册方法导致服客双端不同步的问题；
-10. 更新食物图标
+5. 新增金钟附魔「束音器」；
+6. 「仁者无敌」现在不再有施法维度要求；
+7. 添加中文简化描述资源包；
+8. 修复了自选数据包因注册方法导致服客双端不同步的问题；
+9. 更新食物图标
 
 ---
 
@@ -48,8 +47,7 @@
 2. Updated 「Fall Like Meteorite」;
 3. Reduced unlock difficulty slightly;
 4. New resourcepack to changed some flight animations;
-5. New Effect of 「Indestructible Body」;
-6. Added new enchantment: 「Restrictor」for Gold Bell;
-7. Now「Invincible Benevolence」doesnot has dimession requirement;
-8. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
-9. Updated food icons
+5. Added new enchantment: 「Restrictor」for Gold Bell;
+6. Now「Invincible Benevolence」doesnot has dimession requirement;
+7. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
+8. Updated food icons
