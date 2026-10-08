@@ -48,7 +48,8 @@
               }
             }
           },
-          "targeting_mode": "non_allies"
+          "targeting_mode": "non_allies",
+          "is_harmful": true
         },
         "range_multiplier": {
           "type": "linear",
