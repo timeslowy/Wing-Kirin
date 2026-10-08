@@ -63,7 +63,7 @@
   "dragon_ability.wing_kirin.last_stand": "回光返照",
   "dragon_ability.wing_kirin.last_stand.desc": "§7■此技能作用似于§n另类的不死图腾§r§7，可暂免一死，并§e短暂提升身体各项属性，甚至回转部分技能冷却时间§r。\n\n§4■然而，一旦这股对应属性调整效果消失，自身将立刻暴毙。§r§7\n\n■能维系的时长与§n技能等级（经验消耗）挂钩§r。\n\n§4■⚠注意：死亡后此技能冷却不会立刻重置！§r",
   "dragon_ability.wing_kirin.transposition": "移形换位",
-  "dragon_ability.wing_kirin.transposition.desc": "§7■对近距目标按下绑定键，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■冷却时间随§a技能等级（经验消耗）§r§7提升；\n\n§8■适用距离较短；被§l“定身”§r§8时§l无法使用！§r",
+  "dragon_ability.wing_kirin.transposition.desc": "§7■对近距目标按下绑定键，只需一瞬，即可移行至§n对方身后§r§7，打他个§e措手不及。§7\n\n■冷却时间随§a技能等级（经验消耗）§r§7缩短；\n\n§8■适用距离较短；被§l“定身”§r§8时§l无法使用！§r",
   "dragon_ability.wing_kirin.absent_minded": "神失魄散",
   "dragon_ability.wing_kirin.absent_minded.desc": "§7■§l攻击§r§7有几率施加「失神」药水效果。对于生物而言，使其§e无法自主攻击§7；对于玩家而言，则令其§e攻击疲软无力。§7。\n\n■§n概率§r§7随§a技能等级§7提升。",
 
