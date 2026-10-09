@@ -1,3 +1,4 @@
+## 执行者：施法者
 # 给予施法者相应时长的抗性提升Ⅴ
 $effect give @s resistance $(beneficiary_amount) 4
 

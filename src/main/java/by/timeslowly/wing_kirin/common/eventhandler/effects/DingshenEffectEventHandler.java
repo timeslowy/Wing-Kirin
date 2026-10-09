@@ -35,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
 public class DingshenEffectEventHandler {
     /** 定身被粉碎时需重置的 mcfunction（恢复AI、清效果、移除标签、重置计分板、杀死骑乘展示实体） */
     private static final Identifier DING_SHEN_REMOVE_EFFECTS_FUNCTION =
-            Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/desctuor/remove_effects");
+            Identifier.fromNamespaceAndPath(Wing_kirin.MOD_ID, "dragon_ability/stasia_hex/remove_effects");
 
     /** 肌肉松弛触发阈值：被施加的定身效果总时长超过该刻数（50 秒）时生效，直至本次效果结束 */
     private static final int DING_SHEN_MUSCLE_RELAX_THRESHOLD = 50 * 20;
@@ -51,7 +51,7 @@ public class DingshenEffectEventHandler {
             return;
         }
         MobEffectInstance instance = event.getEffectInstance();
-        if (instance == null || !instance.is(WKEffects.DING_SHEN)) {
+        if (!instance.is(WKEffects.DING_SHEN)) {
             return;
         }
         int duration = instance.getDuration();

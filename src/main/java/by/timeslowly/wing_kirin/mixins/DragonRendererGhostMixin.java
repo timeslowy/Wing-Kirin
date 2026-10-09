@@ -78,7 +78,7 @@ public abstract class DragonRendererGhostMixin<R extends LivingEntityRenderState
             // BoneSnapshots 无批量接口，按 DS 同款模式经 boneLookup 枚举骨骼名
             long cacheId = renderData.renderCacheId();
             renderPassInfo.addBoneUpdater((info, snapshots) -> {
-                Map<String, GeoBone> bones = (Map<String, GeoBone>) info.model().boneLookup().get();
+                Map<String, GeoBone> bones = info.model().boneLookup().get();
                 Map<String, AfterimageRenderHandler.GhostBonePose> poses = new HashMap<>(bones.size());
                 bones.keySet().forEach(name ->
                         snapshots.get(name).ifPresent(snapshot ->

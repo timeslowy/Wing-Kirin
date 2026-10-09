@@ -13,6 +13,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -21,18 +22,18 @@ import java.util.WeakHashMap;
 public class ThunderousShoutEventHandler {
     // 记录每个攻击者上次扣除金钟耐久的世界刻
     private static final Map<LivingEntity, Integer> LAST_DAMAGE_TICK = new WeakHashMap<>();
-    /**
-     * 监听实体受伤事件，处理使用「龙吼功」时金钟的双倍耐久损耗。
-     * <p>
-     * 当伤害来源为音波爆炸（SONIC_BOOM）且攻击者主手持有金钟时，
-     * 对该金钟造成2点耐久损耗。通过记录游戏刻来确保同一刻内只扣除一次耐久，
-     * 快速消耗耐久配置关闭时，避免因事件重复触发导致的过度损耗。
-     * </p>
-     *
-     * @param event 实体受伤事件的后置事件对象，包含伤害来源、伤害值等信息
+    /*
+      监听实体受伤事件，处理使用「龙吼功」时金钟的双倍耐久损耗。
+      <p>
+      当伤害来源为音波爆炸（SONIC_BOOM）且攻击者主手持有金钟时，
+      对该金钟造成2点耐久损耗。通过记录游戏刻来确保同一刻内只扣除一次耐久，
+      快速消耗耐久配置关闭时，避免因事件重复触发导致的过度损耗。
+      </p>
+
+      @param event 实体受伤事件的后置事件对象，包含伤害来源、伤害值等信息
      */
     /** 26.1 起 LivingEntity.getSlotForHand 被移除，手动映射使用手 → 装备槽 */
-    private static EquipmentSlot handSlot(LivingEntity entity) {
+    private static EquipmentSlot handSlot(@NonNull LivingEntity entity) {
         return entity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
     }
 
