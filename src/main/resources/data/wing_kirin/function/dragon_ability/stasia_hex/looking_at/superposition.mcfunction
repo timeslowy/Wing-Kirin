@@ -1,7 +1,7 @@
 ## 叠加机制：每次此生物被箭击定身可依等级增加不同时长，有上限：1200刻（60秒）
-# 获取自定义弹射物的弹射物等级（与技能对应，该数据来源于龙生），并存入命令存储
-execute store result storage wing_kirin:ram stasis_hex.level int 1 \
-    run data get entity @n[type=dragonsurvival:generic_arrow_entity,tag=stasia_hex-ding] projectile_level
+# 获取施法者的技能等级，并存入命令存储
+# 龙生的技能查询指令的直接目标选择器不支持十六进制UUID！！
+$execute as $(out) store result storage wing_kirin:ram stasis_hex.level int 1 run dragon-ability query @s wing_kirin:stasis_hex level
 
 # 叠加机制2：匹配等级设置叠加时长
 # 1级+100刻（5秒）
