@@ -1,2 +1,2 @@
 
-tellraw @s [{"translate": "dragonsurvival.advancement.wing_kirin/be_wing_kirin.message"}]
+execute as @e[type=marker,tag=heavenly_justice_marker-new] run say HERE!

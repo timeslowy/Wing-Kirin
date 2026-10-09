@@ -64,7 +64,7 @@
                     "entity_effect":[
                         {
                             "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:dragon_ability/stasia_hex/sneaking_notification/main"
+                            "function": "wing_kirin:dragon_ability/stasia_hex/display/branch_notification"
                         }
                     ],
                     "targeting_mode": "allies_and_self"
@@ -80,7 +80,7 @@
                     "entity_effect": [
                         {
                             "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:dragon_ability/stasia_hex/caster"
+                            "function": "wing_kirin:lib/uuid/get_caster"
                         },
                         {
                             "effect_type": "dragonsurvival:run_function",

@@ -1,6 +1,9 @@
 ## 执行者: 被定身的生物
 # 执行位置：当前实体
 
+# 声音（主要为叠加）
+playsound block.bone_block.break master @a ~ ~ ~
+
 # 玩家由 Java 侧处理（原版 /ride 指令不支持实体骑乘玩家）
 execute if entity @s[type=player] run return fail
 

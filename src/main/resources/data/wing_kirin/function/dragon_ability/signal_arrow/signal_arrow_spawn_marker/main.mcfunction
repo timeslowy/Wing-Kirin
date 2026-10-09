@@ -8,7 +8,10 @@ data modify storage wing_kirin:ram signal_arrow.Owner set from entity @s Owner
 data modify storage wing_kirin:ram signal_arrow.projectile_level set from entity @s projectile_level
 
 ## 生成标志实体
-function wing_kirin:dragon_ability/signal_arrow/signal_arrow_spawn_marker/spawn
+summon marker ~ ~ ~ {Tags:["new_marker","signal_arrow_generic","signal_arrow"]}
+
+# 设置标志实体 at:在第一个弹射物的最坐标位置执行 @S：往前推
+execute as @n[type=marker,tag=new_marker] at @s run function wing_kirin:dragon_ability/signal_arrow/signal_arrow_spawn_marker/set-marker
 
 # 生成范围标识粒子
 execute at @s run function wing_kirin:dragon_ability/signal_arrow/radiu_display/success/main
