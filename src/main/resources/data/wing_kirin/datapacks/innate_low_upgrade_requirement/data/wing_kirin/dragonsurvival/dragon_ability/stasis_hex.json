@@ -60,20 +60,45 @@
     "actions": [
         {
             "target_selection": {
+                "applied_effects":{
+                    "entity_effect":[
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/sneaking_notification/main"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            },
+            "trigger_point": "charging",
+            "trigger_rate": 1.0
+        },
+        {
+            "target_selection": {
                 "applied_effects": {
                     "entity_effect": [
                         {
-                            "effect_type": "dragonsurvival:projectile",
-                            "number_of_projectiles": 1.0,
-                            "projectile_data": "wing_kirin:ding",
-                            "speed": 5.0,
-                            "target_direction": {
-                                "direction": "looking_at"
-                            }
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/caster"
                         },
                         {
                             "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:dragon_ability/stasia_hex/arrow_hit/on_generic_arrow_entity"
+                            "function": "wing_kirin:dragon_ability/stasia_hex/stat"
+                        }
+                    ],
+                    "targeting_mode": "allies_and_self"
+                },
+                "target_type": "dragonsurvival:self"
+            }
+        },
+        {
+            "target_selection": {
+                "applied_effects": {
+                    "entity_effect": [
+                        {
+                            "effect_type": "dragonsurvival:run_function",
+                            "function": "wing_kirin:dragon_ability/stasia_hex/looking_at/main"
                         }
                     ],
                     "target_conditions": {
@@ -83,6 +108,16 @@
                                 "condition": "entity_properties",
                                 "entity": "this",
                                 "predicate": {
+                                    "type_specific": {
+                                        "type": "dragonsurvival:entity_check_predicate",
+                                        "check_for":"living_entity"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": "entity_properties",
+                                "entity": "attacker",
+                                "predicate": {
                                     "flags": {
                                         "is_sneaking": false
                                     }
@@ -90,9 +125,10 @@
                             }
                         ]
                     },
-                    "targeting_mode": "allies_and_self"
+                    "targeting_mode": "all_except_self"
                 },
-                "target_type": "dragonsurvival:self"
+                "target_type": "dragonsurvival:looking_at",
+                "range": 80
             },
             "trigger_rate": 1.0
         },
@@ -112,6 +148,16 @@
                                 "condition": "entity_properties",
                                 "entity": "this",
                                 "predicate": {
+                                    "type_specific": {
+                                        "type": "dragonsurvival:entity_check_predicate",
+                                        "check_for":"living_entity"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": "entity_properties",
+                                "entity": "attacker",
+                                "predicate": {
                                     "flags": {
                                         "is_sneaking": true
                                     }
@@ -119,25 +165,16 @@
                             }
                         ]
                     },
-                    "targeting_mode": "allies_and_self"
+                    "targeting_mode": "all_except_self"
                 },
-                "target_type": "dragonsurvival:self"
+                "target_type": "dragonsurvival:area",
+                "radius": {
+                    "type": "minecraft:linear",
+                    "base": 8,
+                    "per_level_above_first": 6
+                }
             },
             "trigger_rate": 1
-        },
-        {
-            "target_selection": {
-                "applied_effects": {
-                    "entity_effect": [
-                        {
-                            "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:dragon_ability/stasia_hex/stat"
-                        }
-                    ],
-                    "targeting_mode": "allies_and_self"
-                },
-                "target_type": "dragonsurvival:self"
-            }
         },
         {
             "target_selection": {
@@ -176,22 +213,6 @@
                             }
                         }
                     }
-                },
-                "target_type": "dragonsurvival:self"
-            },
-            "trigger_point": "charging",
-            "trigger_rate": 1.0
-        },
-        {
-            "target_selection": {
-                "applied_effects":{
-                    "entity_effect":[
-                        {
-                            "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:dragon_ability/stasia_hex/sneaking_notification/main"
-                        }
-                    ],
-                    "targeting_mode": "allies_and_self"
                 },
                 "target_type": "dragonsurvival:self"
             },

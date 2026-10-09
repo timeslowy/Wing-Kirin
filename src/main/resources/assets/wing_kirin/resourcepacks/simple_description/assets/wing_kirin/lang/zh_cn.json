@@ -4,7 +4,7 @@
   "dragon_species.dragonsurvival.wing_kirin.banner.desc": "§7■翼麒麟食性广泛，与人类§r§a并无太大差异§r§7。\n■然而，其久在“温室内”生长，较为§n偏安一隅§r§7，早期几乎无对主世界外的“邪气”抵挡之力，因此在离开主世界时必须§e做好万全准备§r§7。",
 
   "dragon_ability.wing_kirin.stasis_hex": "定身术",
-  "dragon_ability.wing_kirin.stasis_hex.desc": "§7■当§f[站立]§r§7施法时，射出一道极快§6「定身光标」§r§7，将所击中实体瞬间§6定身§r§7在原地（包括空中），使其§c动弹不得§r§7。\n■当§f[蹲下]§r§7施法时，「定身光标」将改为§6「范围触发」§r§7，并于地上显示粒子§n标注大致范围§r§7。\n\n■「箭击定身」持续时长随§a技能等级（经验等级）§r§7提升；「范围定身」的半径亦随技能等级提升，§e但定身时间恒定不变§r§7。\n\n■定身还可§a叠加时长。§7§n最大叠加时长为1分钟，次数为10次§r；§7当某生物被施加超过§n50秒§r§7的§6「定身」§r§7药水效果时，会使其§l“筋骨松弛”§r§7，§n定身到期前§r§7所受伤害§a增半！§7当对被定身实体造成超过其§n最大生命一定比例§r§7之伤害，会将其定身§e“粉碎”§7，同时（翼麒麟）龙玩家即获得§6「不破不立」§7增益，一定程度§a恢复血条与法力§7。§r\n\n■§c⚠：并非所有生物均能被定身！§r",
+  "dragon_ability.wing_kirin.stasis_hex.desc": "§7■当§f[站立]§r§7施法时，将§6视线所相至§7的实体瞬间§6定身§r§7在原地（包括空中），使其§c动弹不得§r§7。\n■当§f[蹲下]§r§7施法时，「定身光标」将改为§6「范围触发」§r§7，并于地上显示粒子§n标注大致范围§r§7。\n\n■「箭击定身」持续时长随§a技能等级（经验等级）§r§7提升；「范围定身」的半径亦随技能等级提升，§e但定身时间恒定不变§r§7。\n\n■定身还可§a叠加时长。§7§n最大叠加时长为1分钟，次数为10次§r；§7当某生物被施加超过§n50秒§r§7的§6「定身」§r§7药水效果时，会使其§l“筋骨松弛”§r§7，§n定身到期前§r§7所受伤害§a增半！§7当对被定身实体造成超过其§n最大生命一定比例§r§7之伤害，会将其定身§e“粉碎”§7，同时（翼麒麟）龙玩家即获得§6「不破不立」§7增益，一定程度§a恢复血条与法力§7。§r\n\n■§c⚠：并非所有生物均能被定身！§r",
   "dragon_ability.wing_kirin.uppersky_wind_breath": "罡风之息",
   "dragon_ability.wing_kirin.uppersky_wind_breath.desc": "§7■吐出§6「罡风之息」§r§7，产生高频§e穿甲§7低伤害，并施加虚弱效果。§r\n\n§7■威力随§a技能等级（经验等级）§r§7提升。§8\n\n■只可在§n主世界§r§8使用（除非拥有§r「浩然正气」§8药水效果）。",
   "dragon_ability.wing_kirin.fall_like_meteorite": "从天而降",
@@ -495,7 +495,7 @@
   "actionbar.wing_kirin.upgrade.netherite_ingot": "获得：§b下界合金锭*4",
   "actionbar.wing_kirin.ability.insurance-return_xp": "重复补偿：§a200点经验",
   "actionbar.wing_kirin.ability.insurance-return_item": "§6再来一次！",
-  "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "将施放§6「箭击定身」",
+  "actionbar.wing_kirin.ability.stasis_hex.non-sneaking_notification": "将施放§6「视指定身」",
   "actionbar.wing_kirin.ability.stasis_hex.sneaking_notification": "将施放§6「范围定身」",
   "actionbar.wing_kirin.ability.stasis_hex.disable_ability": "§e定身使你施法不得",
   "actionbar.wing_kirin.ability.stasis_hex.disable_interaction": "§e定身使你动弹不得",
