@@ -80,7 +80,7 @@
                     "entity_effect": [
                         {
                             "effect_type": "dragonsurvival:run_function",
-                            "function": "wing_kirin:lib/uuid/get_caster"
+                            "function": "wing_kirin:lib/uuid/get_caster-player"
                         },
                         {
                             "effect_type": "dragonsurvival:run_function",
