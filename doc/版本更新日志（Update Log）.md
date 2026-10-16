@@ -39,7 +39,9 @@
 6. 「仁者无敌」现在不再有施法维度要求；
 7. 添加中文简化描述资源包；
 8. 修复了自选数据包因注册方法导致服客双端不同步的问题；
-9. 更新食物图标
+9. 更新食物图标；
+10. 更新部分技能图标；
+11. 更新「定身术」逻辑
 
 ---
 
@@ -50,4 +52,6 @@
 5. Added new enchantment: 「Restrictor」for Gold Bell;
 6. Now「Invincible Benevolence」doesnot has dimession requirement;
 7. Fix the issue that will lead to different state between CLIENT and SERVER about optional datapacks;
-8. Updated food icons
+8. Updated food icons;
+9. Updated some abilities' icons;
+10. Updated logic of 「Stasis Hex」
