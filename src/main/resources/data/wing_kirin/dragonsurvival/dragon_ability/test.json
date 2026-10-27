@@ -5,22 +5,38 @@
                 "applied_effects": {
                     "entity_effect": [
                         {
-                            "effect_type": "dragonsurvival:glow",
-                            "glows": [
+                            "effect_type":"dragonsurvival:climbable",
+                            "climbables": [
                                 {
                                     "base": {
-                                        "id": "dragonsurvival:test_glow",
-                                        "duration": 40
+                                        "id": "wing_kirin:test",
+                                        "duration": 100
                                     },
-                                    "color": "#fbdc92"
+                                    "blocks": {
+                                        "entries": [
+                                            {
+                                                "from_level": 1,
+                                                "value": {
+                                                    "type": "minecraft:solid"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "can_climb_ceilings": {
+                                        "entries": [
+                                            {
+                                                "from_level": 1,
+                                                "value": true
+                                            }
+                                        ]
+                                    }
                                 }
                             ]
                         }
                     ],
                     "targeting_mode": "allies_and_self"
                 },
-                "target_type": "dragonsurvival:area",
-                "radius": 5
+                "target_type": "dragonsurvival:self"
             }
         }
     ],

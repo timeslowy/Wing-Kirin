@@ -1,12 +1,9 @@
-##执行者：玩家（技能函数触发）
+## 执行者：玩家（技能函数触发）
 # 将玩家的此技能技能计分板分数设成1
 scoreboard players set @s wk.instant_invisibility.remove_check 1
 
-# 将玩家的UUID传入命令存储后进行计算
-data modify storage wing_kirin:ram math.UUID set from entity @s UUID
-
-# 十进制UUID转换为十六进制（提高查找速度）
-function wing_kirin:lib/math/uuid-dec_to_hex/main
+# 获取施法者的十六进制UUID
+function wing_kirin:lib/uuid/get_caster-player
 
 # 将玩家的技能等级存入命令存储
 execute store result storage wing_kirin:ram instant_invisibility.level int 1 run dragon-ability query @s wing_kirin:instant_invisibility level
@@ -15,4 +12,6 @@ execute store result storage wing_kirin:ram instant_invisibility.level int 1 run
 summon minecraft:marker ~ ~ ~ {Tags:[new_spawn,instant_invisibility]}
 
 # 初始化标志实体（UUID、计时器、清除临时标签）
+# 并发安全：summon→选择→init_marker 同一条同步链，init_marker 末尾才去 new_spawn，
+# 期间不可能插入另一名玩家的施法链；任一时刻至多一个 new_spawn 实体。
 execute as @n[type=marker,tag=new_spawn] run function wing_kirin:dragon_ability/instant_invisibility/init_marker

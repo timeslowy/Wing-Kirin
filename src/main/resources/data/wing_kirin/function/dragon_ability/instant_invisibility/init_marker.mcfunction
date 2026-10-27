@@ -2,7 +2,7 @@
 ## 初始化标志实体数据
 
 # 将UUID传入标志实体
-data modify entity @s data.Owner_hex set from storage wing_kirin:ram math.hex_uuid
+data modify entity @s data.Owner_hex set from storage wing_kirin:uuid main.out
 
 # 根据传入的等级设置标志实体的计分板分数来达到计时效果，每级*200（即scale），每刻减少1(在tick里减少)
 execute store result score @s wk.instant_invisibility.duration \
@@ -10,3 +10,6 @@ execute store result score @s wk.instant_invisibility.duration \
 
 # 移除新生成标记防止选择器错乱
 tag @s remove new_spawn
+
+# 消费后清理：level 已换算为标志实体的 duration
+execute if data storage wing_kirin:ram instant_invisibility run data remove storage wing_kirin:ram instant_invisibility

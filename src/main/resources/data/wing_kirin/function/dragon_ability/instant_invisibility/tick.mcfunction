@@ -13,15 +13,8 @@ $execute if score @s wk.instant_invisibility.duration matches 0 run scoreboard p
 # 标志实体计分板归零时自毙以移除效果
 execute if score @s wk.instant_invisibility.duration matches 0 run kill @s
 
-# 检测当标志实体所有者距离不在30之内产生超距移除效果
-#（注意：由于没有使用 at @s，导致执行位置仍然在标志实体处，因此可以判断距离，且精确删除标志实体）
-$execute as $(Owner_hex) unless entity @s[distance=..25] run function wing_kirin:dragon_ability/instant_invisibility/destruct/distance_out
-
-# 当玩家使出“破隐一击”时删除标志实体
-$execute as $(Owner_hex) unless score @s wk.instant_invisibility.remove_check matches 1 run kill @n[type=marker,tag=instant_invisibility-select]
-
-# 当玩家死亡时清除属于此玩家的标志实体
-$execute as $(Owner_hex) if score @s wk.death_check matches 1.. run kill @n[type=marker,tag=instant_invisibility-select]
+# 玩家行为导致的失效类
+$execute as $(Owner_hex) run function wing_kirin:dragon_ability/instant_invisibility/destruct/main
 
 # 提示失效距离
 function wing_kirin:dragon_ability/instant_invisibility/distance_notice/main with entity @s data

@@ -12,8 +12,8 @@
                             "potion": {
                                 "effects": "minecraft:luck",
                                 "amplifier": 8,
-                                "show_icon": false,
-                                "duration": 100
+                                "show_icon": true,
+                                "duration": 200
                             }
                         },
                         {
@@ -38,7 +38,7 @@
                 },
                 "target_type": "dragonsurvival:self"
             },
-            "trigger_rate": 1.0
+            "trigger_rate": 10.0
         }
     ],
     "icon": {

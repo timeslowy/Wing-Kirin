@@ -6,6 +6,9 @@
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk)
 ![Status](https://img.shields.io/badge/Status-待续-green?style=for-the-badge)
 
+[![Wing Kirin](https://modfolio.creeperkatze.dev/curseforge/project/1370041/downloads)](https://www.curseforge.com/minecraft/mc-mods/wing-kirin)
+[![Wing Kirin](https://modfolio.creeperkatze.dev/modrinth/project/wing-kirin-dragon-survival-addon/downloads)](https://modrinth.com/mod/wing-kirin-dragon-survival-addon)
+
 > 翼麒麟的灵感最初来源于作者的守护兽——青云。在龙之生存的世界里，他是一只长着一对鹤翼的麒麟。  
 > 翼麒麟是生于九天之上的瑞兽（神兽），日月天地间浩然的正气赋予了其使用某些“神通”的能力。大部分“神通”威力强大，而解锁条件又较为苛刻，因此其定位为后期龙种。
 

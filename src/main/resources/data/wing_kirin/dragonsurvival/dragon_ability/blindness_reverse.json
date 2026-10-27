@@ -12,7 +12,7 @@
                                         "id": "wing_kirin:awareness_glow",
                                         "duration": {
                                             "type": "minecraft:linear",
-                                            "base": 700,
+                                            "base": 800,
                                             "per_level_above_first": -200
                                         },
                                         "is_hidden": true

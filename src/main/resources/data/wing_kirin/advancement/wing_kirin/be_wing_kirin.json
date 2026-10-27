@@ -37,7 +37,7 @@
     ]
   ],
   "rewards": {
-    "function": "wing_kirin:test",
+    "function": "wing_kirin:advancements/start",
     "experience": 200
   },
   "sends_telemetry_event": true

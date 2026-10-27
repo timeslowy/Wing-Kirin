@@ -1,30 +1,33 @@
-## 每刻执行各个技能里的主函数触发函数
-## 初始执行者：服务器（server）
-## （已为每条指令添加前置守卫，空闲时跳过无效遍历）
+#> wing_kirin:tick
+# @executor server
+# @frequency tick（每个服务器 tick，由 minecraft/tags/function/tick.json 触发）
+# @input 无：各 feature 自行读取计分板 / 实体标签 / marker data
+# @output 无：仅转发
+# @cleanup 无：清理写在各 feature 入口文件内
+## 全局 tick 调度器。本文件只做转发，不含任何选择器、计分板或条件判断。
+## 新增常驻技能 = 在此追加一行 function wing_kirin:tick/<feature>，
+## 并把执行对象、频率与空闲守卫写进对应的入口文件。
 
-# 给 定身术 每刻执行刻函数（标签已统一为 being_frozen），此处因为里函数检查“定”字展示实体的骑乘状态，因此不能用实体选择器限定否则会失效。
-function wing_kirin:dragon_ability/stasia_hex/tick
+# 定身术：计时推进与定字展示实体校验
+function wing_kirin:tick/stasia_hex
 
-# 给 金风玉露 执行刻函数（守卫：working_symbol 在 0..25 之间，即技能激活或待重置）
-execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.empyrean_wine.working_symbol matches 0.. run function wing_kirin:dragon_ability/empyrean_wine/tick
+# 金风玉露：运行标志递减与归零重置
+function wing_kirin:tick/empyrean_wine
 
-# 给 回光返照 执行刻函数（守卫：death_countdown 存在且 ≥0，即倒计时中或待击杀）
-execute as @a if score @s wk.last_stand.death_countdown matches 0.. run function wing_kirin:dragon_ability/last_stand/tick
+# 回光返照：死亡倒计时
+function wing_kirin:tick/last_stand
 
-# 给 不坏金身 执行刻函数（守卫：working_symbol 在 ..26 之间，即激活中或待重置）
-execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.indestructible_body.working_symbol matches ..26 run function wing_kirin:dragon_ability/indestructible_body/tick
+# 不坏金身：运行标志递增与到点重置
+function wing_kirin:tick/indestructible_body
 
-# 为 聚形散气 标志实体执行（已通过 marker tag 过滤，无需额外守卫）
-execute as @e[type=marker,tag=instant_invisibility] at @s run function wing_kirin:dragon_ability/instant_invisibility/tick with entity @s data
+# 聚形散气：标志实体计时与失效检测
+function wing_kirin:tick/instant_invisibility
 
-# 给 一支穿云箭 标志实体每刻执行主函数（已通过 marker tag 过滤，无需额外守卫）
-execute as @e[type=marker,tag=signal_arrow_generic] at @s run function wing_kirin:dragon_ability/signal_arrow/tick
+# 一支穿云箭：箭雨生成
+function wing_kirin:tick/signal_arrow
 
-# 为 天降正义 标志实体 执行（已通过 marker tag 过滤，无需额外守卫）
-execute as @e[type=marker,tag=heavenly_justice_marker] run function wing_kirin:dragon_ability/heavenly_justice/tick
-# 为 天降正义 发射者 执行（守卫：countdown 存在且 ≥0，即定位中或待输出失败消息）
-execute as @a[predicate=wing_kirin:wing_kirin] if score @s wk.heavenly_justice.countdown matches 0.. run function wing_kirin:dragon_ability/heavenly_justice/ability_data/tick
+# 天降正义：marker 计时与发射者倒计时
+function wing_kirin:tick/heavenly_justice
 
-# 玩家死亡执行（已通过 death_check 计分板过滤，无需额外守卫）
-execute as @a if score @s wk.death_check matches 1.. run function wing_kirin:player_death/main
-
+# 玩家死亡：跨技能状态清理钩子
+function wing_kirin:tick/player_death

@@ -8,5 +8,8 @@ execute store result storage wing_kirin:ram stasis_hex.duration int 1 \
     run scoreboard players operation @s wk.stasis_hex.temp += #01 wk.math
 scoreboard players reset @s wk.stasis_hex.temp
 
-# 效果应用
+# 效果应用（with storage 在调用瞬间已实例化，之后即可清空）
 execute at @s run function wing_kirin:dragon_ability/stasia_hex/apply/apply_effects with storage wing_kirin:ram stasis_hex
+
+# 消费后清理：level 与 duration 均已被 apply_effects 取走
+execute if data storage wing_kirin:ram stasis_hex run data remove storage wing_kirin:ram stasis_hex

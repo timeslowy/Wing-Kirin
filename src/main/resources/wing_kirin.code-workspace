@@ -17,14 +17,13 @@
 			"path": "../../../other"
 		},
 		{
-			"name": "java",
-			"path": "../java"
-		},
-		{
 			"path": "../../../mcdoc"
 		},
 		{
 			"path": "../../../spyglass"
+		},
+		{
+			"path": "../../../plan"
 		}
 	],
 	"settings": {}
