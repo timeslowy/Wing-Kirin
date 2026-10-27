@@ -7,6 +7,8 @@
 execute unless entity @s[distance=..25] run function wing_kirin:dragon_ability/instant_invisibility/destruct/distance_out
 
 # 当玩家使出“破隐一击”时删除标志实体
+# 并发安全：instant_invisibility-select 由 tick 在本 marker 处理期间临时打上、处理完即摘，
+# 任一时刻全服至多一个 marker 持有该标签，因此 @n 选到的一定是本玩家的。
 execute unless score @s wk.instant_invisibility.remove_check matches 1 run kill @n[type=marker,tag=instant_invisibility-select]
 
 # 当玩家死亡时清除属于此玩家的标志实体

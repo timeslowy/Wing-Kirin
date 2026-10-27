@@ -38,7 +38,7 @@
 | `invincible_benevolence` | `beneficiary_amount` | int | `caculate/ability_level:3,7,11,15,19` | `apply_effect` 的 `$(beneficiary_amount)` | 同上 |
 | `math` | `result` | int/float | `caculate_damage:2`、`damage_bounce/*:16,17,26,31` | `damage_bounce/*` 链、`caculate_damage:17` | `caculate_damage` 末尾 |
 | `transposition` | `x` / `y` / `z` | double | `transposition/ready:12-14` | `tp_target` 的 `$(x)/(y)/(z)` | `transposition/cleanup` |
-| `transposition` | `caster` | string(UUID) | `transposition/ready:19`（经 `lib/uuid/get_caster-player`） | `cleanup` 的 `$(caster)` | 同上 |
+| `transposition` | `caster` | string(UUID) | `transposition/ready:19`（经 `lib/uuid/get_caster-player`） | `tp_caster` 的 `$(caster)`（精确定位施法者）、`cleanup` 的 `$(caster)`（清标签） | 同上 |
 
 所有清理均为**守卫式**，避免 `data remove` 对不存在路径抛 `ERROR_MERGE_UNCHANGED`：
 

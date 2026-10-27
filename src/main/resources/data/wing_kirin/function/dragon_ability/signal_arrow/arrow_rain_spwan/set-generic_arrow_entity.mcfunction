@@ -3,11 +3,12 @@
 ## 移除新生成标签
 tag @s remove new_arrow
 
-# 传入来源 来自标志实体
-data modify entity @s Owner set from entity @n[type=marker,tag=signal_arrow] data.Owner
+# 传入来源：读当前 tick 由 arrow_rain_spwan/main 写下的 marker 镜像
+# （原先用 @n[type=marker,tag=signal_arrow] 按距离回溯 marker，两场箭雨重叠时会取到别人的 Owner）
+data modify entity @s Owner set from storage wing_kirin:ram signal_arrow.Owner
 
 # 传入伤害
-data modify entity @s general_data.common_hit_effects[0].general_data.effects[0].effect.amount set from entity @n[type=marker,tag=signal_arrow] data.damage
+data modify entity @s general_data.common_hit_effects[0].general_data.effects[0].effect.amount set from storage wing_kirin:ram signal_arrow.damage
 
 # 将玩家本身作为排除对象 使用ds官方的接口
 data modify entity @s general_data.common_hit_effects[0].general_data.effects[0].condition.term.predicate.type_specific.has_uuid \

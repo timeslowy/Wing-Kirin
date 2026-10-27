@@ -125,5 +125,6 @@ execute anchored eyes run summon dragonsurvival:generic_arrow_entity ^ ^ ^ { \
 }
 
 # 给上面定义的单个箭雨传入参数等
+# 并发安全：每次 spawn 只 summon 1 支箭，set-generic_arrow_entity 首行即去 new_arrow。
 execute as @n[type=dragonsurvival:generic_arrow_entity,tag=new_arrow] at @s \
     run function wing_kirin:dragon_ability/signal_arrow/arrow_rain_spwan/set-generic_arrow_entity

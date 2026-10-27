@@ -7,6 +7,7 @@ scoreboard players reset @s wk.instant_invisibility.remove_check
 effect clear @s invisibility
 
 # 当施法者离开限定距离之后自动清除属于此玩家的标志实体
+# 并发安全：同 destruct/main，instant_invisibility-select 任一时刻仅本 marker 持有。
 kill @n[type=marker,tag=instant_invisibility-select]
 
 # 现身粒子特效

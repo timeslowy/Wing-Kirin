@@ -11,6 +11,7 @@ data modify storage wing_kirin:ram signal_arrow.projectile_level set from entity
 summon marker ~ ~ ~ {Tags:["new_marker","signal_arrow_generic","signal_arrow"]}
 
 # 设置标志实体 at:在第一个弹射物的最坐标位置执行 @S：往前推
+# 并发安全：summon→选择→set-marker 同一条同步链，set-marker 首行即去 new_marker。
 execute as @n[type=marker,tag=new_marker] at @s run function wing_kirin:dragon_ability/signal_arrow/signal_arrow_spawn_marker/set-marker
 
 # 生成范围标识粒子
