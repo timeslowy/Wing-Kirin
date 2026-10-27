@@ -7,14 +7,14 @@ execute unless score @s wk.heavenly_justice.countdown matches 0.. \
 execute if score @s wk.heavenly_justice.countdown matches 400 run function wing_kirin:dragon_ability/heavenly_justice/ability_data/marker
 
 # 对打击地点进行标记
-execute if score @s wk.heavenly_justice.countdown matches 400 at @s run function wing_kirin:dragon_ability/heavenly_justice/position_display/main
+execute if score @s wk.heavenly_justice.countdown matches 400 at @s run function wing_kirin:dragon_ability/heavenly_justice/display
 
 # 输出成功定位消息
 execute if score @s wk.heavenly_justice.countdown matches 400 at @s \
     run function wing_kirin:dragon_ability/heavenly_justice/message/successful_message with entity @s data
 
 # 改换颜色
-execute if score @s wk.heavenly_justice.countdown matches 100 at @s run function wing_kirin:dragon_ability/heavenly_justice/position_display/color_change
+execute if score @s wk.heavenly_justice.countdown matches 100 at @s run data modify entity @n[type=item_display,tag=heavenly_justice_marker_display] glow_color_override set value 14158089
 
 # 开始导弹部署
 execute if score @s wk.heavenly_justice.countdown matches 40 at @s run function wing_kirin:dragon_ability/heavenly_justice/guided_missle/main

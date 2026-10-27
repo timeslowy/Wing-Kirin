@@ -1,4 +1,4 @@
-# 执行者: `new_marker`（标志实体）
+## 执行者: `new_marker`（标志实体）
 
 
 ## 移除新生成标签(防止选错)
@@ -12,9 +12,7 @@ data modify entity @s data.Owner set from storage wing_kirin:ram signal_arrow.Ow
 data modify entity @s data.projectile_level set from storage wing_kirin:ram signal_arrow.projectile_level
 
 # 计算十六进制UUID并存入标志实体
-data modify storage wing_kirin:uuid main.in set from entity @s data.Owner
-function wing_kirin:lib/uuid/dec_to_hex
-data modify entity @s data.hex_Owner set from storage wing_kirin:uuid main.out
+function wing_kirin:lib/uuid/get_caster-marker
 
 # 计算并传入伤害（单次计算，一口价，不实时更新）
 function wing_kirin:dragon_ability/signal_arrow/signal_arrow_spawn_marker/caculate_damage with entity @s data

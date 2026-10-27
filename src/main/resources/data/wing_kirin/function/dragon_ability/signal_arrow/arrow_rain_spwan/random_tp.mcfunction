@@ -4,5 +4,4 @@ $execute store result storage wing_kirin:ram signal_arrow.result_x int 1 run ran
 $execute store result storage wing_kirin:ram signal_arrow.result_y int 1 run random value -$(radius)..$(radius)
 
 # 获得随机好的X、Z坐标后进行传送
-execute as @s at @s \
-    run function wing_kirin:dragon_ability/signal_arrow/arrow_rain_spwan/tp with storage wing_kirin:ram signal_arrow
+execute at @s run function wing_kirin:dragon_ability/signal_arrow/arrow_rain_spwan/tp with storage wing_kirin:ram signal_arrow

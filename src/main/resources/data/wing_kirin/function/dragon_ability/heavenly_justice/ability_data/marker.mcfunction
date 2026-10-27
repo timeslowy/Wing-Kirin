@@ -3,9 +3,7 @@
 data modify entity @s data.Owner set from entity @s "neoforge:attachments"."dragonsurvival:summon_data".data.owner_uuid
 
 # 计算hex_Owner
-data modify storage wing_kirin:uuid main.in set from entity @s data.Owner
-function wing_kirin:lib/uuid/dec_to_hex
-data modify entity @s data.hex_Owner set from storage wing_kirin:uuid main.out
+function wing_kirin:lib/uuid/get_caster-marker
 
 # 将施法者等级从命令存储传入标志实体
 data modify entity @s data.projectile_level set from storage wing_kirin:ram heavenly_justice.level

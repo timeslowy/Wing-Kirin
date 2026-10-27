@@ -12,5 +12,8 @@ execute if score @s wk.stasis_hex.freezeTimer matches 3 run scoreboard players a
 # 给被击中实体增加"定身"标签
 tag @s add being_frozen
 
+# 伤害以触发成就
+$damage @s 0.1 wing_kirin:trace_ding by $(out) from $(out)
+
 # 应用效果
 function wing_kirin:dragon_ability/stasia_hex/apply/set_duration
