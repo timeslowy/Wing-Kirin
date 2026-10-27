@@ -31,14 +31,15 @@ tag @e[tag=new_summon] remove new_summon
 tag @e[tag=new_item_display] remove new_item_display
 
 # 5) 清空运行时 storage（保留 uuid.hex_map 与 lifecycle.schema）
-data remove storage wing_kirin:ram empyrean_wine
-data remove storage wing_kirin:ram heavenly_justice
-data remove storage wing_kirin:ram instant_invisibility
-data remove storage wing_kirin:ram invincible_benevolence
-data remove storage wing_kirin:ram last_stand
-data remove storage wing_kirin:ram math
-data remove storage wing_kirin:ram signal_arrow
-data remove storage wing_kirin:ram stasis_hex
-data remove storage wing_kirin:ram transposition
-data remove storage wing_kirin:uuid main
-data remove storage wing_kirin:uuid temp
+# 每条都以「存在才删」守护：data remove 对不存在的路径会抛 ERROR_MERGE_UNCHANGED
+execute if data storage wing_kirin:ram empyrean_wine run data remove storage wing_kirin:ram empyrean_wine
+execute if data storage wing_kirin:ram heavenly_justice run data remove storage wing_kirin:ram heavenly_justice
+execute if data storage wing_kirin:ram instant_invisibility run data remove storage wing_kirin:ram instant_invisibility
+execute if data storage wing_kirin:ram invincible_benevolence run data remove storage wing_kirin:ram invincible_benevolence
+execute if data storage wing_kirin:ram last_stand run data remove storage wing_kirin:ram last_stand
+execute if data storage wing_kirin:ram math run data remove storage wing_kirin:ram math
+execute if data storage wing_kirin:ram signal_arrow run data remove storage wing_kirin:ram signal_arrow
+execute if data storage wing_kirin:ram stasis_hex run data remove storage wing_kirin:ram stasis_hex
+execute if data storage wing_kirin:ram transposition run data remove storage wing_kirin:ram transposition
+execute if data storage wing_kirin:uuid main run data remove storage wing_kirin:uuid main
+execute if data storage wing_kirin:uuid temp run data remove storage wing_kirin:uuid temp

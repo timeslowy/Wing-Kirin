@@ -10,3 +10,6 @@ execute store result score @s wk.instant_invisibility.duration \
 
 # 移除新生成标记防止选择器错乱
 tag @s remove new_spawn
+
+# 消费后清理：level 已换算为标志实体的 duration
+execute if data storage wing_kirin:ram instant_invisibility run data remove storage wing_kirin:ram instant_invisibility

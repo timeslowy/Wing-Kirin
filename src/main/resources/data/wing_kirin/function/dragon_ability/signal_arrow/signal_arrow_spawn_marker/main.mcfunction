@@ -18,3 +18,6 @@ execute at @s run function wing_kirin:dragon_ability/signal_arrow/radiu_display/
 
 # 可以落下箭雨（高度条件满足）时播放成功音效
 playsound entity.firework_rocket.large_blast_far player @a ~ ~ ~ 60
+
+# 消费后清理：Owner / projectile_level 已拷入标志实体，success 显示也已读取完毕
+execute if data storage wing_kirin:ram signal_arrow run data remove storage wing_kirin:ram signal_arrow

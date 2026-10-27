@@ -11,4 +11,4 @@
 $execute as $(caster) run tag @s remove transposition_ready
 
 # 清空本次缓存，避免坐标与 caster 跨次 / 跨维度复用
-data remove storage wing_kirin:ram transposition
+execute if data storage wing_kirin:ram transposition run data remove storage wing_kirin:ram transposition

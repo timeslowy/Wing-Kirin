@@ -9,3 +9,6 @@ execute store result score @s wk.last_stand.death_countdown run data get storage
 # 若拥有「浩然正气」药水效果则多20%时间(乘12再除以10，为乘1.2)
 execute if data entity @s active_effects[{id:"wing_kirin:great_zhengqi"}] run scoreboard players operation @s wk.last_stand.death_countdown *= #12 wk.math
 execute if data entity @s active_effects[{id:"wing_kirin:great_zhengqi"}] run scoreboard players operation @s wk.last_stand.death_countdown /= #10 wk.math
+
+# 消费后清理：level 已换算为 death_countdown
+execute if data storage wing_kirin:ram last_stand run data remove storage wing_kirin:ram last_stand

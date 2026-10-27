@@ -10,3 +10,6 @@ data modify entity @s data.projectile_level set from storage wing_kirin:ram heav
 
 # 将标志实体位置传入自身
 data modify entity @s data.Pos set from entity @s Pos
+
+# 消费后清理：level 已拷入 data.projectile_level
+execute if data storage wing_kirin:ram heavenly_justice run data remove storage wing_kirin:ram heavenly_justice

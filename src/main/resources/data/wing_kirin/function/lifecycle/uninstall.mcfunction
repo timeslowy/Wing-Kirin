@@ -38,5 +38,5 @@ scoreboard objectives remove wk.math
 scoreboard objectives remove wk.test
 
 # 移除剩余 storage 根（ram 与 uuid.main/temp 已在 reset 中清除）
-data remove storage wing_kirin:uuid hex_map
-data remove storage wing_kirin:lifecycle schema
+execute if data storage wing_kirin:uuid hex_map run data remove storage wing_kirin:uuid hex_map
+execute if data storage wing_kirin:lifecycle schema run data remove storage wing_kirin:lifecycle schema
