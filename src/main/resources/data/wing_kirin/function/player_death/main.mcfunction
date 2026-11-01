@@ -1,17 +1,16 @@
-## 执行者：死亡的玩家
-# 此时计分板 wk.death_check 的值为1
+#> wing_kirin:player_death/main
+# @executor 死亡的玩家
+# @frequency event（由 tick/player_death 在 wk.death_check ≥ 1 时触发）
+# @input 计分板 wk.death_check = 1；玩家身上的各技能状态
+# @output 玩家全部技能状态归零；death_check 置 0
+# @cleanup 实体级定身状态由 stasia_hex/remove_effects 处理；
+#          玩家级状态统一交给 lifecycle/reset_player（与全局 reset 同一份清单）
+## 死亡清理入口：先清实体级定身，再调单玩家归零。
+## 新增玩家态技能时只需往 lifecycle/reset_player 追加，不必改本文件。
 
-# 定身术：清除定身效果与计分板（已统一标签和计时器）
-function wing_kirin:dragon_ability/stasia_hex/desctuor/remove_effects
+# 定身术：恢复 AI、清效果、移标签、清定字展示实体（实体级）
+function wing_kirin:dragon_ability/stasia_hex/remove_effects
 
-# 回光返照：将玩家的倒计时计分板和死亡计数计分板重置
-scoreboard players reset @s wk.last_stand.death_countdown
-scoreboard players reset @s wk.last_stand.death_check
-
-# 聚形散气：
-# 见 wing_kirin:dragon_ability/instant_invisibility/tick ，清除属于玩家的标志实体
-# 删除玩家的死亡检测计分板
-scoreboard players reset @s wk.instant_invisibility.remove_check
-
-# 死亡检查计分板归零
-scoreboard players set @s wk.death_check 0
+# 单玩家状态归零（回光返照、聚形散气、天降正义、金风玉露、不坏金身、
+# 唯快不破、仁者无敌、通仙心、转位残留标签，以及 death_check 置 0）
+function wing_kirin:lifecycle/reset_player

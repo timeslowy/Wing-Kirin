@@ -13,3 +13,6 @@ execute if function wing_kirin:dragon_ability/empyrean_wine/probability run func
 # 设置技能的运行标志
 scoreboard players set @s wk.empyrean_wine.working_symbol 25
 
+# 消费后清理：probability 内部有多条 run return 早退分支，故把清理放在调用方收口
+execute if data storage wing_kirin:ram empyrean_wine run data remove storage wing_kirin:ram empyrean_wine
+

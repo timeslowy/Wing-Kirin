@@ -4,6 +4,8 @@
 function wing_kirin:dragon_ability/heavenly_justice/guided_missle/summon_missle
 
 # 向导弹传入发射者UUID
+# 并发安全：summon_missle→取数→setting 同一条同步链，setting 末尾才去 new_summon；
+# 同一 marker 只生成 1 枚导弹，两个 marker 的链也不会交错。
 data modify entity @n[type=dragonsurvival:generic_ball_entity,tag=new_summon,distance=..1] Owner set from entity @s data.Owner
 # 向导弹传入技能等级（弹射物等级）
 data modify entity @n[type=dragonsurvival:generic_ball_entity,tag=new_summon,distance=..1] projectile_level set from entity @s data.projectile_level

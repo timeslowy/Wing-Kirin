@@ -8,3 +8,6 @@ execute unless function wing_kirin:dragon_ability/invincible_benevolence/select/
 
 # 根据被治疗实体数应用效果
 function wing_kirin:dragon_ability/invincible_benevolence/apply_effect with storage wing_kirin:ram invincible_benevolence
+
+# 消费后清理：level 与 beneficiary_amount 均已被 apply_effect 取走
+execute if data storage wing_kirin:ram invincible_benevolence run data remove storage wing_kirin:ram invincible_benevolence

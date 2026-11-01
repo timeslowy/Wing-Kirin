@@ -12,4 +12,6 @@ execute store result storage wing_kirin:ram instant_invisibility.level int 1 run
 summon minecraft:marker ~ ~ ~ {Tags:[new_spawn,instant_invisibility]}
 
 # 初始化标志实体（UUID、计时器、清除临时标签）
+# 并发安全：summon→选择→init_marker 同一条同步链，init_marker 末尾才去 new_spawn，
+# 期间不可能插入另一名玩家的施法链；任一时刻至多一个 new_spawn 实体。
 execute as @n[type=marker,tag=new_spawn] run function wing_kirin:dragon_ability/instant_invisibility/init_marker

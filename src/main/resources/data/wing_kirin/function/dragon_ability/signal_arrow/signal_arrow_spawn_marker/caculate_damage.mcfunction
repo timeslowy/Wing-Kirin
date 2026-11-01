@@ -15,3 +15,6 @@ $execute as $(hex_Owner) run function wing_kirin:lib/entity/damage_bounce/damage
 
 # 存入标志实体数据里
 data modify entity @s data.damage set from storage wing_kirin:ram math.result
+
+# 消费后清理：math.result 是 lib/damage_bounce 的共享管线槽，用完即清
+execute if data storage wing_kirin:ram math run data remove storage wing_kirin:ram math

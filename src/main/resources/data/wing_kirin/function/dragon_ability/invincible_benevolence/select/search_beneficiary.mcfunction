@@ -8,6 +8,7 @@ execute if score @s wk.invincible_benevolence.beneficiary_amount matches 88.. \
     run return 0
 
 # 找到一定范围内被治疗实体数则加1
+# 并发安全：本函数是「逐个取最近并立刻去标签」的循环，@n 每次拿到的都是尚未统计的实体。
 execute if entity @n[distance=..9,tag=beneficiary] run \
     scoreboard players add @s wk.invincible_benevolence.beneficiary_amount 1
 

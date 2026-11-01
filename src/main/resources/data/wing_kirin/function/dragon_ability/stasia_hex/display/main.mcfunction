@@ -28,6 +28,8 @@ summon item_display ~ ~ ~ { \
 }
 
 # 让物品展示实体（图片）骑乘在被定身生物上
+# 并发安全：summon→ride→去标签 同一条同步链；即使多只生物同坐标被定身，
+# 两个展示实体的内容完全一致，误选不影响表现。
 ride @n[type=item_display,tag=new_item_display] mount @s
 
 # 清除新生成标签

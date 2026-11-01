@@ -1,6 +1,6 @@
 ## 执行者：玩家
 # 调整视角
-rotate @s ~180 ~
+tp @s ~ ~ ~ ~180 ~
 
 # 播放声音
 playsound minecraft:entity.wind_charge.wind_burst master @s ~ ~ ~ 1 1
