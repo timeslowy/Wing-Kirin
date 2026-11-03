@@ -60,7 +60,6 @@ public class PackFinders {
 
         // ② 客户端资源包
         addSimplePack(event, PackType.CLIENT_RESOURCES, WING_KIRIN_UI, "resourcepack.wing_kirin.wing_kirin_ui", false);
-        addSimplePack(event, PackType.CLIENT_RESOURCES, ORIGINAL_FLY_ANIMATION, "resourcepack.wing_kirin.original_fly_animation", false);
         addSimplePack(event, PackType.CLIENT_RESOURCES, SIMPLE_DESCRIPTION, Component.literal("精简描述"), false);
     }
 

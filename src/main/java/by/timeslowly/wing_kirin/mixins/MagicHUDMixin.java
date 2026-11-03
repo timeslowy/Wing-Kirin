@@ -1,25 +1,20 @@
 package by.timeslowly.wing_kirin.mixins;
 
 import by.dragonsurvivalteam.dragonsurvival.client.gui.hud.MagicHUD;
+import by.dragonsurvivalteam.dragonsurvival.registry.attachments.MagicData;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.activation.Activation;
 import by.timeslowly.wing_kirin.config.WKServerConfig;
 import by.timeslowly.wing_kirin.registry.WKEffects;
-import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 import software.bernie.geckolib.util.Color;
 
@@ -27,29 +22,28 @@ import software.bernie.geckolib.util.Color;
 @Mixin(value = MagicHUD.class, remap = false)
 public abstract class MagicHUDMixin {
 
-    @Final
-    @Shadow
-    private static MagicHUD.OutlineColorData[] colors;
-
     /**
-     * 技能图标边框调整
+     * 技能图标边框调整。
+     * <p>
+     * DS 2.0.72 起，边框颜色的状态机（原 {@code render} 内的 {@code lerpToColor}）被抽离到
+     * {@code tickOutlineColors(ClientTickEvent.Post)}，{@code render} 改为调用本方法取色。
+     * 因此注入点由 {@code render#lerpToColor} 迁移至 {@code interpolatedColor} 头部，
+     * 直接短路返回值：既覆盖逐槽边框（render 第 1 处调用），也覆盖选中槽高亮（第 2 处调用）。
      */
-    @Inject(method = "render", at = @At(value = "INVOKE",
-            target = "Lby/dragonsurvivalteam/dragonsurvival/client/gui/hud/MagicHUD;lerpToColor(ILsoftware/bernie/geckolib/util/Color;)V",
-            ordinal = 2, shift = At.Shift.AFTER),
-            locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void applyDingShenBorder(GuiGraphics graphics, DeltaTracker tracker, CallbackInfo ci,
-                                            @Local(name = "x") int x,
-                                            @Local(name = "ability") DragonAbilityInstance ability) {
+    @Inject(method = "interpolatedColor(IF)Lsoftware/bernie/geckolib/util/Color;",
+            at = @At("HEAD"), cancellable = true, remap = false)
+    private static void applyDingShenBorder(int slot, float partialTick, CallbackInfoReturnable<Color> cir) {
         Player player = Minecraft.getInstance().player;
-        if (player == null || ability == null) return;
+        if (player == null) return;
 
-        // 若有定身效果且配置启用禁用技能，则覆盖灰色遮罩
-        if (WKServerConfig.shouldDingShenDisableAbilities() && player.hasEffect(WKEffects.DING_SHEN) && ability.value().activation().type() != Activation.Type.PASSIVE) {
-            MagicHUD.OutlineColorData data = colors[x];
-            ((OutlineColorDataAccessor) data).setColor(Color.ofRGBA(0.3f, 0.3f, 0.3f, 0.7f));
-            ((OutlineColorDataAccessor) data).setPastDelay(false);
-        }
+        // 若有定身效果且配置启用禁用技能，则覆盖灰/红/黄边框为统一灰色
+        if (!WKServerConfig.shouldDingShenDisableAbilities() || !player.hasEffect(WKEffects.DING_SHEN)) return;
+
+        DragonAbilityInstance ability = MagicData.getData(player).fromSlot(slot);
+        if (ability == null) return;
+        if (ability.value().activation().type() == Activation.Type.PASSIVE) return;
+
+        cir.setReturnValue(Color.ofRGBA(0.3f, 0.3f, 0.3f, 0.7f));
     }
 
     /**
