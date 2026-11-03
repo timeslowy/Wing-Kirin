@@ -66,7 +66,6 @@ public class PackFinders {
 
     // 资源包：纯客户端使用，不参与注册表同步
     private static final String WING_KIRIN_UI = "assets/wing_kirin/resourcepacks/wing_kirin_ui";
-    private static final String ORIGINAL_FLY_ANIMATION = "assets/wing_kirin/resourcepacks/original_fly_animation";
     private static final String SIMPLE_DESCRIPTION = "assets/wing_kirin/resourcepacks/simple_description";
 
     @SubscribeEvent
@@ -79,7 +78,6 @@ public class PackFinders {
 
         // ② 客户端资源包
         addSimplePack(event, PackType.CLIENT_RESOURCES, WING_KIRIN_UI, "resourcepack.wing_kirin.wing_kirin_ui", false);
-        addSimplePack(event, PackType.CLIENT_RESOURCES, ORIGINAL_FLY_ANIMATION, "resourcepack.wing_kirin.original_fly_animation", false);
         addSimplePack(event, PackType.CLIENT_RESOURCES, SIMPLE_DESCRIPTION, Component.literal("精简描述"), false);
     }
 

@@ -17,7 +17,6 @@
   "client": [
     "EntityGlowColorMixin",
     "MagicHUDMixin",
-    "OutlineColorDataAccessor",
     "ClientCastingHandlerMixin",
     "MouseHandlerMixin",
     "LivingEntityAfterimageMixin",

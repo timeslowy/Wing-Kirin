@@ -55,3 +55,15 @@
 8. Updated food icons;
 9. Updated some abilities' icons;
 10. Updated logic of 「Stasis Hex」
+
+# 3.3.5
+
+1. 优化mcfunction的结构；
+2. 修复DS 2.1.7 版本的Mixin冲突问题；
+3. 删去可选动画资源包，改为身体类型直接使用龙生动画的修改版
+
+---
+
+1. Improved the structure of mcfunction system;
+2. Fixed mixin conflict of DS-v2.1.7;
+3. Deleted optional animation resourcepack then changed to modified Dragon Survival's animation.
