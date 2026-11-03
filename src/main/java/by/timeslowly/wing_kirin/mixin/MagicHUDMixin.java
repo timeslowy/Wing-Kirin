@@ -1,33 +1,35 @@
 package by.timeslowly.wing_kirin.mixin;
 
 import by.dragonsurvivalteam.dragonsurvival.client.gui.hud.MagicHUD;
+import by.dragonsurvivalteam.dragonsurvival.registry.attachments.MagicData;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.DragonAbilityInstance;
 import by.dragonsurvivalteam.dragonsurvival.registry.dragon.ability.activation.Activation;
 import by.timeslowly.wing_kirin.network.ConfigSyncHandler;
 import by.timeslowly.wing_kirin.registry.WKEffects;
-import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import software.bernie.geckolib.core.object.Color;
 
 /**
  * 定身置灰法力 HUD（自 1.21.1 移植）。
- * 1.20.1 适配（均已对字节码/局部变量表验证）：
+ * 1.20.1 适配（均已对 DS 2.0.69 字节码/反编译验证）：
  * <ul>
  *   <li>render 签名为 (GuiGraphics, float)（1.21.1 为 DeltaTracker）；</li>
  *   <li>GeckoLib 4 的 Color 位于 core.object 包；</li>
- *   <li>lerpToColor 共 3 次调用、局部变量 x/ability 同名，注入点 ordinal=2 不变；</li>
- *   <li>blit 9 参 (GuiGraphics,RL,IIIFFFF)，语义为 (graphics, atlas, x, y, size, alpha, R, G, B)；</li>
+ *   <li>DS 2.0.69 起，边框颜色的状态机（原 {@code render} 内的 {@code lerpToColor}）被抽离到
+ *       {@code tickOutlineColors(ClientTickEvent)}，{@code render} 改为调用 {@code interpolatedColor(int, float)} 取色。
+ *       因此注入点由 {@code render#lerpToColor} 迁移至 {@code interpolatedColor} 头部，直接短路返回值：
+ *       既覆盖逐槽边框（render 第 1 处调用），也覆盖选中槽高亮（render 第 2 处调用）；</li>
+ *   <li>blit 9 参 (GuiGraphics,RL,IIIFFFF)，语义为 (graphics, atlas, x, y, size, alpha, R, G, B)，2.0.69 未变，
+ *       render 中 7 处调用点全部重定向；</li>
  *   <li><b>不能用 1.21.1 的 @ModifyArgs</b>：ArgsClassGenerator 生成的 org.spongepowered.asm.synthetic.args.Args$1
  *       在 Forge 1.20.1 的 ModuleClassLoader 模块体系下无法被 dragonsurvival 模块加载，
  *       DS 的 ConfigHandler 扫描 @ConfigOption 反射加载 MagicHUD 时直接 NoClassDefFoundError 崩启动
@@ -38,33 +40,27 @@ import software.bernie.geckolib.core.object.Color;
 @Mixin(value = MagicHUD.class, remap = false)
 public abstract class MagicHUDMixin {
 
-    @Final
-    @Shadow
-    private static MagicHUD.OutlineColorData[] colors;
-
     @Shadow
     private static void blit(GuiGraphics graphics, ResourceLocation atlas, int x, int y, int size,
                              float alpha, float red, float green, float blue) {}
 
     /**
-     * 技能图标边框调整
+     * 技能图标边框调整。
      */
-    @Inject(method = "render", at = @At(value = "INVOKE",
-            target = "Lby/dragonsurvivalteam/dragonsurvival/client/gui/hud/MagicHUD;lerpToColor(ILsoftware/bernie/geckolib/core/object/Color;)V",
-            ordinal = 2, shift = At.Shift.AFTER),
-            locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void applyDingShenBorder(GuiGraphics graphics, float partialTick, CallbackInfo ci,
-                                            @Local(name = "x") int x,
-                                            @Local(name = "ability") DragonAbilityInstance ability) {
+    @Inject(method = "interpolatedColor(IF)Lsoftware/bernie/geckolib/core/object/Color;",
+            at = @At("HEAD"), cancellable = true, remap = false)
+    private static void applyDingShenBorder(int slot, float partialTick, CallbackInfoReturnable<Color> cir) {
         Player player = Minecraft.getInstance().player;
-        if (player == null || ability == null) return;
+        if (player == null) return;
 
-        // 若有定身效果且配置启用禁用技能，则覆盖灰色遮罩
-        if (ConfigSyncHandler.dingShenDisableAbilities() && player.hasEffect(WKEffects.DING_SHEN.get()) && ability.value().activation().type() != Activation.Type.PASSIVE) {
-            MagicHUD.OutlineColorData data = colors[x];
-            ((OutlineColorDataAccessor) data).setColor(Color.ofRGBA(0.3f, 0.3f, 0.3f, 0.7f));
-            ((OutlineColorDataAccessor) data).setPastDelay(false);
-        }
+        // 若有定身效果且配置启用禁用技能，则覆盖灰/红/黄边框为统一灰色
+        if (!ConfigSyncHandler.dingShenDisableAbilities() || !player.hasEffect(WKEffects.DING_SHEN.get())) return;
+
+        DragonAbilityInstance ability = MagicData.getData(player).fromSlot(slot);
+        if (ability == null) return;
+        if (ability.value().activation().type() == Activation.Type.PASSIVE) return;
+
+        cir.setReturnValue(Color.ofRGBA(0.3f, 0.3f, 0.3f, 0.7f));
     }
 
     /**

@@ -38,7 +38,6 @@ public class PackFinders {
             addPack(event, PackType.SERVER_DATA, "acquired_low_upgrade_requirement");
         } else if (event.getPackType() == PackType.CLIENT_RESOURCES) {
             addPack(event, PackType.CLIENT_RESOURCES, "wing_kirin_ui");
-            addPack(event, PackType.CLIENT_RESOURCES, "original_fly_animation");
         }
     }
 
